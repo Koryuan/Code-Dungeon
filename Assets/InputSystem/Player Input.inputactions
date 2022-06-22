@@ -19,7 +19,15 @@
                     "id": "530fc8ec-cf26-4384-9346-b8411d896853",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Menu Movement",
+                    "type": "Button",
+                    "id": "01201108-bff4-4142-8216-8918e76237a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -81,13 +89,46 @@
                 {
                     "name": "",
                     "id": "fb20f943-725a-495d-be21-fcff62d7b5f8",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Arrow Up Down",
+                    "id": "fb31da4b-2526-4b02-a5d8-b46b8b9d6c04",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "40651021-3d02-4ef8-8367-00d13c854c7e",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "8e971d1a-9427-429f-b7ac-34c0ce722097",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
