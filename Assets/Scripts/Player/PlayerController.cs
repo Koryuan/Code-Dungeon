@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour
     private bool canControl = false;
 
     #region Initialization
+    public bool isInitialize { get; private set; } = false;
     private void Awake()
     {
         canControl = CheckNullReferences();
+        isInitialize = true;
     }
     private bool CheckNullReferences()
     {
@@ -40,7 +42,6 @@ public class PlayerController : MonoBehaviour
         if (canControl)
         {
             Movement();
-            Interaction();
         }
     }
     public void Movement()
@@ -52,9 +53,13 @@ public class PlayerController : MonoBehaviour
         else if (XY.x > 0) _movement.MoveRight();
         else if (XY.x < 0) _movement.MoveLeft();
     }
-
     private void Interaction()
     {
-        if (_interactionInput.action.ReadValue<float>() > 0) Debug.Log("Masuk");
+        if (canControl) Debug.Log("Masuk");
     }
+
+    #region Freeze UnFreeze
+    public void FreezePlayer() => canControl = false;
+    public void UnFreezePlayer() => canControl = true;
+    #endregion
 }

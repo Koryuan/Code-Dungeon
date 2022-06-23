@@ -70,7 +70,7 @@ public class MainMenuUI : MonoBehaviour
     }
     private void InitializeInput()
     {
-        _interactionInput.action.performed +=  (a) => OnInterectPressed();
+        _interactionInput.action.performed +=  (a) => OnInterectInput();
         _movementInput.action.performed += (a) => OnMenuMovementInput();
     }
     #endregion
@@ -105,7 +105,7 @@ public class MainMenuUI : MonoBehaviour
     }
     #endregion
 
-    private void OnInterectPressed()
+    private void OnInterectInput()
     {
         if (movementHelpPanel.activeSelf) SceneLoadManager.LoadTutorialMap();
         else _MainMenuButton[currentButton].MenuButton.onClick.Invoke();
