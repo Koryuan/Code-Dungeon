@@ -22,9 +22,9 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Menu Movement",
+                    "name": "Invetory",
                     "type": "Button",
-                    "id": "01201108-bff4-4142-8216-8918e76237a9",
+                    "id": "4d622b72-40ea-47e7-b6e3-dbf1f6f377de",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -98,8 +98,43 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "7f424e6b-2d30-4d5d-84bd-53c2b65d4f09",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Invetory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Menu Controller Map",
+            "id": "f89db6f1-139d-4ecc-97f1-1c89c4649d44",
+            "actions": [
+                {
+                    "name": "Menu Movement",
+                    "type": "Button",
+                    "id": "e0907ab8-4c13-4303-86d3-bdeffc9d2689",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Menu Interaction",
+                    "type": "Button",
+                    "id": "2308a687-271a-474b-9ba6-47dc23af51ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
                     "name": "Arrow Up Down",
-                    "id": "fb31da4b-2526-4b02-a5d8-b46b8b9d6c04",
+                    "id": "bf7f7cd4-0702-43f2-8483-994aa06beb0a",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -110,7 +145,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "40651021-3d02-4ef8-8367-00d13c854c7e",
+                    "id": "c8462e55-7268-4ab1-9d36-1e2e187b3dcf",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
@@ -121,7 +156,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "8e971d1a-9427-429f-b7ac-34c0ce722097",
+                    "id": "efb90013-01ff-41e7-83b4-39ace8e01940",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
@@ -129,6 +164,17 @@
                     "action": "Menu Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b47845b9-2f7f-4c6a-bfe9-ebcc79c69f74",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

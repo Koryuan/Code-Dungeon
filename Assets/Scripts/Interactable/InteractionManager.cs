@@ -15,6 +15,12 @@ public class InteractionManager : MonoBehaviour
             target.onPlayerEnter += FocusTarget;
             target.onPlayerExit += UnFocusTarget;
         }
+        Instance = this;
+    }
+
+    public void InteractTarget()
+    {
+        if (focusedTarget) focusedTarget.OnInteract();
     }
 
     private void FocusTarget(InteractableTarget Target)

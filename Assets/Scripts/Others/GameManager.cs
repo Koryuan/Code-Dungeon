@@ -5,7 +5,12 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    // Freeze Priority
+
+    // Public References
+    public bool CanOpenItemBox => false;
+    public bool isInitialize { get; private set; } = false;
+
+    // UI Priority
 
     [Header("Input References")]
     [SerializeField] private InputActionAsset playerActionMap;
@@ -14,8 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogBox dialogSystem;
     [SerializeField] private PlayerController playerSystem;
 
-    [Header("Object Not Allow Before Initialize")]
-    [SerializeField] private List<GameObject> notAllowObject = new List<GameObject>();
+    [Header("Object After Initialize")]
+    [SerializeField] private List<GameObject> objectAfterInit = new List<GameObject>();
 
     async private void Awake()
     {
@@ -23,7 +28,8 @@ public class GameManager : MonoBehaviour
         dialogSystem.OnDialogBoxOpen += OnDialogBoxOpen;
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
 
-        foreach (GameObject notActiveObject in notAllowObject) notActiveObject.SetActive(true);
+        foreach (GameObject notActiveObject in objectAfterInit) notActiveObject.SetActive(true);
+        isInitialize = true;
     }
 
     private void OnDialogBoxOpen()

@@ -70,8 +70,13 @@ public class MainMenuUI : MonoBehaviour
     }
     private void InitializeInput()
     {
-        _interactionInput.action.performed +=  (a) => OnInterectInput();
-        _movementInput.action.performed += (a) => OnMenuMovementInput();
+        _interactionInput.action.performed +=  OnInterectInput;
+        _movementInput.action.performed += OnMenuMovementInput;
+    }
+    private void UnRefInput()
+    {
+        _interactionInput.action.performed -= OnInterectInput;
+        _movementInput.action.performed -= OnMenuMovementInput;
     }
     #endregion
 
@@ -105,12 +110,12 @@ public class MainMenuUI : MonoBehaviour
     }
     #endregion
 
-    private void OnInterectInput()
+    private void OnInterectInput(InputAction.CallbackContext callback)
     {
         if (movementHelpPanel.activeSelf) SceneLoadManager.LoadTutorialMap();
         else _MainMenuButton[currentButton].MenuButton.onClick.Invoke();
     }
-    private void OnMenuMovementInput()
+    private void OnMenuMovementInput(InputAction.CallbackContext callback)
     {
         if (!movementHelpPanel.activeSelf)
         {
@@ -129,6 +134,7 @@ public class MainMenuUI : MonoBehaviour
     private void OnDisable()
     {
         playerActionMap.Disable();
+        UnRefInput();
     }
     #endregion
 }

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class DialogBox : MonoBehaviour
     private int currentIndex;
     private DialogSetting currentSetting;
 
+    public static DialogBox instance;
     public Action OnDialogBoxOpen;
     public Action OnDialogBoxClose;
 
@@ -26,7 +28,7 @@ public class DialogBox : MonoBehaviour
     private void Awake()
     {
         CheckNullReferences();
-        InitializeInput();
+        instance = this;
     }
     private void CheckNullReferences()
     {
@@ -35,35 +37,17 @@ public class DialogBox : MonoBehaviour
         if (!boxText) Debug.LogError("Dialog Box text is not Referenced");
         if (!nameText) Debug.LogError("Dialog name text is not Referenced");
     }
-    private void InitializeInput()
-    {
-        _interactionInput.action.performed += (a) => OnInterectInput();
-    }
     #endregion
 
-    private void OnInterectInput()
-    {
-        if (canProceed)
-        {
-            if (currentIndex == currentSetting.Dialogs.Length - 1)
-            {
-                canProceed = false;
-                CloseDialog();
-            }
-            else
-            {
-                currentIndex++;
-                NextDialog(currentSetting.Dialogs[currentIndex].Name, currentSetting.Dialogs[currentIndex].Text);
-            }
-        }
-    }
-
-    public void OpenDialog(DialogSetting dialog)
+    #region Dialog Interaction
+    public async void OpenDialog(DialogSetting dialog)
     {
         currentSetting = dialog;
         currentIndex = 0;
 
         NextDialog(currentSetting.Dialogs[currentIndex].Name, currentSetting.Dialogs[currentIndex].Text);
+        
+        await UniTask.Delay(100); 
         canProceed = true;
 
         OnDialogBoxOpen?.Invoke();
@@ -83,4 +67,41 @@ public class DialogBox : MonoBehaviour
         boxPanel.SetActive(false);
         OnDialogBoxClose?.Invoke();
     }
+    #endregion
+
+    private void OnInterectInput(InputAction.CallbackContext Callback)
+    {
+        if (canProceed)
+        {
+            if (currentIndex == currentSetting.Dialogs.Length - 1)
+            {
+                canProceed = false;
+                CloseDialog();
+            }
+            else
+            {
+                currentIndex++;
+                NextDialog(currentSetting.Dialogs[currentIndex].Name, currentSetting.Dialogs[currentIndex].Text);
+            }
+        }
+    }
+
+    #region Enable Disable
+    private void OnEnable()
+    {
+        EnableInput();
+    }
+    private void OnDisable()
+    {
+        DisableInput();
+    }
+    private void EnableInput()
+    {
+        _interactionInput.action.performed += OnInterectInput;
+    }
+    private void DisableInput()
+    {
+        _interactionInput.action.performed -= OnInterectInput;
+    }
+    #endregion
 }

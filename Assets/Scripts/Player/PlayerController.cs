@@ -53,13 +53,32 @@ public class PlayerController : MonoBehaviour
         else if (XY.x > 0) _movement.MoveRight();
         else if (XY.x < 0) _movement.MoveLeft();
     }
-    private void Interaction()
+    private void Interaction(InputAction.CallbackContext Callback)
     {
-        if (canControl) Debug.Log("Masuk");
+        if (canControl) InteractionManager.Instance.InteractTarget();
     }
 
     #region Freeze UnFreeze
     public void FreezePlayer() => canControl = false;
     public void UnFreezePlayer() => canControl = true;
+    #endregion
+
+    #region Enable Disable
+    private void OnEnable()
+    {
+        InitializePlayerInput();
+    }
+    private void OnDisable()
+    {
+        UnRefPlayerInput();
+    }
+    private void InitializePlayerInput()
+    {
+        _interactionInput.action.performed += Interaction;
+    }
+    private void UnRefPlayerInput()
+    {
+        _interactionInput.action.performed -= Interaction;
+    }
     #endregion
 }

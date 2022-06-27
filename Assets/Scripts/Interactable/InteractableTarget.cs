@@ -3,10 +3,6 @@ using UnityEngine;
 
 public abstract class InteractableTarget : MonoBehaviour 
 {
-    [SerializeField] private string targetName;
-
-    public string TargetName => targetName;
-
     public event Action<InteractableTarget> onPlayerEnter;
     public event Action<InteractableTarget> onPlayerExit;
 
