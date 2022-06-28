@@ -12,7 +12,7 @@ public class InteractionManager : MonoBehaviour
     {
         foreach(var target in interactableTargets)
         {
-            target.onPlayerEnter += FocusTarget;
+            target.onPlayerEnter += NewFocusTarget;
             target.onPlayerExit += UnFocusTarget;
         }
         Instance = this;
@@ -23,13 +23,18 @@ public class InteractionManager : MonoBehaviour
         if (focusedTarget) focusedTarget.OnInteract();
     }
 
-    private void FocusTarget(InteractableTarget Target)
+    public void NewFocusTarget(InteractableTarget Target)
     {
         focusedTarget = Target;
     }
-
-    private void UnFocusTarget(InteractableTarget Target)
+    public void UnFocusTarget(InteractableTarget Target)
     {
         if (focusedTarget == Target) focusedTarget = null;
     }
+}
+
+public class InteractionEvent
+{
+    [SerializeField] private DialogSetting dialog;
+    [SerializeField] private Item item;
 }

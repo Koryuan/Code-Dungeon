@@ -1,39 +1,28 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(PlayerMovement), typeof(PlayerInteraction), typeof(PlayerAnimation))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Movement _movement;
+    [Header("Player Script References")]
+    [SerializeField] private PlayerMovement _movement;
+    [SerializeField] private PlayerInteraction _interaction;
+    [SerializeField] private PlayerAnimation _animator;
 
     [Header("Input References")]
     [SerializeField] private InputActionReference _movementInput;
     [SerializeField] private InputActionReference _interactionInput;
 
-    private bool canControl = false;
+    private bool canControl => GameManager.Instance.CurrentState == GameState.PlayerControl;
 
     #region Initialization
-    public bool isInitialize { get; private set; } = false;
-    private void Awake()
+    private void Awake() => CheckNullReferences();
+    private void CheckNullReferences()
     {
-        canControl = CheckNullReferences();
-        isInitialize = true;
-    }
-    private bool CheckNullReferences()
-    {
-        bool checkResult = false;
-        if (!_movement)
-        {
-            Debug.LogError($"{name} has no movement component for player controller");
-            checkResult = true;
-        }
-        if (!_movementInput)
-        {
-            Debug.LogError($"{name} has no movement input references for player controller");
-            checkResult = true;
-        }
-        return !checkResult;
+        if (!_movement) Debug.LogError($"{name} has no movement script for player controller");
+        if (!_movementInput) Debug.LogError($"{name} has no movement input references for player controller");
+        if (!_interaction) Debug.LogError($"{name} has no interaction script for player controller");
+        if (!_interactionInput) Debug.LogError($"{name} has no intertaction input references for player controller");
     }
     #endregion
 
@@ -47,21 +36,37 @@ public class PlayerController : MonoBehaviour
     public void Movement()
     {
         Vector2 XY = _movementInput.action.ReadValue<Vector2>();
-        
-        if (XY.y > 0) _movement.MoveUp();
-        else if (XY.y < 0) _movement.MoveDown();
-        else if (XY.x > 0) _movement.MoveRight();
-        else if (XY.x < 0) _movement.MoveLeft();
+
+        if (XY.y > 0)
+        {
+            _movement.MoveUp();
+            _interaction.RotateUp();
+            _animator.UpdateMovemenetAnimation(0, XY.y);
+        }
+        else if (XY.y < 0)
+        {
+            _movement.MoveDown();
+            _interaction.RotateDown();
+            _animator.UpdateMovemenetAnimation(0, XY.y);
+        }
+        else if (XY.x > 0)
+        {
+            _movement.MoveRight();
+            _interaction.RotateRight();
+            _animator.UpdateMovemenetAnimation(XY.x, 0);
+        }
+        else if (XY.x < 0)
+        {
+            _movement.MoveLeft();
+            _interaction.RotateLeft();
+            _animator.UpdateMovemenetAnimation(XY.x, 0);
+        }
+        else _animator.UpdateMovemenetAnimation(0,0);
     }
     private void Interaction(InputAction.CallbackContext Callback)
     {
-        if (canControl) InteractionManager.Instance.InteractTarget();
+        if (canControl) _interaction.InteractTarget();
     }
-
-    #region Freeze UnFreeze
-    public void FreezePlayer() => canControl = false;
-    public void UnFreezePlayer() => canControl = true;
-    #endregion
 
     #region Enable Disable
     private void OnEnable()

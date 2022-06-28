@@ -8,14 +8,4 @@ public abstract class InteractableTarget : MonoBehaviour
 
     public abstract void OnInteract();
     public abstract void OnUnInteract();
-
-    protected void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision?.tag == "Player") onPlayerEnter?.Invoke(this);
-    }
-
-    protected void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision?.tag == "Player") onPlayerExit?.Invoke(this);
-    }
 }

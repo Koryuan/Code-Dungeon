@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
 
     // Public References
     public bool CanOpenItemBox => false;
     public bool isInitialize { get; private set; } = false;
+    public GameState CurrentState { get; private set; } = GameState.PlayerControl;
 
     // UI Priority
 
@@ -17,14 +19,14 @@ public class GameManager : MonoBehaviour
 
     [Header("System References")]
     [SerializeField] private DialogBox dialogSystem;
-    [SerializeField] private PlayerController playerSystem;
 
     [Header("Object After Initialize")]
     [SerializeField] private List<GameObject> objectAfterInit = new List<GameObject>();
 
-    async private void Awake()
+    private void Awake()
     {
-        await UniTask.WaitUntil(()=> playerSystem.isInitialize);
+        Instance = this;
+
         dialogSystem.OnDialogBoxOpen += OnDialogBoxOpen;
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
 
@@ -34,11 +36,11 @@ public class GameManager : MonoBehaviour
 
     private void OnDialogBoxOpen()
     {
-        playerSystem.FreezePlayer();
+        CurrentState = GameState.DialogBoxOpen;
     }
     private void OnDialogBoxClose()
     {
-        playerSystem.UnFreezePlayer();
+        CurrentState = GameState.PlayerControl;
     }
 
     #region Enable Disable
@@ -52,4 +54,12 @@ public class GameManager : MonoBehaviour
         playerActionMap.Disable();
     }
     #endregion
+}
+
+public enum GameState
+{
+    PlayerControl,
+    DialogBoxOpen,
+    InVentoryOpen,
+    PauseGame,
 }
