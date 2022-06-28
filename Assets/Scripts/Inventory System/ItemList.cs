@@ -18,6 +18,25 @@ public class ItemList : MonoBehaviour
         }
     }
 
+    private List<Item> _itemList;
+
+    private void Awake()
+    {
+        _itemList = SaveSystem.Instance.InventoryItemList;
+    }
+
+    public List<Item> ListOfItem
+    {
+        get
+        {
+            List<Item> newList = new List<Item>();
+            newList.AddRange(_itemList);
+            return newList;
+        }
+    }
+    public void AddItem(Item NewItem) => _itemList.Add(NewItem);
+    public void RemoveItem(Item RemovedItem) => _itemList.Remove(RemovedItem);
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;

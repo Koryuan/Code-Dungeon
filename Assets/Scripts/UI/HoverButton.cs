@@ -7,5 +7,8 @@ using UnityEngine.UI;
     public int buttonNumber = 0;
     public event Action<int> OnPointerHover;
 
-    public override void OnPointerEnter(PointerEventData eventData) => OnPointerHover?.Invoke(buttonNumber);
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        if (interactable) OnPointerHover?.Invoke(buttonNumber);
+    }
 }

@@ -2,13 +2,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class ItemBox : MonoBehaviour
+public class InventorySystem : MonoBehaviour
 {
-    private static ItemBox box;
     private bool canControl = false;
 
     [Header("UI")]
-    [SerializeField] private ItemBoxUI _itemBoxUI;
+    [SerializeField] private InventoryUI inventoryUI;
 
     [Header("Input References")]
     [SerializeField] private InputActionReference _inventoryInput;
@@ -21,7 +20,7 @@ public class ItemBox : MonoBehaviour
     }
     private void CheckNullReferences()
     {
-        if (!_itemBoxUI) Debug.LogError("There is no UI References");
+        if (!inventoryUI) Debug.LogError("There is no UI References");
         if (!_inventoryInput) Debug.LogError("There is no inventory input References");
         if (!_moveInput) Debug.LogError("There is no move input References");
         if (!_interactionInput) Debug.LogError("There is no interaction input References");
@@ -29,7 +28,7 @@ public class ItemBox : MonoBehaviour
 
     private void OpenInventoryBox(InputAction.CallbackContext Callback)
     {
-        if (canControl) _itemBoxUI.OpenClosePanel();
+        if (canControl) inventoryUI.OpenClosePanel();
     }
 
     private void OnEnable()

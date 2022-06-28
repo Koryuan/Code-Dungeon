@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemBoxUI : MonoBehaviour
+public class InventoryUI : MonoBehaviour
 {
     [Header("General")]
     [SerializeField] private GameObject UIPanel;

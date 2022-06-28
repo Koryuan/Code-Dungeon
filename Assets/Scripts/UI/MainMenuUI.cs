@@ -8,7 +8,34 @@ public class MainMenuUI : MonoBehaviour
     [Serializable] private class MainMenuButton
     {
         public Image ArrowImage;
+        public Sprite Highlight;
+        public Sprite NonHighlight;
         public HoverButton MenuButton;
+
+        public bool CheckNullReferences()
+        {
+            if (!ArrowImage)
+            {
+                Debug.LogError("There is no Arrow Image References");
+                return false;
+            }
+            else if (!Highlight)
+            {
+                Debug.LogError("There is no Highlight sprite References");
+                return false;
+            }
+            else if (!NonHighlight)
+            {
+                Debug.LogError("There is no Nonhighlight sprite References");
+                return false;
+            }
+            else if (!MenuButton)
+            {
+                Debug.LogError("There is no Hover Button References");
+                return false;
+            }
+            return true;
+        }
     }
 
     private int menuButtonLength = 0;
@@ -30,7 +57,6 @@ public class MainMenuUI : MonoBehaviour
     {
         CheckNull();
         InitializeButton();
-        InitializeInput();
     }
     private void CheckNull()
     {
@@ -41,8 +67,17 @@ public class MainMenuUI : MonoBehaviour
         int count = 0;
         foreach(MainMenuButton mainButton in _MainMenuButton)
         {
-            if (count != 0) mainButton.ArrowImage.enabled = false;
-            else mainButton.ArrowImage.enabled = true;
+            if (!mainButton.CheckNullReferences()) Debug.LogError($"Button number:{count+1}, has null References");
+            if (count != 0)
+            {
+                mainButton.ArrowImage.enabled = false;
+                mainButton.MenuButton.image.sprite = mainButton.NonHighlight;
+            }
+            else
+            {
+                mainButton.ArrowImage.enabled = true;
+                mainButton.MenuButton.image.sprite = mainButton.Highlight;
+            }
 
             switch(count)
             {
@@ -50,9 +85,13 @@ public class MainMenuUI : MonoBehaviour
                     mainButton.MenuButton.onClick.AddListener(StartButton);
                     break;
                 case 1:
-                    mainButton.MenuButton.onClick.AddListener(OptionButton);
+                    mainButton.MenuButton.onClick.AddListener(LoadButton);
+                    mainButton.MenuButton.interactable = SaveSystem.Instance.SaveFileExist;
                     break;
                 case 2:
+                    mainButton.MenuButton.onClick.AddListener(OptionButton);
+                    break;
+                case 3:
                     mainButton.MenuButton.onClick.AddListener(ExitButton);
                     break;
                 default:
@@ -68,16 +107,6 @@ public class MainMenuUI : MonoBehaviour
         menuButtonLength = count;
         if (menuButtonLength == 0) Debug.LogError("Button is not referenced");
     }
-    private void InitializeInput()
-    {
-        _interactionInput.action.performed +=  OnInterectInput;
-        _movementInput.action.performed += OnMenuMovementInput;
-    }
-    private void UnRefInput()
-    {
-        _interactionInput.action.performed -= OnInterectInput;
-        _movementInput.action.performed -= OnMenuMovementInput;
-    }
     #endregion
 
     #region Button Function
@@ -85,6 +114,11 @@ public class MainMenuUI : MonoBehaviour
     {
         Debug.Log("Open Help UI");
         movementHelpPanel.SetActive(true);
+    }
+
+    private void LoadButton()
+    {
+        Debug.Log("Load Game");
     }
 
     private void OptionButton()
@@ -100,11 +134,14 @@ public class MainMenuUI : MonoBehaviour
 
     private void MoveCurrentButton(int buttonNumber)
     {
-        if (buttonNumber > menuButtonLength - 1) buttonNumber = 0;
+        if (buttonNumber == 1 && !SaveSystem.Instance.SaveFileExist) buttonNumber = currentButton > buttonNumber ? 0 : 2;
+        else if (buttonNumber > menuButtonLength - 1) buttonNumber = 0;
         else if (buttonNumber < 0) buttonNumber = menuButtonLength - 1;
 
         _MainMenuButton[currentButton].ArrowImage.enabled = false;
+        _MainMenuButton[currentButton].MenuButton.image.sprite = _MainMenuButton[currentButton].NonHighlight;
         _MainMenuButton[buttonNumber].ArrowImage.enabled = true;
+        _MainMenuButton[buttonNumber].MenuButton.image.sprite = _MainMenuButton[buttonNumber].Highlight;
 
         currentButton = buttonNumber;
     }
@@ -129,12 +166,23 @@ public class MainMenuUI : MonoBehaviour
     private void OnEnable()
     {
         playerActionMap.Enable();
+        InitializeInput();
     }
 
     private void OnDisable()
     {
         playerActionMap.Disable();
         UnRefInput();
+    }
+    private void InitializeInput()
+    {
+        _interactionInput.action.performed += OnInterectInput;
+        _movementInput.action.performed += OnMenuMovementInput;
+    }
+    private void UnRefInput()
+    {
+        _interactionInput.action.performed -= OnInterectInput;
+        _movementInput.action.performed -= OnMenuMovementInput;
     }
     #endregion
 }
