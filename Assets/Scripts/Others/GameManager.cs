@@ -13,12 +13,17 @@ public class GameManager : MonoBehaviour
     public GameState CurrentState { get; private set; } = GameState.PlayerControl;
 
     // UI Priority
+    private bool dialogboxOpen = false;
+    private bool inventoryOpen = false;
+    private bool guideOpen = false;
+    private bool onEvent = false;
 
     [Header("Input References")]
     [SerializeField] private InputActionAsset playerActionMap;
 
     [Header("System References")]
     [SerializeField] private DialogBox dialogSystem;
+    [SerializeField] private GuidePanel guideSystem;
 
     [Header("Object After Initialize")]
     [SerializeField] private List<GameObject> objectAfterInit = new List<GameObject>();
@@ -27,20 +32,61 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        dialogSystem.OnDialogBoxOpen += OnDialogBoxOpen;
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
+        guideSystem.OnClosePanel += OnGuideClose;
 
         foreach (GameObject notActiveObject in objectAfterInit) notActiveObject.SetActive(true);
         isInitialize = true;
     }
 
-    private void OnDialogBoxOpen()
+    #region Guide System
+    public void OpenGuide(GuideContent Content)
     {
+        CurrentState = GameState.GuidePanelOpen;
+        guideOpen = true;
+        guideSystem.OpenGuide(Content);
+    }
+    private void OnGuideClose()
+    {
+        guideOpen = false;
+        if (dialogboxOpen) CurrentState = GameState.DialogBoxOpen;
+        else
+        {
+            CurrentState = GameState.PlayerControl;
+            onEvent = false;
+        }
+    }
+    #endregion
+
+    #region Dialog System
+    public void OpenDialogBox(DialogSetting Dialog)
+    {
+        dialogboxOpen = true;
+        dialogSystem.OpenDialog(Dialog);
         CurrentState = GameState.DialogBoxOpen;
     }
     private void OnDialogBoxClose()
     {
-        CurrentState = GameState.PlayerControl;
+        dialogboxOpen = false;
+        
+        if (guideOpen) CurrentState = GameState.GuidePanelOpen;
+        else
+        {
+            CurrentState = GameState.PlayerControl;
+            onEvent = false;
+        }
+    }
+    #endregion
+
+    async public void StartEvent(GameEvent[] EventList)
+    {
+        foreach(GameEvent gameEvent in EventList)
+        {
+            await UniTask.WaitUntil(() => onEvent == false);
+            if (gameEvent.GuideContent) OpenGuide(gameEvent.GuideContent);
+            else if (gameEvent.Dialog) OpenDialogBox(gameEvent.Dialog);
+            onEvent = true;
+        }
     }
 
     #region Enable Disable
@@ -60,6 +106,7 @@ public enum GameState
 {
     PlayerControl,
     DialogBoxOpen,
-    InVentoryOpen,
+    GuidePanelOpen,
+    InventoryOpen,
     PauseGame,
 }

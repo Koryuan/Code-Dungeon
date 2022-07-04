@@ -12,7 +12,6 @@ public class DialogBox : MonoBehaviour
     private DialogSetting currentSetting;
 
     public static DialogBox instance;
-    public Action OnDialogBoxOpen;
     public Action OnDialogBoxClose;
 
     [Header("Input References")]
@@ -47,10 +46,8 @@ public class DialogBox : MonoBehaviour
 
         NextDialog(currentSetting.Dialogs[currentIndex].Name, currentSetting.Dialogs[currentIndex].Text);
         
-        await UniTask.Delay(100); 
+        await UniTask.Delay(100);
         canProceed = true;
-
-        OnDialogBoxOpen?.Invoke();
     }
     private void NextDialog(string name, string text)
     {
