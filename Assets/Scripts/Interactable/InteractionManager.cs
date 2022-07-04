@@ -6,15 +6,10 @@ public class InteractionManager : MonoBehaviour
     public static InteractionManager Instance { get; private set; }
     private InteractableTarget focusedTarget;
 
-    [SerializeField] private List<InteractableTarget> interactableTargets = new List<InteractableTarget>();
+    [SerializeField] private PrintScanUI printScanSystem;
 
     private void Awake()
     {
-        foreach(var target in interactableTargets)
-        {
-            target.onPlayerEnter += NewFocusTarget;
-            target.onPlayerExit += UnFocusTarget;
-        }
         Instance = this;
     }
 
@@ -22,19 +17,29 @@ public class InteractionManager : MonoBehaviour
     {
         if (focusedTarget) focusedTarget.OnInteract();
     }
+    public void PrintInterectTarget()
+    {
+        if (focusedTarget && focusedTarget.CanPrintInterect) focusedTarget.OnPrintInteract();
+    }
+    public void ScanInterectTarget()
+    {
+        if (focusedTarget && focusedTarget.CanScanInterect) focusedTarget.OnScanInteract();
+    }
 
     public void NewFocusTarget(InteractableTarget Target)
     {
-        focusedTarget = Target;
+        if (Target.CanInterect)
+        {
+            printScanSystem.OpenPrintScan(Target.CanPrintInterect,Target.CanScanInterect);
+            focusedTarget = Target;
+        }
     }
     public void UnFocusTarget(InteractableTarget Target)
     {
-        if (focusedTarget == Target) focusedTarget = null;
+        if (focusedTarget == Target)
+        {
+            printScanSystem.ClosePrintScan();
+            focusedTarget = null;
+        }
     }
-}
-
-public class InteractionEvent
-{
-    [SerializeField] private DialogSetting dialog;
-    [SerializeField] private Item item;
 }
