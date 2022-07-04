@@ -53,7 +53,9 @@ public class ItemList : MonoBehaviour
     }
 }
 
-[System.Serializable] public class Item
+[CreateAssetMenu(menuName = "Dialog", order = 100)]
+
+public class Item : ScriptableObject
 {
     [SerializeField] private string itemName;
     [SerializeField] private string itemDescription;

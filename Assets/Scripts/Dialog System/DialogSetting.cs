@@ -6,6 +6,11 @@ public class DialogSetting : ScriptableObject
     [SerializeField] private Dialog[] dialogs;
 
     public Dialog[] Dialogs => dialogs;
+
+    public void AddItemName(string ItemName)
+    {
+        foreach (Dialog dialog in dialogs) dialog.ItemName = ItemName;
+    }
 }
 
 [System.Serializable] public class Dialog

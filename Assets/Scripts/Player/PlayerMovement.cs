@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D _rigidbody;
@@ -17,22 +17,19 @@ public class Movement : MonoBehaviour
     }
     #endregion
 
-    #region
+    #region Movement
     public void MoveUp()
     {
         _rigidbody.MovePosition(_rigidbody.position + new Vector2(0,1) * movementSpeed * Time.fixedDeltaTime);
     }
-
     public void MoveDown()
     {
         _rigidbody.MovePosition(_rigidbody.position + new Vector2(0, -1) * movementSpeed * Time.fixedDeltaTime);
     }
-
     public void MoveRight()
     {
         _rigidbody.MovePosition(_rigidbody.position + new Vector2(1, 0) * movementSpeed * Time.fixedDeltaTime);
     }
-
     public void MoveLeft()
     {
         _rigidbody.MovePosition(_rigidbody.position + new Vector2(-1, 0) * movementSpeed * Time.fixedDeltaTime);
