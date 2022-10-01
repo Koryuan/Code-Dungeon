@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abcd13532e5332a4ebabb93c70b695c2, type: 3}
-  m_Name: Tutorial Stage - How to play
+  m_Name: Tutorial Stage - How to print
   m_EditorClassIdentifier: 
   guideImage:
   - {fileID: 21300000, guid: 3277aa6308556d14d87325c40dabb883, type: 3}

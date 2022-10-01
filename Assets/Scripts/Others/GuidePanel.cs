@@ -7,7 +7,7 @@ public class GuidePanel : MonoBehaviour
 {
     private GuideContent content;
     private int currentContentPage;
-    private bool canControl => GameManager.Instance.CurrentState == GameState.GuidePanelOpen;
+    private bool canControl => GameManager.Instance.CurrentState == GameState.Game_Guide_State;
 
     public Action OnClosePanel;
 

@@ -1,21 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TriggerEnterEvent : MonoBehaviour
 {
     [Header("Event")]
-    [SerializeField] private GameEvent[] gameEvent;
+    [SerializeField] protected GameEvent[] gameEvent;
 
     [Header("Bool")]
-    [SerializeField] private bool onTriggerDisable = false;
+    [SerializeField] protected bool onTriggerDisable = false;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            if (gameEvent.Length != 0) GameManager.Instance.StartEvent(gameEvent);
-            else Debug.LogError($"{name} has no event to start");
-            if (onTriggerDisable) gameObject.SetActive(false);
-        }
+        if (collision.tag == "Player") OnPlayerEnter();
+    }
+
+    protected virtual void OnPlayerEnter()
+    {
+        if (gameEvent.Length != 0) GameManager.Instance.StartEvent(gameEvent).Forget();
+        else Debug.LogError($"{name} has no event to start");
+        if (onTriggerDisable) gameObject.SetActive(false);
     }
 }

@@ -52,14 +52,3 @@ public class ItemList : MonoBehaviour
         if (newScene.name == "Main Menu Scene") Destroy(gameObject);
     }
 }
-
-[CreateAssetMenu(menuName = "Dialog", order = 100)]
-
-public class Item : ScriptableObject
-{
-    [SerializeField] private string itemName;
-    [SerializeField] private string itemDescription;
-
-    public string ItemName => itemName;
-    public string ItemDescription => itemDescription;
-}
