@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputActionReference _movementInput;
     [SerializeField] private InputActionReference _interactionInput;
 
-    private bool canControl => GameManager.Instance.CurrentState == GameState.PlayerControl;
+    private bool canControl => GameManager.Instance.CurrentState == GameState.Game_Player_State;
 
     #region Initialization
     private void Awake() => CheckNullReferences();
@@ -67,23 +67,20 @@ public class PlayerController : MonoBehaviour
     {
         if (canControl) _interaction.InteractTarget();
     }
-
+    private void Pause(InputAction.CallbackContext Callback)
+    {
+        if (canControl) GameManager.Instance.OpenPauseMenu();
+    }
     #region Enable Disable
     private void OnEnable()
     {
-        InitializePlayerInput();
+        _interactionInput.action.performed += Interaction;
+        InputReferences.Instance._PlayerPauseInput.action.performed += Pause;
     }
     private void OnDisable()
     {
-        UnRefPlayerInput();
-    }
-    private void InitializePlayerInput()
-    {
-        _interactionInput.action.performed += Interaction;
-    }
-    private void UnRefPlayerInput()
-    {
         _interactionInput.action.performed -= Interaction;
+        InputReferences.Instance._PlayerPauseInput.action.performed -= Pause;
     }
     #endregion
 }

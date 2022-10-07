@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PrintScanUI : MonoBehaviour
 {
-    private bool canInterect => GameManager.Instance.CurrentState == GameState.PlayerControl;
+    private bool canInterect => GameManager.Instance.CurrentState == GameState.Game_Player_State;
     private bool canPrintInterect => canInterect && printButton.ImageHolder.sprite == printButton.Highlight;
     private bool canScanInterect => canInterect && scanButton.ImageHolder.sprite == scanButton.Highlight;
 

@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 public abstract class InteractableTarget : MonoBehaviour 
 {
     protected bool canInteract = true;
 
     [Header("After Interect")]
-    [SerializeField] protected bool disabledAI;
+    [SerializeField] protected bool disableObject;
+    [SerializeField] protected bool disableInteraction;
 
     [Header("Print Scan Interect")]
     [SerializeField] protected bool printInteract;
@@ -23,10 +25,11 @@ public abstract class InteractableTarget : MonoBehaviour
     {
         if (canInteract) Interaction();
     }
-    protected virtual void Interaction()
+    async protected virtual void Interaction()
     {
-        GameManager.Instance.StartEvent(gameEvent);
-        if (disabledAI) canInteract = false;
+        if (disableInteraction) canInteract = false;
+        await GameManager.Instance.StartEvent(gameEvent);
+        if (disableObject) gameObject.SetActive(false);
     }
     #endregion
 
@@ -37,20 +40,22 @@ public abstract class InteractableTarget : MonoBehaviour
     }
     protected virtual void PrintInteraction()
     {
+        if (disableInteraction) canInteract = false;
         Debug.Log("Print Interect");
-        if (disabledAI) canInteract = false;
+        if (disableObject) gameObject.SetActive(false);
     }
     #endregion
 
     #region Scan Interaction
     public void OnScanInteract()
     {
-        if (scanInteract && canInteract) ;
+        if (scanInteract && canInteract) ScanInteraction();
     }
     protected virtual void ScanInteraction()
     {
+        if (disableInteraction) canInteract = false;
         Debug.Log("scan Interect");
-        if (disabledAI) canInteract = false;
+        if (disableObject) gameObject.SetActive(false);
     }
     #endregion
 

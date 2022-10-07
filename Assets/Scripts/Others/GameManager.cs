@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour
     // Public References
     public bool CanOpenItemBox => false;
     public bool isInitialize { get; private set; } = false;
-    public GameState CurrentState { get; private set; } = GameState.PlayerControl;
+    public GameState CurrentState { get; private set; } = GameState.Game_Player_State;
 
     // UI Priority
     private bool dialogboxOpen = false;
     private bool inventoryOpen = false;
     private bool guideOpen = false;
+    private bool pauseOpen = false;
     private bool onEvent = false;
 
     [Header("Input References")]
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     [Header("System References")]
     [SerializeField] private DialogBox dialogSystem;
     [SerializeField] private GuidePanel guideSystem;
+    [SerializeField] private InventorySystem inventorySystem;
+    [SerializeField] private PauseSystem pauseSystem;
 
     [Header("Object After Initialize")]
     [SerializeField] private List<GameObject> objectAfterInit = new List<GameObject>();
@@ -34,6 +37,12 @@ public class GameManager : MonoBehaviour
 
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
         guideSystem.OnClosePanel += OnGuideClose;
+        pauseSystem.OnClosePanel += OnPauseMenuClose;
+
+        // Inventory System
+        inventorySystem.Initialize();
+        inventorySystem.OnOpenInventory += OnOpenInventory;
+        inventorySystem.OnCloseInventory += OnCloseInventory;
 
         foreach (GameObject notActiveObject in objectAfterInit) notActiveObject.SetActive(true);
         isInitialize = true;
@@ -42,19 +51,14 @@ public class GameManager : MonoBehaviour
     #region Guide System
     public void OpenGuide(GuideContent Content)
     {
-        CurrentState = GameState.GuidePanelOpen;
+        CurrentState = GameState.Game_Guide_State;
         guideOpen = true;
         guideSystem.OpenGuide(Content);
     }
     private void OnGuideClose()
     {
         guideOpen = false;
-        if (dialogboxOpen) CurrentState = GameState.DialogBoxOpen;
-        else
-        {
-            CurrentState = GameState.PlayerControl;
-            onEvent = false;
-        }
+        UpdateState();
     }
     #endregion
 
@@ -63,30 +67,66 @@ public class GameManager : MonoBehaviour
     {
         dialogboxOpen = true;
         dialogSystem.OpenDialog(Dialog);
-        CurrentState = GameState.DialogBoxOpen;
+        CurrentState = GameState.Game_Dialog_State;
     }
     private void OnDialogBoxClose()
     {
         dialogboxOpen = false;
-        
-        if (guideOpen) CurrentState = GameState.GuidePanelOpen;
-        else
-        {
-            CurrentState = GameState.PlayerControl;
-            onEvent = false;
-        }
+        UpdateState();
     }
     #endregion
 
-    async public void StartEvent(GameEvent[] EventList)
+    #region Inventory System
+    private void OnOpenInventory()
+    {
+        inventoryOpen = true;
+        CurrentState = GameState.Game_Inventory_State;
+    }
+    private void OnCloseInventory()
+    {
+        inventoryOpen = false;
+        UpdateState();
+    }
+    #endregion
+
+    #region Pause System
+    public void OpenPauseMenu()
+    {
+        CurrentState = GameState.Game_Pause_State;
+        pauseOpen = true;
+    }
+    private void OnPauseMenuClose()
+    {
+        pauseOpen = false;
+        UpdateState();
+    }
+    #endregion
+
+    private void UpdateState()
+    {
+        if (dialogboxOpen) CurrentState = GameState.Game_Dialog_State;
+        else if (guideOpen) CurrentState = GameState.Game_Guide_State;
+        else if (inventoryOpen) CurrentState = GameState.Game_Inventory_State;
+        else if (pauseOpen) CurrentState = GameState.Game_Pause_State;
+        else
+        {
+            CurrentState = GameState.Game_Player_State;
+            onEvent = false;
+        }
+    }
+
+    async public UniTask StartEvent(GameEvent[] EventList)
     {
         foreach(GameEvent gameEvent in EventList)
         {
             await UniTask.WaitUntil(() => onEvent == false);
             if (gameEvent.GuideContent) OpenGuide(gameEvent.GuideContent);
             else if (gameEvent.Dialog) OpenDialogBox(gameEvent.Dialog);
-            onEvent = true;
+            else if (gameEvent.HasEvent) gameEvent.ActiveAction();
+
+            if (!gameEvent.HasEvent) onEvent = true;
         }
+        await UniTask.WaitUntil(() => onEvent == false);
     }
 
     #region Enable Disable
@@ -104,9 +144,9 @@ public class GameManager : MonoBehaviour
 
 public enum GameState
 {
-    PlayerControl,
-    DialogBoxOpen,
-    GuidePanelOpen,
-    InventoryOpen,
-    PauseGame,
+    Game_Player_State,
+    Game_Dialog_State,
+    Game_Guide_State,
+    Game_Inventory_State,
+    Game_Pause_State,
 }
