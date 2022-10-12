@@ -1,0 +1,52 @@
+﻿using System;
+using UnityEngine;
+
+public class PauseMenuUI : MonoBehaviour
+{
+    [Header("Panel")]
+    [SerializeField] private GameObject pauseMenuPanel;
+
+    [Header("Button References")]
+    [SerializeField] private MenuButton resumeButton;
+    [SerializeField] private MenuButton optionButton;
+    [SerializeField] private MenuButton loadButton;
+    [SerializeField] private MenuButton exitButton;
+
+    public MenuButton ResumeButton => resumeButton;
+    public MenuButton LoadButton => loadButton;
+    public MenuButton OptionButton => optionButton;
+    public MenuButton ExitButton => exitButton;
+
+    public void Initialize(Action<MenuButton> OnSelectEvent)
+    {
+        CheckReferences();
+
+        resumeButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(resumeButton);
+        loadButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(loadButton);
+        optionButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(optionButton);
+        exitButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(exitButton);
+
+        resumeButton.ChangeHighlight(false);
+        loadButton.ChangeHighlight(false);
+        optionButton.ChangeHighlight(false);
+        exitButton.ChangeHighlight(false);
+
+        if (!SaveSystem.Instance.SaveFileExist) loadButton.Button.interactable = false;
+    }
+
+    private void CheckReferences()
+    {
+        if (!pauseMenuPanel) Debug.LogError($"{name} has no pause menu panel");
+        resumeButton.CheckReferences();
+        loadButton.CheckReferences();
+        optionButton.CheckReferences();
+        exitButton.CheckReferences();
+    }
+
+    public void PauseMenuPanel(bool Open) => pauseMenuPanel.SetActive(Open);
+
+    public void AddResumeButtonListener(Action OnClick) => resumeButton.Button.onClick.AddListener(() => OnClick?.Invoke());
+    public void AddLoadButtonListener(Action OnClick) => loadButton.Button.onClick.AddListener(() => OnClick?.Invoke());
+    public void AddOptionButtonListener(Action OnClick) => optionButton.Button.onClick.AddListener(() => OnClick?.Invoke());
+    public void AddExitButtonListener(Action OnClick) => exitButton.Button.onClick.AddListener(() => OnClick?.Invoke());
+}

@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _UI: {fileID: 117441915}
-  _EventSystem: {fileID: 0}
+  _EventSystem: {fileID: 500855371}
   playerActionMap: {fileID: -944628639613478452, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
 --- !u!114 &117441915
 MonoBehaviour:
@@ -871,11 +871,11 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_ActionsAsset: {fileID: -944628639613478452, guid: e688653ad037f864da6d612043d1a51b, type: 3}
-  m_PointAction: {fileID: 0}
+  m_PointAction: {fileID: 7027903186414749866, guid: e688653ad037f864da6d612043d1a51b, type: 3}
   m_MoveAction: {fileID: 6874474832455790230, guid: e688653ad037f864da6d612043d1a51b, type: 3}
   m_SubmitAction: {fileID: 5693211679415556221, guid: e688653ad037f864da6d612043d1a51b, type: 3}
   m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
+  m_LeftClickAction: {fileID: -191192979280663649, guid: e688653ad037f864da6d612043d1a51b, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}

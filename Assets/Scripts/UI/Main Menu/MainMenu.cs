@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
-    private MainMenuButton currentButton = null;
+    private MenuButton currentButton = null;
 
     [Header("Main References")]
     [SerializeField] private MainMenuUI _UI;
@@ -44,24 +44,21 @@ public class MainMenu : MonoBehaviour
     {
         _UI.ActiveGuidePanel();
     }
-
     private void LoadButton()
     {
         Debug.Log("Load Game");
     }
-
     private void OptionButton()
     {
         Debug.Log("Open Option Menu");
     }
-
     private void QuitButton()
     {
         Debug.Log("Exit Game");
         Application.Quit();
     }
 
-    private void MoveCurrentButton(MainMenuButton NewButton)
+    private void MoveCurrentButton(MenuButton NewButton)
     {
         if (NewButton)
         {
@@ -76,7 +73,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnInterectInput(InputAction.CallbackContext callback)
     {
-        if (_UI.GuidePanelIsActive) SceneLoadManager.LoadTutorialMap();
+        if (_UI.GuidePanelIsActive) SceneLoad.LoadTutorialMap();
     }
 
     #region Enable Disable

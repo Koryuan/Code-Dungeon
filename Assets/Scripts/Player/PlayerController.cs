@@ -28,14 +28,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canControl)
-        {
-            Movement();
-        }
+        Movement();
     }
     public void Movement()
     {
-        Vector2 XY = _movementInput.action.ReadValue<Vector2>();
+        Vector2 XY = canControl? _movementInput.action.ReadValue<Vector2>() : Vector2.zero;
 
         if (XY.y > 0)
         {
@@ -71,6 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canControl) GameManager.Instance.OpenPauseMenu();
     }
+
     #region Enable Disable
     private void OnEnable()
     {
