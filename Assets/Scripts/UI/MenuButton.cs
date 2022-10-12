@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenuButton : MonoBehaviour
+public class MenuButton : MonoBehaviour
 {
     public Image ArrowImage;
     public Sprite HighlightSprite;
@@ -11,8 +11,8 @@ public class MainMenuButton : MonoBehaviour
     public void CheckReferences()
     {
         if (!ArrowImage) Debug.LogError($"{name} has no Arrow Image References");
-        if (!HighlightSprite) Debug.LogError($"{name} has no Highlight sprite References");
-        if (!NonHighlightSprite) Debug.LogError($"{name} has no Nonhighlight sprite References");
+        if (!HighlightSprite) Debug.Log($"{name} has no Highlight sprite References");
+        if (!NonHighlightSprite) Debug.Log($"{name} has no Nonhighlight sprite References");
         if (!Button) Debug.LogError($"{name} has no Button References");
     }
 

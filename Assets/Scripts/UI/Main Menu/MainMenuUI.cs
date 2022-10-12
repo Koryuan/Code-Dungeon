@@ -4,21 +4,21 @@ using UnityEngine;
 public class MainMenuUI : MonoBehaviour
 {
     [Header("Button References")]
-    [SerializeField] private MainMenuButton playButton;
-    [SerializeField] private MainMenuButton loadButton;
-    [SerializeField] private MainMenuButton optionButton;
-    [SerializeField] private MainMenuButton quitButton;
+    [SerializeField] private MenuButton playButton;
+    [SerializeField] private MenuButton loadButton;
+    [SerializeField] private MenuButton optionButton;
+    [SerializeField] private MenuButton quitButton;
 
-    public MainMenuButton PlayButton => playButton;
-    public MainMenuButton LoadButton => loadButton;
-    public MainMenuButton OptionButton => optionButton;
-    public MainMenuButton QuitButton => quitButton;
+    public MenuButton PlayButton => playButton;
+    public MenuButton LoadButton => loadButton;
+    public MenuButton OptionButton => optionButton;
+    public MenuButton QuitButton => quitButton;
 
     [Header("Help References")]
     [SerializeField] private GameObject playGuidePanel;
     public bool GuidePanelIsActive => playGuidePanel.activeSelf;
 
-    public void Initialize(Action<MainMenuButton> OnSelectEvent)
+    public void Initialize(Action<MenuButton> OnSelectEvent)
     {
         CheckReferences();
 

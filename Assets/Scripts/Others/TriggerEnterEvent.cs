@@ -19,6 +19,10 @@ public class TriggerEnterEvent : MonoBehaviour
     {
         if (gameEvent.Length != 0) GameManager.Instance.StartEvent(gameEvent).Forget();
         else Debug.LogError($"{name} has no event to start");
-        if (onTriggerDisable) gameObject.SetActive(false);
+        if (onTriggerDisable)
+        {
+            AutoSaveScene.SaveObjectState(gameObject.name);
+            gameObject.SetActive(false);
+        }
     }
 }

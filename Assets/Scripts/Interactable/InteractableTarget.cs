@@ -29,7 +29,11 @@ public abstract class InteractableTarget : MonoBehaviour
     {
         if (disableInteraction) canInteract = false;
         await GameManager.Instance.StartEvent(gameEvent);
-        if (disableObject) gameObject.SetActive(false);
+        if (disableObject)
+        {
+            AutoSaveScene.SaveObjectState(gameObject.name);
+            gameObject.SetActive(false);
+        }
     }
     #endregion
 

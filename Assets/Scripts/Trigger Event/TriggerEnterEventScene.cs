@@ -11,10 +11,10 @@ public class TriggerEnterEventScene : TriggerEnterEvent
         switch(_sceneName)
         {
             case SceneName.TutorialStage:
-                SceneLoadManager.LoadTutorialMap();
+                SceneLoad.LoadTutorialMap();
                 break;
             case SceneName.SceneSelector:
-                SceneLoadManager.LoadSelectStage();
+                SceneLoad.LoadSelectStage();
                 break;
             default:
                 break;

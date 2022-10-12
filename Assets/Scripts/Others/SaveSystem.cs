@@ -19,26 +19,23 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    private void Awake() => _saveData = LoadFile();
+    private void Awake() => SaveData = CurrentSaveData = LoadFile();
 
     #region Save Data
-    private SaveData _saveData;
+    public SaveData SaveData { get; private set; } = null;
+    public SaveData CurrentSaveData { get; private set; } = null;
 
-    #region Last Scene Name
-    public string LastSceneName => _saveData.lastSceneName;
-    public void UpdateLastSceneName(string NewScene) => _saveData.lastSceneName = NewScene;
-    #endregion
     #region Item List
     public List<Item> InventoryItemList
     {
         get
         {
             List<Item> newList = new List<Item>();
-            newList.AddRange(_saveData._itemList);
+            newList.AddRange(SaveData._itemList);
             return newList;
         }
     }
-    public void UpdateItemList(List<Item> NewItemList) => _saveData._itemList = NewItemList;
+    public void UpdateItemList(List<Item> NewItemList) => SaveData._itemList = NewItemList;
     #endregion
     #endregion
 
@@ -54,7 +51,7 @@ public class SaveSystem : MonoBehaviour
     }
     private SaveData LoadFile()
     {
-        if (!SaveFileExist) return new SaveData();
+        if (!SaveFileExist || DebuggingTool.Instance == null) return new SaveData();
 
         // Create initializer to get data
         SaveData loadData = new SaveData();
@@ -75,10 +72,4 @@ public class SaveSystem : MonoBehaviour
         }
     }
     #endregion
-}
-
-public class SaveData
-{
-    public string lastSceneName = "";
-    public List<Item> _itemList = new List<Item>();
 }

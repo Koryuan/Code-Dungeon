@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     // Public References
     public bool CanOpenItemBox => false;
-    public bool isInitialize { get; private set; } = false;
+    public bool IsInitialize { get; private set; } = false;
     public GameState CurrentState { get; private set; } = GameState.Game_Player_State;
 
     // UI Priority
@@ -26,17 +26,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogBox dialogSystem;
     [SerializeField] private GuidePanel guideSystem;
     [SerializeField] private InventorySystem inventorySystem;
-    [SerializeField] private PauseSystem pauseSystem;
+    [SerializeField] private PauseMenu pauseSystem;
 
-    [Header("Object After Initialize")]
-    [SerializeField] private List<GameObject> objectAfterInit = new List<GameObject>();
-
-    private void Awake()
+    async private void Awake()
     {
         Instance = this;
 
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
         guideSystem.OnClosePanel += OnGuideClose;
+
+        // Pause System
+        pauseSystem.Initialize();
         pauseSystem.OnClosePanel += OnPauseMenuClose;
 
         // Inventory System
@@ -44,8 +44,9 @@ public class GameManager : MonoBehaviour
         inventorySystem.OnOpenInventory += OnOpenInventory;
         inventorySystem.OnCloseInventory += OnCloseInventory;
 
-        foreach (GameObject notActiveObject in objectAfterInit) notActiveObject.SetActive(true);
-        isInitialize = true;
+        await UniTask.WaitUntil(() => LoadSceneObject.Instance.AllLoad == true);
+
+        IsInitialize = true;
     }
 
     #region Guide System
@@ -93,6 +94,7 @@ public class GameManager : MonoBehaviour
     public void OpenPauseMenu()
     {
         CurrentState = GameState.Game_Pause_State;
+        pauseSystem.OpenPanel(null);
         pauseOpen = true;
     }
     private void OnPauseMenuClose()
