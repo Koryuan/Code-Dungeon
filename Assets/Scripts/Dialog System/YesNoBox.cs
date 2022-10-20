@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class YesNoBox : MonoBehaviour
 {
     [Header("Panel")]
-    [SerializeField] private GameObject YesNoBoxPanel;
+    [SerializeField] private GameObject Panel;
 
     [Header("Button")]
     [SerializeField] private YesNoButton yesButton;
@@ -14,54 +14,43 @@ public class YesNoBox : MonoBehaviour
     public event Action onYesButton;
     public event Action onNoButton;
 
-    public bool IsYes => yesButton.Arrow.enabled;
-    public bool IsOpen => YesNoBoxPanel.activeSelf;
-
+    #region Initialization
     private void Awake()
     {
         CheckNullReferences();
-        yesButton.Button.OnSelectHover += ChangeToYes;
-        noButton.Button.OnSelectHover += ChangeToNo;
+
+        yesButton.SetHighlight(false);
+        yesButton.Button.OnSelectEvent += () => ChangeYesNo(true);
+        yesButton.Button.onClick.AddListener(()=> onYesButton?.Invoke());
+
+        noButton.SetHighlight(false);
+        noButton.Button.OnSelectEvent += () => ChangeYesNo(false);
+        noButton.Button.onClick.AddListener(() => onNoButton?.Invoke());
     }
     private void CheckNullReferences()
     {
-        if (!YesNoBoxPanel) Debug.LogError($"{name} has no box panel references");
+        if (!Panel) Debug.LogError($"{name} has no box panel references");
         yesButton.CheckNullReferences("Yes Button");
         noButton.CheckNullReferences("No Button");
     }
-
-    public void OpenYesNoBox()
-    {
-        ChangeToYes();
-        YesNoBoxPanel.SetActive(true);
-    }
-    public void CloseYesNoBox() => YesNoBoxPanel.SetActive(false);
-    public void SelectButton()
-    {
-        if (IsYes) onYesButton?.Invoke();
-        else onNoButton?.Invoke();
-    }
-
-    #region Change current arrow position
-    public void ChangeCurrentButton()
-    {
-        yesButton.Arrow.enabled = !yesButton.Arrow.enabled;
-        noButton.Arrow.enabled = !noButton.Arrow.enabled;
-    }
-    private void ChangeToNo()
-    {
-        yesButton.Arrow.enabled = false;
-        noButton.Arrow.enabled = true;
-    }
-    private void ChangeToYes()
-    {
-        yesButton.Arrow.enabled = true;
-        noButton.Arrow.enabled = false;
-    }
     #endregion
+    public void OpenYesNo(Action OnYesButton, Action OnNoButton)
+    {
+        Panel.SetActive(true);
+        yesButton.Select();
+
+        onYesButton = onNoButton = ClosePanel;
+        onYesButton += OnYesButton; onNoButton += OnNoButton;
+    }
+    public void ChangeYesNo(bool IsYes)
+    {
+        yesButton.SetHighlight(IsYes);
+        noButton.SetHighlight(!IsYes);
+    }
+    public void ClosePanel() => Panel.SetActive(false);
 }
 
-[Serializable] public class YesNoButton
+[Serializable] public class YesNoButton : IMenuUI
 {
     public Image Arrow;
     public HoverButton Button;
@@ -71,4 +60,7 @@ public class YesNoBox : MonoBehaviour
         if (!Arrow) Debug.LogError($"{Name} has no arrow image references");
         if (!Button) Debug.LogError($"{Name} has no button references");
     }
+
+    public void Select() => Button.Select();
+    public void SetHighlight(bool IsHighlighted) => Arrow.enabled = IsHighlighted;
 }

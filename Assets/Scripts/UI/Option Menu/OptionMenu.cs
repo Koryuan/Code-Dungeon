@@ -1,26 +1,63 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class OptionMenu : MonoBehaviour
 {
-    private MenuButton currentButton = null;
+    private IMenuUI currentUI = null;
+    private IPanelUI previousPanel = null;
+    private IMenuUI previousUI = null;
 
     [Header("Main References")]
     [SerializeField] private OptionMenuUI _UI;
-    [SerializeField] private MenuButton previousButton;
 
-    private void Awake()
-    {
-        CheckReferences();
-        InitializeUI();
-    }
+    public bool IsActive => gameObject.activeSelf;
 
+    #region Initialization
     private void CheckReferences()
     {
         if (!_UI) Debug.LogError($"{name} has no UI references");
-        if (!previousButton) Debug.LogError($"{name} has no previous button references");
     }
-    private void InitializeUI()
+    public void Initialize()
     {
+        // Defalut Initialize
+        CheckReferences();
+        _UI.Initialize(MoveCurrentUI);
 
+        // Each UI
+        _UI.AddExitButtonListener(ExitButton);
+
+        // Close since not allow open
+        gameObject.SetActive(false);
+    }
+    #endregion
+
+    #region Open Close
+    public void OpenPanel(IPanelUI PreviousPanel, IMenuUI PreviousUI)
+    {
+        previousPanel = PreviousPanel; previousUI = PreviousUI;
+
+        _UI.OptionMenu(true);
+        _UI.SFXSlider.Select(); currentUI = _UI.SFXSlider;
+    }
+    public void ClosePanel()
+    {
+        currentUI.SetHighlight(false);
+        _UI.OptionMenu(false);
+        previousPanel.OpenPanel(previousUI);
+    }
+    #endregion
+
+    private void ExitButton() => ClosePanel();
+
+    private void MoveCurrentUI(IMenuUI NewUI)
+    {
+        if (NewUI != null)
+        {
+            if (currentUI != null) currentUI.SetHighlight(false);
+            currentUI = NewUI;
+
+            NewUI.SetHighlight(true);
+            NewUI.Select();
+        }
     }
 }

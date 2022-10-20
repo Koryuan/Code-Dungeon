@@ -9,20 +9,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerInteraction _interaction;
     [SerializeField] private PlayerAnimation _animator;
 
-    [Header("Input References")]
-    [SerializeField] private InputActionReference _movementInput;
-    [SerializeField] private InputActionReference _interactionInput;
-
     private bool canControl => GameManager.Instance.CurrentState == GameState.Game_Player_State;
 
     #region Initialization
-    private void Awake() => CheckNullReferences();
-    private void CheckNullReferences()
+    private void Awake() => CheckReferences();
+    private void CheckReferences()
     {
         if (!_movement) Debug.LogError($"{name} has no movement script for player controller");
-        if (!_movementInput) Debug.LogError($"{name} has no movement input references for player controller");
         if (!_interaction) Debug.LogError($"{name} has no interaction script for player controller");
-        if (!_interactionInput) Debug.LogError($"{name} has no intertaction input references for player controller");
+        if (!_animator) Debug.LogError($"{name} has no animator script for player controller");
     }
     #endregion
 
@@ -32,7 +27,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Movement()
     {
-        Vector2 XY = canControl? _movementInput.action.ReadValue<Vector2>() : Vector2.zero;
+        Vector2 XY = canControl? movementInput.action.ReadValue<Vector2>() : Vector2.zero;
 
         if (XY.y > 0)
         {
@@ -60,25 +55,25 @@ public class PlayerController : MonoBehaviour
         }
         else _animator.UpdateMovemenetAnimation(0,0);
     }
+
+    #region Input References
+    private InputActionReference movementInput => InputReferences.Instance._PlayerMovementInput;
+    private InputActionReference interactionInput => InputReferences.Instance._PlayerInteractionInput;
+
     private void Interaction(InputAction.CallbackContext Callback)
     {
         if (canControl) _interaction.InteractTarget();
     }
-    private void Pause(InputAction.CallbackContext Callback)
-    {
-        if (canControl) GameManager.Instance.OpenPauseMenu();
-    }
+    #endregion
 
     #region Enable Disable
     private void OnEnable()
     {
-        _interactionInput.action.performed += Interaction;
-        InputReferences.Instance._PlayerPauseInput.action.performed += Pause;
+        interactionInput.action.performed += Interaction;
     }
     private void OnDisable()
     {
-        _interactionInput.action.performed -= Interaction;
-        InputReferences.Instance._PlayerPauseInput.action.performed -= Pause;
+        interactionInput.action.performed -= Interaction;
     }
     #endregion
 }
