@@ -4,16 +4,20 @@ using UnityEngine.UI;
 
 [Serializable] public class HoverButton : Button, IPointerEnterHandler, ISelectHandler
 {
-    public int buttonNumber = 0;
-    public event Action OnSelectHover;
+    public event Action OnSelectEvent;
+    public event Action OnHoverEvent;
 
     public override void OnSelect(BaseEventData eventData)
     {
-        if (interactable) OnSelectHover?.Invoke();
+        if (interactable) OnSelectEvent?.Invoke();
     }
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
-        if (interactable) Select();
+        if (interactable)
+        {
+            OnHoverEvent?.Invoke();
+            Select();
+        }
     }
 }

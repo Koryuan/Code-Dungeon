@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour, IPanelUI
 {
     private MenuButton currentButton = null;
 
     [Header("Main References")]
     [SerializeField] private MainMenuUI _UI;
-    [SerializeField] private EventSystem _EventSystem;
+    [SerializeField] private OptionMenu _OptionMenu;
 
     [Header("Input References")]
     [SerializeField] private InputActionAsset playerActionMap;
@@ -18,16 +18,19 @@ public class MainMenu : MonoBehaviour
     {
         CheckReferences();
         InitializeUI();
+        playerActionMap.Enable();
     }
     private void CheckReferences()
     {
         if (!_UI) Debug.LogError($"{name} has no UI references");
         if (!playerActionMap) Debug.LogError($"{name} has no action map references");
+        if (!_OptionMenu) Debug.LogError($"{name} has no Option Menu references");
     }
     private void InitializeUI()
     {
         // Defalut Initialize
         _UI.Initialize(MoveCurrentButton);
+        _OptionMenu.Initialize();
 
         // Each button
         _UI.AddPlayButtonListener(StartButton);
@@ -50,7 +53,8 @@ public class MainMenu : MonoBehaviour
     }
     private void OptionButton()
     {
-        Debug.Log("Open Option Menu");
+        _UI.MainMenuPanel(false);
+        _OptionMenu.OpenPanel(this, _UI.OptionButton);
     }
     private void QuitButton()
     {
@@ -62,14 +66,20 @@ public class MainMenu : MonoBehaviour
     {
         if (NewButton)
         {
-            if (currentButton) currentButton.ChangeHighlight(false);
+            if (currentButton) currentButton.SetHighlight(false);
             currentButton = NewButton;
 
-            NewButton.ChangeHighlight(true);
+            NewButton.SetHighlight(true);
             NewButton.Button.Select();
         }
     }
     #endregion
+
+    public void OpenPanel(IMenuUI LastUI)
+    {
+        _UI.MainMenuPanel(true);
+        LastUI.Select();
+    }
 
     private void OnInterectInput(InputAction.CallbackContext callback)
     {
@@ -79,13 +89,11 @@ public class MainMenu : MonoBehaviour
     #region Enable Disable
     private void OnEnable()
     {
-        playerActionMap.Enable();
         InputReferences.Instance._MenuInterectInput.action.performed += OnInterectInput;
     }
 
     private void OnDisable()
     {
-        playerActionMap.Disable();
         InputReferences.Instance._MenuInterectInput.action.performed -= OnInterectInput;
     }
     #endregion

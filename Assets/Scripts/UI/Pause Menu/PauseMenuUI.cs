@@ -21,15 +21,15 @@ public class PauseMenuUI : MonoBehaviour
     {
         CheckReferences();
 
-        resumeButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(resumeButton);
-        loadButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(loadButton);
-        optionButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(optionButton);
-        exitButton.Button.OnSelectHover += () => OnSelectEvent?.Invoke(exitButton);
+        resumeButton.Button.OnSelectEvent += () => OnSelectEvent?.Invoke(resumeButton);
+        loadButton.Button.OnSelectEvent += () => OnSelectEvent?.Invoke(loadButton);
+        optionButton.Button.OnSelectEvent += () => OnSelectEvent?.Invoke(optionButton);
+        exitButton.Button.OnSelectEvent += () => OnSelectEvent?.Invoke(exitButton);
 
-        resumeButton.ChangeHighlight(false);
-        loadButton.ChangeHighlight(false);
-        optionButton.ChangeHighlight(false);
-        exitButton.ChangeHighlight(false);
+        resumeButton.SetHighlight(false);
+        loadButton.SetHighlight(false);
+        optionButton.SetHighlight(false);
+        exitButton.SetHighlight(false);
 
         if (!SaveSystem.Instance.SaveFileExist) loadButton.Button.interactable = false;
     }

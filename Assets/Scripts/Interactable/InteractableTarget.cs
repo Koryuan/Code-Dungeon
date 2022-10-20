@@ -5,8 +5,11 @@ public abstract class InteractableTarget : MonoBehaviour
 {
     protected bool canInteract = true;
 
+    [Header("Before Event")]
+    [SerializeField] protected bool disableObjectBefore;
+
     [Header("After Interect")]
-    [SerializeField] protected bool disableObject;
+    [SerializeField] protected bool disableObjectAfter;
     [SerializeField] protected bool disableInteraction;
 
     [Header("Print Scan Interect")]
@@ -28,12 +31,10 @@ public abstract class InteractableTarget : MonoBehaviour
     async protected virtual void Interaction()
     {
         if (disableInteraction) canInteract = false;
+        if (disableObjectBefore) DisableObject();
+
         await GameManager.Instance.StartEvent(gameEvent);
-        if (disableObject)
-        {
-            AutoSaveScene.SaveObjectState(gameObject.name);
-            gameObject.SetActive(false);
-        }
+        if (disableObjectAfter) DisableObject();
     }
     #endregion
 
@@ -45,8 +46,9 @@ public abstract class InteractableTarget : MonoBehaviour
     protected virtual void PrintInteraction()
     {
         if (disableInteraction) canInteract = false;
+        if (disableObjectBefore) DisableObject();
         Debug.Log("Print Interect");
-        if (disableObject) gameObject.SetActive(false);
+        if (disableObjectAfter) DisableObject();
     }
     #endregion
 
@@ -58,9 +60,15 @@ public abstract class InteractableTarget : MonoBehaviour
     protected virtual void ScanInteraction()
     {
         if (disableInteraction) canInteract = false;
+        if (disableObjectBefore) DisableObject();
         Debug.Log("scan Interect");
-        if (disableObject) gameObject.SetActive(false);
+        if (disableObjectAfter) DisableObject();
     }
     #endregion
 
+    protected virtual void DisableObject()
+    {
+        AutoSaveScene.SaveObjectState(gameObject.name);
+        gameObject.SetActive(false);
+    }
 }
