@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public static class AutoSaveScene
 {
@@ -11,7 +10,7 @@ public static class AutoSaveScene
 
     private static void SaveTutorialScene(string ObjectName)
     {
-        SaveDataTutorialScene tutorialSaveData = SaveSystem.Instance.CurrentSaveData.TutorialScene;
+        var tutorialSaveData = SaveLoadSystem.Instance._SaveData.TutorialScene;
         if (tutorialSaveData == null)
         {
             Debug.LogError("The Save Data have no Tutorial Class attached");
@@ -22,6 +21,7 @@ public static class AutoSaveScene
         {
             case "Awake - Dialog":
                 tutorialSaveData.JustAwake = false;
+                Debug.Log($"Just Awake: {SaveLoadSystem.Instance._SaveData.TutorialScene.JustAwake}");
                 break;
             case "Tablet":
                 tutorialSaveData.TakeTablet = true;

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private bool inventoryOpen = false;
     private bool guideOpen = false;
     private bool pauseOpen = false;
+    private bool saveMenuOpen = false;
     private bool onEvent = false;
 
     [Header("Input References")]
@@ -25,9 +26,12 @@ public class GameManager : MonoBehaviour
     [Header("System References")]
     [SerializeField] private DialogBox dialogSystem;
     [SerializeField] private GuidePanel guideSystem;
-    [SerializeField] private PauseMenu pauseSystem;
 
+    #region Instance References
     private Inventory inventory => Inventory.Instance;
+    private PauseMenu pause => PauseMenu.Instance;
+    private SaveLoadMenu saveLoad => SaveLoadMenu.Instance;
+    #endregion
 
     async private void Awake()
     {
@@ -37,15 +41,25 @@ public class GameManager : MonoBehaviour
         guideSystem.OnClosePanel += OnGuideClose;
 
         // Pause System
-        pauseSystem.OnOpenPanel += OnPauseMenuOpen;
-        pauseSystem.OnClosePanel += OnPauseMenuClose;
+        await UniTask.WaitUntil(() => pause && pause.IsInitialize);
+        pause.OnOpenPanel += OnPauseMenuOpen;
+        pause.OnClosePanel += OnPauseMenuClose;
 
         // Inventory System
-        await UniTask.WaitUntil(() => inventory.IsInitialize);
+        await UniTask.WaitUntil(() => inventory && inventory.IsInitialize);
         inventory.OnOpenInventory += OnOpenInventory;
         inventory.OnCloseInventory += OnCloseInventory;
 
+        // Save Load Menu
+        await UniTask.WaitUntil(() => saveLoad && saveLoad.IsInitialize);
+        saveLoad.OnOpenPanel += OnOpenSaveMenu;
+        saveLoad.OnClosePanel += OnCloseSaveMenu;
+
+        // Let all object load before play
         await UniTask.WaitUntil(() => LoadSceneObject.Instance.AllLoad == true);
+
+        // Let time Manager move
+        await UniTask.WaitUntil(() => TimeManager.Instance != null);
 
         IsInitialize = true;
     }
@@ -104,12 +118,26 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Save Load Menu
+    private void OnOpenSaveMenu()
+    {
+        saveMenuOpen = true;
+        CurrentState = GameState.Game_Save_Load_State;
+    }
+    private void OnCloseSaveMenu()
+    {
+        saveMenuOpen = false;
+        UpdateState();
+    }
+    #endregion
+
     async private void UpdateState()
     {
         if (dialogboxOpen) CurrentState = GameState.Game_Dialog_State;
         else if (guideOpen) CurrentState = GameState.Game_Guide_State;
         else if (inventoryOpen) CurrentState = GameState.Game_Inventory_State;
         else if (pauseOpen) CurrentState = GameState.Game_Pause_State;
+        else if (saveMenuOpen) CurrentState = GameState.Game_Save_Load_State;
         else
         {
             onEvent = false; await UniTask.Delay(10);
@@ -152,4 +180,5 @@ public enum GameState
     Game_Guide_State,
     Game_Inventory_State,
     Game_Pause_State,
+    Game_Save_Load_State
 }

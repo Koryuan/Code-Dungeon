@@ -16,6 +16,13 @@ public class MenuButton : MonoBehaviour, IMenuUI
         if (!Button) Debug.LogError($"{name} has no Button References");
     }
 
+    public void Initialize()
+    {
+        CheckReferences();
+        Button.OnSelectEvent += () => SetHighlight(true);
+        Button.OnDeselectEvent += SetHighlight;
+    }
+
     public void Select() => Button.Select();
 
     public void SetHighlight(bool IsHighlighted)

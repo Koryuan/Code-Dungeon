@@ -10,7 +10,7 @@ public class DebuggingTool : MonoBehaviour
 
     private void Awake()
     {
-        Instance = debuging ? null : this;
+        Instance = debuging ? this : null;
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = fpsLimit;

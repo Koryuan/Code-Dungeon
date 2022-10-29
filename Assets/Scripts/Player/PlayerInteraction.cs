@@ -62,7 +62,11 @@ public class PlayerInteraction : MonoBehaviour
     }
     #endregion
 
-    public void InteractTarget() => InteractionManager.Instance.InteractTarget();
+    public void InteractTarget()
+    {
+        SaveLoadSystem.Instance._SaveData.PlayerLastPosition = transform.position;
+        InteractionManager.Instance.InteractTarget();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

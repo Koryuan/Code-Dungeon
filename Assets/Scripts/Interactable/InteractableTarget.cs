@@ -16,54 +16,56 @@ public abstract class InteractableTarget : MonoBehaviour
     [SerializeField] protected bool printInteract;
     [SerializeField] protected bool scanInteract;
 
-    [Header("Event")]
-    [SerializeField] protected GameEvent[] gameEvent;
-
     public bool CanPrintInterect => printInteract;
     public bool CanScanInterect => scanInteract;
     public bool CanInterect => canInteract;
 
     #region Normal Interaction
-    public void OnInteract()
+    async public void OnInteract()
     {
-        if (canInteract) Interaction();
-    }
-    async protected virtual void Interaction()
-    {
-        if (disableInteraction) canInteract = false;
-        if (disableObjectBefore) DisableObject();
+        if (canInteract)
+        {
+            if (disableInteraction) canInteract = false;
+            if (disableObjectBefore) DisableObject();
 
-        await GameManager.Instance.StartEvent(gameEvent);
-        if (disableObjectAfter) DisableObject();
+            await Interaction();
+            
+            if (disableObjectAfter) DisableObject();
+        }
     }
+    protected abstract UniTask Interaction();
     #endregion
 
     #region Print Interaction
-    public void OnPrintInteract()
+    async public void OnPrintInteract()
     {
-        if (printInteract && canInteract) PrintInteraction();
+        if (printInteract && canInteract)
+        {
+            if (disableInteraction) canInteract = false;
+            if (disableObjectBefore) DisableObject();
+
+            await PrintInteraction();
+
+            if (disableObjectAfter) DisableObject();
+        }
     }
-    protected virtual void PrintInteraction()
-    {
-        if (disableInteraction) canInteract = false;
-        if (disableObjectBefore) DisableObject();
-        Debug.Log("Print Interect");
-        if (disableObjectAfter) DisableObject();
-    }
+    protected abstract UniTask PrintInteraction();
     #endregion
 
     #region Scan Interaction
-    public void OnScanInteract()
+    async public void OnScanInteract()
     {
-        if (scanInteract && canInteract) ScanInteraction();
+        if (scanInteract && canInteract)
+        {
+            if (disableInteraction) canInteract = false;
+            if (disableObjectBefore) DisableObject();
+
+            await ScanInteraction();
+
+            if (disableObjectAfter) DisableObject();
+        }
     }
-    protected virtual void ScanInteraction()
-    {
-        if (disableInteraction) canInteract = false;
-        if (disableObjectBefore) DisableObject();
-        Debug.Log("scan Interect");
-        if (disableObjectAfter) DisableObject();
-    }
+    protected abstract UniTask ScanInteraction();
     #endregion
 
     protected virtual void DisableObject()

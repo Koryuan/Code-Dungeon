@@ -1,14 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
 
-public class TestInteractionObject : InteractableTarget
+public class SavePoint : InteractableTarget
 {
-    [Header("Game Event")]
-    [SerializeField] private GameEvent[] eventList;
-
     async protected override UniTask Interaction()
     {
-        await GameManager.Instance.StartEvent(eventList);
+        SaveLoadMenu.Instance.OpenPanel(null, null, true);
     }
 
     protected override UniTask PrintInteraction() => throw new System.NotImplementedException();

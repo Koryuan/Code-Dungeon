@@ -22,7 +22,7 @@ public class ItemList : MonoBehaviour
 
     private void Awake()
     {
-        _itemList = SaveSystem.Instance.InventoryItemList;
+        _itemList = SaveLoadSystem.Instance.InventoryItemList;
     }
 
     public List<Item> ListOfItem

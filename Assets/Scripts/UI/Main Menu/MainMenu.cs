@@ -49,7 +49,8 @@ public class MainMenu : MonoBehaviour, IPanelUI
     }
     private void LoadButton()
     {
-        Debug.Log("Load Game");
+        _UI.MainMenuPanel(false);
+        SaveLoadMenu.Instance.OpenPanel(this, _UI.LoadButton, false);
     }
     private void OptionButton()
     {

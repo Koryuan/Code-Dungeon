@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour, IPanelUI
     [SerializeField] private PauseMenuUI _UI;
     [SerializeField] private OptionMenu _OptionPanel;
 
-    public static PauseMenu Instance;
+    public static PauseMenu Instance = null;
     public event Action OnOpenPanel;
     public event Action OnClosePanel;
     public bool IsInitialize { get; private set; } = false;
@@ -45,7 +45,11 @@ public class PauseMenu : MonoBehaviour, IPanelUI
 
     #region Button Function
     private void ResumeButton() => ClosePanel();
-    private void LoadButton() => Debug.Log("Open Load Panel");
+    private void LoadButton()
+    {
+        _UI.PauseMenuPanel(IsOpen = false);
+        SaveLoadMenu.Instance.OpenPanel(this, _UI.LoadButton, false);
+    }
     private void OptionButton()
     {
         _UI.PauseMenuPanel(IsOpen = false);

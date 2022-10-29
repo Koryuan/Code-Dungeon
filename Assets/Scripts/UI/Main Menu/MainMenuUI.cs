@@ -33,7 +33,7 @@ public class MainMenuUI : MonoBehaviour
         optionButton.SetHighlight(false);
         quitButton.SetHighlight(false);
 
-        if (!SaveSystem.Instance.SaveFileExist) loadButton.Button.interactable = false;
+        if (!SaveLoadSystem.Instance.SaveFileExist) loadButton.Button.interactable = false;
     }
     private void CheckReferences()
     {
