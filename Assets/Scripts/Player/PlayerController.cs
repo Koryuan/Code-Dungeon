@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
     }
-    public void Movement()
+    private void Movement()
     {
         Vector2 XY = canControl? movementInput.action.ReadValue<Vector2>() : Vector2.zero;
 
@@ -56,6 +57,18 @@ public class PlayerController : MonoBehaviour
         else _animator.UpdateMovemenetAnimation(0,0);
     }
 
+    public void InstantMove(Transform NewPosition, Vector2 Rotation)
+    {
+        transform.position = NewPosition.position;
+        _interaction.UpdateRotation(Rotation);
+        _animator.UpdateMovemenetAnimation(Rotation.x, Rotation.y);
+    }
+
+    public void InstantMove(Vector3 NewPosition)
+    {
+        transform.position = NewPosition;
+    }
+
     #region Input References
     private InputActionReference movementInput => InputReferences.Instance._PlayerMovementInput;
     private InputActionReference interactionInput => InputReferences.Instance._PlayerInteractionInput;
@@ -67,8 +80,9 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Enable Disable
-    private void OnEnable()
+    private async void OnEnable()
     {
+        await UniTask.WaitUntil(() => InputReferences.Instance != null);
         interactionInput.action.performed += Interaction;
     }
     private void OnDisable()

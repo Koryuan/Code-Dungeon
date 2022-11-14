@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TriggerEnterEvent : TriggerEnter
 {
-    [Header("")]
+    [Header("Event list")]
     [SerializeField] private GameEvent[] gameEvents;
 
     [Header("Variable")]
@@ -20,6 +20,8 @@ public class TriggerEnterEvent : TriggerEnter
 
         GameManager.Instance.StartEvent(gameEvents).Forget();
 
+        // After Everyting done
+        AutoSaveScene.SaveObjectState(name);
         if (OnEnterDisable) gameObject.SetActive(false);
     }
 }

@@ -263,8 +263,9 @@ public class Inventory : MonoBehaviour
     #endregion
 
     #region Enable Disable
-    private void OnEnable()
+    private async void OnEnable()
     {
+        await UniTask.WaitUntil(() => InputReferences.Instance != null);
         inventoryInput.action.performed += OpenClosePanel;
     }
     private void OnDisable()

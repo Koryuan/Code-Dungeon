@@ -17,4 +17,6 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetFloat("X Coordinate", X);
         _animator.SetFloat("Y Coordinate", Y);
     }
+
+    public Vector2 GetXYCoordinate() => new Vector2(_animator.GetFloat("X Coordinate"), _animator.GetFloat("Y Coordinate"));
 }

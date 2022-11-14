@@ -7,6 +7,7 @@ public class DebuggingTool : MonoBehaviour
     [Header("Debugging")]
     [SerializeField] private bool debuging = false;
     [Range(30,60)][SerializeField] private int fpsLimit = 30;
+    [SerializeField] private bool CloseMouse = false;
 
     private void Awake()
     {
@@ -14,5 +15,10 @@ public class DebuggingTool : MonoBehaviour
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = fpsLimit;
+        if (CloseMouse)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }

@@ -20,6 +20,13 @@ public class PlayerInteraction : MonoBehaviour
     #endregion
 
     #region Change Trigger
+    public void UpdateRotation(Vector2 XY)
+    {
+        if (XY.y > 0) RotateUp();
+        else if (XY.y < 0) RotateDown();
+        else if (XY.x > 0) RotateRight();
+        else if (XY.x < 0) RotateLeft();
+    }
     public void RotateUp()
     {
         if (!_TopTrigger.activeSelf)
