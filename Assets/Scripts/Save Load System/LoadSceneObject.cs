@@ -56,13 +56,6 @@ public class LoadSceneObject : MonoBehaviour
     #endregion
 }
 
-public enum SceneType
-{
-    None,
-    TutorialScene,
-    SelectionScene
-}
-
 [Serializable] public class TutorialSceneObject
 {
     public GameObject tablet = null;
