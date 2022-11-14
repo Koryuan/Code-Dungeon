@@ -165,17 +165,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 130573458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac692b7d52325546a5f2321bdc1c3f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ffc762ce46529e4bbe6d6feb96a5662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent:
+  gameEvents:
   - dialog: {fileID: 0}
     item: {fileID: 0}
     guide: {fileID: 11400000, guid: be38e06d449ac43489c1f56fa69f9a18, type: 2}
     eventAction:
       m_PersistentCalls:
         m_Calls: []
-  onTriggerDisable: 1
+  OnEnterDisable: 1
 --- !u!61 &130573461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4911,9 +4911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d788e27ded94e4ba0342a9fe1d64f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: []
-  onTriggerDisable: 0
-  _sceneName: 0
+  _sceneType: 2
 --- !u!61 &1116398515
 BoxCollider2D:
   m_ObjectHideFlags: 0
