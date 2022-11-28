@@ -10,8 +10,6 @@ public class OptionMenu : MonoBehaviour
     [Header("Main References")]
     [SerializeField] private OptionMenuUI _UI;
 
-    public bool IsActive => gameObject.activeSelf;
-
     #region Initialization
     private void CheckReferences()
     {

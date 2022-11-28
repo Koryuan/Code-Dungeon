@@ -23,10 +23,6 @@ public class Inventory : MonoBehaviour
     [Header("UI")]
     [SerializeField] private InventoryUI _UI;
 
-    [Header("Input References")]
-    [SerializeField] private InputActionReference _moveInput;
-    [SerializeField] private InputActionReference _interactionInput;
-
     [Header("Item Scroller")]
     [SerializeField] private float scrollSpeed = 0;
     [SerializeField] private bool instant = false;
@@ -60,8 +56,6 @@ public class Inventory : MonoBehaviour
     private void CheckNullReferences()
     {
         if (!_UI) Debug.LogError("There is no UI References");
-        if (!_moveInput) Debug.LogError("There is no move input References");
-        if (!_interactionInput) Debug.LogError("There is no interaction input References");
 
         // Scroll
         if (!_scrollRect) Debug.LogError($"{name} has no Scroll Rectangle References");
@@ -110,7 +104,7 @@ public class Inventory : MonoBehaviour
     #endregion
 
     #region Ohter Scroll Function
-    public void CenterOnItem(RectTransform target)
+    private void CenterOnItem(RectTransform target)
     {
         // Item is here
         var itemCenterPositionInScroll = GetWorldPointInWidget(mScrollTransform, GetWidgetWorldPoint(target));

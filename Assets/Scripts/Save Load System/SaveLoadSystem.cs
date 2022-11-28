@@ -24,19 +24,6 @@ public class SaveLoadSystem : MonoBehaviour
     #region Save Data
     private void Awake() => _SaveData = new SaveData();
     public SaveData _SaveData { get; private set; } = null;
-
-    #region Item List
-    public List<Item> InventoryItemList
-    {
-        get
-        {
-            List<Item> newList = new List<Item>();
-            newList.AddRange(_SaveData._ItemList);
-            return newList;
-        }
-    }
-    public void UpdateItemList(List<Item> NewItemList) => _SaveData._ItemList = NewItemList;
-    #endregion
     #endregion
 
     #region Save and Load

@@ -11,7 +11,7 @@ public static class SceneLoad
         var saveData = SaveLoadSystem.Instance._SaveData;
         if (DebuggingTool.Instance == null)
         {
-            switch(saveData.LastSceneName)
+            switch(saveData.LastScene)
             {
                 case SceneType.TutorialScene:
                     LoadTutorialMap();
@@ -25,7 +25,7 @@ public static class SceneLoad
         }
         else
         {
-            switch (saveData.LastSceneName)
+            switch (saveData.LastScene)
             {
                 case SceneType.TutorialScene:
                     SceneManager.LoadScene("(Duplicate) Tutorial Scene");

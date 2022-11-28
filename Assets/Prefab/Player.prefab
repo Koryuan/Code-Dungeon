@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 5072358144754969505}
   - component: {fileID: 5072358144754969506}
   - component: {fileID: 5072358144754969507}
-  - component: {fileID: 5072358144754969504}
   m_Layer: 0
   m_Name: Player - Camera
   m_TagString: MainCamera
@@ -175,21 +174,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5072358144754969516}
   m_Enabled: 1
---- !u!114 &5072358144754969504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5072358144754969516}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab2623870a396ff40b023cece8884bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPosition: {fileID: 5072358145991132559}
-  smoothness: 0.25
-  cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5072358145146639853
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,9 +358,6 @@ GameObject:
   - component: {fileID: 5072358145991132555}
   - component: {fileID: 5072358145991132553}
   - component: {fileID: 5072358145991132564}
-  - component: {fileID: 5072358145991132554}
-  - component: {fileID: 5072358145991132557}
-  - component: {fileID: 5072358145991132556}
   - component: {fileID: 5072358145991132558}
   m_Layer: 0
   m_Name: Player
@@ -464,9 +445,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb1ac482ab0f6049ac90f435ad0ac46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movement: {fileID: 5072358145991132554}
-  _interaction: {fileID: 5072358145991132557}
-  _animator: {fileID: 5072358145991132556}
+  _movement:
+    _rigidbody: {fileID: 5072358145991132553}
+    movementSpeed: 10
+  _interaction:
+    _TopTrigger: {fileID: 5072358145433270557}
+    _BottomTrigger: {fileID: 5072358144541431575}
+    _LeftTrigger: {fileID: 5072358145311228623}
+    _RightTrigger: {fileID: 5072358145146639853}
+  _animator:
+    _animator: {fileID: 5072358145991132558}
 --- !u!50 &5072358145991132553
 Rigidbody2D:
   serializedVersion: 4
@@ -514,49 +502,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.30875248, y: 0.22800577}
   m_EdgeRadius: 0
---- !u!114 &5072358145991132554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5072358145991132565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0217edc39468bea43bb4327387049f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 5072358145991132553}
-  movementSpeed: 5
---- !u!114 &5072358145991132557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5072358145991132565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc0a37f77559bf45bfad18b8d3382e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _TopTrigger: {fileID: 5072358145433270557}
-  _BottomTrigger: {fileID: 5072358144541431575}
-  _LeftTrigger: {fileID: 5072358145311228623}
-  _RightTrigger: {fileID: 5072358145146639853}
---- !u!114 &5072358145991132556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5072358145991132565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d3fbe1ff8e8b4248bd34eb000c1784d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 5072358145991132558}
 --- !u!95 &5072358145991132558
 Animator:
   serializedVersion: 3

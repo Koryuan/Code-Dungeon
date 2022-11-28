@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour, IPanelUI
 {
     private MenuButton currentButton = null;
 
     [Header("Main References")]
-    [SerializeField] private MainMenuUI _UI;
-    [SerializeField] private OptionMenu _OptionMenu;
+    [SerializeField] private MainMenuUI ui;
+    [SerializeField] private OptionMenu _optionMenu;
 
     [Header("Input References")]
     [SerializeField] private InputActionAsset playerActionMap;
@@ -22,40 +21,40 @@ public class MainMenu : MonoBehaviour, IPanelUI
     }
     private void CheckReferences()
     {
-        if (!_UI) Debug.LogError($"{name} has no UI references");
+        if (!ui) Debug.LogError($"{name} has no UI references");
         if (!playerActionMap) Debug.LogError($"{name} has no action map references");
-        if (!_OptionMenu) Debug.LogError($"{name} has no Option Menu references");
+        if (!_optionMenu) Debug.LogError($"{name} has no Option Menu references");
     }
     private void InitializeUI()
     {
         // Defalut Initialize
-        _UI.Initialize(MoveCurrentButton);
-        _OptionMenu.Initialize();
+        ui.Initialize(MoveCurrentButton);
+        _optionMenu.Initialize();
 
         // Each button
-        _UI.AddPlayButtonListener(StartButton);
-        _UI.AddLoadButtonListener(LoadButton);
-        _UI.AddOptionButtonListener(OptionButton);
-        _UI.AddQuitButtonListener(QuitButton);
+        ui.AddPlayButtonListener(StartButton);
+        ui.AddLoadButtonListener(LoadButton);
+        ui.AddOptionButtonListener(OptionButton);
+        ui.AddQuitButtonListener(QuitButton);
 
-        MoveCurrentButton(_UI.PlayButton);
+        MoveCurrentButton(ui.PlayButton);
     }
     #endregion
 
     #region Button Function
     private void StartButton()
     {
-        _UI.ActiveGuidePanel();
+        ui.ActiveGuidePanel();
     }
     private void LoadButton()
     {
-        _UI.MainMenuPanel(false);
-        SaveLoadMenu.Instance.OpenPanel(this, _UI.LoadButton, false);
+        ui.MainMenuPanel(false);
+        SaveLoadMenu.Instance.OpenPanel(this, ui.LoadButton, false);
     }
     private void OptionButton()
     {
-        _UI.MainMenuPanel(false);
-        _OptionMenu.OpenPanel(this, _UI.OptionButton);
+        ui.MainMenuPanel(false);
+        _optionMenu.OpenPanel(this, ui.OptionButton);
     }
     private void QuitButton()
     {
@@ -78,13 +77,13 @@ public class MainMenu : MonoBehaviour, IPanelUI
 
     public void OpenPanel(IMenuUI LastUI)
     {
-        _UI.MainMenuPanel(true);
+        ui.MainMenuPanel(true);
         LastUI.Select();
     }
 
     private void OnInterectInput(InputAction.CallbackContext callback)
     {
-        if (_UI.GuidePanelIsActive) SceneLoad.LoadTutorialMap();
+        if (ui.GuidePanelIsActive) SceneLoad.LoadTutorialMap();
     }
 
     #region Enable Disable

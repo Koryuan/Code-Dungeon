@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9cb6519f4c44d44bc8ebab985b8de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpenObject: {fileID: 8175847912869854901}
-  CloseSprite: {fileID: 1587263350665940983}
+  openObject: {fileID: 8175847912869854901}
+  closeSprite: {fileID: 1587263350665940983}
 --- !u!1 &1404864134324727261
 GameObject:
   m_ObjectHideFlags: 0

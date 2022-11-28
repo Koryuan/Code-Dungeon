@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
+[System.Serializable] public class PlayerInteraction
 {
     [Header("References")]
     [SerializeField] private GameObject _TopTrigger;
@@ -9,13 +9,12 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GameObject _RightTrigger;
 
     #region Initialization
-    private void Awake() => CheckNullReferences();
-    private void CheckNullReferences()
+    public void CheckReferences(string Name)
     {
-        if (!_TopTrigger) Debug.LogError($"{name} has no Top Trigger for interaction");
-        if (!_BottomTrigger) Debug.LogError($"{name} has no Bottom Trigger for interaction");
-        if (!_LeftTrigger) Debug.LogError($"{name} has no Left Trigger for interaction");
-        if (!_RightTrigger) Debug.LogError($"{name} has no Right Trigger for interaction");
+        if (!_TopTrigger) Debug.LogError($"{Name} has no Top Trigger for interaction");
+        if (!_BottomTrigger) Debug.LogError($"{Name} has no Bottom Trigger for interaction");
+        if (!_LeftTrigger) Debug.LogError($"{Name} has no Left Trigger for interaction");
+        if (!_RightTrigger) Debug.LogError($"{Name} has no Right Trigger for interaction");
     }
     #endregion
 
@@ -69,18 +68,18 @@ public class PlayerInteraction : MonoBehaviour
     }
     #endregion
 
-    public void InteractTarget()
+    public void InteractTarget(Vector3 Position)
     {
-        SaveLoadSystem.Instance._SaveData.PlayerLastPosition = transform.position;
+        SaveLoadSystem.Instance._SaveData.PlayerLastPosition = Position;
         InteractionManager.Instance.InteractTarget();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TargetEnter(Collider2D collision)
     {
         InteractableTarget interactableTarget = collision.gameObject.GetComponent<InteractableTarget>();
         if (interactableTarget) InteractionManager.Instance.NewFocusTarget(interactableTarget);
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public void TargetExit(Collider2D collision)
     {
         InteractableTarget interactableTarget = collision.gameObject.GetComponent<InteractableTarget>();
         if (interactableTarget) InteractionManager.Instance.UnFocusTarget(interactableTarget);

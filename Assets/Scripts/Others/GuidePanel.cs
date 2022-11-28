@@ -19,9 +19,6 @@ public class GuidePanel : MonoBehaviour
     [SerializeField] private Button nextButton;
     [SerializeField] private Button prevButton;
 
-    [Header("Input References")]
-    [SerializeField] private InputActionReference _nextInput;
-
     #region Initialization
     private void Awake()
     {
@@ -32,7 +29,7 @@ public class GuidePanel : MonoBehaviour
     {
         if (!nextButton) Debug.LogError($"{name} has no button to go next");
         if (!prevButton) Debug.LogError($"{name} has no button to go back");
-        if (!_nextInput) Debug.LogError($"{name} has no input references to go next");
+        if (!nextInput) Debug.LogError($"{name} has no input references to go next");
     }
     private void InitializeButton()
     {
@@ -78,6 +75,8 @@ public class GuidePanel : MonoBehaviour
         panel.SetActive(false);
         OnClosePanel?.Invoke();
     }
+
+    private InputActionReference nextInput => InputReferences.Instance._MenuInterectInput;
     private void NextContent(InputAction.CallbackContext Callback)
     {
         if (currentContentPage == content.GuideImage.Length - 1) CloseGuide();
@@ -87,11 +86,11 @@ public class GuidePanel : MonoBehaviour
     #region Enable Disable
     private void OnEnable()
     {
-        _nextInput.action.performed += NextContent;
+        nextInput.action.performed += NextContent;
     }
     private void OnDisable()
     {
-        _nextInput.action.performed -= NextContent;
+        nextInput.action.performed -= NextContent;
     }
     #endregion
 }

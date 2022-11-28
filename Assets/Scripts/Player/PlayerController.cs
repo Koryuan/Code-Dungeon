@@ -2,10 +2,9 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerMovement), typeof(PlayerInteraction), typeof(PlayerAnimation))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Script References")]
+    [Header("Player References")]
     [SerializeField] private PlayerMovement _movement;
     [SerializeField] private PlayerInteraction _interaction;
     [SerializeField] private PlayerAnimation _animator;
@@ -16,9 +15,9 @@ public class PlayerController : MonoBehaviour
     private void Awake() => CheckReferences();
     private void CheckReferences()
     {
-        if (!_movement) Debug.LogError($"{name} has no movement script for player controller");
-        if (!_interaction) Debug.LogError($"{name} has no interaction script for player controller");
-        if (!_animator) Debug.LogError($"{name} has no animator script for player controller");
+        _animator.CheckReferences(name);
+        _interaction.CheckReferences(name);
+        _movement.CheckReferences(name);
     }
     #endregion
 
@@ -26,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
     }
+
+    #region Movement
     private void Movement()
     {
         Vector2 XY = canControl? movementInput.action.ReadValue<Vector2>() : Vector2.zero;
@@ -56,18 +57,17 @@ public class PlayerController : MonoBehaviour
         }
         else _animator.UpdateMovemenetAnimation(0,0);
     }
-
     public void InstantMove(Transform NewPosition, Vector2 Rotation)
     {
         transform.position = NewPosition.position;
         _interaction.UpdateRotation(Rotation);
         _animator.UpdateMovemenetAnimation(Rotation.x, Rotation.y);
     }
-
     public void InstantMove(Vector3 NewPosition)
     {
         transform.position = NewPosition;
     }
+    #endregion
 
     #region Input References
     private InputActionReference movementInput => InputReferences.Instance._PlayerMovementInput;
@@ -75,8 +75,14 @@ public class PlayerController : MonoBehaviour
 
     private void Interaction(InputAction.CallbackContext Callback)
     {
-        if (canControl) _interaction.InteractTarget();
+        if (canControl) _interaction.InteractTarget(transform.position);
     }
+    #endregion
+
+    #region Trigger
+    private void OnTriggerEnter2D(Collider2D collision) => _interaction.TargetEnter(collision);
+
+    private void OnTriggerExit2D(Collider2D collision) => _interaction.TargetExit(collision);
     #endregion
 
     #region Enable Disable

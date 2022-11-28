@@ -2,13 +2,14 @@
 
 public class Door : MonoBehaviour
 {
-    public GameObject OpenObject;
-    public GameObject CloseSprite;
+    [Header("Open Close Object")]
+    [SerializeField] private GameObject openObject;
+    [SerializeField] private GameObject closeSprite;
 
     public void Activated(bool Open)
     {
-        OpenObject.SetActive(Open);
-        CloseSprite.SetActive(!Open);
+        openObject.SetActive(Open);
+        closeSprite.SetActive(!Open);
         gameObject.SetActive(true);
     }
 }

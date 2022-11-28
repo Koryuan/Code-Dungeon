@@ -5,14 +5,14 @@ using UnityEngine.UI;
 public class YesNoBox : MonoBehaviour
 {
     [Header("Panel")]
-    [SerializeField] private GameObject Panel;
+    [SerializeField] private GameObject panel;
 
     [Header("Button")]
     [SerializeField] private YesNoButton yesButton;
     [SerializeField] private YesNoButton noButton;
 
-    public event Action onYesButton;
-    public event Action onNoButton;
+    public event Action OnYesButton;
+    public event Action OnNoButton;
 
     #region Initialization
     private void Awake()
@@ -21,33 +21,34 @@ public class YesNoBox : MonoBehaviour
 
         yesButton.SetHighlight(false);
         yesButton.Button.OnSelectEvent += () => ChangeYesNo(true);
-        yesButton.Button.onClick.AddListener(()=> onYesButton?.Invoke());
+        yesButton.Button.onClick.AddListener(()=> OnYesButton?.Invoke());
 
         noButton.SetHighlight(false);
         noButton.Button.OnSelectEvent += () => ChangeYesNo(false);
-        noButton.Button.onClick.AddListener(() => onNoButton?.Invoke());
+        noButton.Button.onClick.AddListener(() => OnNoButton?.Invoke());
     }
     private void CheckNullReferences()
     {
-        if (!Panel) Debug.LogError($"{name} has no box panel references");
+        if (!panel) Debug.LogError($"{name} has no box panel references");
         yesButton.CheckNullReferences("Yes Button");
         noButton.CheckNullReferences("No Button");
     }
     #endregion
+
     public void OpenYesNo(Action OnYesButton, Action OnNoButton)
     {
-        Panel.SetActive(true);
+        panel.SetActive(true);
         yesButton.Select();
 
-        onYesButton = onNoButton = ClosePanel;
-        onYesButton += OnYesButton; onNoButton += OnNoButton;
+        OnYesButton = OnNoButton = ClosePanel;
+        OnYesButton += OnYesButton; OnNoButton += OnNoButton;
     }
-    public void ChangeYesNo(bool IsYes)
+    private void ChangeYesNo(bool IsYes)
     {
         yesButton.SetHighlight(IsYes);
         noButton.SetHighlight(!IsYes);
     }
-    public void ClosePanel() => Panel.SetActive(false);
+    private void ClosePanel() => panel.SetActive(false);
 }
 
 [Serializable] public class YesNoButton : IMenuUI

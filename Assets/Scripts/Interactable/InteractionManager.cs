@@ -13,6 +13,7 @@ public class InteractionManager : MonoBehaviour
         Instance = this;
     }
 
+    #region Interaction
     public void InteractTarget()
     {
         if (focusedTarget) focusedTarget.OnInteract();
@@ -25,7 +26,9 @@ public class InteractionManager : MonoBehaviour
     {
         if (focusedTarget && focusedTarget.CanScanInterect) focusedTarget.OnScanInteract();
     }
+    #endregion
 
+    #region Update Target
     public void NewFocusTarget(InteractableTarget Target)
     {
         if (Target.CanInterect)
@@ -42,4 +45,5 @@ public class InteractionManager : MonoBehaviour
             focusedTarget = null;
         }
     }
+    #endregion
 }

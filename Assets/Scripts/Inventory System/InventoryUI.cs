@@ -21,15 +21,14 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Scrollbar itemContainerScrollbar;
 
     [Header("Dialogue Box")]
-    [SerializeField] private GameObject InventoryText;
-    [SerializeField] private GameObject YesNoBoxText;
+    [SerializeField] private GameObject inventoryText;
+    [SerializeField] private GameObject yesNoBoxText;
 
     [Header("Yes/No Box")]
     [SerializeField] private YesNoBox yesNoPanel;
 
     public bool isOpen => inventoryPanel.activeSelf;
     public bool ScrollbarActive => itemContainerScrollbar.isActiveAndEnabled;
-    public Transform ItemContainer => itemContainer;
     public YesNoBox _YesNoBox => yesNoPanel;
 
     #region Initialize
@@ -56,7 +55,7 @@ public class InventoryUI : MonoBehaviour
     public void InventoryPanel(bool Open) => inventoryPanel.SetActive(Open);
     public void YesNoPanel(bool Open)
     {
-        InventoryText.SetActive(!Open);
-        YesNoBoxText.SetActive(Open);
+        inventoryText.SetActive(!Open);
+        yesNoBoxText.SetActive(Open);
     }
 }

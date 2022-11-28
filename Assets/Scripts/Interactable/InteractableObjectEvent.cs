@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class TestInteractionObject : InteractableTarget
+public class InteractableObjectEvent : InteractableTarget
 {
     [Header("Game Event")]
     [SerializeField] private GameEvent[] eventList;

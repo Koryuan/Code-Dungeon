@@ -20,7 +20,7 @@ public class DialogSetting : ScriptableObject
 
     public string ItemName { get; set; } = "No Name";
 
-    public string Name => name;
+    public (string, string) DialogDetail => (name, Text);
     public string Text
     {
         get

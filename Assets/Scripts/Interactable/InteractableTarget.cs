@@ -28,9 +28,12 @@ public abstract class InteractableTarget : MonoBehaviour
             if (disableInteraction) canInteract = false;
             if (disableObjectBefore) DisableObject();
 
-            await Interaction();
-            
-            if (disableObjectAfter) DisableObject();
+            try{
+                await Interaction();
+                if (disableObjectAfter) DisableObject();
+            } catch (System.Exception){
+                return;
+            }
         }
     }
     protected abstract UniTask Interaction();

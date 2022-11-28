@@ -9,13 +9,9 @@ public class DialogBox : MonoBehaviour
     private bool canProceed = false;
 
     private int currentIndex;
-    private DialogSetting currentSetting;
+    private DialogSetting currentDialog;
 
-    public static DialogBox instance;
     public Action OnDialogBoxClose;
-
-    [Header("Input References")]
-    [SerializeField] private InputActionReference _interactionInput;
 
     [Header("References")]
     [SerializeField] private GameObject namePanel;
@@ -27,7 +23,6 @@ public class DialogBox : MonoBehaviour
     private void Awake()
     {
         CheckNullReferences();
-        instance = this;
     }
     private void CheckNullReferences()
     {
@@ -41,18 +36,24 @@ public class DialogBox : MonoBehaviour
     #region Dialog Interaction
     public async void OpenDialog(DialogSetting dialog)
     {
-        currentSetting = dialog;
+        currentDialog = dialog;
         currentIndex = 0;
 
-        NextDialog(currentSetting.Dialogs[currentIndex].Name, currentSetting.Dialogs[currentIndex].Text);
-        
-        await UniTask.Delay(100);
-        canProceed = true;
+        NextDialog(currentDialog.Dialogs[currentIndex]);
+
+        // Exception Handeller
+        var cts = this.GetCancellationTokenOnDestroy();
+        try{
+            await UniTask.Delay(100, cancellationToken: cts);
+            canProceed = true;
+        }
+        catch (Exception){
+            Debug.LogError($"{name} got destroyed while still open");
+        }
     }
-    private void NextDialog(string name, string text)
+    private void NextDialog(Dialog Next)
     {
-        nameText.text = name;
-        boxText.text = text;
+        (nameText.text, boxText.text) = Next.DialogDetail;
 
         if (string.IsNullOrEmpty(name)) namePanel.SetActive(false);
         else namePanel.SetActive(true);
@@ -66,11 +67,13 @@ public class DialogBox : MonoBehaviour
     }
     #endregion
 
+    #region Input References
+    private InputActionReference interactionInput => InputReferences.Instance._MenuInterectInput;
     private void OnInterectInput(InputAction.CallbackContext Callback)
     {
         if (canProceed)
         {
-            if (currentIndex == currentSetting.Dialogs.Length - 1)
+            if (currentIndex == currentDialog.Dialogs.Length - 1)
             {
                 canProceed = false;
                 CloseDialog();
@@ -78,27 +81,22 @@ public class DialogBox : MonoBehaviour
             else
             {
                 currentIndex++;
-                NextDialog(currentSetting.Dialogs[currentIndex].Name, currentSetting.Dialogs[currentIndex].Text);
+                NextDialog(currentDialog.Dialogs[currentIndex]);
             }
         }
     }
+    #endregion
 
     #region Enable Disable
-    private void OnEnable()
+    async private void OnEnable()
     {
-        EnableInput();
+        await UniTask.WaitUntil(()=> InputReferences.Instance);
+        interactionInput.action.performed += OnInterectInput;
     }
-    private void OnDisable()
+    async private void OnDisable()
     {
-        DisableInput();
-    }
-    private void EnableInput()
-    {
-        _interactionInput.action.performed += OnInterectInput;
-    }
-    private void DisableInput()
-    {
-        _interactionInput.action.performed -= OnInterectInput;
+        await UniTask.WaitUntil(() => InputReferences.Instance);
+        interactionInput.action.performed -= OnInterectInput;
     }
     #endregion
 }
