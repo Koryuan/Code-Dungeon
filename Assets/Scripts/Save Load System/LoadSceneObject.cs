@@ -28,7 +28,7 @@ public class LoadSceneObject : MonoBehaviour
         if (thisScene == SceneType.TutorialScene) LoadTutorialSceneObject(player);
         else if (thisScene == SceneType.SelectionScene) LoadStageSelectionSceneObject(player);
 
-        SaveLoadSystem.Instance._SaveData.LastSceneName = thisScene;
+        SaveLoadSystem.Instance._SaveData.LastScene = thisScene;
         AllLoad = true;
     }
 
@@ -55,7 +55,7 @@ public class LoadSceneObject : MonoBehaviour
 
         if(Player != null)
         {
-            if (SaveLoadSystem.Instance._SaveData.LastSceneName == SceneType.SelectionScene)
+            if (SaveLoadSystem.Instance._SaveData.LastScene == SceneType.SelectionScene)
                 Player.InstantMove(tutorialSceneObject.StageSelectionSP, new Vector2(0, -1));
         }
     }
@@ -76,7 +76,7 @@ public class LoadSceneObject : MonoBehaviour
 
         #region Ommiting Save data name
         SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
-        SceneType LastScene = loadedSaveData.LastSceneName;
+        SceneType LastScene = loadedSaveData.LastScene;
         #endregion
 
         stageSelectionSceneObject.Door1.Activated(loadedSaveData.TutorialScene.TakeTablet);

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+[System.Serializable] public class PlayerMovement
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D _rigidbody;
@@ -10,10 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed;
 
     #region Initialization
-    private void Awake() => CheckNullReferences();
-    private void CheckNullReferences()
+    public void CheckReferences(string Name)
     {
-        if (!_rigidbody) Debug.LogError($"{name} has no rigidbody for movement");
+        if (!_rigidbody) Debug.LogError($"{Name} has no rigidbody for movement");
     }
     #endregion
 

@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+[System.Serializable] public class PlayerAnimation
 {
     [SerializeField] private Animator _animator;
 
     #region Initialization
-    private void Awake() => CheckNullReferences();
-    private void CheckNullReferences()
+    public void CheckReferences(string Name)
     {
-        if (!_animator) Debug.LogError($"{name} has no animator for animation");
+        if (!_animator) Debug.LogError($"{Name} has no animator for animation");
     }
     #endregion
 

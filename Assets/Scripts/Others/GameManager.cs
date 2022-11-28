@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     }
 
     #region Guide System
-    public void OpenGuide(GuideContent Content)
+    private void OpenGuide(GuideContent Content)
     {
         CurrentState = GameState.Game_Guide_State;
         guideOpen = true; onEvent = true;
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Inventory System
-    public void OnOpenInventory()
+    private void OnOpenInventory()
     {
         inventoryOpen = true;
         CurrentState = GameState.Game_Inventory_State;

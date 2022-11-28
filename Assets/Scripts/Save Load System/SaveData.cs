@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveData
 {
     // Showned Data in Save/Load Menu
-    public SceneType LastSceneName = SceneType.None;
+    public SceneType LastScene = SceneType.None;
     public List<Item> _ItemList = new List<Item>();
 
     // Player Data
@@ -25,5 +25,4 @@ public class SaveData
     public bool JustAwake = true;
     public bool InteractionQuideInteracted = false;
     public bool TakeTablet = false;
-    public bool UseNextSceneDoor = false;
 }
