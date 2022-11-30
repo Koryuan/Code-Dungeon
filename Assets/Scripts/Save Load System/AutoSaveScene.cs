@@ -4,6 +4,7 @@ public static class AutoSaveScene
 {
     public static void SaveObjectState(string ObjectName)
     {
+        if (SaveLoadSystem.Instance == null || SaveLoadSystem.Instance._SaveData == null) return;
         if (LoadSceneObject.Instance.CurrentScene == SceneType.TutorialScene)
             SaveTutorialScene(ObjectName);
     }

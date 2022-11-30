@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     // Public References
-    public bool CanOpenItemBox => false;
     public bool IsInitialize { get; private set; } = false;
     public GameState CurrentState { get; private set; } = GameState.Game_Player_State;
 
