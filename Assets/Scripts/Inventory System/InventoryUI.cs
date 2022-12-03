@@ -27,6 +27,7 @@ public class InventoryUI : MonoBehaviour
     [Header("Yes/No Box")]
     [SerializeField] private YesNoBox yesNoPanel;
 
+    public Transform ItemContainer => itemContainer;
     public bool isOpen => inventoryPanel.activeSelf;
     public bool ScrollbarActive => itemContainerScrollbar.isActiveAndEnabled;
     public YesNoBox _YesNoBox => yesNoPanel;

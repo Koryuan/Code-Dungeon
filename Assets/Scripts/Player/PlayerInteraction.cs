@@ -76,6 +76,7 @@
 
     public void TargetEnter(Collider2D collision)
     {
+        
         InteractableTarget interactableTarget = collision.gameObject.GetComponent<InteractableTarget>();
         if (interactableTarget) InteractionManager.Instance.NewFocusTarget(interactableTarget);
     }

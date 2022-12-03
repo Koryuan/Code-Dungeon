@@ -13,12 +13,14 @@ public class InputReferences : MonoBehaviour
 
     [Header("Menu Input")]
     [SerializeField] private InputActionReference _menuInterectInput;
+    [SerializeField] private InputActionReference _menuCloseInput;
 
     public InputActionReference _PlayerMovementInput => _playerMovementInput;
     public InputActionReference _PlayerInteractionInput => _playerInteractionInput;
     public InputActionReference _PlayerInventoryInput => _playerInventoryInput;
     public InputActionReference _PlayerPauseInput => _playerPauseInput;
     public InputActionReference _MenuInterectInput => _menuInterectInput;
+    public InputActionReference _MenuCloseInput => _menuCloseInput;
 
     private void Awake()
     {
@@ -36,5 +38,6 @@ public class InputReferences : MonoBehaviour
 
         // Menu
         if (!_menuInterectInput) Debug.LogError($"{name} has no interact input references for menu");
+        if (!_menuCloseInput) Debug.LogError($"{name} has no close input references for menu");
     }
 }

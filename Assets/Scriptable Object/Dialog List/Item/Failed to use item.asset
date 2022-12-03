@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cbbeecd4fd4fa745a8031950043e1ae, type: 3}
-  m_Name: Test Item
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Failed to use item
   m_EditorClassIdentifier: 
-  itemName: Test Item
-  isUseable: 1
-  itemDescription: This is just a test item :)
+  dialogs:
+  - name: 
+    text: There is no code machine that can be unlocked

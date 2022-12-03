@@ -55,7 +55,7 @@ public class DialogBox : MonoBehaviour
     {
         (nameText.text, boxText.text) = Next.DialogDetail;
 
-        if (string.IsNullOrEmpty(name)) namePanel.SetActive(false);
+        if (string.IsNullOrEmpty(Next.DialogDetail.Name)) namePanel.SetActive(false);
         else namePanel.SetActive(true);
         boxPanel.SetActive(true);
     }

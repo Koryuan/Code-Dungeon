@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     // Public References
-    public bool CanOpenItemBox => false;
     public bool IsInitialize { get; private set; } = false;
     public GameState CurrentState { get; private set; } = GameState.Game_Player_State;
 
@@ -18,6 +17,7 @@ public class GameManager : MonoBehaviour
     private bool guideOpen = false;
     private bool pauseOpen = false;
     private bool saveMenuOpen = false;
+    private bool menuOpen = false;
     private bool onEvent = false;
 
     [Header("Input References")]
@@ -27,19 +27,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogBox dialogSystem;
     [SerializeField] private GuidePanel guideSystem;
 
+    [Header("Object References")]
+    [SerializeField] private PlayerController player;
+    public PlayerController Player => player;
+
     #region Instance References
     private Inventory inventory => Inventory.Instance;
     private PauseMenu pause => PauseMenu.Instance;
     private SaveLoadMenu saveLoad => SaveLoadMenu.Instance;
     #endregion
 
+    #region Initialization
     async private void Awake()
     {
         Instance = this;
 
+        CheckReferences();
+
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
         guideSystem.OnClosePanel += OnGuideClose;
-
+;
         // Pause System
         await UniTask.WaitUntil(() => pause && pause.IsInitialize);
         pause.OnOpenPanel += OnPauseMenuOpen;
@@ -49,7 +56,6 @@ public class GameManager : MonoBehaviour
         await UniTask.WaitUntil(() => inventory && inventory.IsInitialize);
         inventory.OnOpenInventory += OnOpenInventory;
         inventory.OnCloseInventory += OnCloseInventory;
-
         // Save Load Menu
         await UniTask.WaitUntil(() => saveLoad && saveLoad.IsInitialize);
         saveLoad.OnOpenPanel += OnOpenSaveMenu;
@@ -63,6 +69,14 @@ public class GameManager : MonoBehaviour
 
         IsInitialize = true;
     }
+    private void CheckReferences()
+    {
+        if (!playerActionMap) Debug.LogError($"{name} has no action map for activated");
+        if (!dialogSystem) Debug.LogError($"{name} has no dialog box references");
+        if (!guideSystem) Debug.LogError($"{name} has no guide system references");
+        if (!player) Debug.LogError($"{name} has no player references");
+    }
+    #endregion
 
     #region Guide System
     private void OpenGuide(GuideContent Content)
@@ -131,6 +145,19 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Menu
+    public void OpenMenu()
+    {
+        menuOpen = true;
+        CurrentState = GameState.Game_Open_Menu;
+    }
+    public void CloseMenu()
+    {
+        menuOpen = false;
+        UpdateState();
+    }
+    #endregion
+
     async private void UpdateState()
     {
         if (dialogboxOpen) CurrentState = GameState.Game_Dialog_State;
@@ -138,6 +165,7 @@ public class GameManager : MonoBehaviour
         else if (inventoryOpen) CurrentState = GameState.Game_Inventory_State;
         else if (pauseOpen) CurrentState = GameState.Game_Pause_State;
         else if (saveMenuOpen) CurrentState = GameState.Game_Save_Load_State;
+        else if (menuOpen) CurrentState = GameState.Game_Open_Menu;
         else
         {
             onEvent = false; await UniTask.Delay(10);
@@ -147,12 +175,20 @@ public class GameManager : MonoBehaviour
 
     async public UniTask StartEvent(GameEvent[] EventList)
     {
-        foreach(GameEvent gameEvent in EventList)
+        foreach (GameEvent gameEvent in EventList)
         {
             await UniTask.WaitUntil(() => onEvent == false);
 
             if (gameEvent.GuideContent) OpenGuide(gameEvent.GuideContent);
-            else if (gameEvent.Dialog) OpenDialogBox(gameEvent.Dialog);
+            else if (gameEvent.Dialog)
+            {
+                if (gameEvent.Item)
+                {
+                    gameEvent.Dialog.AddItemName(gameEvent.Item.ItemName);
+                    inventory.AddNewItem(gameEvent.Item);
+                }
+                OpenDialogBox(gameEvent.Dialog);
+            }
             else if (gameEvent.HasEvent) gameEvent.ActiveAction();
 
             if (!gameEvent.HasEvent) onEvent = true;
@@ -175,7 +211,9 @@ public class GameManager : MonoBehaviour
 
 public enum GameState
 {
+    None,
     Game_Player_State,
+    Game_Open_Menu,
     Game_Dialog_State,
     Game_Guide_State,
     Game_Inventory_State,

@@ -18,15 +18,27 @@ public class LoadSceneObject : MonoBehaviour
         await UniTask.WaitUntil(() => SaveLoadSystem.Instance._SaveData != null);
 
         // Update player position if player is loading save data
-        PlayerController player = FindObjectOfType<PlayerController>();
+        PlayerController player = GameManager.Instance.Player;
         if (player != null && SaveLoadSystem.Instance.LoadFromSaveData)
         {
             player.InstantMove(SaveLoadSystem.Instance._SaveData.PlayerLastPosition);
             SaveLoadSystem.Instance.LoadFromSaveData = false;
         }
 
-        if (thisScene == SceneType.TutorialScene) LoadTutorialSceneObject(player);
-        else if (thisScene == SceneType.SelectionScene) LoadStageSelectionSceneObject(player);
+        switch (thisScene)
+        {
+            case SceneType.TutorialScene:
+                LoadTutorialSceneObject(player);
+                break;
+            case SceneType.SelectionScene:
+                LoadStageSelectionSceneObject(player);
+                break;
+            case SceneType.Print1Scene:
+                LoadPrint1SceneObject(player);
+                break;
+            default:
+                break;
+        }
 
         SaveLoadSystem.Instance._SaveData.LastScene = thisScene;
         AllLoad = true;
@@ -90,6 +102,40 @@ public class LoadSceneObject : MonoBehaviour
         }
     }
     #endregion
+
+    #region Print 1 Scene
+    [SerializeField] private Print1SceneObject print1SceneObject = null;
+    private void LoadPrint1SceneObject(PlayerController Player)
+    {
+        void CheckReferences()
+        {
+            if (!print1SceneObject.StageSelctionSP) Debug.LogError($"Load Scene has no reference to Stage Selection Spawn Point");
+            if (!print1SceneObject.PrintItem1) Debug.LogError($"Load Scene has no reference to Print 1 Item");
+            if (!print1SceneObject.Door1) Debug.LogError($"Load Scene has no reference to Door 1");
+            if (!print1SceneObject.Machine1) Debug.LogError($"Load Scene has no reference to Machine 1");
+        }
+
+        CheckReferences();
+
+        #region Ommiting Save data name
+        SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
+        SaveDataPrint1Scene sceneSaveData = loadedSaveData.Print1Scene;
+        SceneType LastScene = loadedSaveData.LastScene;
+        #endregion
+
+        print1SceneObject.PrintItem1.SetActive(!sceneSaveData.TakePrint1Item);
+        print1SceneObject.Door1.Activated(sceneSaveData.OpenDoor1);
+
+        if (sceneSaveData.UpdateCodeMachine1Test) 
+            print1SceneObject.Machine1.UnlockText(StringList.CodeMachine1_Text_Before);
+
+        if (Player != null)
+        {
+            if (LastScene == SceneType.SelectionScene)
+                Player.InstantMove(print1SceneObject.StageSelctionSP, new Vector2(0, 1));
+        }
+    }
+    #endregion
 }
 
 [Serializable] public class TutorialSceneObject
@@ -109,4 +155,17 @@ public class LoadSceneObject : MonoBehaviour
     [Header("Spawn Point")]
     public Transform TutorialSP = null;
     public Transform Door1SP = null;
+}
+
+[Serializable] public class Print1SceneObject
+{
+    public GameObject PrintItem1;
+    public GameObject PrintItem2;
+
+    public Door Door1;
+    public Door Door2;
+
+    public CodeMachine Machine1;
+
+    public Transform StageSelctionSP;
 }

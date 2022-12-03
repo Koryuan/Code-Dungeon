@@ -20,14 +20,6 @@ public class DialogSetting : ScriptableObject
 
     public string ItemName { get; set; } = "No Name";
 
-    public (string, string) DialogDetail => (name, Text);
-    public string Text
-    {
-        get
-        {
-            string newText = text;
-            newText.Replace("<item>",ItemName);
-            return newText;
-        }
-    }
+    public (string Name, string Text) DialogDetail => (name, Text);
+    public string Text => text.Replace(StringList.DialogItemCode, ItemName);
 }

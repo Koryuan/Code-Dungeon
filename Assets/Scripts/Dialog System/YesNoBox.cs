@@ -11,27 +11,27 @@ public class YesNoBox : MonoBehaviour
     [SerializeField] private YesNoButton yesButton;
     [SerializeField] private YesNoButton noButton;
 
-    public event Action OnYesButton;
-    public event Action OnNoButton;
+    public event Action OnYes;
+    public event Action OnNo;
 
     #region Initialization
     private void Awake()
     {
-        CheckNullReferences();
+        CheckReferences();
 
         yesButton.SetHighlight(false);
         yesButton.Button.OnSelectEvent += () => ChangeYesNo(true);
-        yesButton.Button.onClick.AddListener(()=> OnYesButton?.Invoke());
+        yesButton.Button.onClick.AddListener(()=> OnYes?.Invoke());
 
         noButton.SetHighlight(false);
         noButton.Button.OnSelectEvent += () => ChangeYesNo(false);
-        noButton.Button.onClick.AddListener(() => OnNoButton?.Invoke());
+        noButton.Button.onClick.AddListener(() => OnNo?.Invoke());
     }
-    private void CheckNullReferences()
+    private void CheckReferences()
     {
         if (!panel) Debug.LogError($"{name} has no box panel references");
-        yesButton.CheckNullReferences("Yes Button");
-        noButton.CheckNullReferences("No Button");
+        yesButton.CheckReferences("Yes Button");
+        noButton.CheckReferences("No Button");
     }
     #endregion
 
@@ -40,8 +40,8 @@ public class YesNoBox : MonoBehaviour
         panel.SetActive(true);
         yesButton.Select();
 
-        OnYesButton = OnNoButton = ClosePanel;
-        OnYesButton += OnYesButton; OnNoButton += OnNoButton;
+        OnYes = OnNo = ClosePanel;
+        OnYes += OnYesButton; OnNo += OnNoButton;
     }
     private void ChangeYesNo(bool IsYes)
     {
@@ -56,12 +56,15 @@ public class YesNoBox : MonoBehaviour
     public Image Arrow;
     public HoverButton Button;
     
-    public void CheckNullReferences(string Name)
+    public void CheckReferences(string Name)
     {
         if (!Arrow) Debug.LogError($"{Name} has no arrow image references");
         if (!Button) Debug.LogError($"{Name} has no button references");
     }
 
-    public void Select() => Button.Select();
+    public void Select()
+    {
+        Button.Select();
+    }
     public void SetHighlight(bool IsHighlighted) => Arrow.enabled = IsHighlighted;
 }

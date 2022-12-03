@@ -1,7 +1,6 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ItemBoxContain : MonoBehaviour, IMenuUI
@@ -15,6 +14,8 @@ public class ItemBoxContain : MonoBehaviour, IMenuUI
     [Header("Button")]
     [SerializeField] private ItemButton itemButton;
     [SerializeField] private RectTransform buttonTransform;
+
+    public Action<ItemBoxContain,Item> OnDestroy;
 
     public HoverButton Button => itemButton.Button;
     public RectTransform ContainerTransform => containerTransform;
@@ -34,7 +35,14 @@ public class ItemBoxContain : MonoBehaviour, IMenuUI
         itemButton.NameText.text = item.ItemName;
     }
 
-    public void Use() => Debug.Log($"Use {name}");
+    public void Use()
+    {
+        if (item.Use())
+        {
+            OnDestroy?.Invoke(this,item);
+            Destroy(gameObject);
+        }
+    }
 
     public void Select()
     {
