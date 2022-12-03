@@ -186,6 +186,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Menu Close",
+                    "type": "Button",
+                    "id": "b74465e6-f4c2-4153-a3cb-e04dfc20b950",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -230,6 +238,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Menu Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f38f8570-a414-404d-9db0-724cbe848237",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Close",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,6 +1,8 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -9,8 +11,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
-    [Header("Debugging")]
-    [SerializeField] private List<ItemBoxContain> itemList = new List<ItemBoxContain>();
+    private List<ItemBoxContain> itemList = new List<ItemBoxContain>();
 
     private ItemBoxContain currentSelection;
 
@@ -22,6 +23,7 @@ public class Inventory : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private InventoryUI _UI;
+    [SerializeField] private ItemBoxContain containerPrefab;
 
     [Header("Item Scroller")]
     [SerializeField] private float scrollSpeed = 0;
@@ -35,10 +37,12 @@ public class Inventory : MonoBehaviour
     private bool dontHover { get; set; } = false;
 
     #region Initialization
-    public void Awake()
+    async public void Awake()
     {
         Instance = this;
         CheckNullReferences();
+
+        await UniTask.WaitUntil(()=> SaveLoadSystem.Instance._SaveData != null);
 
         foreach (ItemBoxContain contain in itemList){
             contain.Button.OnSelectEvent += () => ChangeSelection(contain);
@@ -63,6 +67,31 @@ public class Inventory : MonoBehaviour
         if (!_viewportTransform) Debug.LogError($"{name} has no Viewport Transform References");
     }
     #endregion
+
+    public void AddNewItem(Item NewItem)
+    {
+        var Item = Instantiate(containerPrefab, _UI.ItemContainer);
+        Item.transform.SetSiblingIndex(0);
+        Item.Initialize(NewItem);
+
+        // Update Action on Item
+        Item.OnDestroy += RemoveItem;
+        Item.Button.OnSelectEvent += () => ChangeSelection(Item);
+        Item.Button.OnHoverEvent += () => dontHover = true;
+        if (Item.ItemUseable) Item.Button.onClick.AddListener(OpenYesNoBox);
+
+        // Add to list
+        SaveLoadSystem.Instance._SaveData._ItemList.Add(NewItem);
+        itemList.Add(Item);
+    }
+    private void RemoveItem(ItemBoxContain RemovedItemContainer, Item RemovedItem)
+    {
+        itemList.Remove(RemovedItemContainer);
+        SaveLoadSystem.Instance._SaveData._ItemList.Remove(RemovedItem);
+
+        // Unsubscribe
+        RemovedItemContainer.OnDestroy -= RemoveItem;
+    }
 
     private void ChangeSelection(ItemBoxContain NewSelection)
     {
@@ -220,17 +249,11 @@ public class Inventory : MonoBehaviour
     #region Yes / No box
     private void OpenYesNoBox()
     {
-        Action onSelectYes = UseItem; onSelectYes += ClosePanel;
+        Action onSelectYes = currentSelection.Use; onSelectYes += ClosePanel;
         Action onSelectNo = currentSelection.Select; onSelectNo += () => _UI.YesNoPanel(false);
 
         _UI._YesNoBox.OpenYesNo(onSelectYes, onSelectNo);
         _UI.YesNoPanel(true);
-    }
-    private void UseItem()
-    {
-        currentSelection.Use();
-        itemList.Remove(currentSelection);
-        Destroy(currentSelection.gameObject);
     }
     #endregion
 
@@ -246,7 +269,12 @@ public class Inventory : MonoBehaviour
         _UI.InventoryPanel(true);
         _UI.YesNoPanel(false);
         dontHover = true;
-        itemList[0].Select();
+
+        if (itemList.Count > 0)
+        {
+            _UI.UpdateItemInfo(itemList[0].ItemName, itemList[0].ItemDescription);
+            itemList[0].Select();
+        } else _UI.UpdateItemInfo("", "");
         OnOpenInventory?.Invoke();
     }
     private void ClosePanel()

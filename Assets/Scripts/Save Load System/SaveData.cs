@@ -11,7 +11,9 @@ public class SaveData
     // Player Data
     public Vector3 PlayerLastPosition = new Vector3();
 
+    // Scene Data
     public SaveDataTutorialScene TutorialScene = new SaveDataTutorialScene();
+    public SaveDataPrint1Scene Print1Scene = new SaveDataPrint1Scene();
 
     // Save Data Description
     public string SaveFileName = "";
@@ -25,4 +27,21 @@ public class SaveData
     public bool JustAwake = true;
     public bool InteractionQuideInteracted = false;
     public bool TakeTablet = false;
+
+    public void ResetData() => 
+        (JustAwake, InteractionQuideInteracted, TakeTablet) = (true,false,false);
+}
+
+[Serializable] public class SaveDataPrint1Scene
+{
+    public bool TakePrint1Item = false;
+    public bool UpdateCodeMachine1Test = false;
+    public bool OpenDoor1 = false;
+
+    public void ResetData()
+    {
+        TakePrint1Item = false;
+        UpdateCodeMachine1Test = false;
+        OpenDoor1 = false;
+    }
 }

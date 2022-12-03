@@ -2,5 +2,6 @@
 {
     None,
     TutorialScene,
-    SelectionScene
+    SelectionScene,
+    Print1Scene
 }

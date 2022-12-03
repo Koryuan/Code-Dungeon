@@ -47,5 +47,5 @@ MonoBehaviour:
   _playerInteractionInput: {fileID: -3558197239092269630, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
   _playerInventoryInput: {fileID: -1945080646515338425, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
   _playerPauseInput: {fileID: 1854392689663151667, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
-  _menuMoveInput: {fileID: -5973466860301252681, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
   _menuInterectInput: {fileID: -3500733767570208791, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
+  _menuCloseInput: {fileID: 4658180035578854726, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}

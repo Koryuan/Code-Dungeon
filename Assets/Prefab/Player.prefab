@@ -455,6 +455,9 @@ MonoBehaviour:
     _RightTrigger: {fileID: 5072358145146639853}
   _animator:
     _animator: {fileID: 5072358145991132558}
+  _camera:
+    m_playerCamera: {fileID: 5072358144754969516}
+    Duration: 2
 --- !u!50 &5072358145991132553
 Rigidbody2D:
   serializedVersion: 4

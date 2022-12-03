@@ -11,5 +11,7 @@ public class Door : MonoBehaviour
         openObject.SetActive(Open);
         closeSprite.SetActive(!Open);
         gameObject.SetActive(true);
+
+        if (Open) AutoSaveScene.SaveObjectState(name);
     }
 }

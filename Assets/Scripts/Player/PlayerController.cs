@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerMovement _movement;
     [SerializeField] private PlayerInteraction _interaction;
     [SerializeField] private PlayerAnimation _animator;
+    [SerializeField] private PlayerCamera _camera;
 
     private bool canControl => GameManager.Instance.CurrentState == GameState.Game_Player_State;
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
         _animator.CheckReferences(name);
         _interaction.CheckReferences(name);
         _movement.CheckReferences(name);
+        _camera.CheckReference();
     }
     #endregion
 
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
     }
+
+    public UniTask MoveCamera(bool NormalPosition) => _camera.MoveCamera(NormalPosition);
 
     #region Movement
     private void Movement()
