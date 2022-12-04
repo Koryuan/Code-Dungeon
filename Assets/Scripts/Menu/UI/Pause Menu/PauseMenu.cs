@@ -8,7 +8,11 @@ public class PauseMenu : MonoBehaviour, IPanelUI
     private IMenuUI currentUI = null;
     private bool IsOpen { get; set; } = false;
     private bool inControl => GameManager.Instance.CurrentState == GameState.Game_Pause_State && IsOpen;
-    private bool canOpen => GameManager.Instance.CurrentState == GameState.Game_Player_State && !IsOpen;
+    private bool canOpen => menuState && !IsOpen;
+    private bool menuState => 
+        GameManager.Instance.CurrentState == GameState.Game_Player_State ||
+        GameManager.Instance.CurrentState == GameState.Game_Pause_State || 
+        GameManager.Instance.CurrentState == GameState.Game_Save_Load_State;
 
     [Header("Main References")]
     [SerializeField] private PauseMenuUI _UI;
@@ -76,8 +80,8 @@ public class PauseMenu : MonoBehaviour, IPanelUI
         if (canOpen)
         {
             OnOpenPanel?.Invoke();
+            Debug.Log($"Last UI: {LastUI}");
             await UniTask.Delay(10);
-
             _UI.PauseMenuPanel(IsOpen = true);
             if (LastUI == null) _UI.ResumeButton.Select();
             else LastUI.Select();
@@ -95,7 +99,10 @@ public class PauseMenu : MonoBehaviour, IPanelUI
 
     #region Input References
     private InputActionReference pauseInput => InputReferences.Instance._PlayerPauseInput;
-    private void OpenPanel(InputAction.CallbackContext Callback) => OpenPanel(null);
+    private void OpenPanel(InputAction.CallbackContext Callback)
+    {
+        if (GameManager.Instance.CurrentState != GameState.Game_Save_Load_State) OpenPanel(null);
+    }
     private void ClosePanel(InputAction.CallbackContext Callback) => ClosePanel();
     #endregion
 

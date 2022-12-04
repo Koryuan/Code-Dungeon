@@ -14,6 +14,8 @@ using UnityEngine;
     [Header("Safe File")]
     [SerializeField] private SaveFileButton[] saveFileButtons;
 
+    public bool IsOpen => panel.activeSelf;
+
     #region Initialization
     public void Initialization(string ObjectName)
     {
@@ -40,7 +42,7 @@ using UnityEngine;
     {
         panel.SetActive(IsOpen);
         await UniTask.Delay(10);
-        saveFileButtons[0].Select();
+        if (IsOpen) saveFileButtons[0].Select();
     }
     public void UpdateUIState(bool IsSave)
     {

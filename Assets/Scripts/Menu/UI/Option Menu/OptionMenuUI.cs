@@ -14,7 +14,7 @@ public class OptionMenuUI : MonoBehaviour
     [SerializeField] private MenuButton exitButton;
 
     public MenuSlider SFXSlider => sfxSlider;
-
+    public bool IsOpen => optionMenuPanel.activeSelf;
     #region Initialization
     public void Initialize(Action<IMenuUI> OnSelectEvent)
     {

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class OptionMenu : MonoBehaviour
 {
@@ -43,6 +45,10 @@ public class OptionMenu : MonoBehaviour
         _UI.OptionMenu(false);
         previousPanel.OpenPanel(previousUI);
     }
+    public void ClosePanel(InputAction.CallbackContext Context)
+    {
+        if (_UI.IsOpen) ClosePanel();
+    }
     #endregion
 
     private void ExitButton() => ClosePanel();
@@ -57,5 +63,15 @@ public class OptionMenu : MonoBehaviour
             NewUI.SetHighlight(true);
             NewUI.Select();
         }
+    }
+
+    async private void OnEnable()
+    {
+        await UniTask.WaitUntil(()=> InputReferences.Instance);
+        InputReferences.Instance._MenuCloseInput.action.performed += ClosePanel;
+    }
+    private void OnDisable()
+    {
+        InputReferences.Instance._MenuCloseInput.action.performed -= ClosePanel;
     }
 }

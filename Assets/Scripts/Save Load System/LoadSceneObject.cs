@@ -109,10 +109,17 @@ public class LoadSceneObject : MonoBehaviour
     {
         void CheckReferences()
         {
+            // Puzzle 1
             if (!print1SceneObject.StageSelctionSP) Debug.LogError($"Load Scene has no reference to Stage Selection Spawn Point");
             if (!print1SceneObject.PrintItem1) Debug.LogError($"Load Scene has no reference to Print 1 Item");
             if (!print1SceneObject.Door1) Debug.LogError($"Load Scene has no reference to Door 1");
             if (!print1SceneObject.Machine1) Debug.LogError($"Load Scene has no reference to Machine 1");
+
+            // Puzzle 2
+            if (!print1SceneObject.PrintItem2) Debug.LogError($"Load Scene has no reference to Print 2 Item");
+            if (!print1SceneObject.Door2) Debug.LogError($"Load Scene has no reference to Door 2");
+            if (!print1SceneObject.Machine2) Debug.LogError($"Load Scene has no reference to Machine 2");
+            if (!print1SceneObject.Keypad) Debug.LogError($"Load Scene has no reference to Machine 2");
         }
 
         CheckReferences();
@@ -123,11 +130,31 @@ public class LoadSceneObject : MonoBehaviour
         SceneType LastScene = loadedSaveData.LastScene;
         #endregion
 
-        print1SceneObject.PrintItem1.SetActive(!sceneSaveData.TakePrint1Item);
+        // Puzzle 1
+        if (sceneSaveData.TakePrint1Item) print1SceneObject.PrintItem1.ForceDisableInteraction();
         print1SceneObject.Door1.Activated(sceneSaveData.OpenDoor1);
 
         if (sceneSaveData.UpdateCodeMachine1Test) 
             print1SceneObject.Machine1.UnlockText(StringList.CodeMachine1_Text_Before);
+        if (sceneSaveData.CodeMachine1PrintedText != string.Empty)
+            print1SceneObject.Machine1.PrintMessage(sceneSaveData.CodeMachine1PrintedText);
+
+        // Puzzle 2
+        if (sceneSaveData.TreasureChest2_Opened)
+        {
+            print1SceneObject.PrintItem2.OpenTreasureChest(true);
+            if (sceneSaveData.TreasureChest2_Taken) print1SceneObject.PrintItem2.ForceDisableInteraction();
+        }
+        print1SceneObject.Door2.Activated(sceneSaveData.OpenDoor2);
+
+        if (sceneSaveData.CodeMachine2Updated)
+            print1SceneObject.Machine2.UnlockText(StringList.CodeMachine2_Text_Before);
+        if (sceneSaveData.CodeMachine2PrintedText != string.Empty)
+            print1SceneObject.Machine1.PrintMessage(sceneSaveData.CodeMachine2PrintedText);
+
+        string[] OccuredText = {"739"};
+        print1SceneObject.Keypad.
+            LoadKeyPad(sceneSaveData.TreasureChest2_Opened ? OccuredText : null,sceneSaveData.Keypad_LastText);
 
         if (Player != null)
         {
@@ -159,13 +186,16 @@ public class LoadSceneObject : MonoBehaviour
 
 [Serializable] public class Print1SceneObject
 {
-    public GameObject PrintItem1;
-    public GameObject PrintItem2;
+    public TreasureChest PrintItem1;
+    public TreasureChest PrintItem2;
 
     public Door Door1;
     public Door Door2;
 
     public CodeMachine Machine1;
+    public CodeMachine Machine2;
+
+    public KeypadManager Keypad;
 
     public Transform StageSelctionSP;
 }

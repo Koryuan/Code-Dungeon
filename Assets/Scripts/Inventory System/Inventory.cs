@@ -259,6 +259,7 @@ public class Inventory : MonoBehaviour
 
     #region Open Close
     InputActionReference inventoryInput => InputReferences.Instance._PlayerInventoryInput;
+    InputActionReference closeInput => InputReferences.Instance._MenuCloseInput;
     private void OpenClosePanel(InputAction.CallbackContext Callback)
     {
         if (isClose) OpenPanel();
@@ -282,6 +283,10 @@ public class Inventory : MonoBehaviour
         _UI.InventoryPanel(false);
         OnCloseInventory?.Invoke();
     }
+    private void ClosePanel(InputAction.CallbackContext Callback)
+    {
+        if (isOpen) ClosePanel();
+    }
     #endregion
 
     #region Enable Disable
@@ -289,10 +294,12 @@ public class Inventory : MonoBehaviour
     {
         await UniTask.WaitUntil(() => InputReferences.Instance != null);
         inventoryInput.action.performed += OpenClosePanel;
+        closeInput.action.performed += ClosePanel;
     }
     private void OnDisable()
     {
         inventoryInput.action.performed -= OpenClosePanel;
+        closeInput.action.performed -= ClosePanel;
     }
     #endregion
 }

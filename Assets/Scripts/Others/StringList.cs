@@ -12,6 +12,7 @@
     public static string CodeMachine1 = "Code Machine - 1";
     public static string CodeMachine1_Text_After = "print\"(Hello World)\"";
     public static string CodeMachine1_Text_Before = "print//\"(Hello World)\"";
+    public static string CodeMachine2_Text_Before = "print//\"(739)\"";
 
     // Code Analog
     public static string CommentCode = "//";

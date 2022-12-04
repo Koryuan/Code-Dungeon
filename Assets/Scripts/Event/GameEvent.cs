@@ -4,10 +4,10 @@ using UnityEngine.Events;
 
 [Serializable] public class GameEvent
 {
-    [SerializeField] private DialogSetting dialog;
-    [SerializeField] private Item item;
-    [SerializeField] private GuideContent guide;
-    [SerializeField] private UnityEvent eventAction;
+    [SerializeField] protected DialogSetting dialog;
+    [SerializeField] protected Item item;
+    [SerializeField] protected GuideContent guide;
+    [SerializeField] protected UnityEvent eventAction;
 
     public bool HasEvent => eventAction != null;
 

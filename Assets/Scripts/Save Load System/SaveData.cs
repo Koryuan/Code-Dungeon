@@ -34,14 +34,34 @@ public class SaveData
 
 [Serializable] public class SaveDataPrint1Scene
 {
+    // Puzzle 1
     public bool TakePrint1Item = false;
     public bool UpdateCodeMachine1Test = false;
     public bool OpenDoor1 = false;
+    public string CodeMachine1PrintedText = string.Empty;
+
+    // Puzzle 2
+    public bool CodeMachine2Updated = false;
+    public string CodeMachine2PrintedText = string.Empty;
+    public bool OpenDoor2 = false;
+    public bool TreasureChest2_Opened = false;
+    public bool TreasureChest2_Taken = false;
+    public string Keypad_LastText = string.Empty;
 
     public void ResetData()
     {
+        //Puzzle 1
         TakePrint1Item = false;
         UpdateCodeMachine1Test = false;
         OpenDoor1 = false;
+        CodeMachine1PrintedText = string.Empty;
+
+        // Puzzle 2
+        CodeMachine2Updated = false;
+        CodeMachine2PrintedText = string.Empty;
+        OpenDoor2 = false;
+        TreasureChest2_Opened = false;
+        TreasureChest2_Taken = false;
+        Keypad_LastText = string.Empty;
     }
 }

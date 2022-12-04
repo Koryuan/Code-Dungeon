@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class InteractionManager : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class InteractionManager : MonoBehaviour
             printScanSystem.ClosePrintScan();
             focusedTarget = null;
         }
+    }
+    public void UpdateState()
+    {
+        if (focusedTarget)
+            printScanSystem.OpenPrintScan(focusedTarget.CanPrintInterect, focusedTarget.CanScanInterect);
     }
     #endregion
 }

@@ -59,9 +59,10 @@ public class CodeMachine : InteractableTarget, IPanelUI
                 {
                     if (line.BaseText.Contains(StringList.PrintString))
                     {
-                        line.UpdateText(line.BaseText.Replace("//",string.Empty));
                         printInteract = true;
-                    } 
+                        InteractionManager.Instance.UpdateState();
+                    }
+                    line.UpdateText(line.BaseText.Replace("//", string.Empty));
                     return true;
                 }
             }
@@ -91,14 +92,14 @@ public class CodeMachine : InteractableTarget, IPanelUI
                 {
                     int index = newCode.IndexOf(StringList.Code_Print_End);
                     string tmpCode = newCode.Substring(0,index);
-                    PrintFunction(tmpCode);
+                    PrintMessage(tmpCode);
                     newCode = newCode.Replace(tmpCode,string.Empty);
                     newCode = newCode.Replace(StringList.Code_Print_End,string.Empty);
                     Debug.Log("This is runned");
                 }
                 else
                 {
-                    PrintFunction("Error");
+                    PrintMessage("Error");
                     return true;
                 }
                 Code = newCode;
@@ -108,14 +109,14 @@ public class CodeMachine : InteractableTarget, IPanelUI
             if (count > 100)
             {
                 Debug.Log($"{count}, {Code}");
-                PrintFunction("Infinite Loop");
+                PrintMessage("Infinite Loop");
                 return true;
             }
             #endregion
         }
         return false;
     }
-    private void PrintFunction(string TextToPrint)
+    public void PrintMessage(string TextToPrint)
     {
         if (printMessage) printMessage.OpenMessage(TextToPrint);
         else Debug.Log($"{name} Print Message Not Exist");
@@ -135,7 +136,12 @@ public class CodeMachine : InteractableTarget, IPanelUI
     async protected override UniTask PrintInteraction()
     {
         CompileEachScript();
-        if (printFunction) await printFunction.Activate();
+        if (printFunction)
+        {
+            await printFunction.Activate();
+            AutoSaveScene.SaveObjectState($"{name} | Print");
+            Debug.Log($"{name} | Print");
+        }
         else Debug.LogError($"{name}, trying to use function from print without having the class");
     }
 

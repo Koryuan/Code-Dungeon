@@ -1,9 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public abstract class InteractableTarget : MonoBehaviour 
 {
-    protected bool canInteract = true;
+    [SerializeField] protected bool canInteract = true;
 
     [Header("Before Event")]
     [SerializeField] protected bool disableObjectBefore;
@@ -16,6 +17,9 @@ public abstract class InteractableTarget : MonoBehaviour
     [SerializeField] protected bool printInteract;
     [SerializeField] protected bool scanInteract;
 
+    [Header("Animation")]
+    [SerializeField] protected GameObject m_interactableAnimator;
+
     public bool CanPrintInterect => printInteract;
     public bool CanScanInterect => scanInteract;
     public bool CanInterect => canInteract;
@@ -25,7 +29,7 @@ public abstract class InteractableTarget : MonoBehaviour
     {
         if (canInteract)
         {
-            if (disableInteraction) canInteract = false;
+            if (disableInteraction) DisableInteraction();
             if (disableObjectBefore) DisableObject();
 
             try{
@@ -36,7 +40,7 @@ public abstract class InteractableTarget : MonoBehaviour
             }
         }
     }
-    protected abstract UniTask Interaction();
+    protected virtual UniTask Interaction() => throw new System.NotImplementedException();
     #endregion
 
     #region Print Interaction
@@ -44,7 +48,7 @@ public abstract class InteractableTarget : MonoBehaviour
     {
         if (printInteract && canInteract)
         {
-            if (disableInteraction) canInteract = false;
+            if (disableInteraction) DisableInteraction();
             if (disableObjectBefore) DisableObject();
 
             await PrintInteraction();
@@ -52,7 +56,7 @@ public abstract class InteractableTarget : MonoBehaviour
             if (disableObjectAfter) DisableObject();
         }
     }
-    protected abstract UniTask PrintInteraction();
+    protected virtual UniTask PrintInteraction() => throw new System.NotImplementedException();
     #endregion
 
     #region Scan Interaction
@@ -60,7 +64,7 @@ public abstract class InteractableTarget : MonoBehaviour
     {
         if (scanInteract && canInteract)
         {
-            if (disableInteraction) canInteract = false;
+            if (disableInteraction) DisableInteraction();
             if (disableObjectBefore) DisableObject();
 
             await ScanInteraction();
@@ -68,12 +72,18 @@ public abstract class InteractableTarget : MonoBehaviour
             if (disableObjectAfter) DisableObject();
         }
     }
-    protected abstract UniTask ScanInteraction();
+    protected virtual UniTask ScanInteraction() => throw new System.NotImplementedException();
     #endregion
 
     protected virtual void DisableObject()
     {
         AutoSaveScene.SaveObjectState(gameObject.name);
         gameObject.SetActive(false);
+    }
+    protected virtual void DisableInteraction()
+    {
+        AutoSaveScene.SaveObjectState(gameObject.name); 
+        canInteract = false;
+        if (m_interactableAnimator) m_interactableAnimator.SetActive(false);
     }
 }
