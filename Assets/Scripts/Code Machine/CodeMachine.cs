@@ -63,8 +63,10 @@ public class CodeMachine : InteractableTarget, IPanelUI
                         InteractionManager.Instance.UpdateState();
                     }
                     line.UpdateText(line.BaseText.Replace("//", string.Empty));
+                    Debug.Log("Text Finded");
                     return true;
                 }
+                Debug.Log($"Text Didn't Find: {line.BaseText} != {TextSearched}");
             }
         }
         return false;

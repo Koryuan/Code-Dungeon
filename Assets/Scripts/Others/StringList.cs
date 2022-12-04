@@ -10,9 +10,9 @@
     //Print 1 Scene Saved Object
     public static string Item_Print1 = "Item Print 1";
     public static string CodeMachine1 = "Code Machine - 1";
-    public static string CodeMachine1_Text_After = "print\"(Hello World)\"";
-    public static string CodeMachine1_Text_Before = "print//\"(Hello World)\"";
-    public static string CodeMachine2_Text_Before = "print//\"(739)\"";
+    public static string CodeMachine1_Text_After = "print(\"Hello World\");";
+    public static string CodeMachine1_Text_Before = "print//(\"Hello World\");";
+    public static string CodeMachine2_Text_Before = "print//(\"729\");";
 
     // Code Analog
     public static string CommentCode = "//";
@@ -25,5 +25,6 @@
 
     // HTML texting
     public static string DarkGreenHex = "023020";
+    public static string Color_LightGreen = "90EE90";
     public static string ColorString(string NewString, string Color) => $"<color=#{Color}>{NewString}</color>";
 }

@@ -150,11 +150,11 @@ public class LoadSceneObject : MonoBehaviour
         if (sceneSaveData.CodeMachine2Updated)
             print1SceneObject.Machine2.UnlockText(StringList.CodeMachine2_Text_Before);
         if (sceneSaveData.CodeMachine2PrintedText != string.Empty)
-            print1SceneObject.Machine1.PrintMessage(sceneSaveData.CodeMachine2PrintedText);
+            print1SceneObject.Machine2.PrintMessage(sceneSaveData.CodeMachine2PrintedText);
 
-        string[] OccuredText = {"739"};
+        string[] OccuredText = {"729"};
         print1SceneObject.Keypad.
-            LoadKeyPad(sceneSaveData.TreasureChest2_Opened ? OccuredText : null,sceneSaveData.Keypad_LastText);
+            LoadKeyPad(sceneSaveData.CodeMachine2Updated ? OccuredText : null,sceneSaveData.Keypad_LastText);
 
         if (Player != null)
         {

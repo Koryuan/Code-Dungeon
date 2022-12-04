@@ -40,6 +40,7 @@ using UnityEngine;
 
     async public void Panel(bool IsOpen)
     {
+        foreach (SaveFileButton Button in saveFileButtons) Button.SetHighlight(false);
         panel.SetActive(IsOpen);
         await UniTask.Delay(10);
         if (IsOpen) saveFileButtons[0].Select();

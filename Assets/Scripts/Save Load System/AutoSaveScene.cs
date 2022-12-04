@@ -76,7 +76,7 @@ public static class AutoSaveScene
                 print1SaveData.CodeMachine2Updated = true;
                 break;
             case "Code Machine - 2 | Print":
-                print1SaveData.CodeMachine2PrintedText = "739";
+                print1SaveData.CodeMachine2PrintedText = "729";
                 break;
             case "Keypad":
                 print1SaveData.Keypad_LastText = Additional;

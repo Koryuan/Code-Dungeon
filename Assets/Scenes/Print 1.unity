@@ -17057,6 +17057,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8484189717931704765, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: targetText
+      value: 729
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
 --- !u!4 &486401616 stripped
@@ -18641,7 +18645,7 @@ MonoBehaviour:
   - {fileID: 257190309}
   - {fileID: 2033557779}
   m_eventList:
-  - m_targetText: 739
+  - m_targetText: 729
     m_occurenceNumber: 1
     m_eventList:
     - dialog: {fileID: 0}
@@ -18654,18 +18658,6 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: TreasureChest, Assembly-CSharp
             m_MethodName: OpenTreasureChest
             m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-          - m_Target: {fileID: 1744105664}
-            m_TargetAssemblyTypeName: TreasureChest, Assembly-CSharp
-            m_MethodName: ForceActivateInteraction
-            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21885,6 +21877,10 @@ PrefabInstance:
     - target: {fileID: 6395737031920232895, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484189717931704765, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: targetText
+      value: Hello World
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
