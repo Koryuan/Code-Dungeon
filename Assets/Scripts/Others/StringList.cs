@@ -15,8 +15,12 @@
 
     // Code Analog
     public static string CommentCode = "//";
-    public static string PrintCode = "print";
+    public static string PrintString = "print";
     public static string HtmlCode = "<color=023020>";
+
+    // Compiler
+    public static string Code_Print_Start = "print(\"";
+    public static string Code_Print_End = "\");";
 
     // HTML texting
     public static string DarkGreenHex = "023020";

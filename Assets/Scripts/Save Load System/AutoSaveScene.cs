@@ -50,15 +50,12 @@ public static class AutoSaveScene
         {
             case "Code Machine - 1":
                 print1SaveData.UpdateCodeMachine1Test = true;
-                Debug.Log("Machine 1 Saved");
                 break;
             case "Door - 1":
                 print1SaveData.OpenDoor1 = true;
-                Debug.Log("Door 1 Saved");
                 break;
             case "Item Print 1":
                 print1SaveData.TakePrint1Item = true;
-                Debug.Log("Item 1 Saved");
                 break;
             default:
                 break;

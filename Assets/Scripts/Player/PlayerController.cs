@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerInteraction _interaction;
     [SerializeField] private PlayerAnimation _animator;
     [SerializeField] private PlayerCamera _camera;
+    [SerializeField] private PlayerSound _sound;
 
     private bool canControl => GameManager.Instance.CurrentState == GameState.Game_Player_State;
 
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         Vector2 XY = canControl? movementInput.action.ReadValue<Vector2>() : Vector2.zero;
-
+        if (XY.x != 0 || XY.y != 0) _sound.PlayWalkSound();
         if (XY.y > 0)
         {
             _movement.MoveUp();
@@ -59,7 +61,11 @@ public class PlayerController : MonoBehaviour
             _interaction.RotateLeft();
             _animator.UpdateMovemenetAnimation(XY.x, 0);
         }
-        else _animator.UpdateMovemenetAnimation(0,0);
+        else
+        {
+            _animator.UpdateMovemenetAnimation(0, 0);
+            _sound.StopWalkSounds();
+        }
     }
     public void InstantMove(Transform NewPosition, Vector2 Rotation)
     {

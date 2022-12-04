@@ -5,6 +5,7 @@ public abstract class CodeMachineContain : MonoBehaviour
 {
     [Header("Properties")]
     [SerializeField] protected TMP_Text m_codeNumber;
+    public string BaseText { get; protected set; }
 
     public virtual void Initialize()
     {

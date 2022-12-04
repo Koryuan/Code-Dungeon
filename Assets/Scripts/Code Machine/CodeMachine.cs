@@ -10,6 +10,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
     [SerializeField] private List<CodeMachineContain> m_containList = new List<CodeMachineContain>();
 
     private PrintFunction printFunction;
+    private PopUpMessage printMessage;
 
     private bool canClose => panel.activeSelf && MenuManager.Instance.CodeMachineOpen;
 
@@ -19,6 +20,8 @@ public class CodeMachine : InteractableTarget, IPanelUI
         CheckReferences();
         foreach(CodeMachineContain contain in m_containList) contain.Initialize();
         printFunction = GetComponent<PrintFunction>();
+        printMessage = GetComponentInChildren<PopUpMessage>(true);
+        Debug.Log(printMessage);
     }
     private void CheckReferences()
     {
@@ -54,7 +57,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
                 var line = contain as ReadonlyLine;
                 if (line.BaseText == TextSearched)
                 {
-                    if (line.BaseText.Contains(StringList.PrintCode))
+                    if (line.BaseText.Contains(StringList.PrintString))
                     {
                         line.UpdateText(line.BaseText.Replace("//",string.Empty));
                         printInteract = true;
@@ -65,6 +68,59 @@ public class CodeMachine : InteractableTarget, IPanelUI
         }
         return false;
     }
+
+    #region Compiler
+    private void CompileEachScript()
+    {
+        foreach(CodeMachineContain contain in m_containList)
+        {
+            string code = contain.BaseText;
+            bool error = CompileOneLine(code);
+            if (error) break;
+        }
+    }
+    private bool CompileOneLine(string Code)
+    {
+        int count = 0;
+        while (Code.Length > 0)
+        {
+            if (Code.Contains(StringList.Code_Print_Start))
+            {
+                string newCode = Code.Replace(StringList.Code_Print_Start, string.Empty);
+                if (newCode.Contains(StringList.Code_Print_End))
+                {
+                    int index = newCode.IndexOf(StringList.Code_Print_End);
+                    string tmpCode = newCode.Substring(0,index);
+                    PrintFunction(tmpCode);
+                    newCode = newCode.Replace(tmpCode,string.Empty);
+                    newCode = newCode.Replace(StringList.Code_Print_End,string.Empty);
+                    Debug.Log("This is runned");
+                }
+                else
+                {
+                    PrintFunction("Error");
+                    return true;
+                }
+                Code = newCode;
+            }
+            #region Infinite LOOP Breaker
+            count++;
+            if (count > 100)
+            {
+                Debug.Log($"{count}, {Code}");
+                PrintFunction("Infinite Loop");
+                return true;
+            }
+            #endregion
+        }
+        return false;
+    }
+    private void PrintFunction(string TextToPrint)
+    {
+        if (printMessage) printMessage.OpenMessage(TextToPrint);
+        else Debug.Log($"{name} Print Message Not Exist");
+    }
+    #endregion
 
     #region Interaction
     protected override UniTask Interaction()
@@ -78,6 +134,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
 
     async protected override UniTask PrintInteraction()
     {
+        CompileEachScript();
         if (printFunction) await printFunction.Activate();
         else Debug.LogError($"{name}, trying to use function from print without having the class");
     }

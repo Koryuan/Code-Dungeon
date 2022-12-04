@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -8,8 +9,19 @@ using UnityEngine.UI;
     public event Action<bool> OnDeselectEvent;
     public event Action OnHoverEvent;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        onClick.AddListener(PlayConfirmAudio);
+    }
+    private void PlayConfirmAudio()
+    {
+        if (AudioManager.Instance) AudioManager.Instance.PlayUIConfirm();
+    }
+
     public override void OnSelect(BaseEventData eventData)
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlayUIHover();
         if (interactable) OnSelectEvent?.Invoke();
     }
 

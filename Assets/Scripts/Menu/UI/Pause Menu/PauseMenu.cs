@@ -100,8 +100,9 @@ public class PauseMenu : MonoBehaviour, IPanelUI
     #endregion
 
     #region Enable Disable
-    private void OnEnable()
+    async private void OnEnable()
     {
+        await UniTask.WaitUntil(()=> InputReferences.Instance != null);
         pauseInput.action.performed += OpenPanel;
         pauseInput.action.performed += ClosePanel;
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 public class ReadonlyLine: CodeMachineContain
 {
     [SerializeField] private TMP_Text codeLine;
-    public string BaseText { get; private set; }
 
     public override void Initialize()
     {
@@ -21,6 +20,7 @@ public class ReadonlyLine: CodeMachineContain
 
     public void UpdateText(string NewLine)
     {
+        BaseText = NewLine;
         if (NewLine.Contains(StringList.CommentCode))
         {
             int commentIndex = NewLine.IndexOf("//");

@@ -15954,7 +15954,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1037661153}
           m_TargetAssemblyTypeName: Door, Assembly-CSharp
-          m_MethodName: Activated
+          m_MethodName: ActivatedWithSound
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -21173,6 +21173,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2103780276}
     m_Modifications:
+    - target: {fileID: 239268408489730711, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052487426518069967, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052487426518069967, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331382394955493040, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5857065443232087143, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -21243,6 +21259,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5857065443919091764, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395737031920232895, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395737031920232895, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395737031920232895, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395737031920232895, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395737031920232895, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395737031920232895, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
