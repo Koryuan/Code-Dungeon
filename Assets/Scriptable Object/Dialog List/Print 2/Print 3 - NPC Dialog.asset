@@ -10,6 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
-  m_Name: New Dialog Setting
+  m_Name: Print 3 - NPC Dialog
   m_EditorClassIdentifier: 
-  dialogs: []
+  dialogs:
+  - name: Strange People
+    text: 'Hey you.
+
+      Its seems like you just past the previous area.'
+  - name: Player
+    text: Yeah it was a breeze.
+  - name: Strange People
+    text: Hahaha.... i also thought it was a breeze, but now you are stuck here just
+      like me.
+  - name: Player
+    text: What did you mean?
+  - name: Strange People
+    text: You see the 2 machine there they look <Bold> Same <Bold> but one of them
+      is empty.
+  - name: Strange People
+    text: What do you think should be in that empty one.
+  - name: Player
+    text: Hmm i didn't know, maybe there is hint somewhere?
+  - name: Strange People
+    text: If there is i probably has found it. Sadly the one here is just Me, you
+      and those 2 machine.
