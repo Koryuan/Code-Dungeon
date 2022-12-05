@@ -10,18 +10,18 @@
     //Print 1 Scene Saved Object
     public static string Item_Print1 = "Item Print 1";
     public static string CodeMachine1 = "Code Machine - 1";
-    public static string CodeMachine1_Text_After = "print(\"Hello World\");";
-    public static string CodeMachine1_Text_Before = "print//(\"Hello World\");";
-    public static string CodeMachine2_Text_Before = "print//(\"729\");";
+    public static string CodeMachine1_Text_After = "PRINT(\"Hello World\")";
+    public static string CodeMachine1_Text_Before = "PRINT//(\"Hello World\")";
+    public static string CodeMachine2_Text_Before = "PRINT//(\"729\")";
 
     // Code Analog
     public static string CommentCode = "//";
-    public static string PrintString = "print";
+    public static string PrintString = "PRINT";
     public static string HtmlCode = "<color=023020>";
 
     // Compiler
-    public static string Code_Print_Start = "print(\"";
-    public static string Code_Print_End = "\");";
+    public static string Code_Print_Start = "PRINT(\"";
+    public static string Code_Print_End = "\")";
 
     // HTML texting
     public static string DarkGreenHex = "023020";
