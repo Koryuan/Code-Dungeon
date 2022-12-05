@@ -15,4 +15,5 @@ using UnityEngine.Events;
     public GuideContent GuideContent => guide;
     public Item Item => item;
     public void ActiveAction() => eventAction?.Invoke();
+    public void UpdateDialog(DialogSetting NewDialog, Item NewItem = null) => (dialog, item) = (NewDialog, NewItem); 
 }

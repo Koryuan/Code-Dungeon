@@ -6,16 +6,16 @@ using UnityEngine.InputSystem;
 public class CodeMachine : InteractableTarget, IPanelUI
 {
     [Header("Code Machine Properties")]
-    [SerializeField] private GameObject panel;
-    [SerializeField] private List<CodeMachineContain> m_containList = new List<CodeMachineContain>();
+    [SerializeField] protected GameObject panel;
+    [SerializeField] protected List<CodeMachineContain> m_containList = new List<CodeMachineContain>();
 
-    private PrintFunction printFunction;
-    private PopUpMessage printMessage;
+    protected PrintFunction printFunction;
+    protected PopUpMessage printMessage;
 
-    private bool canClose => panel.activeSelf && MenuManager.Instance.CodeMachineOpen;
+    protected bool canClose => panel.activeSelf && MenuManager.Instance.CodeMachineOpen;
 
     #region Initialization
-    private void Awake()
+    protected virtual void Awake()
     {
         CheckReferences();
         foreach(CodeMachineContain contain in m_containList) contain.Initialize();
@@ -23,7 +23,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
         printMessage = GetComponentInChildren<PopUpMessage>(true);
         Debug.Log(printMessage);
     }
-    private void CheckReferences()
+    protected void CheckReferences()
     {
         if (!panel) Debug.LogError($"{name}, has no panel to open");
     }
@@ -37,7 +37,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
         await GameManager.Instance.Player.MoveCamera(true);
         panel.SetActive(true);
     }
-    async private void ClosePanel(InputAction.CallbackContext Context)
+    async protected void ClosePanel(InputAction.CallbackContext Context)
     {
         if (canClose)
         {
@@ -52,9 +52,9 @@ public class CodeMachine : InteractableTarget, IPanelUI
     {
         foreach(CodeMachineContain contain in m_containList)
         {
-            if (contain is ReadonlyLine)
+            if (contain is LineReadonly)
             {
-                var line = contain as ReadonlyLine;
+                var line = contain as LineReadonly;
                 if (line.BaseText == TextSearched)
                 {
                     if (line.BaseText.Contains(StringList.PrintString))
@@ -73,51 +73,6 @@ public class CodeMachine : InteractableTarget, IPanelUI
     }
 
     #region Compiler
-    private void CompileEachScript()
-    {
-        foreach(CodeMachineContain contain in m_containList)
-        {
-            string code = contain.BaseText;
-            bool error = CompileOneLine(code);
-            if (error) break;
-        }
-    }
-    private bool CompileOneLine(string Code)
-    {
-        int count = 0;
-        while (Code.Length > 0)
-        {
-            if (Code.Contains(StringList.Code_Print_Start))
-            {
-                string newCode = Code.Replace(StringList.Code_Print_Start, string.Empty);
-                if (newCode.Contains(StringList.Code_Print_End))
-                {
-                    int index = newCode.IndexOf(StringList.Code_Print_End);
-                    string tmpCode = newCode.Substring(0,index);
-                    PrintMessage(tmpCode);
-                    newCode = newCode.Replace(tmpCode,string.Empty);
-                    newCode = newCode.Replace(StringList.Code_Print_End,string.Empty);
-                    Debug.Log("This is runned");
-                }
-                else
-                {
-                    PrintMessage("Error");
-                    return true;
-                }
-                Code = newCode;
-            }
-            #region Infinite LOOP Breaker
-            count++;
-            if (count > 100)
-            {
-                Debug.Log($"{count}, {Code}");
-                PrintMessage("Infinite Loop");
-                return true;
-            }
-            #endregion
-        }
-        return false;
-    }
     public void PrintMessage(string TextToPrint)
     {
         if (printMessage) printMessage.OpenMessage(TextToPrint);
@@ -137,7 +92,6 @@ public class CodeMachine : InteractableTarget, IPanelUI
 
     async protected override UniTask PrintInteraction()
     {
-        CompileEachScript();
         if (printFunction)
         {
             await printFunction.Activate();
@@ -154,12 +108,12 @@ public class CodeMachine : InteractableTarget, IPanelUI
     #endregion
 
     #region Enable/Disable
-    async private void OnEnable()
+    async protected void OnEnable()
     {
         await UniTask.WaitUntil(() => InputReferences.Instance);
         CloseInput.action.performed += ClosePanel;
     }
-    private void OnDisable()
+    protected void OnDisable()
     {
         CloseInput.action.performed -= ClosePanel;
     }

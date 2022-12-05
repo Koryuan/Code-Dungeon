@@ -65,6 +65,11 @@ public class AudioManager : MonoBehaviour
         Source.volume = sfxVolume;
         Source.PlayOneShot(ObjectAudio.Object_DoorOpen);
     }
+    public void PlayDoorClose(AudioSource Source)
+    {
+        Source.volume = sfxVolume;
+        Source.PlayOneShot(ObjectAudio.Object_DoorClose);
+    }
     #endregion
 
     #region UI

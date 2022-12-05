@@ -459,7 +459,7 @@ MonoBehaviour:
     _animator: {fileID: 5072358145991132558}
   _camera:
     m_playerCamera: {fileID: 5072358144754969516}
-    Duration: 2
+    Duration: 0.5
   _sound:
     source: {fileID: 3269556395888772471}
 --- !u!50 &5072358145991132553

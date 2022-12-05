@@ -26,7 +26,7 @@ MonoBehaviour:
   - name: Player
     text: Apa maksud mu?
   - name: Stranger
-    text: Kau lihat 2 mesin disana yang terlihat SAMA? Meskipun sekilas terlihat
+    text: Kau lihat 2 mesin disana yang terlihat <b>SAMA</b>? Meskipun sekilas terlihat
       sama namun satu diantaranya tidak dapat melakukan apapun.
   - name: Stranger
     text: Apa menurut mu yang harus kita lakukan?

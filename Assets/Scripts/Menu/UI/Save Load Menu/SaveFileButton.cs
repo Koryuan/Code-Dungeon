@@ -54,12 +54,14 @@ public class SaveFileButton : MonoBehaviour, IMenuUI
     #region Save
     private void SaveLoad()
     {
-        if (_state == State.Save && GameManager.Instance.CurrentState == GameState.Game_Save_Load_State)
+        bool canUse = true;
+        if (GameManager.Instance) canUse = GameManager.Instance.CurrentState == GameState.Game_Save_Load_State;
+        if (_state == State.Save && canUse)
         {
             UpdateSaveData(SaveLoadSystem.Instance._SaveData);
             SaveLoadSystem.Instance.SaveFile(_saveDataName);
         }
-        else if (GameManager.Instance.CurrentState == GameState.Game_Save_Load_State)
+        else if (canUse)
         {
             SaveLoadSystem.Instance.LoadData(_saveDataName);
         }

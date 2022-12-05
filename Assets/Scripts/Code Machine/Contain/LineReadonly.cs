@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class ReadonlyLine: CodeMachineContain
+public class LineReadonly: CodeMachineContain
 {
     [SerializeField] private TMP_Text codeLine;
 
