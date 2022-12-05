@@ -175,6 +175,7 @@ public class GameManager : MonoBehaviour
 
     async public UniTask StartEvent(GameEvent[] EventList)
     {
+        if (EventList == null) return;
         foreach (GameEvent gameEvent in EventList)
         {
             await UniTask.WaitUntil(() => onEvent == false);

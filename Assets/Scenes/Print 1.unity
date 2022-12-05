@@ -18175,6 +18175,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7395290460628199290, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.31
+      objectReference: {fileID: 0}
     - target: {fileID: 7395290460628199300, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -18225,10 +18229,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
       propertyPath: canInteract
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
       propertyPath: eventList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onOpen.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onClose.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
@@ -18239,6 +18251,18 @@ PrefabInstance:
       propertyPath: eventList.Array.data[0].dialog
       value: 
       objectReference: {fileID: 11400000, guid: c5ffa86c8d2e7f645b0bf4bc0e6eb335, type: 2}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onOpen.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bfbf2a6f882ec248b1b81d96d66f312, type: 2}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onOpen.Array.data[0].dialog
+      value: 
+      objectReference: {fileID: 11400000, guid: c5ffa86c8d2e7f645b0bf4bc0e6eb335, type: 2}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onClose.Array.data[0].dialog
+      value: 
+      objectReference: {fileID: 11400000, guid: c23437e136ff21b4793480e3662bd043, type: 2}
     - target: {fileID: 7395290460628199302, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
       propertyPath: m_Name
       value: Treasure Chest - 2
@@ -21936,7 +21960,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: isOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
       propertyPath: eventList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onOpen.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
@@ -21945,6 +21977,14 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9c086e9805015184bbc731e93bfb8596, type: 2}
     - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
       propertyPath: eventList.Array.data[0].dialog
+      value: 
+      objectReference: {fileID: 11400000, guid: c5ffa86c8d2e7f645b0bf4bc0e6eb335, type: 2}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onOpen.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c086e9805015184bbc731e93bfb8596, type: 2}
+    - target: {fileID: 7395290460628199301, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}
+      propertyPath: m_event.onOpen.Array.data[0].dialog
       value: 
       objectReference: {fileID: 11400000, guid: c5ffa86c8d2e7f645b0bf4bc0e6eb335, type: 2}
     - target: {fileID: 7395290460628199302, guid: 4a6b4f86916504d4aa1b1282755180ea, type: 3}

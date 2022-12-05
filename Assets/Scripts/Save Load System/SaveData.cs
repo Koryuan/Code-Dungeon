@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.Profiling;
 using UnityEngine;
 
 public class SaveData
@@ -13,8 +12,8 @@ public class SaveData
     public Vector3 PlayerLastPosition = new Vector3();
 
     // Option Data
-    public float sfxVolume = 0f;
-    public float bgmVolume = 0f;
+    public float sfxVolume = 1f;
+    public float bgmVolume = 1f;
 
     // Scene Data
     public SaveDataTutorialScene TutorialScene = new SaveDataTutorialScene();
