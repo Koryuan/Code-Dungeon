@@ -39,7 +39,7 @@ public class DialogBox : MonoBehaviour
         currentDialog = dialog;
         currentIndex = 0;
 
-        NextDialog(currentDialog.Dialogs[currentIndex]);
+        NextDialog(currentDialog.Dialogs[currentIndex], true);
 
         // Exception Handeller
         var cts = this.GetCancellationTokenOnDestroy();
@@ -51,9 +51,11 @@ public class DialogBox : MonoBehaviour
             Debug.LogError($"{name} got destroyed while still open");
         }
     }
-    private void NextDialog(Dialog Next)
+    private void NextDialog(Dialog Next, bool JustOpen = false)
     {
         (nameText.text, boxText.text) = Next.DialogDetail;
+
+        if (AudioManager.Instance && !JustOpen) AudioManager.Instance.PlayUIConfirm();
 
         if (string.IsNullOrEmpty(Next.DialogDetail.Name)) namePanel.SetActive(false);
         else namePanel.SetActive(true);

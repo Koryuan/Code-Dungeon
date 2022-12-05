@@ -48,7 +48,7 @@ public class YesNoBox : MonoBehaviour
         yesButton.SetHighlight(IsYes);
         noButton.SetHighlight(!IsYes);
     }
-    private void ClosePanel() => panel.SetActive(false);
+    public void ClosePanel() => panel.SetActive(false);
 }
 
 [Serializable] public class YesNoButton : IMenuUI

@@ -1,5 +1,3 @@
-using JetBrains.Annotations;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -7,7 +5,13 @@ public class AudioManager : MonoBehaviour
     private static AudioManager m_instance;
     public static AudioManager Instance => m_instance;
 
-    [System.Serializable] private class ObjectAudioClip
+    private float sfxVolume 
+        => (SaveLoadSystem.Instance?._SaveData != null) ? SaveLoadSystem.Instance._SaveData.sfxVolume : 1;
+    private float bgmVolume 
+        => (SaveLoadSystem.Instance?._SaveData != null) ? SaveLoadSystem.Instance._SaveData.bgmVolume : 1;
+
+    [System.Serializable]
+    private class ObjectAudioClip
     {
         // Door
         public AudioClip Object_DoorOpen;
@@ -15,13 +19,15 @@ public class AudioManager : MonoBehaviour
     }
     [SerializeField] private ObjectAudioClip ObjectAudio;
 
-    [System.Serializable] private class PlayerAudioClip
+    [System.Serializable]
+    private class PlayerAudioClip
     {
         public AudioClip Player_Walk;
     }
     [SerializeField] private PlayerAudioClip PlayerAudio;
 
-    [System.Serializable] private class UIAudioClip
+    [System.Serializable]
+    private class UIAudioClip
     {
         public AudioClip UI_Confirm;
         public AudioClip UI_Hover;
@@ -48,22 +54,35 @@ public class AudioManager : MonoBehaviour
     {
         Source.loop = true;
         Source.clip = PlayerAudio.Player_Walk;
+        Source.volume = sfxVolume;
         Source.Play();
     }
     #endregion
 
     #region Object
-    public void PlayDoorOpen(AudioSource Source) => Source.PlayOneShot(ObjectAudio.Object_DoorOpen);
+    public void PlayDoorOpen(AudioSource Source)
+    {
+        Source.volume = sfxVolume;
+        Source.PlayOneShot(ObjectAudio.Object_DoorOpen);
+    }
     #endregion
 
     #region UI
     public void PlayUIConfirm()
     {
-        if (MainAudioSource.Instance) MainAudioSource.Instance.Source.PlayOneShot(UIAudio.UI_Confirm);
+        if (MainAudioSource.Instance)
+        {
+            MainAudioSource.Instance.Source.volume = sfxVolume;
+            MainAudioSource.Instance.Source.PlayOneShot(UIAudio.UI_Confirm);
+        }
     }
     public void PlayUIHover()
     {
-        if (MainAudioSource.Instance) MainAudioSource.Instance.Source.PlayOneShot(UIAudio.UI_Hover);
+        if (MainAudioSource.Instance)
+        {
+            MainAudioSource.Instance.Source.volume = sfxVolume;
+            MainAudioSource.Instance.Source.PlayOneShot(UIAudio.UI_Hover);
+        }
     }
     #endregion
 }

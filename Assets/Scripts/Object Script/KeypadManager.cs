@@ -89,7 +89,15 @@ public class KeypadManager : MonoBehaviour
         if (LastTarget != string.Empty)
         {
             string[] splitedText = LastTarget.Split('|');
-            foreach (string text in splitedText) SearchTargetKey(text)?.UpdateLook(true);
+            foreach (string text in splitedText)
+            {
+                Keypad key = SearchTargetKey(text);
+                if (key)
+                {
+                    key.UpdateLook(true);
+                    AppendText(text);
+                }
+            }
         }
     }
 

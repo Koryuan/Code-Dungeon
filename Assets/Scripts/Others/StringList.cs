@@ -26,5 +26,6 @@
     // HTML texting
     public static string DarkGreenHex = "023020";
     public static string Color_LightGreen = "90EE90";
+    public static string Color_Red = "e91c1c";
     public static string ColorString(string NewString, string Color) => $"<color=#{Color}>{NewString}</color>";
 }
