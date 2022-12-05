@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 
 public class OptionMenuUI : MonoBehaviour
@@ -15,8 +16,9 @@ public class OptionMenuUI : MonoBehaviour
 
     public MenuSlider SFXSlider => sfxSlider;
     public bool IsOpen => optionMenuPanel.activeSelf;
+
     #region Initialization
-    public void Initialize(Action<IMenuUI> OnSelectEvent)
+    async public void Initialize(Action<IMenuUI> OnSelectEvent)
     {
         CheckReferences();
 
@@ -27,6 +29,14 @@ public class OptionMenuUI : MonoBehaviour
         sfxSlider.SetHighlight(false);
         bgmSlider.SetHighlight(false);
         exitButton.SetHighlight(false);
+
+        sfxSlider.Slider.onValueChanged.AddListener(UpdateSFXVolume);
+        bgmSlider.Slider.onValueChanged.AddListener(UpdateBGMVolume);
+
+        await UniTask.WaitUntil(() => SaveLoadSystem.Instance?._SaveData != null);
+
+        sfxSlider.Slider.value = SaveLoadSystem.Instance._SaveData.sfxVolume;
+        bgmSlider.Slider.value = SaveLoadSystem.Instance._SaveData.bgmVolume;
     }
     private void CheckReferences()
     {
@@ -34,7 +44,22 @@ public class OptionMenuUI : MonoBehaviour
     }
     #endregion
 
+    private void UpdateSFXVolume(float Value)
+    {
+        if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._SaveData.sfxVolume = Value;
+    }
+    private void UpdateBGMVolume(float Value)
+    {
+        if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._SaveData.bgmVolume = Value;
+    }
+
     public void OptionMenu(bool Open) => optionMenuPanel.SetActive(Open);
 
     public void AddExitButtonListener(Action OnClick) => exitButton.Button.onClick.AddListener(() => OnClick?.Invoke());
+
+    private void OnDestroy()
+    {
+        if (sfxSlider) sfxSlider.Slider.onValueChanged.RemoveAllListeners();
+        if (bgmSlider) bgmSlider.Slider.onValueChanged.RemoveAllListeners();
+    }
 }

@@ -53,7 +53,11 @@ public class InventoryUI : MonoBehaviour
         => itemContainerViewport.offsetMax = 
             new Vector2(ScrollbarPopOut ? onScrollbarViewport : onNoScrollbarViewport, itemContainerViewport.offsetMax.y);
 
-    public void InventoryPanel(bool Open) => inventoryPanel.SetActive(Open);
+    public void InventoryPanel(bool Open)
+    {
+        inventoryPanel.SetActive(Open);
+        if (!Open) _YesNoBox.ClosePanel();
+    }
     public void YesNoPanel(bool Open)
     {
         inventoryText.SetActive(!Open);
