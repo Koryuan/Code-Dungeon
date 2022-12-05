@@ -4778,49 +4778,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &898042866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 898042868}
-  - component: {fileID: 898042867}
-  m_Layer: 0
-  m_Name: Audio Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &898042867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898042866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f19f55bc09a8442845c1de00149e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &898042868
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898042866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1082157827
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,11 +5320,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532815f4bde22564d80e276484d60ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   disableObjectBefore: 0
   disableObjectAfter: 1
   disableInteraction: 0
   printInteract: 0
   scanInteract: 0
+  m_interactableAnimator: {fileID: 0}
   eventList:
   - dialog: {fileID: 11400000, guid: 0ec7ab3bc342e3c47a74506447d69c6e, type: 2}
     item: {fileID: 0}
