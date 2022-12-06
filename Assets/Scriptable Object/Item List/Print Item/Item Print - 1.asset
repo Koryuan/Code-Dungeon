@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: ????
   isUseable: 1
   itemDescription: ?????
-  range: 0.2
+  range: 0.5
   searchedText: PRINT//("Hello World")
   atFailedDialog: {fileID: 11400000, guid: 455fc1239475b9c489a6058d0aa18cb2, type: 2}
