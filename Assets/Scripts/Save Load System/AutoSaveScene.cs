@@ -123,6 +123,9 @@ public static class AutoSaveScene
                     SaveData.NPCDialog = Convert.ToInt32(Additional);
                 }
                 break;
+            case "Code Machine - 1":
+
+                break;
             default:
                 break;
         }

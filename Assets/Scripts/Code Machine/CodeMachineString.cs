@@ -14,6 +14,7 @@ public class CodeMachineString : CodeMachine
 
     async protected override UniTask PrintInteraction()
     {
+        string textPrinted = string.Empty;
         if (m_compiler)
         {
             string[] codeList = null;
@@ -25,12 +26,12 @@ public class CodeMachineString : CodeMachine
                 }
                 else continue;
             }
-            if (codeList.Length > 0) PrintMessage(m_compiler.CompileCodeReturnString(codeList));
+            if (codeList.Length > 0) PrintMessage(textPrinted = m_compiler.CompileCodeReturnString(codeList));
         }
         if (printFunction)
         {
             await printFunction.Activate(printMessage.Correct);
-            AutoSaveScene.SaveObjectState($"{name} | Print");
+            AutoSaveScene.SaveObjectState($"{name} | Print",textPrinted);
             Debug.Log($"{name} | Print");
         }
         else Debug.LogError($"{name}, trying to use function from print without having the class");
