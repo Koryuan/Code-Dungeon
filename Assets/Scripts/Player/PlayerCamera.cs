@@ -19,12 +19,14 @@ using UnityEngine;
     {
         float progress = 0;
         Vector3 targetPosition = Moved ? positionMoved : positionNormal;
-        while (progress < Duration || m_playerCamera.transform.localPosition == targetPosition)
+        while (progress < Duration)
         {
             m_playerCamera.transform.localPosition = Vector3.Lerp(m_playerCamera.transform.localPosition, targetPosition, progress/2);
             progress += Time.deltaTime;
             await UniTask.Yield();
+            if (m_playerCamera.transform.localPosition == targetPosition) break;
         }
+        Debug.Log("Camera is done Moved");
         m_playerCamera.transform.localPosition = targetPosition;
     }
 }

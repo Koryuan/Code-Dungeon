@@ -18,6 +18,7 @@ public class SaveData
     // Scene Data
     public SaveDataTutorialScene TutorialScene = new SaveDataTutorialScene();
     public SaveDataPrint1Scene Print1Scene = new SaveDataPrint1Scene();
+    public SaveDataPrint2Scene Print2Scene = new SaveDataPrint2Scene();
 
     // Save Data Description
     public string SaveFileName = "";
@@ -68,4 +69,12 @@ public class SaveData
         TreasureChest2_Taken = false;
         Keypad_LastText = string.Empty;
     }
+}
+
+[Serializable] public class SaveDataPrint2Scene
+{
+    //Puzzle 1
+    public bool Door1Open = false;
+    public bool Door1OpenOnce = false;
+    public int NPCDialog = -1;
 }

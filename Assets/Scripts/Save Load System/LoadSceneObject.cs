@@ -36,6 +36,9 @@ public class LoadSceneObject : MonoBehaviour
             case SceneType.Print1Scene:
                 LoadPrint1SceneObject(player);
                 break;
+            case SceneType.Print2Scene:
+                LoadPrint2SceneObject(player);
+                break;
             default:
                 break;
         }
@@ -163,6 +166,36 @@ public class LoadSceneObject : MonoBehaviour
         }
     }
     #endregion
+
+    #region Print 2 Scene
+    [SerializeField] private Print2SceneObject print2SceneObject = null;
+    private void LoadPrint2SceneObject(PlayerController Player)
+    {
+        void CheckReferences()
+        {
+            // Puzzle 1
+            if (!print2SceneObject.Machine1) Debug.LogError($"Load Scene has no reference to Machine 1");
+            if (!print2SceneObject.Machine2) Debug.LogError($"Load Scene has no reference to Machine 2");
+            if (!print2SceneObject.Door1) Debug.LogError($"Load Scene has no reference to Door 1");
+            if (!print2SceneObject.NPC1) Debug.LogError($"Load Scene has no reference to NPC 1");
+        }
+
+        CheckReferences();
+
+        #region Ommiting Save data name
+        SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
+        SaveDataPrint2Scene sceneSaveData = loadedSaveData.Print2Scene;
+        SceneType LastScene = loadedSaveData.LastScene;
+        #endregion
+
+        #region Puzzle 1
+        print2SceneObject.Machine2.PrintMessage("Lock Release");
+        print2SceneObject.Door1.Activated(sceneSaveData.Door1Open);
+        if (sceneSaveData.Door1OpenOnce) print2SceneObject.NPC1.gameObject.SetActive(false);
+        else if(sceneSaveData.NPCDialog > -1) print2SceneObject.NPC1.UpdateNPCEvent(sceneSaveData.NPCDialog + 1);
+        #endregion
+    }
+    #endregion
 }
 
 [Serializable] public class TutorialSceneObject
@@ -198,4 +231,13 @@ public class LoadSceneObject : MonoBehaviour
     public KeypadManager Keypad;
 
     public Transform StageSelctionSP;
+}
+
+[Serializable] public class Print2SceneObject
+{
+    [Header("Puzzle 1")]
+    public CodeMachine Machine1;
+    public CodeMachine Machine2;
+    public Door Door1;
+    public NonPlayableCharacter NPC1;
 }

@@ -16,4 +16,8 @@ public abstract class CodeMachineContain : MonoBehaviour
     {
         if (!m_codeNumber) Debug.LogError($"{name} in {transform.parent.name}, has no number in code");
     }
+    public virtual string[] GetInputFieldText()
+    {
+        throw new System.NotImplementedException();
+    }
 }

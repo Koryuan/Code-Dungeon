@@ -5,7 +5,7 @@ public class PrintFunction : MonoBehaviour
 {
     [SerializeField] private GameEvent[] eventList;
 
-    async public UniTask Activate()
+    async public virtual UniTask Activate(bool Correct = false)
     {
         if (eventList.Length > 0)
         {

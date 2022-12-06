@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public static class AutoSaveScene
 {
@@ -9,6 +10,14 @@ public static class AutoSaveScene
             SaveTutorialScene(ObjectName);
         else if (LoadSceneObject.Instance.CurrentScene == SceneType.Print1Scene)
             SavePrint1Scene(ObjectName, Additional);
+        else if (LoadSceneObject.Instance.CurrentScene == SceneType.Print2Scene)
+            SavePrint2Scene(ObjectName, Additional);
+    }
+    public static void SaveObjectState<T>(string ObjectName,T Additional)
+    {
+        if (SaveLoadSystem.Instance == null || SaveLoadSystem.Instance._SaveData == null) return;
+        if (LoadSceneObject.Instance.CurrentScene == SceneType.Print2Scene)
+            SavePrint2Scene(ObjectName, Additional);
     }
 
     private static void SaveTutorialScene(string ObjectName)
@@ -42,7 +51,7 @@ public static class AutoSaveScene
         var print1SaveData = SaveLoadSystem.Instance._SaveData.Print1Scene;
         if (print1SaveData == null)
         {
-            Debug.LogError("The Save Data have no Tutorial Class attached");
+            Debug.LogError("The Save Data have no Class attached");
             return;
         }
 
@@ -80,6 +89,42 @@ public static class AutoSaveScene
                 break;
             case "Keypad":
                 print1SaveData.Keypad_LastText = Additional;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private static void SavePrint2Scene<T>(string ObjectName, T Additional)
+    {
+        var SaveData = SaveLoadSystem.Instance._SaveData.Print2Scene;
+        if (SaveData == null)
+        {
+            Debug.LogError("The Save Data have no Class attached");
+            return;
+        }
+
+        switch (ObjectName)
+        {
+            // Puzzle 1
+            case "Door 1":
+                Debug.Log("Door 1 Open: Saved");
+                SaveData.Door1OpenOnce = true;
+                SaveData.Door1Open = true;
+                break;
+            case "Door 1 | Close":
+                Debug.Log("Door 1 Close: Saved");
+                SaveData.Door1Open = false;
+                break;
+            case "NPC - 1":
+                if (Additional is int)
+                {
+                    Debug.Log("Save NPC");
+                    SaveData.NPCDialog = Convert.ToInt32(Additional);
+                }
+                break;
+            case "Code Machine - 1":
+
                 break;
             default:
                 break;

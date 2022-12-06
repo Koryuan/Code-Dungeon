@@ -17,4 +17,4 @@ MonoBehaviour:
     text: Jika ada petunjuk lain, aku pasti sudah menemukannya. Hanya ada kau, aku,
       dan 2 mesin tersebut.
   - name: Stranger
-    text: Aneh sekali. Apa kedua mesin ini memang benar - benar SAMA?
+    text: Aneh sekali. Apa kedua mesin ini memang benar - benar <b>SAMA</b>?

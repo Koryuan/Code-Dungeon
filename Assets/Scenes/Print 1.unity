@@ -15987,6 +15987,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 153859163}
+          m_TargetAssemblyTypeName: CodeMachine, Assembly-CSharp
+          m_MethodName: PrintMessage
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hello World
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!4 &153859162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5857065443654469461, guid: b1cdc6f5dac3bad41a973962c2b14216, type: 3}
@@ -16248,6 +16260,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -732061553415295908, guid: 9b8d18f74cae9fa4ebdf9d205b458c6d, type: 3}
+    - target: {fileID: 5717243554988833789, guid: d5936a3bc13df7342b8d17e4e5e5658c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717243554988833789, guid: d5936a3bc13df7342b8d17e4e5e5658c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717243554988833789, guid: d5936a3bc13df7342b8d17e4e5e5658c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5717243554988833791, guid: d5936a3bc13df7342b8d17e4e5e5658c, type: 3}
       propertyPath: m_Name
       value: Keypad - Button - 2
@@ -17107,6 +17131,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 486401621}
+          m_TargetAssemblyTypeName: CodeMachine, Assembly-CSharp
+          m_MethodName: PrintMessage
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 729
             m_BoolArgument: 1
           m_CallState: 2
 --- !u!114 &486401621 stripped
@@ -21710,6 +21746,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2049583803}
     m_Modifications:
+    - target: {fileID: 1586192366181111241, guid: d5936a3bc13df7342b8d17e4e5e5658c, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1586192366181111241, guid: d5936a3bc13df7342b8d17e4e5e5658c, type: 3}
       propertyPath: m_interactedSprite
       value: 

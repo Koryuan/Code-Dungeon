@@ -190,8 +190,7 @@ public class GameManager : MonoBehaviour
                 }
                 OpenDialogBox(gameEvent.Dialog);
             }
-            else if (gameEvent.HasEvent) gameEvent.ActiveAction();
-
+            if (gameEvent.HasEvent) gameEvent.ActiveAction();
             if (!gameEvent.HasEvent) onEvent = true;
         }
         await UniTask.WaitUntil(() => onEvent == false);
