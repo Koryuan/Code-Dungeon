@@ -24,12 +24,12 @@ public class HelpMenu : MonoBehaviour, IPanelUI
 
         m_ui.Initialize();
         m_channel.OnHelpInserted += AddHelpSetting;
-        m_channel.OnHelpInsertedMultiple += LoadHelpSetting;
 
         await UniTask.Delay(100);
-        m_channel.RaiseHelpDataRequested();
 
-        DontDestroyOnLoad(gameObject);
+        HelpSettings[] LoadedSettings = null;
+        while ((LoadedSettings = m_channel.RaiseHelpDataRequested()) == null) await UniTask.Delay(100);
+        if (LoadedSettings.Length > 0) LoadHelpSetting(LoadedSettings);
     }
     private void CheckReferences()
     {
@@ -99,6 +99,5 @@ public class HelpMenu : MonoBehaviour, IPanelUI
     private void OnDestroy()
     {
         m_ui.DestroyConnection();
-        if (m_channel) m_channel.OnHelpInserted -= AddHelpSetting;
     }
 }

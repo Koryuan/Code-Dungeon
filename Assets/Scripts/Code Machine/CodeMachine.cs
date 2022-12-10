@@ -27,7 +27,6 @@ public class CodeMachine : InteractableTarget, IPanelUI
         foreach(CodeMachineContain contain in m_containList) contain.Initialize();
         printFunction = GetComponent<PrintFunction>();
         printMessage = GetComponentInChildren<PopUpMessage>(true);
-        Debug.Log(printMessage);
     }
     protected void CheckReferences()
     {

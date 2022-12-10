@@ -3,20 +3,17 @@ using UnityEngine;
 
 public class HelpChannel : ScriptableObject
 {
-    public Action OnHelpRequested;
+    public delegate HelpSettings[] HelpCallback();
+    public HelpCallback OnHelpRequested;
     public Action<HelpSettings> OnHelpInserted;
-    public Action<HelpSettings[]> OnHelpInsertedMultiple;
 
-    public void RaiseHelpDataRequested()
+    public HelpSettings[] RaiseHelpDataRequested()
     {
-        OnHelpRequested?.Invoke();
+        if (OnHelpRequested == null) return null;
+        return OnHelpRequested?.Invoke();
     }
     public void RaiseHelpInsert(HelpSettings Setting)
     {
         OnHelpInserted?.Invoke(Setting);
-    }
-    public void RaiseHelpInsertMultiple(HelpSettings[] Settings)
-    {
-        OnHelpInsertedMultiple?.Invoke(Settings);
     }
 }

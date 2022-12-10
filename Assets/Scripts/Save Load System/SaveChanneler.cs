@@ -12,12 +12,12 @@ public class SaveChanneler : MonoBehaviour
         m_helpChannel.OnHelpRequested += OnRequestHelpList;
     }
 
-    private void OnRequestHelpList()
+    private HelpSettings[] OnRequestHelpList()
     {
-        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return;
-        
-        m_helpChannel.OnHelpInsertedMultiple(SaveLoadSystem.Instance._SaveData.HelpList.ToArray());
-        Debug.Log("Data send");
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
+
+        Debug.Log($"{name}, send help data");
+        return SaveLoadSystem.Instance._SaveData.HelpList.ToArray();
     }
 
     private void OnDestroy()
