@@ -22,7 +22,8 @@ public class MenuManager: MonoBehaviour
     private enum MenuState
     {
         None,
-        CodeMachine
+        CodeMachine,
+        Help
     }
 
     // Currently Open Menu
@@ -53,6 +54,7 @@ public class MenuManager: MonoBehaviour
         {
             IPanelUI lastUI = m_menuList[m_menuList.Count-1];
             if (lastUI is CodeMachine) m_currentState = MenuState.CodeMachine;
+            else if (lastUI is HelpMenu) m_currentState = MenuState.Help;
 
             if (AfterClose) lastUI.OpenPanel(null);
         }

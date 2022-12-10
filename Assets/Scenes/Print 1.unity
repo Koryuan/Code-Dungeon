@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 16402222}
   m_Layer: 0
-  m_Name: Scene Point
+  m_Name: Scene Load Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,6 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 825927561}
+  - {fileID: 640290698}
   m_Father: {fileID: 1903588993}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16568,6 +16569,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 486401621}
     - target: {fileID: 942913444, guid: c3145a5c4d4c5e948851f63b3d4b73b8, type: 3}
+      propertyPath: print1SceneObject.Print2SP
+      value: 
+      objectReference: {fileID: 1870660129}
+    - target: {fileID: 942913444, guid: c3145a5c4d4c5e948851f63b3d4b73b8, type: 3}
       propertyPath: print1SceneObject.PrintItem1
       value: 
       objectReference: {fileID: 712765565}
@@ -17237,6 +17242,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &640290697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640290698}
+  - component: {fileID: 640290700}
+  - component: {fileID: 640290699}
+  m_Layer: 0
+  m_Name: Scene Load Point - Print 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &640290698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640290697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.37, y: 16.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 16402222}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640290699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640290697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d788e27ded94e4ba0342a9fe1d64f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneType: 4
+--- !u!61 &640290700
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640290697}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!1001 &688536975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17296,7 +17372,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9207438205813045564, guid: f21eb30de5aae38449ccaf8622b023d6, type: 3}
+    - {fileID: 4047191089102172255, guid: f21eb30de5aae38449ccaf8622b023d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f21eb30de5aae38449ccaf8622b023d6, type: 3}
 --- !u!4 &688536976 stripped
 Transform:
@@ -17479,7 +17557,7 @@ GameObject:
   - component: {fileID: 825927563}
   - component: {fileID: 825927562}
   m_Layer: 0
-  m_Name: Stage Selection - Scene
+  m_Name: Scene Load Point - Stage Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18197,6 +18275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 170493750}
+  - {fileID: 1870660129}
   m_Father: {fileID: 1903588993}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18393,6 +18472,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1404864133733802765, guid: f21eb30de5aae38449ccaf8622b023d6, type: 3}
   m_PrefabInstance: {fileID: 1784639619}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1870660128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870660129}
+  m_Layer: 0
+  m_Name: Spawn Point - Print 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870660129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870660128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.37, y: 15.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1594414362}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1877327743
 PrefabInstance:
   m_ObjectHideFlags: 0

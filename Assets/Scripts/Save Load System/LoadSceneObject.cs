@@ -112,8 +112,10 @@ public class LoadSceneObject : MonoBehaviour
     {
         void CheckReferences()
         {
-            // Puzzle 1
             if (!print1SceneObject.StageSelctionSP) Debug.LogError($"Load Scene has no reference to Stage Selection Spawn Point");
+            if (!print1SceneObject.Print2SP) Debug.LogError($"Load Scene has no reference to Print 2 Spawn Point");
+
+            // Puzzle 1
             if (!print1SceneObject.PrintItem1) Debug.LogError($"Load Scene has no reference to Print 1 Item");
             if (!print1SceneObject.Door1) Debug.LogError($"Load Scene has no reference to Door 1");
             if (!print1SceneObject.Machine1) Debug.LogError($"Load Scene has no reference to Machine 1");
@@ -163,6 +165,8 @@ public class LoadSceneObject : MonoBehaviour
         {
             if (LastScene == SceneType.SelectionScene)
                 Player.InstantMove(print1SceneObject.StageSelctionSP, new Vector2(0, 1));
+            else if (LastScene == SceneType.Print2Scene)
+                Player.InstantMove(print1SceneObject.Print2SP, new Vector2(0, -1));
         }
     }
     #endregion
@@ -188,12 +192,72 @@ public class LoadSceneObject : MonoBehaviour
         SceneType LastScene = loadedSaveData.LastScene;
         #endregion
 
-        #region Puzzle 1
+        #region Puzzle 3
         print2SceneObject.Machine2.PrintMessage("Lock Release");
         print2SceneObject.Door1.Activated(sceneSaveData.Door1Open);
         if (sceneSaveData.Door1OpenOnce) print2SceneObject.NPC1.gameObject.SetActive(false);
         else if(sceneSaveData.NPCDialog > -1) print2SceneObject.NPC1.UpdateNPCEvent(sceneSaveData.NPCDialog + 1);
+
+        if (sceneSaveData.CodeMachine1PrintedText != string.Empty) 
+            print2SceneObject.Machine1.PrintMessage(sceneSaveData.CodeMachine1PrintedText);
+        if (sceneSaveData.CodeMachine1InputField.IndexInArray != -1)
+            print2SceneObject.Machine1.UpdateContainText(sceneSaveData.CodeMachine1InputField);
+
+        if (Player)
+        {
+            if (LastScene == SceneType.Print1Scene)
+                Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, -1));
+        }
         #endregion
+
+        #region Puzzle 4
+        if (sceneSaveData.Puzzle4_CodeMachineIntInterected)
+        {
+            print2SceneObject.Puzzle4_MachineInt.OnCloseStopped();
+            print2SceneObject.Puzzle4_MachineInt.ActivatePrintInteract();
+        }
+        if (sceneSaveData.Puzzle4_CodeMachineCharInterected)
+        {
+            print2SceneObject.Puzzle4_MachineChar.OnCloseStopped();
+            print2SceneObject.Puzzle4_MachineChar.ActivatePrintInteract();
+        }
+        if (sceneSaveData.Puzzle4_CodeMachineStringInterected)
+        {
+            print2SceneObject.Puzzle4_MachineString.OnCloseStopped();
+            print2SceneObject.Puzzle4_MachineString.ActivatePrintInteract();
+        }
+        if (sceneSaveData.Puzzle4_CodeMachineFloatInterected)
+        {
+            print2SceneObject.Puzzle4_MachineFloat.OnCloseStopped();
+            print2SceneObject.Puzzle4_MachineFloat.ActivatePrintInteract();
+        }
+            
+        foreach(string text in sceneSaveData.Puzzle4_Collective)
+        {
+            switch (text)
+            {
+                case "Code Machine - Integer - 01":
+                    print2SceneObject.Puzzle4_MachineInt.PrintMessage("-1");
+                    break;
+                case "Code Machine - Char - 01":
+                    print2SceneObject.Puzzle4_MachineChar.PrintMessage("S");
+                    break;
+                case "Code Machine - String - 01":
+                    print2SceneObject.Puzzle4_MachineString.PrintMessage("S@@1Az3");
+                    break;
+                case "Code Machine - Float - 01":
+                    print2SceneObject.Puzzle4_MachineFloat.PrintMessage("3.123");
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (sceneSaveData.Puzzle4_Collective.Count > 0) 
+            print2SceneObject.Puzzle4_Unlocker.UnlockManyTarget(sceneSaveData.Puzzle4_Collective.ToArray());
+        print2SceneObject.Puzzle4_Door.Activated(sceneSaveData.Puzzle4_DoorOpen);
+        #endregion
+
+        Debug.Log("Everything done loaded");
     }
     #endregion
 }
@@ -231,13 +295,25 @@ public class LoadSceneObject : MonoBehaviour
     public KeypadManager Keypad;
 
     public Transform StageSelctionSP;
+    public Transform Print2SP;
 }
 
 [Serializable] public class Print2SceneObject
 {
-    [Header("Puzzle 1")]
-    public CodeMachine Machine1;
+    [Header("Puzzle 3")]
+    public CodeMachineString Machine1;
     public CodeMachine Machine2;
     public Door Door1;
     public NonPlayableCharacter NPC1;
+
+    [Header("Puzzle 4")]
+    public CodeMachine Puzzle4_MachineInt;
+    public CodeMachine Puzzle4_MachineChar;
+    public CodeMachine Puzzle4_MachineString;
+    public CodeMachine Puzzle4_MachineFloat;
+    public CollectiveStringUnlocker Puzzle4_Unlocker;
+    public Door Puzzle4_Door;
+
+    [Header("Spawn Point")]
+    public Transform Print1SP;
 }

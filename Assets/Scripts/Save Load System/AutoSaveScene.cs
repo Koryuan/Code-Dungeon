@@ -106,7 +106,7 @@ public static class AutoSaveScene
 
         switch (ObjectName)
         {
-            // Puzzle 1
+            // Puzzle 3
             case "Door 1":
                 Debug.Log("Door 1 Open: Saved");
                 SaveData.Door1OpenOnce = true;
@@ -124,8 +124,57 @@ public static class AutoSaveScene
                 }
                 break;
             case "Code Machine - 1":
-
+                Debug.Log("Save Code Machine - 1| Input Field Text: " + Additional);
+                if (Additional is InputFieldLine NewData)
+                {
+                    SaveData.CodeMachine1InputField = NewData;
+                    Debug.Log($"Inside:{NewData.Number},{NewData.IndexInArray},{NewData.Text}");
+                }
                 break;
+            case "Code Machine - 1 | Print":
+                Debug.Log("Save Code Machine - 1| Printed Message: " + Additional + " | Saved");
+                SaveData.CodeMachine1PrintedText = Convert.ToString(Additional);
+                break;
+
+            #region Puzzle 4
+            case "Code Machine - Integer - 01 | Print":
+                Debug.Log("Save: Code Machine - Integer - 01 | Print");
+                SaveData.Puzzle4_AddToCollective("Code Machine - Integer - 01");
+                break;
+            case "Code Machine - Integer - 01 | Close":
+                Debug.Log("Save: Code Machine - Integer - 01 | Close");
+                SaveData.Puzzle4_CodeMachineIntInterected = true;
+                break;
+            case "Code Machine - Char - 01 | Print":
+                Debug.Log("Save: Code Machine - Char - 01 | Print");
+                SaveData.Puzzle4_AddToCollective("Code Machine - Char - 01");
+                break;
+            case "Code Machine - Char - 01 | Close":
+                Debug.Log("Save: Code Machine - Char - 01 | Close");
+                SaveData.Puzzle4_CodeMachineCharInterected = true;
+                break;
+            case "Code Machine - Float - 01 | Print":
+                Debug.Log("Save: Code Machine - Float - 01 | Print");
+                SaveData.Puzzle4_AddToCollective("Code Machine - Float - 01");
+                break;
+            case "Code Machine - Float - 01 | Close":
+                Debug.Log("Save: Code Machine - Float - 01 | Close");
+                SaveData.Puzzle4_CodeMachineFloatInterected = true;
+                break;
+            case "Code Machine - String - 01 | Print":
+                Debug.Log("Save: Code Machine - String - 01 | Print");
+                SaveData.Puzzle4_AddToCollective("Code Machine - String - 01");
+                break;
+            case "Code Machine - String - 01 | Close":
+                Debug.Log("Save: Code Machine - String - 01 | Close");
+                SaveData.Puzzle4_CodeMachineStringInterected = true;
+                break;
+            case "Puzzle 4 - Door":
+                Debug.Log("Save: Puzzle 4 - Door | Open");
+                SaveData.Puzzle4_DoorOpen = true;
+                break;
+            #endregion
+
             default:
                 break;
         }

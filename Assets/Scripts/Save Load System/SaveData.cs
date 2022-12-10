@@ -7,6 +7,7 @@ public class SaveData
     // Showned Data in Save/Load Menu
     public SceneType LastScene = SceneType.None;
     public List<Item> _ItemList = new List<Item>();
+    public List<HelpSettings> HelpList = new List<HelpSettings>();
 
     // Player Data
     public Vector3 PlayerLastPosition = new Vector3();
@@ -73,8 +74,25 @@ public class SaveData
 
 [Serializable] public class SaveDataPrint2Scene
 {
-    //Puzzle 1
+    //Puzzle 3
     public bool Door1Open = false;
     public bool Door1OpenOnce = false;
     public int NPCDialog = -1;
+    public InputFieldLine CodeMachine1InputField = new InputFieldLine();
+    public string CodeMachine1PrintedText = string.Empty;
+
+    // Puzzle 4
+    public bool Puzzle4_CodeMachineIntInterected = false;
+    public bool Puzzle4_CodeMachineCharInterected = false;
+    public bool Puzzle4_CodeMachineStringInterected = false;
+    public bool Puzzle4_CodeMachineFloatInterected = false;
+    public bool Puzzle4_DoorOpen = false;
+
+    public List<string> Puzzle4_Collective = new List<string>();
+    public void Puzzle4_AddToCollective(string Text)
+    {
+        foreach (string text in Puzzle4_Collective)
+            if (Text == text) return;
+        Puzzle4_Collective.Add(Text);
+    }
 }

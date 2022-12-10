@@ -4,23 +4,23 @@ public class Door : MonoBehaviour
 {
     [Header("Open Close Object")]
     [SerializeField] private GameObject openObject;
-    [SerializeField] private GameObject closeSprite;
+    [SerializeField] private GameObject closeObject;
 
     [Header("Audio Source")]
     [SerializeField] private AudioSource m_audioSource;
 
     public void Activated(bool Open)
     {
-        openObject.SetActive(Open);
-        closeSprite.SetActive(!Open);
+        if (openObject) openObject.SetActive(Open);
+        if (closeObject) closeObject.SetActive(!Open);
         gameObject.SetActive(true);
 
         if (Open) AutoSaveScene.SaveObjectState(name);
     }
     public void ActivatedWithSound(bool Open)
     {
-        openObject.SetActive(Open);
-        closeSprite.SetActive(!Open);
+        if (openObject) openObject.SetActive(Open);
+        if (closeObject) closeObject.SetActive(!Open);
         gameObject.SetActive(true);
 
         if (Open)

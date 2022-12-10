@@ -89,12 +89,12 @@ public class MainMenu : MonoBehaviour, IPanelUI
     #region Enable Disable
     private void OnEnable()
     {
-        InputReferences.Instance._MenuInterectInput.action.performed += OnInterectInput;
+        InputReferences.Instance._Menu_Interect.action.performed += OnInterectInput;
     }
 
     private void OnDisable()
     {
-        InputReferences.Instance._MenuInterectInput.action.performed -= OnInterectInput;
+        InputReferences.Instance._Menu_Interect.action.performed -= OnInterectInput;
     }
     #endregion
 }

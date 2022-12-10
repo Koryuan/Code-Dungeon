@@ -70,7 +70,7 @@ public class DialogBox : MonoBehaviour
     #endregion
 
     #region Input References
-    private InputActionReference interactionInput => InputReferences.Instance._MenuInterectInput;
+    private InputActionReference interactionInput => InputReferences.Instance._Menu_Interect;
     private void OnInterectInput(InputAction.CallbackContext Callback)
     {
         if (canProceed)

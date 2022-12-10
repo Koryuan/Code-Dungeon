@@ -7,7 +7,7 @@ public static class SceneLoad
     public static void LoadTutorialMap() => SceneManager.LoadScene("Tutorial Scene");
     public static void LoadSelectStage() => SceneManager.LoadScene("Stage Selection");
     public static void LoadPrint1Stage() => SceneManager.LoadScene("Print 1");
-    public static void LoadPrint2Stage() => SceneManager.LoadScene("Print 2");
+    public static void LoadPrint2Stage() => SceneManager.LoadScene("(Duplicate) Print 2");
     public static void LoadStageFromSaveFile()
     {
         var saveData = SaveLoadSystem.Instance._SaveData;

@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 8175847912869854901}
-  closeSprite: {fileID: 1587263350665940983}
+  closeObject: {fileID: 1587263350665940983}
   m_audioSource: {fileID: 6087086989496029725}
 --- !u!82 &6087086989496029725
 AudioSource:

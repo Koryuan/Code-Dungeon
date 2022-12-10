@@ -1,6 +1,6 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LineInput : CodeMachineContain
 {
@@ -13,6 +13,7 @@ public class LineInput : CodeMachineContain
         public bool ReachTarget() => Input.text.Replace(StringList.HTML_Underline_Front, string.Empty) == Target;
     }
 
+    [SerializeField] private string parentName = string.Empty;
     [SerializeField] private string startText = string.Empty;
     [SerializeField] private InputField[] m_inputField;
 
@@ -25,18 +26,27 @@ public class LineInput : CodeMachineContain
             input.Input.onEndEdit.AddListener((Text) => UpdateColor(input));
         }
     }
-
-    private void UpdateColor(InputField Input)
-    {
-        if (Input.ReachTarget()) Input.Text.color = new Color(0, 255, 87);
-        else Input.Text.color = Color.black;
-    }
-
     protected override void CheckReferences()
     {
         base.CheckReferences();
         if (startText == string.Empty) Debug.LogError($"{name} in {transform.parent.name}, has no starting text for code line");
         if (m_inputField.Length == 0) Debug.LogError($"{name} in {transform.parent.name}, has no input field for code line");
+    }
+
+    public void UpdateText(InputFieldLine NewText)
+    {
+        Debug.Log($"{m_codeNumber.text} and {NewText.Number}");
+        if (m_codeNumber.text != NewText.Number) return;
+        Debug.Log("Update Text");
+        m_inputField[NewText.IndexInArray].Input.text = NewText.Text;
+        UpdateColor(m_inputField[NewText.IndexInArray]);
+    }
+    private void UpdateColor(InputField Input)
+    {
+        if (Input.ReachTarget()) Input.Text.color = new Color(0, 255, 87);
+        else Input.Text.color = Color.black;
+        AutoSaveScene.SaveObjectState(parentName,
+            new InputFieldLine(m_codeNumber.text, Array.IndexOf(m_inputField, Input), Input.Text.text));
     }
 
     public override string[] GetInputFieldText()
@@ -48,4 +58,19 @@ public class LineInput : CodeMachineContain
         }
         return returnedString;
     }
+}
+
+[Serializable] public class InputFieldLine
+{
+    public string Number;
+    public int IndexInArray;
+    public string Text;
+
+    public InputFieldLine(string Number = "", int IndexInArray = -1, string Text = "")
+    {
+        this.Number = Number;
+        this.IndexInArray = IndexInArray;
+        this.Text = Text;
+    }
+
 }

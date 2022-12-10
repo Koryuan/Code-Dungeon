@@ -76,7 +76,7 @@ public class GuidePanel : MonoBehaviour
         OnClosePanel?.Invoke();
     }
 
-    private InputActionReference nextInput => InputReferences.Instance._MenuInterectInput;
+    private InputActionReference nextInput => InputReferences.Instance._Menu_Interect;
     private void NextContent(InputAction.CallbackContext Callback)
     {
         if (currentContentPage == content.GuideImage.Length - 1) CloseGuide();

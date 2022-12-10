@@ -53,10 +53,10 @@ public class SaveLoadMenu : MonoBehaviour
     async private void OnEnable()
     {
         await UniTask.WaitUntil(() => InputReferences.Instance);
-        InputReferences.Instance._MenuCloseInput.action.performed += ClosePanel;
+        InputReferences.Instance._Menu_Close.action.performed += ClosePanel;
     }
     private void OnDisable()
     {
-        InputReferences.Instance._MenuCloseInput.action.performed -= ClosePanel;
+        InputReferences.Instance._Menu_Close.action.performed -= ClosePanel;
     }
 }

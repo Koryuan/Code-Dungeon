@@ -12,6 +12,14 @@ public class CodeMachineString : CodeMachine
         m_compiler = GetComponent<CompileObject>();
     }
 
+    public void UpdateContainText(InputFieldLine NewText)
+    {
+        foreach(CodeMachineContain Contain in m_containList)
+        {
+            if (Contain is LineInput Input) Input.UpdateText(NewText);
+        }
+    }
+
     async protected override UniTask PrintInteraction()
     {
         string textPrinted = string.Empty;
@@ -31,7 +39,7 @@ public class CodeMachineString : CodeMachine
         if (printFunction)
         {
             await printFunction.Activate(printMessage.Correct);
-            AutoSaveScene.SaveObjectState($"{name} | Print",textPrinted);
+            AutoSaveScene.SaveObjectState($"{name} | Print: ", textPrinted);
             Debug.Log($"{name} | Print");
         }
         else Debug.LogError($"{name}, trying to use function from print without having the class");

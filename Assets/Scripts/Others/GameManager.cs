@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Object References")]
     [SerializeField] private PlayerController player;
+
+    [Header("Channel References")]
+    [SerializeField] private HelpChannel m_helpChannel;
+
     public PlayerController Player => player;
 
     #region Instance References
@@ -56,6 +60,7 @@ public class GameManager : MonoBehaviour
         await UniTask.WaitUntil(() => inventory && inventory.IsInitialize);
         inventory.OnOpenInventory += OnOpenInventory;
         inventory.OnCloseInventory += OnCloseInventory;
+
         // Save Load Menu
         await UniTask.WaitUntil(() => saveLoad && saveLoad.IsInitialize);
         saveLoad.OnOpenPanel += OnOpenSaveMenu;
@@ -66,6 +71,8 @@ public class GameManager : MonoBehaviour
 
         // Let time Manager move
         await UniTask.WaitUntil(() => TimeManager.Instance != null);
+
+        Debug.Log("Game Manager - Everything loaded");
 
         IsInitialize = true;
     }

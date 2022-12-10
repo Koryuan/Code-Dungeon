@@ -1,8 +1,6 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -259,7 +257,7 @@ public class Inventory : MonoBehaviour
 
     #region Open Close
     InputActionReference inventoryInput => InputReferences.Instance._PlayerInventoryInput;
-    InputActionReference closeInput => InputReferences.Instance._MenuCloseInput;
+    InputActionReference closeInput => InputReferences.Instance._Menu_Close;
     private void OpenClosePanel(InputAction.CallbackContext Callback)
     {
         if (isClose) OpenPanel();

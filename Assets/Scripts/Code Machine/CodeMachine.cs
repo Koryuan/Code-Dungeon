@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,9 +10,14 @@ public class CodeMachine : InteractableTarget, IPanelUI
     [SerializeField] protected GameObject panel;
     [SerializeField] protected List<CodeMachineContain> m_containList = new List<CodeMachineContain>();
 
+    [Header("On Close")]
+    [SerializeField] protected bool m_onlyOnce = false;
+    [SerializeField] protected GameEvent[] onClosePanel;
+
     protected PrintFunction printFunction;
     protected PopUpMessage printMessage;
 
+    protected bool onClosePossible = true;
     protected bool canClose => panel.activeSelf && MenuManager.Instance.CodeMachineOpen;
 
     #region Initialization
@@ -30,7 +36,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
     #endregion
 
     #region Open Close
-    InputActionReference CloseInput => InputReferences.Instance._MenuCloseInput;
+    InputActionReference CloseInput => InputReferences.Instance._Menu_Close;
     async public void OpenPanel(IMenuUI LastUI)
     {
         MenuManager.Instance.OpenMenu(this);
@@ -39,11 +45,17 @@ public class CodeMachine : InteractableTarget, IPanelUI
     }
     async protected void ClosePanel(InputAction.CallbackContext Context)
     {
-        if (canClose)
+        if (!canClose) return;
+
+        panel.SetActive(false);
+        await GameManager.Instance.Player.MoveCamera(false);
+        MenuManager.Instance.CloseMenu(this);
+        AutoSaveScene.SaveObjectState($"{name} | Close");
+
+        if (onClosePossible && onClosePanel.Length > 0)
         {
-            panel.SetActive(false);
-            await GameManager.Instance.Player.MoveCamera(false);
-            MenuManager.Instance.CloseMenu(this);
+            await GameManager.Instance.StartEvent(onClosePanel);
+            if (m_onlyOnce) onClosePossible = false;
         }
     }
     #endregion
@@ -71,6 +83,13 @@ public class CodeMachine : InteractableTarget, IPanelUI
         }
         return false;
     }
+
+    public void ActivatePrintInteract()
+    {
+        printInteract = true;
+        InteractionManager.Instance.UpdateState();
+    }
+    public void OnCloseStopped() => onClosePossible = false;
 
     #region Compiler
     public void PrintMessage(string TextToPrint)
