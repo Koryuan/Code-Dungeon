@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 
+[CreateAssetMenu(menuName = "Scriptable Objects/Help/Help Setting")]
 public class HelpSettings : ScriptableObject
 {
     [Serializable] public struct Setting

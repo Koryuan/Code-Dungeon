@@ -1,7 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
-using System;
 using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,10 +10,15 @@ public class HelpMenu : MonoBehaviour, IPanelUI
     [SerializeField] private HelpContain m_containPrefab;
 
     [Header("Channel")]
-    [SerializeField] private HelpChannel m_channel;
+    [SerializeField] private HelpChannel m_helpChannel;
+    [SerializeField] private GameStateChannel m_GameStateChannel;
+    [SerializeField] private MenuManager m_menuManager;
 
     private bool hover = true;
     private List<HelpContain> m_contains = new List<HelpContain>();
+
+    private bool canOpen { get; set; } = true;
+    private bool canInterect { get; set; } = false;
 
     #region Initialization
     async private void Start()
@@ -23,17 +26,19 @@ public class HelpMenu : MonoBehaviour, IPanelUI
         CheckReferences();
 
         m_ui.Initialize();
-        m_channel.OnHelpInserted += AddHelpSetting;
+        m_helpChannel.OnHelpInserted += AddHelpSetting;
+        m_GameStateChannel.OnGameStateChanged += OnGameStateChanged;
+        m_menuManager.OnMenuStateChanged += OnMenuStateChanged;
 
         await UniTask.Delay(100);
 
         HelpSettings[] LoadedSettings = null;
-        while ((LoadedSettings = m_channel.RaiseHelpDataRequested()) == null) await UniTask.Delay(100);
+        while ((LoadedSettings = m_helpChannel.RaiseHelpListRequested()) == null) await UniTask.Delay(100);
         if (LoadedSettings.Length > 0) LoadHelpSetting(LoadedSettings);
     }
     private void CheckReferences()
     {
-        if (m_channel) Debug.LogError("Help Menu, has no channel to get data");
+        if (m_helpChannel) Debug.LogError("Help Menu, has no channel to get data");
         if (m_containPrefab) Debug.LogError("Help Menu, has no prefab to insert");
     }
     #endregion
@@ -61,12 +66,15 @@ public class HelpMenu : MonoBehaviour, IPanelUI
         hover = true;
     }
 
+    private void OnGameStateChanged(GameState NewState) => canOpen = NewState == GameState.Game_Player_State;
+    private void OnMenuStateChanged(MenuState NewState) => canInterect = NewState == MenuState.Help;
+
     #region Open Close
     public void OpenPanel(IMenuUI LastUI)
     {
-        if (m_ui.Open) return;
+        if (m_ui.Open || !canOpen) return;
 
-        MenuManager.Instance.OpenMenu(this);
+        m_menuManager.OpenMenu(this,null);
         m_ui.OpenPanel(true);
 
         if (m_contains.Count > 0) m_ui.UpdateSetting(m_contains[0].Settings);
@@ -76,9 +84,9 @@ public class HelpMenu : MonoBehaviour, IPanelUI
     private void OpenPanel(InputAction.CallbackContext Context) => OpenPanel(null);
     public void ClosePanel(InputAction.CallbackContext Context)
     {
-        if (!m_ui.Open) return;
+        if (!m_ui.Open || !canInterect) return;
 
-        MenuManager.Instance.CloseMenu(this);
+        m_menuManager.CloseMenu(this);
         m_ui.OpenPanel(false);
 
         Debug.Log("Help Menu: Closed");
@@ -99,5 +107,8 @@ public class HelpMenu : MonoBehaviour, IPanelUI
     private void OnDestroy()
     {
         m_ui.DestroyConnection();
+        m_helpChannel.OnHelpInserted -= AddHelpSetting;
+        m_GameStateChannel.OnGameStateChanged -= OnGameStateChanged;
+        m_menuManager.OnMenuStateChanged -= OnMenuStateChanged;
     }
 }

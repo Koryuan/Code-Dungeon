@@ -431,7 +431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494474907}
   - component: {fileID: 494474909}
-  - component: {fileID: 494474908}
+  - component: {fileID: 7437680110789295443}
   m_Layer: 5
   m_Name: UI - Inventory
   m_TagString: Untagged
@@ -472,15 +472,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f01b32fc9e7c4c9569a233938912d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UI: {fileID: 494474908}
-  containerPrefab: {fileID: 6865161743858844536, guid: ba6d9de8ef562b5448a4d48c5400fed1, type: 3}
-  scrollSpeed: 0
-  instant: 1
-  _scrollRect: {fileID: 1268345134494170274}
-  mScrollTransform: {fileID: 561123653749425418}
-  _contentTransform: {fileID: 7713326151515018766}
-  _viewportTransform: {fileID: 561123653749425418}
---- !u!114 &494474908
+  m_ui:
+    m_panel: {fileID: 966485729}
+    m_nameHolder: {fileID: 2014306417928162878}
+    m_descriptionHolder: {fileID: 2010249028792423955}
+    m_container: {fileID: 7713326151515018766}
+    m_viewport: {fileID: 561123653749425418}
+    m_scrollbar: {fileID: 6797992101248060424}
+    m_itemDialog: {fileID: 838535565179635616}
+    m_yesNoDialog: {fileID: 1215140839752925629}
+    m_yesNoPanel: {fileID: 7384082063438809919}
+    m_scrollbarFunction: {fileID: 7437680110789295443}
+  m_containerPrefab: {fileID: 6865161743858844536, guid: ba6d9de8ef562b5448a4d48c5400fed1, type: 3}
+  m_itemChannel: {fileID: 11400000, guid: c23500c67bbdfe14e8958a638153ac75, type: 2}
+  m_gameChannel: {fileID: 11400000, guid: 431909f63d5384443ba9f6d401dadb9a, type: 2}
+  m_menuManager: {fileID: 11400000, guid: 5ba601c8329def546b9109a636600305, type: 2}
+--- !u!114 &7437680110789295443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,18 +496,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 494474906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7eee1fb9417c064b9473cbfef5686fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 6434ba1b4449ff244a0bc5ae4e204ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 966485729}
-  itemName: {fileID: 2014306417928162878}
-  itemDescription: {fileID: 2010249028792423955}
-  itemContainer: {fileID: 7713326151515018766}
-  itemContainerViewport: {fileID: 561123653749425418}
-  itemContainerScrollbar: {fileID: 6797992101248060424}
-  inventoryText: {fileID: 838535565179635616}
-  yesNoBoxText: {fileID: 1215140839752925629}
-  yesNoPanel: {fileID: 7384082063438809919}
+  m_scrollRect: {fileID: 1268345134494170274}
+  m_scrollTransform: {fileID: 561123653749425418}
+  m_contentTransform: {fileID: 7713326151515018766}
+  m_viewportTransform: {fileID: 561123653749425418}
 --- !u!1 &934192297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,7 +2608,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 557.1, y: -0.8000183}
   m_SizeDelta: {x: -1180, y: -69}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4399,7 +4401,9 @@ MonoBehaviour:
   dialogSystem: {fileID: 1000985401}
   guideSystem: {fileID: 1993198211}
   player: {fileID: 0}
-  m_helpChannel: {fileID: 0}
+  m_gameStateChannel: {fileID: 11400000, guid: 431909f63d5384443ba9f6d401dadb9a, type: 2}
+  m_helpChannel: {fileID: 11400000, guid: ab94fa64a9620694db5d2b25af40f676, type: 2}
+  m_itemChannel: {fileID: 11400000, guid: c23500c67bbdfe14e8958a638153ac75, type: 2}
 --- !u!114 &4682798047610999605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6410,7 +6414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4389233886322288142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6452,7 +6456,9 @@ MonoBehaviour:
     m_nextButton: {fileID: 0}
     m_prevButton: {fileID: 0}
   m_containPrefab: {fileID: 0}
-  m_channel: {fileID: 0}
+  m_helpChannel: {fileID: 11400000, guid: ab94fa64a9620694db5d2b25af40f676, type: 2}
+  m_GameStateChannel: {fileID: 11400000, guid: 431909f63d5384443ba9f6d401dadb9a, type: 2}
+  m_menuManager: {fileID: 11400000, guid: 5ba601c8329def546b9109a636600305, type: 2}
 --- !u!114 &3152157791209553103
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,67 +1,84 @@
-﻿using System.Collections.Generic;
+﻿using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class MenuManager: MonoBehaviour
+[CreateAssetMenu(menuName = "Scriptable Objects/Manager/Menu")]
+public class MenuManager: ScriptableObject
 {
-    #region Instance
-    private static MenuManager m_instance;
-    public static MenuManager Instance
-    {
-        get
-        {
-            if (m_instance == null)
-            {
-                m_instance = new GameObject("Menu Manager").AddComponent<MenuManager>();
-                DontDestroyOnLoad(m_instance);
-            }
-            return m_instance;
-        }
-    }
-    #endregion
+    public delegate void MenuStateCallBack(MenuState NewState);
+    public event MenuStateCallBack OnMenuStateChanged;
 
-    private enum MenuState
+    [SerializeField] private GameStateChannel m_gameStateChannel;
+
+    private class Menu
     {
-        None,
-        CodeMachine,
-        Help
+        readonly IPanelUI m_panel;
+        public IMenuUI LastUI;
+
+        public Menu(IPanelUI NewPanel) => m_panel = NewPanel;
+
+        public IPanelUI Panel => m_panel;
+        public void OpenPanel() => m_panel.OpenPanel(LastUI);
     }
 
     // Currently Open Menu
+    private List<Menu> m_menuList = new List<Menu>();
     private MenuState m_currentState = MenuState.None;
-    public bool CodeMachineOpen => m_currentState == MenuState.CodeMachine;
-
-    // Menu List
-    private List<IPanelUI> m_menuList = new List<IPanelUI>();
+    private Menu m_currentMenu => m_menuList[m_menuList.Count - 1];
 
     #region Open Close
-    public void OpenMenu(IPanelUI OpenedMenu)
+    private Menu FindMenu(IPanelUI SearchedPanel) => m_menuList.Find(x => x.Panel == SearchedPanel);
+    public void OpenMenu(IPanelUI OpenedMenu, IMenuUI LastUI)
     {
-        if (GameManager.Instance) GameManager.Instance.OpenMenu();
+        if (m_gameStateChannel) m_gameStateChannel.RaiseGameStateRequested(GameState.Game_Open_Menu);
 
-        m_menuList.Add(OpenedMenu);
+        if (m_menuList.Count > 0) m_currentMenu.LastUI = LastUI;
+;
+        if (FindMenu(OpenedMenu) == null)
+        {
+            Menu NewMenu = new Menu(OpenedMenu);
+            m_menuList.Add(NewMenu);
+            Debug.Log($"Menu Manager: Menu Added, Current Count:{m_menuList.Count}");
+        }
+
         UpdateState(false);
     }
     public void CloseMenu(IPanelUI ClosedMenu)
     {
-        m_menuList.Remove(ClosedMenu);
-        UpdateState(true);
+        m_menuList.Remove(FindMenu(ClosedMenu));
+        Debug.Log("Menu manager: Remove Menu");
+        UpdateState(false);
     }
     #endregion
 
-    private void UpdateState(bool AfterClose)
+    async private void UpdateState(bool CloseUI)
     {
         if (m_menuList.Count > 0)
         {
-            IPanelUI lastUI = m_menuList[m_menuList.Count-1];
-            if (lastUI is CodeMachine) m_currentState = MenuState.CodeMachine;
-            else if (lastUI is HelpMenu) m_currentState = MenuState.Help;
+            if (m_currentMenu.Panel is CodeMachine) m_currentState = MenuState.CodeMachine;
+            else if (m_currentMenu.Panel is HelpMenu) m_currentState = MenuState.Help;
+            else if (m_currentMenu.Panel is Inventory) m_currentState = MenuState.Inventory;
 
-            if (AfterClose) lastUI.OpenPanel(null);
+            if (CloseUI) m_currentMenu.OpenPanel();
         }
         else
         {
             m_currentState = MenuState.None;
-            if (GameManager.Instance) GameManager.Instance.CloseMenu();
+            if (m_gameStateChannel) m_gameStateChannel.RaiseGameStateRequested(GameState.None);
         }
+
+        await UniTask.Delay(100);
+
+        OnMenuStateChanged?.Invoke(m_currentState);
+        Debug.Log($"Menu Manager: Current State -> {m_currentState}");
     }
+}
+
+public enum MenuState
+{
+    None,
+    CodeMachine,
+    Help,
+    Inventory
 }

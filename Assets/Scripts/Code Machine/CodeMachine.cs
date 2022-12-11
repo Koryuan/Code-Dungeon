@@ -9,6 +9,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
     [Header("Code Machine Properties")]
     [SerializeField] protected GameObject panel;
     [SerializeField] protected List<CodeMachineContain> m_containList = new List<CodeMachineContain>();
+    [SerializeField] protected MenuManager m_menuManager;
 
     [Header("On Close")]
     [SerializeField] protected bool m_onlyOnce = false;
@@ -18,12 +19,15 @@ public class CodeMachine : InteractableTarget, IPanelUI
     protected PopUpMessage printMessage;
 
     protected bool onClosePossible = true;
-    protected bool canClose => panel.activeSelf && MenuManager.Instance.CodeMachineOpen;
+    protected bool canClose { get; set; }
 
     #region Initialization
     protected virtual void Awake()
     {
         CheckReferences();
+
+        m_menuManager.OnMenuStateChanged += OnMenuStateChanged;
+
         foreach(CodeMachineContain contain in m_containList) contain.Initialize();
         printFunction = GetComponent<PrintFunction>();
         printMessage = GetComponentInChildren<PopUpMessage>(true);
@@ -34,11 +38,13 @@ public class CodeMachine : InteractableTarget, IPanelUI
     }
     #endregion
 
+    protected void OnMenuStateChanged(MenuState NewMenuState) => canClose = NewMenuState == MenuState.CodeMachine;
+
     #region Open Close
     InputActionReference CloseInput => InputReferences.Instance._Menu_Close;
     async public void OpenPanel(IMenuUI LastUI)
     {
-        MenuManager.Instance.OpenMenu(this);
+        if (m_menuManager) m_menuManager.OpenMenu(this,null);
         await GameManager.Instance.Player.MoveCamera(true);
         panel.SetActive(true);
     }
@@ -48,7 +54,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
 
         panel.SetActive(false);
         await GameManager.Instance.Player.MoveCamera(false);
-        MenuManager.Instance.CloseMenu(this);
+        if (m_menuManager) m_menuManager.CloseMenu(this);
         AutoSaveScene.SaveObjectState($"{name} | Close");
 
         if (onClosePossible && onClosePanel.Length > 0)
@@ -134,6 +140,10 @@ public class CodeMachine : InteractableTarget, IPanelUI
     protected void OnDisable()
     {
         CloseInput.action.performed -= ClosePanel;
+    }
+    protected void OnDestroy()
+    {
+        m_menuManager.OnMenuStateChanged -= OnMenuStateChanged;
     }
     #endregion
 }

@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     // UI Priority
     private bool dialogboxOpen = false;
-    private bool inventoryOpen = false;
     private bool guideOpen = false;
     private bool pauseOpen = false;
     private bool saveMenuOpen = false;
@@ -31,12 +30,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController player;
 
     [Header("Channel References")]
+    [SerializeField] private GameStateChannel m_gameStateChannel;
     [SerializeField] private HelpChannel m_helpChannel;
+    [SerializeField] private ItemChannel m_itemChannel;
 
     public PlayerController Player => player;
 
     #region Instance References
-    private Inventory inventory => Inventory.Instance;
     private PauseMenu pause => PauseMenu.Instance;
     private SaveLoadMenu saveLoad => SaveLoadMenu.Instance;
     #endregion
@@ -50,16 +50,12 @@ public class GameManager : MonoBehaviour
 
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
         guideSystem.OnClosePanel += OnGuideClose;
-;
+        m_gameStateChannel.OnGameStateRequestedChange += UpdateState;
+
         // Pause System
         await UniTask.WaitUntil(() => pause && pause.IsInitialize);
         pause.OnOpenPanel += OnPauseMenuOpen;
         pause.OnClosePanel += OnPauseMenuClose;
-
-        // Inventory System
-        await UniTask.WaitUntil(() => inventory && inventory.IsInitialize);
-        inventory.OnOpenInventory += OnOpenInventory;
-        inventory.OnCloseInventory += OnCloseInventory;
 
         // Save Load Menu
         await UniTask.WaitUntil(() => saveLoad && saveLoad.IsInitialize);
@@ -113,19 +109,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    #region Inventory System
-    private void OnOpenInventory()
-    {
-        inventoryOpen = true;
-        CurrentState = GameState.Game_Inventory_State;
-    }
-    private void OnCloseInventory()
-    {
-        inventoryOpen = false;
-        UpdateState();
-    }
-    #endregion
-
     #region Pause System
     private void OnPauseMenuOpen()
     {
@@ -152,24 +135,25 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    #region Menu
-    public void OpenMenu()
+    private void UpdateState(GameState NewState)
     {
-        menuOpen = true;
-        CurrentState = GameState.Game_Open_Menu;
+        switch(NewState)
+        {
+            case GameState.Game_Open_Menu:
+                m_gameStateChannel.RaiseGameStateChanged(CurrentState = GameState.Game_Open_Menu);
+                menuOpen = true;
+                break;
+            default:
+                RemoveCurrentState();
+                UpdateState();
+                break;
+        }
     }
-    public void CloseMenu()
-    {
-        menuOpen = false;
-        UpdateState();
-    }
-    #endregion
 
     async private void UpdateState()
     {
         if (dialogboxOpen) CurrentState = GameState.Game_Dialog_State;
         else if (guideOpen) CurrentState = GameState.Game_Guide_State;
-        else if (inventoryOpen) CurrentState = GameState.Game_Inventory_State;
         else if (pauseOpen) CurrentState = GameState.Game_Pause_State;
         else if (saveMenuOpen) CurrentState = GameState.Game_Save_Load_State;
         else if (menuOpen) CurrentState = GameState.Game_Open_Menu;
@@ -178,6 +162,11 @@ public class GameManager : MonoBehaviour
             onEvent = false; await UniTask.Delay(10);
             if (onEvent == false) CurrentState = GameState.Game_Player_State;
         }
+        m_gameStateChannel.RaiseGameStateChanged(CurrentState);
+    }
+    private void RemoveCurrentState()
+    {
+        if (CurrentState == GameState.Game_Open_Menu) menuOpen = false;
     }
 
     async public UniTask StartEvent(GameEvent[] EventList)
@@ -193,7 +182,7 @@ public class GameManager : MonoBehaviour
                 if (gameEvent.Item)
                 {
                     gameEvent.Dialog.AddItemName(gameEvent.Item.ItemName);
-                    inventory.AddNewItem(gameEvent.Item);
+                    m_itemChannel.RaiseItemInsert(gameEvent.Item);
                 }
                 OpenDialogBox(gameEvent.Dialog);
             }
@@ -203,15 +192,15 @@ public class GameManager : MonoBehaviour
         await UniTask.WaitUntil(() => onEvent == false);
     }
 
-    #region Enable Disable
+    #region Enable/Disalbe/Destroy
     private void OnEnable()
     {
         playerActionMap.Enable();
     }
-
-    private void OnDisable()
+    private void OnDestroy()
     {
         playerActionMap.Disable();
+        m_gameStateChannel.OnGameStateRequestedChange -= UpdateState;
     }
     #endregion
 }
@@ -223,7 +212,6 @@ public enum GameState
     Game_Open_Menu,
     Game_Dialog_State,
     Game_Guide_State,
-    Game_Inventory_State,
     Game_Pause_State,
     Game_Save_Load_State
 }

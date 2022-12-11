@@ -1,16 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Scriptable Objects/Channel/Help Channel")]
 public class HelpChannel : ScriptableObject
 {
     public delegate HelpSettings[] HelpCallback();
-    public HelpCallback OnHelpRequested;
-    public Action<HelpSettings> OnHelpInserted;
+    public event HelpCallback OnHelpListRequested;
+    public event Action<HelpSettings> OnHelpInserted;
 
-    public HelpSettings[] RaiseHelpDataRequested()
+    public HelpSettings[] RaiseHelpListRequested()
     {
-        if (OnHelpRequested == null) return null;
-        return OnHelpRequested?.Invoke();
+        if (OnHelpListRequested == null) return null;
+        return OnHelpListRequested?.Invoke();
     }
     public void RaiseHelpInsert(HelpSettings Setting)
     {

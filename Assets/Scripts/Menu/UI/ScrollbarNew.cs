@@ -76,4 +76,40 @@ public class ScrollbarNew : MonoBehaviour
             }
         }
     }
+    #region Unused Scroll Function
+    private bool m_instant = true;
+    private float m_scrollSpeed = 0;
+    private void UpdateScrollPosition(ItemBoxContain NewSelection)
+    {
+        // Math Calculation
+        RectTransform selectedRectTransform = NewSelection.ContainerTransform;
+        Vector3 selectedDifference = m_viewportTransform.localPosition - selectedRectTransform.localPosition;
+        float contentHeightDifference = (m_contentTransform.rect.height - m_viewportTransform.rect.height);
+
+        float selectedPosition = (m_contentTransform.rect.height - selectedDifference.y);
+        float currentScrollRectPosition = m_scrollRect.normalizedPosition.y;
+        float above = currentScrollRectPosition - (selectedRectTransform.rect.height / 2) + m_viewportTransform.rect.height;
+        float below = currentScrollRectPosition + (selectedRectTransform.rect.height / 2);
+
+        Debug.Log($"D: <color=red>{selectedDifference}</color>, CHD: <color=green>{contentHeightDifference}</color>, CSRP: <color=blue>{currentScrollRectPosition}</color>");
+        Debug.Log($"SP: <color=red>{selectedPosition}</color>, A: <color=green>{above}</color>, B: <color=blue>{below}</color>");
+        if (selectedPosition > above)
+        {
+            float step = selectedPosition - above;
+            float newY = currentScrollRectPosition + step;
+            float newNormalizedY = newY / contentHeightDifference;
+            m_scrollRect.normalizedPosition = Vector2.Lerp(m_scrollRect.normalizedPosition, new Vector2(0, newNormalizedY), m_scrollSpeed * Time.deltaTime);
+            if (m_instant) m_scrollRect.normalizedPosition = new Vector2(0, newNormalizedY);
+        }
+        else if (selectedPosition < below)
+        {
+            float step = selectedPosition - below;
+            float newY = currentScrollRectPosition + step;
+            float newNormalizedY = newY / contentHeightDifference;
+            m_scrollRect.normalizedPosition = Vector2.Lerp(m_scrollRect.normalizedPosition, new Vector2(0, newNormalizedY), m_scrollSpeed * Time.deltaTime);
+            if (m_instant) m_scrollRect.normalizedPosition = new Vector2(0, newNormalizedY);
+        }
+        Debug.Log($"Current Position: <color=green>{m_scrollRect.normalizedPosition}</color>");
+    }
+    #endregion
 }

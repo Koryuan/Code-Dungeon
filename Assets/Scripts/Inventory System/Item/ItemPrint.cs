@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Print Item", order = 100)]
+[CreateAssetMenu(menuName = "Scriptable Objects/Item/Comment Unlocker")]
 public class ItemPrint: Item
 {
     [Header("Special Attribute")]

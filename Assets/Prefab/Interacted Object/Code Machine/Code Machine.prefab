@@ -735,6 +735,9 @@ MonoBehaviour:
   m_interactableAnimator: {fileID: 0}
   panel: {fileID: 5857065443615623738}
   m_containList: []
+  m_menuManager: {fileID: 11400000, guid: 5ba601c8329def546b9109a636600305, type: 2}
+  m_onlyOnce: 0
+  onClosePanel: []
 --- !u!61 &5857065443654469459
 BoxCollider2D:
   m_ObjectHideFlags: 0
