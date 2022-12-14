@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     [Header("Object References")]
     [SerializeField] private PlayerController player;
 
+    [Header("Dialog References")]
+    [SerializeField] private DialogSetting m_OnHelpAdded;
+
     [Header("Channel References")]
     [SerializeField] private GameStateChannel m_gameStateChannel;
     [SerializeField] private HelpChannel m_helpChannel;
@@ -210,10 +213,24 @@ public class GameManager : MonoBehaviour
                 }
                 OpenDialogBox(gameEvent.Dialog);
             }
+            if (gameEvent.Help) StartHelpEvent(gameEvent.Help);
+            await UniTask.WaitUntil(() => onEvent == false);
+
             if (gameEvent.HasEvent) gameEvent.ActiveAction();
             if (!gameEvent.HasEvent) onEvent = true;
         }
         await UniTask.WaitUntil(() => onEvent == false);
+    }
+    private void StartHelpEvent(HelpSettings Setting)
+    {
+        if (m_helpChannel.RaiseHelpSearchRequested(Setting)) return;
+
+        m_helpChannel.RaiseHelpInsert(Setting);
+
+        onEvent = true;
+        m_OnHelpAdded.AddHelpname(Setting.Name);
+
+        OpenDialogBox(m_OnHelpAdded);
     }
 
     #region Enable/Disalbe/Destroy

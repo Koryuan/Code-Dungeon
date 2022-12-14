@@ -3,6 +3,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class DialogBox : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class DialogBox : MonoBehaviour
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private GameObject boxPanel;
     [SerializeField] private TMP_Text boxText;
+    [SerializeField] private Image m_imageHolder;
 
     #region Initialization
     private void Awake()
@@ -54,6 +56,14 @@ public class DialogBox : MonoBehaviour
     private void NextDialog(Dialog Next, bool JustOpen = false)
     {
         (nameText.text, boxText.text) = Next.DialogDetail;
+        
+        if (Next.Image)
+        {
+            m_imageHolder.sprite = Next.Image;
+            m_imageHolder.rectTransform.sizeDelta = Next.ImageScale;
+            m_imageHolder.enabled = true;
+            m_imageHolder.rectTransform.anchoredPosition = new Vector2(0,Next.Y_Offset);
+        } m_imageHolder.enabled = false;
 
         if (AudioManager.Instance && !JustOpen) AudioManager.Instance.PlayUIConfirm();
 

@@ -194,6 +194,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Menu Help",
+                    "type": "Button",
+                    "id": "d4453fd9-f99f-47a3-aa77-6624bdc453aa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -249,6 +257,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Menu Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e4a772e-2ca8-4a4b-a99f-6237b3489277",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Help",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

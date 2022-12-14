@@ -5,7 +5,8 @@
     public static string Inventory_YesNoText = "Apakah ingin menggunakan item ini?";
 
     // Dialog String List
-    public static string DialogItemCode = "<Item>";
+    public const string DialogItemCode = "<Item>";
+    public const string DialogHelpCode = "<Help>";
 
     //Print 1 Scene Saved Object
     public static string Item_Print1 = "Item Print 1";

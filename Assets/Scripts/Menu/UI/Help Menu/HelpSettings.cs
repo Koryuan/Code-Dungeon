@@ -6,7 +6,7 @@ public class HelpSettings : ScriptableObject
 {
     [Serializable] public struct Setting
     {
-        [SerializeField] private string m_text;
+        [SerializeField, TextArea(10, 50)] private string m_text;
         [SerializeField] private Sprite m_image;
 
         public (string Text, Sprite Image) Data => (m_text, m_image);

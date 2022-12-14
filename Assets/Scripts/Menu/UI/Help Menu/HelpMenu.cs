@@ -27,6 +27,8 @@ public class HelpMenu : MonoBehaviour, IPanelUI
 
         m_ui.Initialize();
         m_helpChannel.OnHelpInserted += AddHelpSetting;
+        m_helpChannel.OnHelpSearchRequested += SearchHelpSetting;
+
         m_GameStateChannel.OnGameStateChanged += OnGameStateChanged;
         m_menuManager.OnMenuStateChanged += OnMenuStateChanged;
 
@@ -38,8 +40,8 @@ public class HelpMenu : MonoBehaviour, IPanelUI
     }
     private void CheckReferences()
     {
-        if (m_helpChannel) Debug.LogError("Help Menu, has no channel to get data");
-        if (m_containPrefab) Debug.LogError("Help Menu, has no prefab to insert");
+        if (!m_helpChannel) Debug.LogError("Help Menu, has no channel to get data");
+        if (!m_containPrefab) Debug.LogError("Help Menu, has no prefab to insert");
     }
     #endregion
 
@@ -59,6 +61,13 @@ public class HelpMenu : MonoBehaviour, IPanelUI
     private void LoadHelpSetting(HelpSettings[] SavedSettings)
     {
         foreach (HelpSettings settings in SavedSettings) AddHelpSetting(settings);
+    }
+    private bool SearchHelpSetting(HelpSettings SearchedSetting)
+    {
+        if (m_contains.Count == 0) return false;
+
+        HelpContain SearchedContain = m_contains.Find(x => x.Settings == SearchedSetting);
+        return SearchedContain != null;
     }
     private void UpdateScrollbar(RectTransform Target)
     {
@@ -108,6 +117,7 @@ public class HelpMenu : MonoBehaviour, IPanelUI
     {
         m_ui.DestroyConnection();
         m_helpChannel.OnHelpInserted -= AddHelpSetting;
+        m_helpChannel.OnHelpSearchRequested -= SearchHelpSetting;
         m_GameStateChannel.OnGameStateChanged -= OnGameStateChanged;
         m_menuManager.OnMenuStateChanged -= OnMenuStateChanged;
     }

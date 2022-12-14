@@ -11,6 +11,9 @@ using UnityEngine.UI;
     [SerializeField] private Transform m_containerTransform;
     [SerializeField] private ScrollbarNew m_scrollbar;
 
+    [Header("Preset")]
+    [SerializeField] private Sprite m_onNoImage;
+
     [Header("Button")]
     [SerializeField] private Button m_nextButton;
     [SerializeField] private Button m_prevButton;
@@ -52,9 +55,9 @@ using UnityEngine.UI;
     {
         var data = Setting.Data;
         m_textHolder.text = data.Text;
-        m_imageHolder.sprite = data.Image;
+        m_imageHolder.sprite = data.Image != null ? data.Image : m_onNoImage;
 
-        bool canNext = m_currentIndex + 1 < m_currentSettings.Settings.Length - 1;
+        bool canNext = m_currentIndex + 1 <= m_currentSettings.Settings.Length - 1;
         bool canPrev = m_currentIndex - 1 > -1;
         m_nextButton.gameObject.SetActive(canNext);
         m_prevButton.gameObject.SetActive(canPrev);
