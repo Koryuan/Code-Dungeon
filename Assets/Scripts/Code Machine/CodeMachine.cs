@@ -22,8 +22,9 @@ public class CodeMachine : InteractableTarget, IPanelUI
     protected bool canClose { get; set; }
 
     #region Initialization
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         CheckReferences();
 
         m_menuManager.OnMenuStateChanged += OnMenuStateChanged;
@@ -38,9 +39,10 @@ public class CodeMachine : InteractableTarget, IPanelUI
     }
     #endregion
 
+    // Done
     protected void OnMenuStateChanged(MenuState NewMenuState) => canClose = NewMenuState == MenuState.CodeMachine;
 
-    #region Open Close
+    #region Open Close (Done Migrate)
     InputActionReference CloseInput => InputReferences.Instance._Menu_Close;
     async public void OpenPanel(IMenuUI LastUI)
     {
@@ -50,7 +52,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
     }
     async protected void ClosePanel(InputAction.CallbackContext Context)
     {
-        if (!canClose) return;
+        if (!canClose || !panel.activeSelf) return;
 
         panel.SetActive(false);
         await GameManager.Instance.Player.MoveCamera(false);
@@ -112,7 +114,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
         OpenPanel(null);
 
         return utcs.Task;
-    }
+    } // Done
 
     async protected override UniTask PrintInteraction()
     {
@@ -131,7 +133,7 @@ public class CodeMachine : InteractableTarget, IPanelUI
     }
     #endregion
 
-    #region Enable/Disable
+    #region Enable/Disable (Done Migrated)
     async protected void OnEnable()
     {
         await UniTask.WaitUntil(() => InputReferences.Instance);

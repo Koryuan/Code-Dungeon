@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Dialog", order = 99)]
+[CreateAssetMenu(menuName = "Scriptable Objects/Dialog/Dialog Setting")]
 public class DialogSetting : ScriptableObject
 {
     [SerializeField] private Dialog[] dialogs;

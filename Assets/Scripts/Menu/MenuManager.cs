@@ -57,6 +57,7 @@ public class MenuManager: ScriptableObject
         if (m_menuList.Count > 0)
         {
             if (m_currentMenu.Panel is CodeMachine) m_currentState = MenuState.CodeMachine;
+            else if (m_currentMenu.Panel is CodeMachineMK2) m_currentState = MenuState.CodeMachineMK2;
             else if (m_currentMenu.Panel is HelpMenu) m_currentState = MenuState.Help;
             else if (m_currentMenu.Panel is Inventory) m_currentState = MenuState.Inventory;
 
@@ -65,7 +66,7 @@ public class MenuManager: ScriptableObject
         else
         {
             m_currentState = MenuState.None;
-            if (m_gameStateChannel) m_gameStateChannel.RaiseGameStateRequested(GameState.None);
+            if (m_gameStateChannel) m_gameStateChannel.RaiseGameStateRemoveState(GameState.Game_Open_Menu);
         }
 
         await UniTask.Delay(100);
@@ -79,6 +80,7 @@ public enum MenuState
 {
     None,
     CodeMachine,
+    CodeMachineMK2,
     Help,
     Inventory
 }

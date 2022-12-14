@@ -9,8 +9,9 @@ public class SavePoint : InteractableTarget
     [SerializeField] private Sprite onSprite;
     [SerializeField] private Sprite offSprite;
 
-    async public void Awake()
+    async protected override void Awake()
     {
+        base.Awake();
         await UniTask.WaitUntil(() => SaveLoadMenu.Instance);
         SaveLoadMenu.Instance.OnClosePanel += () => UpdateSprite(false);
     }

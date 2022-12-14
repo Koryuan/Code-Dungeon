@@ -29,6 +29,8 @@ public class Inventory : MonoBehaviour, IPanelUI
         CheckReferences();
 
         m_itemChannel.OnItemInserted += AddNewItem;
+        m_itemChannel.OnItemRequested += SearchItem;
+        m_itemChannel.OnItemRequestRemove += RemoveRequestedItem;
         m_gameChannel.OnGameStateChanged += OnGameStateChanged;
         m_menuManager.OnMenuStateChanged += OnMenuStateChanged;
 
@@ -48,7 +50,7 @@ public class Inventory : MonoBehaviour, IPanelUI
     }
     #endregion
 
-    #region Add/Remove
+    #region Add/Remove/Search
     private void AddNewItem(Item NewItem)
     {
         var Item = Instantiate(m_containerPrefab, m_ui.ItemContainer);
@@ -59,7 +61,7 @@ public class Inventory : MonoBehaviour, IPanelUI
         Item.OnContainDestroy += RemoveItem;
         Item.Button.OnSelectEvent += () => UpdateItemInfo(Item);
         Item.Button.OnHoverEvent += () => m_hover = false;
-        if (Item.ItemUseable) Item.Button.onClick.AddListener(OpenYesNoBox);
+        Item.OnPressed += OpenYesNoBox;
 
         // Add to list
         m_itemList.Add(Item);
@@ -74,10 +76,23 @@ public class Inventory : MonoBehaviour, IPanelUI
     private void RemoveItem(ItemBoxContain RemovedItemContainer, Item RemovedItem)
     {
         m_itemList.Remove(RemovedItemContainer);
-        m_itemChannel.RaiseItemRemove(RemovedItem);
+        m_itemChannel.RaiseItemRemoved(RemovedItem);
 
         // Unsubscribe
         RemovedItemContainer.OnContainDestroy -= RemoveItem;
+    }
+    private void RemoveRequestedItem(Item RequestedItem)
+    {
+        if (m_itemList.Count == 0) return;
+        ItemBoxContain contain = m_itemList.Find(x => x.Item == RequestedItem);
+
+        if (contain != null) contain.DestoryContain();
+    }
+    private Item SearchItem(string Itemname)
+    {
+        if (m_itemList.Count == 0) return null;
+        Item SearchedItem = m_itemList.Find(x => x.ItemName == Itemname)?.Item;
+        return SearchedItem;
     }
     #endregion
 
@@ -99,10 +114,10 @@ public class Inventory : MonoBehaviour, IPanelUI
     #endregion
 
     #region Yes / No box
-    private void OpenYesNoBox()
+    private void OpenYesNoBox(ItemBoxContain Contain)
     {
-        Action onSelectYes = m_currentSelection.Use; onSelectYes += ClosePanel;
-        Action onSelectNo = m_currentSelection.Select; onSelectNo += () => m_ui.Update_Dialog(false);
+        Action onSelectYes = Contain.Use; onSelectYes += ClosePanel;
+        Action onSelectNo = Contain.Select; onSelectNo += () => m_ui.Update_Dialog(false);
 
         m_ui._YesNoBox.OpenYesNo(onSelectYes, onSelectNo);
         m_ui.Update_Dialog(true);

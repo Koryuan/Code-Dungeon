@@ -1,7 +1,9 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,7 +52,11 @@ public class GameManager : MonoBehaviour
 
         dialogSystem.OnDialogBoxClose += OnDialogBoxClose;
         guideSystem.OnClosePanel += OnGuideClose;
+
+        // Game State Channel
         m_gameStateChannel.OnGameStateRequestedChange += UpdateState;
+        m_gameStateChannel.OnGameStateRequestedRemove += RemoveState;
+        m_gameStateChannel.OnGameEventPassed += StartEventFromChannel;
 
         // Pause System
         await UniTask.WaitUntil(() => pause && pause.IsInitialize);
@@ -149,6 +155,20 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    private void RemoveState(GameState OldState)
+    {
+        switch (OldState)
+        {
+            case GameState.Game_Open_Menu:
+                menuOpen = false;
+                UpdateState();
+                break;
+            default:
+                RemoveCurrentState();
+                UpdateState();
+                break;
+        }
+    }
 
     async private void UpdateState()
     {
@@ -167,6 +187,10 @@ public class GameManager : MonoBehaviour
     private void RemoveCurrentState()
     {
         if (CurrentState == GameState.Game_Open_Menu) menuOpen = false;
+    }
+    async private void StartEventFromChannel(GameEvent[] EventList)
+    {
+        await StartEvent(EventList);
     }
 
     async public UniTask StartEvent(GameEvent[] EventList)
@@ -201,6 +225,7 @@ public class GameManager : MonoBehaviour
     {
         playerActionMap.Disable();
         m_gameStateChannel.OnGameStateRequestedChange -= UpdateState;
+        m_gameStateChannel.OnGameStateRequestedRemove -= RemoveState;
     }
     #endregion
 }

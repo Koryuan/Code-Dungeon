@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f948724b5a8c44086ee1d7bb227c6f, type: 3}
+  m_Name: Puzzle 5 - Middle Machine - Code 2
+  m_EditorClassIdentifier: 
+  itemName: Middle - Code Unlocker - 2
+  isUseable: 1
+  itemDescription: 'Unlock Code:
+
+    //b = 10 + 5 * a
+
+    to
+
+    b = 10 + 5 *
+    a'
+  m_range: 0.5
+  m_searchedText: <color=#023020>//b = 10 + 5 * a
+  m_changedText: b = 10 + 5 * a
+  m_afterChangeFixed: 1
+  m_atFailedDialog: {fileID: 11400000, guid: 455fc1239475b9c489a6058d0aa18cb2, type: 2}

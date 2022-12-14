@@ -136,7 +136,7 @@ public class LoadSceneObject : MonoBehaviour
         #endregion
 
         // Puzzle 1
-        if (sceneSaveData.TakePrint1Item) print1SceneObject.PrintItem1.ForceDisableInteraction();
+        if (sceneSaveData.TakePrint1Item) print1SceneObject.PrintItem1.InteractionActivation(false);
         print1SceneObject.Door1.Activated(sceneSaveData.OpenDoor1);
 
         if (sceneSaveData.UpdateCodeMachine1Test) 
@@ -148,7 +148,7 @@ public class LoadSceneObject : MonoBehaviour
         if (sceneSaveData.TreasureChest2_Opened)
         {
             print1SceneObject.PrintItem2.OpenTreasureChest(true);
-            if (sceneSaveData.TreasureChest2_Taken) print1SceneObject.PrintItem2.ForceDisableInteraction();
+            if (sceneSaveData.TreasureChest2_Taken) print1SceneObject.PrintItem2.InteractionActivation(false);
         }
         print1SceneObject.Door2.Activated(sceneSaveData.OpenDoor2);
 
@@ -175,39 +175,10 @@ public class LoadSceneObject : MonoBehaviour
     [SerializeField] private Print2SceneObject print2SceneObject = null;
     private void LoadPrint2SceneObject(PlayerController Player)
     {
-        void CheckReferences()
-        {
-            // Puzzle 1
-            if (!print2SceneObject.Machine1) Debug.LogError($"Load Scene has no reference to Machine 1");
-            if (!print2SceneObject.Machine2) Debug.LogError($"Load Scene has no reference to Machine 2");
-            if (!print2SceneObject.Door1) Debug.LogError($"Load Scene has no reference to Door 1");
-            if (!print2SceneObject.NPC1) Debug.LogError($"Load Scene has no reference to NPC 1");
-        }
-
-        CheckReferences();
-
         #region Ommiting Save data name
         SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
         SaveDataPrint2Scene sceneSaveData = loadedSaveData.Print2Scene;
         SceneType LastScene = loadedSaveData.LastScene;
-        #endregion
-
-        #region Puzzle 3
-        print2SceneObject.Machine2.PrintMessage("Lock Release");
-        print2SceneObject.Door1.Activated(sceneSaveData.Door1Open);
-        if (sceneSaveData.Door1OpenOnce) print2SceneObject.NPC1.gameObject.SetActive(false);
-        else if(sceneSaveData.NPCDialog > -1) print2SceneObject.NPC1.UpdateNPCEvent(sceneSaveData.NPCDialog + 1);
-
-        if (sceneSaveData.CodeMachine1PrintedText != string.Empty) 
-            print2SceneObject.Machine1.PrintMessage(sceneSaveData.CodeMachine1PrintedText);
-        if (sceneSaveData.CodeMachine1InputField.IndexInArray != -1)
-            print2SceneObject.Machine1.UpdateContainText(sceneSaveData.CodeMachine1InputField);
-
-        if (Player)
-        {
-            if (LastScene == SceneType.Print1Scene)
-                Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, -1));
-        }
         #endregion
 
         #region Puzzle 4
@@ -257,6 +228,12 @@ public class LoadSceneObject : MonoBehaviour
         print2SceneObject.Puzzle4_Door.Activated(sceneSaveData.Puzzle4_DoorOpen);
         #endregion
 
+        if (Player)
+        {
+            if (LastScene == SceneType.Print1Scene)
+                Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, -1));
+        }
+
         Debug.Log("Everything done loaded");
     }
     #endregion
@@ -300,12 +277,6 @@ public class LoadSceneObject : MonoBehaviour
 
 [Serializable] public class Print2SceneObject
 {
-    [Header("Puzzle 3")]
-    public CodeMachineString Machine1;
-    public CodeMachine Machine2;
-    public Door Door1;
-    public NonPlayableCharacter NPC1;
-
     [Header("Puzzle 4")]
     public CodeMachine Puzzle4_MachineInt;
     public CodeMachine Puzzle4_MachineChar;

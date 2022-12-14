@@ -26,7 +26,7 @@ using UnityEngine;
             await UniTask.Yield();
             if (m_playerCamera.transform.localPosition == targetPosition) break;
         }
-        Debug.Log("Camera is done Moved");
+        //Debug.Log("Camera is done Moved");
         m_playerCamera.transform.localPosition = targetPosition;
     }
 }

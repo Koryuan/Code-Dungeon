@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class LineInput : CodeMachineContain
 {
-    [System.Serializable] public struct InputField
-    {
-        public TMP_InputField Input;
-        public TMP_Text Text;
-        public string Target;
-
-        public bool ReachTarget() => Input.text.Replace(StringList.HTML_Underline_Front, string.Empty) == Target;
-    }
-
     [SerializeField] private string parentName = string.Empty;
     [SerializeField] private string startText = string.Empty;
     [SerializeField] private InputField[] m_inputField;
@@ -58,6 +49,15 @@ public class LineInput : CodeMachineContain
         }
         return returnedString;
     }
+}
+
+[Serializable] public struct InputField
+{
+    public TMP_InputField Input;
+    public TMP_Text Text;
+    public string Target;
+
+    public bool ReachTarget() => Input.text.Replace(StringList.HTML_Underline_Front, string.Empty) == Target;
 }
 
 [Serializable] public class InputFieldLine

@@ -29,13 +29,8 @@ public class Keypad : InteractableTarget
 
     public void UpdateLook(bool On)
     {
-        if (UseSprite)
-        {
-            m_spriteRenderer.sprite = On ? m_interactedSprite : m_unInteractedSprite;
-            
-        }
-        if (!On) canInteract = true;
-        else canInteract = false;
+        if (UseSprite) m_spriteRenderer.sprite = On ? m_interactedSprite : m_unInteractedSprite;
+        canInteract = !On;
     }
     public void UpdateInteraction(bool On) => canInteract = On;
 }

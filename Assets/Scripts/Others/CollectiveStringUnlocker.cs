@@ -36,7 +36,7 @@ public class CollectiveStringUnlocker : MonoBehaviour
     }
     async public void UnlockTargetWithEffect(string Input)
     {
-        if (!UnlockTarget(Input) && !CheckStatus() && m_onAllUnlock.Length == 0) return;
+        if (!UnlockTarget(Input) || !CheckStatus() || m_onAllUnlock.Length == 0) return;
         await GameManager.Instance.StartEvent(m_onAllUnlock);
     }
     public void UnlockManyTarget(string[] Input)

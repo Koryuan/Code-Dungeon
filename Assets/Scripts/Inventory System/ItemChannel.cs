@@ -7,7 +7,9 @@ public class ItemChannel : ScriptableObject
     public delegate Item[] ItemsCallback();
     public event ItemsCallback OnItemListRequested;
     public event Action<Item> OnItemInserted;
+    public event Func<string, Item> OnItemRequested;
     public event Action<Item> OnItemRemoved;
+    public event Action<Item> OnItemRequestRemove;
 
     public Item[] RaiseItemListRequested()
     {
@@ -18,8 +20,17 @@ public class ItemChannel : ScriptableObject
     {
         OnItemInserted?.Invoke(AddedItem);
     }
-    public void RaiseItemRemove(Item RemovedItem)
+    public Item RaiseItemRequested(string ItemName)
+    {
+        if (OnItemRequested == null) return null;
+        return OnItemRequested?.Invoke(ItemName);
+    }
+    public void RaiseItemRemoved(Item RemovedItem)
     {
         OnItemRemoved?.Invoke(RemovedItem);
+    }
+    public void RaiseItemRequestRemove(Item RequestedItem)
+    {
+        OnItemRequestRemove?.Invoke(RequestedItem);
     }
 }

@@ -7,7 +7,7 @@ public class ItemBoxContain : MonoBehaviour, IMenuUI
 {
     private const float noScrollbarSize = 535f, withScrollbarSize = 515f;
 
-    private Item item;
+    private Item m_item;
 
     [Header("General")]
     [SerializeField] private RectTransform containerTransform;
@@ -16,25 +16,29 @@ public class ItemBoxContain : MonoBehaviour, IMenuUI
     [SerializeField] private ItemButton itemButton;
     [SerializeField] private RectTransform buttonTransform;
 
+    public event Action<ItemBoxContain> OnPressed;
     public Action<ItemBoxContain,Item> OnContainDestroy;
 
     public HoverButton Button => itemButton.Button;
     public RectTransform ContainerTransform => containerTransform;
-    public string ItemDescription => item.ItemDescription;
-    public string ItemName => item.ItemName;
-    public bool ItemUseable => item.IsUseable;
+    public string ItemDescription => m_item.ItemDescription;
+    public string ItemName => m_item.ItemName;
+    public bool ItemUseable => m_item.IsUseable;
+    public Item Item => m_item;
 
     #region Intialization
     public void Create(Item Item)
     {
         CheckReferences();
 
-        item = Item;
-        name = itemButton.NameText.text = item.ItemName;
+        m_item = Item;
+        name = itemButton.NameText.text = 
+            m_item.IsUseable ? m_item.ItemName : StringList.ColorString(m_item.ItemName,StringList.Color_Grey);
 
         // Button Initialization
         itemButton.Button.OnSelectEvent += OnSelect;
         itemButton.Button.OnDeselectEvent += SetHighlight;
+        if (m_item.IsUseable) itemButton.Button.onClick.AddListener(OnClick);
 
         SetHighlight(false);
     }
@@ -48,15 +52,16 @@ public class ItemBoxContain : MonoBehaviour, IMenuUI
     }
     #endregion
 
+    private void OnClick() => OnPressed?.Invoke(this);
     public void Use()
     {
-        if (item.Use())
-        {
-            OnContainDestroy?.Invoke(this, item);
-            Destroy(gameObject);
-        }
+        if (m_item.Use()) DestoryContain();
     }
-
+    public void DestoryContain()
+    {
+        OnContainDestroy?.Invoke(this, m_item);
+        Destroy(gameObject);
+    }
     #region Select/Deselect
     public void OnSelect()
     {

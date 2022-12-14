@@ -6,13 +6,23 @@ public class GameStateChannel : ScriptableObject
     public delegate void GameStateCallback(GameState NewState);
     public event GameStateCallback OnGameStateChanged;
     public event GameStateCallback OnGameStateRequestedChange;
+    public event GameStateCallback OnGameStateRequestedRemove;
+    public event System.Action<GameEvent[]> OnGameEventPassed;
 
     public void RaiseGameStateRequested(GameState NewState)
     {
         OnGameStateRequestedChange?.Invoke(NewState);
     }
+    public void RaiseGameStateRemoveState(GameState OldState)
+    {
+        OnGameStateRequestedRemove?.Invoke(OldState);
+    }
     public void RaiseGameStateChanged(GameState NewState)
     {
         OnGameStateChanged?.Invoke(NewState);
+    }
+    public void RaiseGameEventPassed(GameEvent[] EventList)
+    {
+        OnGameEventPassed?.Invoke(EventList);
     }
 }
