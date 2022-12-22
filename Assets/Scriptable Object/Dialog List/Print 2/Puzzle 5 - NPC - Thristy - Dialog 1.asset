@@ -13,5 +13,38 @@ MonoBehaviour:
   m_Name: Puzzle 5 - NPC - Thristy - Dialog 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'Insert: Dialog - 1'
+  - name: Dying Stranger
+    text: .....
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: (Tidak ada kehidupan di mata orang ini)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Dying Stranger
+    text: A-air..
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Air?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Dying Stranger
+    text: A-aku... butuh.. air.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

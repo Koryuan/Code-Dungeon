@@ -13,5 +13,82 @@ MonoBehaviour:
   m_Name: Puzzle 5 - NPC - Thristy - Dialog Find 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'Insert: Dialog - Find'
+  - name: Dying Stranger
+    text: Terima kasih atas bantuan mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Tidak masalah, apakah kamu terjebak disini juga?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Dying Stranger
+    text: Iya, aku tidak tahu sudah berapa lama aku kehausan. Jika tidak ada bantuan
+      dari mu aku tidak tahu apa yang akan terjadi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: ....Jadi, apa kamu mengetahui sesuatu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Dying Stranger
+    text: Hmm? Apa maksud mu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Tentang jalan keluar dari tempat ini. Apakah kamu menemukan sesuatu selama
+      berusaha keluar dari sini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Dying Stranger
+    text: Oh. Aku hanya memiliki benda ini sebelum terjebak disini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Lagi - lagi benda ini...
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Dying Stranger
+    text: Apakah ada masalah?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Tidak. Tolong berikan benda itu pada ku
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Dying Stranger
+    text: Baiklah. Ini dia.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

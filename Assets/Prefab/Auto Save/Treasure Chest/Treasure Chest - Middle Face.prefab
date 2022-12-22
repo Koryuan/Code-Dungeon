@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4023792278404484306}
   - component: {fileID: 4023792278404484310}
   m_Layer: 0
-  m_Name: Puzzle 5 - Treasure Chest - Right Middle - 1
+  m_Name: Treasure Chest - Middle Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.000000044703484, y: 0.00064253807}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.44}
+  m_Size: {x: 0.37246707, y: 0.31013012}
   m_EdgeRadius: 0
 --- !u!114 &4023792278404484306
 MonoBehaviour:
@@ -139,6 +139,7 @@ MonoBehaviour:
       Event:
       - dialog: {fileID: 11400000, guid: c5ffa86c8d2e7f645b0bf4bc0e6eb335, type: 2}
         item: {fileID: 0}
+        m_help: {fileID: 0}
         guide: {fileID: 0}
         eventAction:
           m_PersistentCalls:
@@ -171,6 +172,7 @@ MonoBehaviour:
       Event:
       - dialog: {fileID: 11400000, guid: 42f9051095a80324ba4e263d3c706b10, type: 2}
         item: {fileID: 0}
+        m_help: {fileID: 0}
         guide: {fileID: 0}
         eventAction:
           m_PersistentCalls:
@@ -182,6 +184,7 @@ MonoBehaviour:
       Event:
       - dialog: {fileID: 11400000, guid: c23437e136ff21b4793480e3662bd043, type: 2}
         item: {fileID: 0}
+        m_help: {fileID: 0}
         guide: {fileID: 0}
         eventAction:
           m_PersistentCalls:

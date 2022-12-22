@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 3632643124567587306}
   - component: {fileID: 1201631158979743303}
   m_Layer: 7
-  m_Name: Puzzle 5 - Keypad - Mod
+  m_Name: Keypad - Key - Auto Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

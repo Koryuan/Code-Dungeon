@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: Puzzle 5 - NPC - Smug - Dialog 2
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'Insert: Dialog - 2'
+  - name: Stranger <smug>
+    text: Apakah kamu menyerah? Kalau begitu silahkan saja menunggu nasib bersama
+      dengan orang pasrah disana. Hahahaha
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

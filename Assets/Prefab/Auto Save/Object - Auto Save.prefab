@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 122768519358292210}
   - component: {fileID: 1838405612919004425}
   m_Layer: 0
-  m_Name: Puzzle 5 - Object - Chest Key - 1
+  m_Name: Object - Auto Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008031845, y: 0.020078659}
+  m_Offset: {x: 0.00037956238, y: -0.0009498596}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.82331467, y: 0.36554337}
+  m_Size: {x: 0.68873215, y: 0.14684677}
   m_EdgeRadius: 0
 --- !u!114 &122768519358292210
 MonoBehaviour:
@@ -133,6 +133,7 @@ MonoBehaviour:
   eventList:
   - dialog: {fileID: 11400000, guid: c5ffa86c8d2e7f645b0bf4bc0e6eb335, type: 2}
     item: {fileID: 11400000, guid: 990cd10a561a254418e1e8c86bbcb8aa, type: 2}
+    m_help: {fileID: 0}
     guide: {fileID: 0}
     eventAction:
       m_PersistentCalls:

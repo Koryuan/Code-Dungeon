@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Puzzle 5 - NPC - Thristy - Dialog 2
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'Insert: Dialog - 2'
+  - name: Dying Stranger
+    text: T-tolong... aku perlu air
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
