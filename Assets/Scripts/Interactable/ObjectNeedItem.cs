@@ -7,6 +7,7 @@ public class ObjectNeedItem : MonoBehaviour
 {
     [System.Serializable] private struct UseItem
     {
+        public string name;
         public bool RemoveOnUse;
         public string[] SearchedList;
         public GameEvent[] OnFindObject;

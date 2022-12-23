@@ -39,7 +39,7 @@ public class MenuManager: ScriptableObject
         {
             Menu NewMenu = new Menu(OpenedMenu);
             m_menuList.Add(NewMenu);
-            Debug.Log($"Menu Manager: Menu Added, Current Count:{m_menuList.Count}");
+            //Debug.Log($"Menu Manager: Menu Added, Current Count:{m_menuList.Count}");
         }
 
         UpdateState(false);
@@ -47,7 +47,7 @@ public class MenuManager: ScriptableObject
     public void CloseMenu(IPanelUI ClosedMenu)
     {
         m_menuList.Remove(FindMenu(ClosedMenu));
-        Debug.Log("Menu manager: Remove Menu");
+        //Debug.Log("Menu manager: Remove Menu");
         UpdateState(false);
     }
     #endregion
@@ -73,7 +73,7 @@ public class MenuManager: ScriptableObject
         await UniTask.Delay(100);
 
         OnMenuStateChanged?.Invoke(m_currentState);
-        Debug.Log($"Menu Manager: Current State -> {m_currentState}");
+        //Debug.Log($"Menu Manager: Current State -> {m_currentState}");
     }
 }
 

@@ -210,9 +210,11 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
     #endregion
 
     #region Unlock
-    public void UpdateReadOnlyLine()
+    public void UpdateReadOnlyLine(ReadonlyUpdate Update)
     {
-
+        if (Update == null || Update.IndexToUpdate < 0) return;
+        if (m_readonlyContains.Count > Update.IndexToUpdate)
+            m_readonlyContains[Update.IndexToUpdate].UpdateText(Update.UpdatedText);
     }
     public bool UnlockLine(string SearchedText, string ReplaceText, bool Fixed)
     {
