@@ -5,6 +5,7 @@ using UnityEngine;
 {
     [System.Serializable] public struct TargetOutput
     {
+        [SerializeField] private string name;
         [SerializeField] private string[] m_targetTexts;
         [SerializeField] private int m_occurence;
         [SerializeField] private GameEvent[] m_onTargetEvent;
@@ -15,7 +16,7 @@ using UnityEngine;
         public void LoadData(int Occurence) => m_occurence = Occurence;
         public (bool, string[]) IsTargetUpdateColor(string[] TextOutput)
         {
-            //Debug.Log(TextOutput.Length);
+            Debug.Log(TextOutput[0]);
             // Validation Check
             int breakNumber = 0; bool isTrue = false;
             for (int i = 0; i < m_targetTexts.Length; i++)
@@ -25,6 +26,7 @@ using UnityEngine;
                 else TextOutput[i] = StringList.ColorStringNoBack(TextOutput[i],StringList.Color_LightGreen);
             }
             isTrue = !isTrue;
+            //Debug.Log($"CurrentText: {m_targetTexts.Length}, BreakNumber:{breakNumber}");
 
             // Check the last data
             List<string> NoOutput = new List<string>();
@@ -34,6 +36,11 @@ using UnityEngine;
                 else if (TextOutput[i] != m_targetTexts[i]) TextOutput[i] = StringList.ColorStringNoBack(TextOutput[i], StringList.Color_Red);
                 else TextOutput[i] = StringList.ColorStringNoBack(TextOutput[i], StringList.Color_LightGreen);
                 //Debug.Log($"{i}: {TextOutput[i]}");
+            }
+            if (m_targetTexts.Length < TextOutput.Length)
+            {
+                for(int i = m_targetTexts.Length-1; i < TextOutput.Length;i++)
+                    TextOutput[i] = StringList.ColorStringNoBack(TextOutput[i], StringList.Color_Red);
             }
             //Debugging(TextOutput);
             return (isTrue,TextOutput);
@@ -87,13 +94,15 @@ using UnityEngine;
             return new[] { StringList.ColorStringNoBack("ERROR", StringList.Color_Red) };
         for (int i = 0;i < m_targetList.Length;i++)
         {
-            (bool IsTarget, string[] StringList) Result = m_targetList[i].IsTargetUpdateColor(Output);
+            
+            (bool IsTarget, string[] StringList) Result = m_targetList[i].IsTargetUpdateColor(CreateTMPList(Output));
+            //Debug.Log($"Compiler: Current i = {i}, is target: {Result.IsTarget}");
             if (Result.IsTarget)
             {
-                Debug.Log($"Compile: It was target {Result.StringList}");
+                //Debug.Log($"Compile: It was target {Result.StringList}");
                 if (m_targetList[i].OccurenceNumber == 0) return Result.StringList;
 
-                m_targetList[i].Occur();
+                if (m_targetList[i].OccurenceNumber != -1) m_targetList[i].Occur();
                 if (SaveData.OccurenceList.Count > i)
                 {
                     SaveData.OccurenceList[i].Occurence = m_targetList[i].OccurenceNumber;
@@ -107,6 +116,12 @@ using UnityEngine;
 
         Debug.Log("Something doesn't right with the compiler");
         return new[] { StringList.ColorStringNoBack("ERROR",StringList.Color_Red) };
+    }
+    protected virtual string[] CreateTMPList(string[] Output)
+    {
+        List<string> TMP = new List<string>();
+        TMP.AddRange(Output);
+        return TMP.ToArray();
     }
     protected virtual string GetArithmaticValueINT(int Value1, int Value2, string Input) => (Input) switch
     {

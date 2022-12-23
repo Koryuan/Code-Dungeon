@@ -2,7 +2,8 @@
 {
     None,
     TutorialScene,
-    SelectionScene,
+    SelectStageScene,
     Print1Scene,
-    Print2Scene
+    Print2Scene,
+    SelectionScene
 }

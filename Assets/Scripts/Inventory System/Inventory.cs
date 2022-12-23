@@ -142,6 +142,7 @@ public class Inventory : MonoBehaviour, IPanelUI
         }
         else if (m_itemList.Count > 0)
         {
+            SetAllHightlightOff();
             m_ui.UpdateItemInfo(m_itemList[0]);
             m_itemList[m_itemList.Count-1].Select();
         } else m_ui.UpdateItemInfo(null);
@@ -158,6 +159,10 @@ public class Inventory : MonoBehaviour, IPanelUI
     private void ClosePanel(InputAction.CallbackContext Callback)
     {
         if (m_canInterect) ClosePanel();
+    }
+    private void SetAllHightlightOff()
+    {
+        foreach (ItemBoxContain contain in m_itemList) contain.SetHighlight(false);
     }
     #endregion
 

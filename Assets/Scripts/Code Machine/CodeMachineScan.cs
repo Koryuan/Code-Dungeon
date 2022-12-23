@@ -26,6 +26,10 @@ public class CodeMachineScan : MonoBehaviour
         }
         return ReturnedString.ToArray();
     }
+    public void ResetInput()
+    {
+        foreach (TMP_InputField input in m_inputFieldList) input.text = null;
+    }
     private void OnDestroy()
     {
         if (m_button) m_button.onClick.RemoveAllListeners();

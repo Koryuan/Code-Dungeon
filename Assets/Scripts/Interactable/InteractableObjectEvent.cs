@@ -3,11 +3,15 @@ using UnityEngine;
 
 public class InteractableObjectEvent : InteractableTarget
 {
+    [Header("Special Attribute")]
+    [SerializeField] protected bool openAtStart = true;
     [SerializeField] protected GameEvent[] eventList;
 
     protected override void Awake()
     {
         base.Awake();
+        gameObject.SetActive(openAtStart);
+
         if (m_autoSave)
         {
             m_autoSave.OnDataLoaded += LoadData;

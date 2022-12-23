@@ -25,7 +25,7 @@ public class AutoSaveDoor : AutoSaveAttach
     {
         m_saveData.Open = Open;
         m_saveChannel.RaiseDoorSaveDataUpdated(m_saveData);
-        Debug.Log($"{name}, Save Door Open data");
+        //Debug.Log($"{name}, Save Door Open data");
     }
 }
 

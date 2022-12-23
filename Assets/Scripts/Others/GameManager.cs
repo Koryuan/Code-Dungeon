@@ -255,5 +255,5 @@ public enum GameState
     Game_Dialog_State,
     Game_Guide_State,
     Game_Pause_State,
-    Game_Save_Load_State
+    Game_Save_Load_State,
 }

@@ -60,6 +60,7 @@ public class MenuManager: ScriptableObject
             else if (m_currentMenu.Panel is CodeMachineMK2) m_currentState = MenuState.CodeMachineMK2;
             else if (m_currentMenu.Panel is HelpMenu) m_currentState = MenuState.Help;
             else if (m_currentMenu.Panel is Inventory) m_currentState = MenuState.Inventory;
+            else if (m_currentMenu.Panel is GameOverMenu) m_currentState = MenuState.GameOver;
 
             if (CloseUI) m_currentMenu.OpenPanel();
         }
@@ -82,5 +83,6 @@ public enum MenuState
     CodeMachine,
     CodeMachineMK2,
     Help,
-    Inventory
+    Inventory,
+    GameOver
 }

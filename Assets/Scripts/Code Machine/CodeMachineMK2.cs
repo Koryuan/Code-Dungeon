@@ -3,6 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//#############%%#(////(%&#/*,,,,,,,,,,,,*/(%%%%##############################################%#(//(((////////////((###(/**,,,,
+//############%%#(/////((#%#/,,,,,,,,,,,,,,,**(###############################################%%#(/((((((((((####(/***,,,,,,,,,
+//###########%%#(/((((((((#%#/,,,,,,,,,,,,,,,,,**(#############################################%%#((((((((((/**,,,,,,,,,,,,,,,,
+//##########%%%(((((((((((((##/*,,,,,,,,,,,,,,,,,,,*/##%########################################%%###((/**,,,,,,,,,,,,,,,,,,,,,
+//#########%%%############(((###/*,,,,,,,,,,,,,,,,,,,,*/(##############################%%%%%%%###(/**,,,,,,,,,,,,,,,,,,,,,,,,,*
+//#########%%#####################/*,,,,,,,,,,,,,,,,,,,,,**/(((((((((((/////**************,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**(
+//########%&%#####################%#/*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**//((
+//#######%&%######################%%%#/*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/(####(
+//######%&%#######%################%%%%#(*,,,,*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/(########
+//######%%%######%%%%%%%%%#%%%%%%%####%%%%#((/**,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**/(###########
+//#####%%%###%##%%%%%%%%%%%%%%%%%%%%%####%%#(*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**////((##############
+//####%&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/##################
+//###%&%%%%%%%%%%%%%%%%%%%%%%%%&&&&&%%%%%%(*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****,,,,,,,,,,,,,,,*/#################
+//###&%%%%%%%%%%%%%%%%%%%%%%%%&&&&&%%##%%#/,,,,,,,**//(###(*,,,,,,,,,,,,,,,,,,,,,,,,,,*////#%%#/*,,,,,,,,,,,,*/################
+//##%&%%#%%%%%%%%%%%%%%%%%%%%%%%%%####%%#/*,,,,,,,*((/*(%&%(/,,,,,,,,,,,,,,,,,,,,,,,,,*((**(%&%#/*,,,,,,,,,,,,*/#####((((((((((
+//#%&&%%%%%%%%%%%%&&&%%%%%%%%#########%%#*,,,,,,,,*/#%%&&&&#/,,,,,,,,,,,,,,,,,,,,,,,,,*(%%%&&&%(/*,,,,,,,,,,,,,*(###(((((((((((
+//%&&%%%%%%%%&&&&&&&&&&&&%%###########%%/,,,,,,,,,,,*/(###(/*,,,,,,,,,,,,,,,,,,,,,,,,,,**/((##(/,,,,,,,,,,,,,,,,*(##(((((((((((
+//&&%%%%%%%&&&&&&&&&&&&&&%%%#########%%(*,,,,,,,,,,,,,,,,,,,,,,,,**/(#((/*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/##(((((((((((
+//&%###%%%%&&&&&&&&&&&&&&%%##########%%#(//***,,,,,,,,,,,,,,,,,,,,,*/(#((/,,,,,,,,,,,,,,,,,,,,,,,*,*******,,,,,,,*(#(((((((((((
+//%#####%%%%%%%%%%%%%%%%%###########%&%%######(/*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/(#((((((//*,,,,*/##((((((((((
+//%##################((((((((((####%&%((((((((((*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/(((((((((((/*,,,,*(##(((((((((
+//%#####################((((######%&&%#(((((((#(*,,,,,,,,,,,,,,,,**//((((((/***,,,,,,,,,,,,,,,,/((((((((((#(/*,,,,,*(###(((((((
+//%###############%%%%############%&%%###((((((*,,,,,,,,,,,,,,,,/(%%%#(/////(((/*,,,,,,,,,,,,,,*/(((((((((((/*,,,,,*/##########
+//(########%%%%%%%%%%%%%%%#%%%%%#%%%(//(((((//*,,,,,,,,,,,,,,,,,/#%#(//******//(/*,,,,,,,,,,,,,,*/((((((((/*,,,,,,,,*/##((((((#
+//(#############%%%#####%#%##%%%%%%%#/,,,,,,,,,,,,,,,,,,,,,,,,,,*(#(/********//(/*,,,,,,,,,,,,,,,,,,,,**,,,,,,,,,,,,,*(#(((((((
+//#########%%%%#%%#%#####%#%%%%##%%%%#/,,,,,,,,,,,,,,,,,,,,,,,,,,*/(((///***/(((**,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,/##((((((
+//(#####(((########((((((((((((((#(##%#/,,,,,,,,,,,,,,,,,,,,,,,,,,,,**//(((((//*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*(##((###
+//#%%%%##((((((((((((((((((((((((((((###/*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/#######
+//%%%%%%#######((((((((((((((((((########/*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*(######
+
 public class CodeMachineMK2 : InteractableTarget, IPanelUI
 {
     [Header("Code Machine Properties")]
@@ -21,6 +51,9 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
 
     [Header("Awake print")]
     [SerializeField] private string[] m_awakeString = null;
+
+    [Header("On Interact")]
+    [SerializeField] private GameEvent[] m_onInteractEvent;
 
     [Header("On Close Code")]
     [SerializeField] private bool m_onCloseCodeOnce = false;
@@ -104,35 +137,27 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
     private void OnMenuStateChanged(MenuState NewMenuState) => m_canClose = NewMenuState == MenuState.CodeMachineMK2;
 
     #region Interaction
-    protected override UniTask Interaction()
+    async protected override UniTask Interaction()
     {
-        var utcs = new UniTaskCompletionSource();
-
+        if (m_onInteractEvent.Length > 0) await GameManager.Instance.StartEvent(m_onInteractEvent);
         OpenPanel(null);
-
-        return utcs.Task;
     }
-    protected override UniTask PrintInteraction()
+    async protected override UniTask PrintInteraction()
     {
-        var utcs = new UniTaskCompletionSource();
+        if (m_onInteractEvent.Length > 0) await GameManager.Instance.StartEvent(m_onInteractEvent);
+        if (CannotPrintOrScan) return;
 
-        if (CannotPrintOrScan) return utcs.Task;
-            
         List<string> InputData = new List<string>();
         foreach (ContainInputField contain in m_inputFieldContains) InputData.AddRange(contain.GetInputFieldText());
         PrintAndSaveMessage(m_compiler.PrintCompile(InputData.ToArray()));
-        return utcs.Task;
     }
-    protected override UniTask ScanInteraction()
+    async protected override UniTask ScanInteraction()
     {
-        var utcs = new UniTaskCompletionSource();
-
-        if (CannotPrintOrScan) return utcs.Task;
+        if (m_onInteractEvent.Length > 0) await GameManager.Instance.StartEvent(m_onInteractEvent);
+        if (CannotPrintOrScan) return;
 
         m_scanOpen = true;
         OpenPanel(null);
-
-        return utcs.Task;
     }
     private void ScanInputReceive(string[] ScanInputs)
     {
@@ -185,6 +210,10 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
     #endregion
 
     #region Unlock
+    public void UpdateReadOnlyLine()
+    {
+
+    }
     public bool UnlockLine(string SearchedText, string ReplaceText, bool Fixed)
     {
         foreach(ContainReadonly contain in m_readonlyContains)
@@ -223,7 +252,8 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
         bool fromCode = m_codePanel.activeSelf;
 
         m_codePanel.SetActive(false);
-        m_scanPanel.SetActive(false);
+        if (m_scanPanel) m_scanPanel.SetActive(false);
+        if (m_scanContainer) m_scanContainer.ResetInput();
         m_scanOpen = false;
 
         await GameManager.Instance.Player.MoveCamera(false);

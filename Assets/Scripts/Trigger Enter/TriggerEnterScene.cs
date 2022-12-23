@@ -1,5 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TriggerEnterScene : TriggerEnter
 {
@@ -12,11 +11,14 @@ public class TriggerEnterScene : TriggerEnter
             case SceneType.TutorialScene:
                 SceneLoad.LoadTutorialMap();
                 break;
-            case SceneType.SelectionScene:
+            case SceneType.SelectStageScene:
                 SceneLoad.LoadSelectStage();
                 break;
             case SceneType.Print1Scene:
                 SceneLoad.LoadPrint1Stage();
+                break;
+            case SceneType.Print2Scene:
+                SceneLoad.LoadPrint2Stage();
                 break;
             default:
                 break;

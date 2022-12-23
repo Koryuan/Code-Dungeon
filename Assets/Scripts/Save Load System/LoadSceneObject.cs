@@ -30,7 +30,7 @@ public class LoadSceneObject : MonoBehaviour
             case SceneType.TutorialScene:
                 LoadTutorialSceneObject(player);
                 break;
-            case SceneType.SelectionScene:
+            case SceneType.SelectStageScene:
                 LoadStageSelectionSceneObject(player);
                 break;
             case SceneType.Print1Scene:
@@ -38,6 +38,9 @@ public class LoadSceneObject : MonoBehaviour
                 break;
             case SceneType.Print2Scene:
                 LoadPrint2SceneObject(player);
+                break;
+            case SceneType.SelectionScene:
+                LoadPlayerPositionInSelectionScene(player);
                 break;
             default:
                 break;
@@ -70,7 +73,7 @@ public class LoadSceneObject : MonoBehaviour
 
         if(Player != null)
         {
-            if (SaveLoadSystem.Instance._SaveData.LastScene == SceneType.SelectionScene)
+            if (SaveLoadSystem.Instance._SaveData.LastScene == SceneType.SelectStageScene)
                 Player.InstantMove(tutorialSceneObject.StageSelectionSP, new Vector2(0, -1));
         }
     }
@@ -100,7 +103,7 @@ public class LoadSceneObject : MonoBehaviour
         {
             if (LastScene == SceneType.TutorialScene)
                 Player.InstantMove(stageSelectionSceneObject.TutorialSP, new Vector2(0,1));
-            else if (LastScene == SceneType.SelectionScene)
+            else if (LastScene == SceneType.SelectStageScene)
                 Player.InstantMove(stageSelectionSceneObject.Door1SP, new Vector2(0, -1));
         }
     }
@@ -114,56 +117,16 @@ public class LoadSceneObject : MonoBehaviour
         {
             if (!print1SceneObject.StageSelctionSP) Debug.LogError($"Load Scene has no reference to Stage Selection Spawn Point");
             if (!print1SceneObject.Print2SP) Debug.LogError($"Load Scene has no reference to Print 2 Spawn Point");
-
-            // Puzzle 1
-            if (!print1SceneObject.PrintItem1) Debug.LogError($"Load Scene has no reference to Print 1 Item");
-            if (!print1SceneObject.Door1) Debug.LogError($"Load Scene has no reference to Door 1");
-            if (!print1SceneObject.Machine1) Debug.LogError($"Load Scene has no reference to Machine 1");
-
-            // Puzzle 2
-            if (!print1SceneObject.PrintItem2) Debug.LogError($"Load Scene has no reference to Print 2 Item");
-            if (!print1SceneObject.Door2) Debug.LogError($"Load Scene has no reference to Door 2");
-            if (!print1SceneObject.Machine2) Debug.LogError($"Load Scene has no reference to Machine 2");
-            if (!print1SceneObject.Keypad) Debug.LogError($"Load Scene has no reference to Machine 2");
         }
 
         CheckReferences();
 
-        #region Ommiting Save data name
         SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
-        SaveDataPrint1Scene sceneSaveData = loadedSaveData.Print1Scene;
         SceneType LastScene = loadedSaveData.LastScene;
-        #endregion
-
-        // Puzzle 1
-        if (sceneSaveData.TakePrint1Item) print1SceneObject.PrintItem1.InteractionActivation(false);
-        print1SceneObject.Door1.Activated(sceneSaveData.OpenDoor1);
-
-        if (sceneSaveData.UpdateCodeMachine1Test) 
-            print1SceneObject.Machine1.UnlockText(StringList.CodeMachine1_Text_Before);
-        if (sceneSaveData.CodeMachine1PrintedText != string.Empty)
-            print1SceneObject.Machine1.PrintMessage(sceneSaveData.CodeMachine1PrintedText);
-
-        // Puzzle 2
-        if (sceneSaveData.TreasureChest2_Opened)
-        {
-            print1SceneObject.PrintItem2.OpenTreasureChest(true);
-            if (sceneSaveData.TreasureChest2_Taken) print1SceneObject.PrintItem2.InteractionActivation(false);
-        }
-        print1SceneObject.Door2.Activated(sceneSaveData.OpenDoor2);
-
-        if (sceneSaveData.CodeMachine2Updated)
-            print1SceneObject.Machine2.UnlockText(StringList.CodeMachine2_Text_Before);
-        if (sceneSaveData.CodeMachine2PrintedText != string.Empty)
-            print1SceneObject.Machine2.PrintMessage(sceneSaveData.CodeMachine2PrintedText);
-
-        string[] OccuredText = {"729"};
-        print1SceneObject.Keypad.
-            LoadKeyPad(sceneSaveData.CodeMachine2Updated ? OccuredText : null,sceneSaveData.Keypad_LastText);
 
         if (Player != null)
         {
-            if (LastScene == SceneType.SelectionScene)
+            if (LastScene == SceneType.SelectStageScene)
                 Player.InstantMove(print1SceneObject.StageSelctionSP, new Vector2(0, 1));
             else if (LastScene == SceneType.Print2Scene)
                 Player.InstantMove(print1SceneObject.Print2SP, new Vector2(0, -1));
@@ -237,6 +200,23 @@ public class LoadSceneObject : MonoBehaviour
         Debug.Log("Everything done loaded");
     }
     #endregion
+
+    #region Selection Scene
+    [SerializeField] private SelectionSceneSP m_selectionSceneSP;
+    private void LoadPlayerPositionInSelectionScene(PlayerController Player)
+    {
+        SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
+        SceneType LastScene = loadedSaveData.LastScene;
+
+        if (Player != null)
+        {
+            if (LastScene == SceneType.Print2Scene)
+                Player.InstantMove(m_selectionSceneSP.Print2SP, new Vector2(0, 1));
+            else if (LastScene == SceneType.SelectStageScene)
+                Player.InstantMove(m_selectionSceneSP.SelectStageSP, new Vector2(0, -1));
+        }
+    }
+    #endregion
 }
 
 [Serializable] public class TutorialSceneObject
@@ -260,17 +240,6 @@ public class LoadSceneObject : MonoBehaviour
 
 [Serializable] public class Print1SceneObject
 {
-    public TreasureChest PrintItem1;
-    public TreasureChest PrintItem2;
-
-    public Door Door1;
-    public Door Door2;
-
-    public CodeMachine Machine1;
-    public CodeMachine Machine2;
-
-    public KeypadManager Keypad;
-
     public Transform StageSelctionSP;
     public Transform Print2SP;
 }
@@ -287,4 +256,10 @@ public class LoadSceneObject : MonoBehaviour
 
     [Header("Spawn Point")]
     public Transform Print1SP;
+}
+
+[Serializable] public class SelectionSceneSP
+{
+    public Transform Print2SP;
+    public Transform SelectStageSP;
 }

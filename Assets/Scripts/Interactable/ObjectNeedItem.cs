@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class ObjectNeedItem : MonoBehaviour
@@ -6,7 +8,7 @@ public class ObjectNeedItem : MonoBehaviour
     [System.Serializable] private struct UseItem
     {
         public bool RemoveOnUse;
-        public string ItemName;
+        public string[] SearchedList;
         public GameEvent[] OnFindObject;
         public GameEvent[] OnNotFindObject;
     }
@@ -25,10 +27,21 @@ public class ObjectNeedItem : MonoBehaviour
     {
         if (!m_itemChannel || EventIndex > m_UseItemEvent.Length - 1) return;
 
-        Item getItem =  m_itemChannel?.RaiseItemRequested(m_UseItemEvent[EventIndex].ItemName);
-        if (getItem != null)
+        List<Item> itemList = new List<Item>();
+        bool itemAvailable = true;
+
+        foreach(string Item in m_UseItemEvent[EventIndex].SearchedList)
         {
-            if (m_UseItemEvent[EventIndex].RemoveOnUse) m_itemChannel.RaiseItemRequestRemove(getItem);
+            Item getItem = m_itemChannel?.RaiseItemRequested(Item);
+            if (!(itemAvailable = getItem)) break;
+
+            itemList.Add(getItem);
+        }
+        
+        if (itemAvailable) 
+        {
+            if (m_UseItemEvent[EventIndex].RemoveOnUse)
+                foreach (Item item in itemList) m_itemChannel.RaiseItemRequestRemove(item);
             await GameManager.Instance.StartEvent(m_UseItemEvent[EventIndex].OnFindObject);
         }
         else

@@ -8,6 +8,7 @@ public static class SceneLoad
     public static void LoadSelectStage() => SceneManager.LoadScene("Stage Selection");
     public static void LoadPrint1Stage() => SceneManager.LoadScene("Print 1");
     public static void LoadPrint2Stage() => SceneManager.LoadScene("Print 2");
+    public static void LoadSelectionStage() => SceneManager.LoadScene("(Duplication) Selection");
     public static void LoadStageFromSaveFile()
     {
         var saveData = SaveLoadSystem.Instance._SaveData;
@@ -16,7 +17,7 @@ public static class SceneLoad
             case SceneType.TutorialScene:
                 LoadTutorialMap();
                 break;
-            case SceneType.SelectionScene:
+            case SceneType.SelectStageScene:
                 LoadSelectStage();
                 break;
             case SceneType.Print1Scene:
@@ -24,6 +25,9 @@ public static class SceneLoad
                 break;
             case SceneType.Print2Scene:
                 LoadPrint2Stage();
+                break;
+            case SceneType.SelectionScene:
+                LoadSelectionStage();
                 break;
             default:
                 break;
