@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Channel/Save Channel")]
 public class SaveChannel : ScriptableObject
 {
+    #region Normal Object
     // Interactable Object Save Data
     public event Func<string, InteractableSaveData> OnObjectSaveDataRequest;
     public event Action<InteractableSaveData> OnObjectSaveDataUpdated;
@@ -17,7 +18,9 @@ public class SaveChannel : ScriptableObject
     {
         OnObjectSaveDataUpdated?.Invoke(NewSaveData);
     }
+    #endregion
 
+    #region NPC
     // NPC Save Data
     public event Func<string, NPCSaveData> OnNPCSaveDataRequest;
     public event Action<NPCSaveData> OnNPCSaveDataUpdated;
@@ -31,7 +34,9 @@ public class SaveChannel : ScriptableObject
     {
         OnNPCSaveDataUpdated?.Invoke(NewSaveData);
     }
+    #endregion
 
+    #region Treasure Chest
     // Treasure Chest
     public event Func<string, TreasureChestSaveData> OnTreasureChestSaveDataRequest;
     public event Action<TreasureChestSaveData> OnTreasureChestSaveDataUpdated;
@@ -45,7 +50,9 @@ public class SaveChannel : ScriptableObject
     {
         OnTreasureChestSaveDataUpdated?.Invoke(NewSaveData);
     }
+    #endregion
 
+    #region Keypad
     // Keypad
     public event Func<string, KeypadSaveData> OnKeypadSaveDataRequest;
     public event Action<KeypadSaveData> OnKeypadSaveDataUpdated;
@@ -59,7 +66,9 @@ public class SaveChannel : ScriptableObject
     {
         OnKeypadSaveDataUpdated?.Invoke(NewSaveData);
     }
+    #endregion
 
+    #region Door
     // Door
     public event Func<string, DoorSaveData> OnDoorSaveDataRequest;
     public event Action<DoorSaveData> OnDoorSaveDataUpdated;
@@ -73,7 +82,9 @@ public class SaveChannel : ScriptableObject
     {
         OnDoorSaveDataUpdated?.Invoke(NewSaveData);
     }
+    #endregion
 
+    #region Code Machine
     // Code Machine
     public event Func<string, CodeMachineSaveData> OnCodeMachineSaveDataRequest;
     public event Action<CodeMachineSaveData> OnCodeMachineSaveDataUpdated;
@@ -87,4 +98,20 @@ public class SaveChannel : ScriptableObject
     {
         OnCodeMachineSaveDataUpdated?.Invoke(NewSaveData);
     }
+    #endregion
+
+    #region String Unlocker
+    public event Func<string, StringUnlockerSaveData> OnStringUnlockerSaveDataRequest;
+    public event Action<StringUnlockerSaveData> OnStringUnlockerSaveDataUpdated;
+
+    public StringUnlockerSaveData RaiseStringUnlockerSaveDataRequest(string ID)
+    {
+        if (OnStringUnlockerSaveDataRequest == null) return null;
+        return OnStringUnlockerSaveDataRequest?.Invoke(ID);
+    }
+    public void RaiseStringUnlockerSaveDataUpdated(StringUnlockerSaveData NewSaveData)
+    {
+        OnStringUnlockerSaveDataUpdated?.Invoke(NewSaveData);
+    }
+    #endregion
 }

@@ -43,6 +43,10 @@ public class SaveChanneler : MonoBehaviour
         // Code Machine
         m_saveChannel.OnCodeMachineSaveDataRequest += GetCodeMachineSaveData;
         m_saveChannel.OnCodeMachineSaveDataUpdated += UpdateCodeMachineSaveData;
+
+        // String Unlocker
+        m_saveChannel.OnStringUnlockerSaveDataRequest += GetStringUnlockerSaveData;
+        m_saveChannel.OnStringUnlockerSaveDataUpdated += UpdateStringUnlockerSaveData;
     }
 
     #region Item
@@ -178,6 +182,22 @@ public class SaveChanneler : MonoBehaviour
     }
     #endregion
 
+    #region String Unlocker
+    private StringUnlockerSaveData GetStringUnlockerSaveData(string ID)
+    {
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
+
+        StringUnlockerSaveData OldData = SaveLoadSystem.Instance._SaveData.GetStringUnlockerSaveData(ID);
+        if (OldData == null) return new StringUnlockerSaveData();
+        return OldData;
+    }
+    private void UpdateStringUnlockerSaveData(StringUnlockerSaveData NewData)
+    {
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return;
+        SaveLoadSystem.Instance._SaveData.AddStringUnlockerSaveData(NewData);
+    }
+    #endregion
+
     private void OnDestroy()
     {
         // Help
@@ -212,5 +232,9 @@ public class SaveChanneler : MonoBehaviour
         // Code Machine
         m_saveChannel.OnCodeMachineSaveDataRequest -= GetCodeMachineSaveData;
         m_saveChannel.OnCodeMachineSaveDataUpdated -= UpdateCodeMachineSaveData;
+
+        // String Unlocker
+        m_saveChannel.OnStringUnlockerSaveDataRequest -= GetStringUnlockerSaveData;
+        m_saveChannel.OnStringUnlockerSaveDataUpdated -= UpdateStringUnlockerSaveData;
     }
 }

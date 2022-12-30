@@ -62,6 +62,4 @@ public class NonPlayableCharacter : InteractableTarget
         SaveIndex();
     }
     private void SaveIndex() => m_npcAutoSave?.UpdateCurrentIndex(m_currentIndex);
-
-    public void SaveData() => AutoSaveScene.SaveObjectState(name,m_currentIndex);
 }

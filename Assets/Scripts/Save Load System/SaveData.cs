@@ -18,7 +18,6 @@ public class SaveData
 
     // Scene Data
     public SaveDataTutorialScene TutorialScene = new SaveDataTutorialScene();
-    public SaveDataPrint2Scene Print2Scene = new SaveDataPrint2Scene();
 
     #region Scene Object Save Data
     public List<InteractableSaveData> ObjectSaveDataList = new List<InteractableSaveData>();
@@ -140,6 +139,27 @@ public class SaveData
     }
     #endregion
 
+    #region Scene String Unlocker Data
+    public List<StringUnlockerSaveData> StringUnlockerSaveDataList = new List<StringUnlockerSaveData>();
+    public StringUnlockerSaveData GetStringUnlockerSaveData(string ID) => StringUnlockerSaveDataList.Find(x => x.ID == ID);
+    public void AddStringUnlockerSaveData(StringUnlockerSaveData NewData)
+    {
+        StringUnlockerSaveData OldData = StringUnlockerSaveDataList.Find(x => x == NewData);
+        NewData.New = false;
+
+        if (OldData != null)
+        {
+            OldData = NewData;
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | update Data");
+        }
+        else
+        {
+            StringUnlockerSaveDataList.Add(NewData);
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | add Data");
+        }
+    }
+    #endregion
+
     // Save Data Description
     public string SaveFileName = "";
     public float PlayTime = 0f;
@@ -155,22 +175,4 @@ public class SaveData
 
     public void ResetData() => 
         (JustAwake, InteractionQuideInteracted, TakeTablet) = (true,false,false);
-}
-
-[Serializable] public class SaveDataPrint2Scene
-{
-    // Puzzle 4
-    public bool Puzzle4_CodeMachineIntInterected = false;
-    public bool Puzzle4_CodeMachineCharInterected = false;
-    public bool Puzzle4_CodeMachineStringInterected = false;
-    public bool Puzzle4_CodeMachineFloatInterected = false;
-    public bool Puzzle4_DoorOpen = false;
-
-    public List<string> Puzzle4_Collective = new List<string>();
-    public void Puzzle4_AddToCollective(string Text)
-    {
-        foreach (string text in Puzzle4_Collective)
-            if (Text == text) return;
-        Puzzle4_Collective.Add(Text);
-    }
 }
