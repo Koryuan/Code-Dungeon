@@ -36,8 +36,6 @@ public class LineInput : CodeMachineContain
     {
         if (Input.ReachTarget()) Input.Text.color = new Color(0, 255, 87);
         else Input.Text.color = Color.black;
-        AutoSaveScene.SaveObjectState(parentName,
-            new InputFieldLine(m_codeNumber.text, Array.IndexOf(m_inputField, Input), Input.Text.text));
     }
 
     public override string[] GetInputFieldText()

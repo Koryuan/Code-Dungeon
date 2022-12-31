@@ -18,6 +18,24 @@ public class CollectiveStringUnlocker : MonoBehaviour
     [SerializeField] StringCollection[] m_stringTargetList;
     [SerializeField] GameEvent[] m_onAllUnlock;
 
+    private AutoSaveStringUnlocker m_autoSave = null;
+
+    private void Awake()
+    {
+        m_autoSave = GetComponent<AutoSaveStringUnlocker>();
+
+        if (!m_autoSave) return;
+
+        m_autoSave.OnDataLoaded += LoadData;
+        m_autoSave.LoadData();
+    }
+
+    private void LoadData(SaveDataAuto LoadedData)
+    {
+        if (LoadedData.New) return;
+        if (LoadedData is StringUnlockerSaveData oldData) LoadUnlockedText(oldData.UnlockedString.ToArray());
+    }
+
     public bool CheckStatus()
     {
         foreach(StringCollection target in m_stringTargetList)
@@ -39,7 +57,7 @@ public class CollectiveStringUnlocker : MonoBehaviour
         if (!UnlockTarget(Input) || !CheckStatus() || m_onAllUnlock.Length == 0) return;
         await GameManager.Instance.StartEvent(m_onAllUnlock);
     }
-    public void UnlockManyTarget(string[] Input)
+    public void LoadUnlockedText(string[] Input)
     {
         foreach (string t in Input) UnlockTarget(t);
     }

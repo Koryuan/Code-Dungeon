@@ -135,66 +135,20 @@ public class LoadSceneObject : MonoBehaviour
     #endregion
 
     #region Print 2 Scene
-    [SerializeField] private Print2SceneObject print2SceneObject = null;
+    [SerializeField] private Print2SceneSP print2SceneObject = null;
     private void LoadPrint2SceneObject(PlayerController Player)
     {
         #region Ommiting Save data name
         SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
-        SaveDataPrint2Scene sceneSaveData = loadedSaveData.Print2Scene;
         SceneType LastScene = loadedSaveData.LastScene;
-        #endregion
-
-        #region Puzzle 4
-        if (sceneSaveData.Puzzle4_CodeMachineIntInterected)
-        {
-            print2SceneObject.Puzzle4_MachineInt.OnCloseStopped();
-            print2SceneObject.Puzzle4_MachineInt.ActivatePrintInteract();
-        }
-        if (sceneSaveData.Puzzle4_CodeMachineCharInterected)
-        {
-            print2SceneObject.Puzzle4_MachineChar.OnCloseStopped();
-            print2SceneObject.Puzzle4_MachineChar.ActivatePrintInteract();
-        }
-        if (sceneSaveData.Puzzle4_CodeMachineStringInterected)
-        {
-            print2SceneObject.Puzzle4_MachineString.OnCloseStopped();
-            print2SceneObject.Puzzle4_MachineString.ActivatePrintInteract();
-        }
-        if (sceneSaveData.Puzzle4_CodeMachineFloatInterected)
-        {
-            print2SceneObject.Puzzle4_MachineFloat.OnCloseStopped();
-            print2SceneObject.Puzzle4_MachineFloat.ActivatePrintInteract();
-        }
-            
-        foreach(string text in sceneSaveData.Puzzle4_Collective)
-        {
-            switch (text)
-            {
-                case "Code Machine - Integer - 01":
-                    print2SceneObject.Puzzle4_MachineInt.PrintMessage("-1");
-                    break;
-                case "Code Machine - Char - 01":
-                    print2SceneObject.Puzzle4_MachineChar.PrintMessage("S");
-                    break;
-                case "Code Machine - String - 01":
-                    print2SceneObject.Puzzle4_MachineString.PrintMessage("S@@1Az3");
-                    break;
-                case "Code Machine - Float - 01":
-                    print2SceneObject.Puzzle4_MachineFloat.PrintMessage("3.123");
-                    break;
-                default:
-                    break;
-            }
-        }
-        if (sceneSaveData.Puzzle4_Collective.Count > 0) 
-            print2SceneObject.Puzzle4_Unlocker.UnlockManyTarget(sceneSaveData.Puzzle4_Collective.ToArray());
-        print2SceneObject.Puzzle4_Door.Activated(sceneSaveData.Puzzle4_DoorOpen);
         #endregion
 
         if (Player)
         {
             if (LastScene == SceneType.Print1Scene)
                 Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, -1));
+            else if (LastScene == SceneType.SelectionScene)
+                Player.InstantMove(print2SceneObject.SelectionSP, new Vector2(0,-1));
         }
 
         Debug.Log("Everything done loaded");
@@ -244,18 +198,10 @@ public class LoadSceneObject : MonoBehaviour
     public Transform Print2SP;
 }
 
-[Serializable] public class Print2SceneObject
+[Serializable] public class Print2SceneSP
 {
-    [Header("Puzzle 4")]
-    public CodeMachine Puzzle4_MachineInt;
-    public CodeMachine Puzzle4_MachineChar;
-    public CodeMachine Puzzle4_MachineString;
-    public CodeMachine Puzzle4_MachineFloat;
-    public CollectiveStringUnlocker Puzzle4_Unlocker;
-    public Door Puzzle4_Door;
-
-    [Header("Spawn Point")]
     public Transform Print1SP;
+    public Transform SelectionSP;
 }
 
 [Serializable] public class SelectionSceneSP
