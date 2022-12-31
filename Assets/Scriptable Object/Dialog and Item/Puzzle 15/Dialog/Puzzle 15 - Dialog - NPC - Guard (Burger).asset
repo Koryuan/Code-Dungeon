@@ -13,8 +13,86 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger)
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: aaaaa
+  - name: Player
+    text: Permisi, bolehkah kalian membukakan pintu ini untukku?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: 
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Apa keperluan mu untuk  melewati Pintu ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Aku terjebak disini dan ingin mencari jalan keluar
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Tidak ada jalan keluar dari tempat ini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Bagaimana kamu tahu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Bukan urusan mu
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Tolong lah. Aku harus melewati tempat ini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: 'Hmm. Sesungguhnya aku tidak peduli. Namun rekan ku disamping cukup serius
+      dalam tugasnya. '
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Apa yang akan didapatkan kami jika kami mendengarkan permohonan mu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Apa yang di rugikan jika kalian mengabuli permohonan ku?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Sudah cukup. Pergi dari sini sekarang!
     m_image:
       Image: {fileID: 0}
       Width: 0

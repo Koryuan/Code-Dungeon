@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Fairy put in jar
+    text: Fairy telah diletakan di toples
     m_image:
       Image: {fileID: 0}
       Width: 0

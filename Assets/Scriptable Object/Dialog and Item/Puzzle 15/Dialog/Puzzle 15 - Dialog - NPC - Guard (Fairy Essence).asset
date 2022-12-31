@@ -13,8 +13,36 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Fairy Essence)
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: aaaa
+  - name: Player
+    text: Permisi, bisakah kau membukakan pintu ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard T
+    text: .....
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Permisi, apakah kau-
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard T
+    text: Pergi dari hadapan kami sekarang
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: O-ok, maaf mengganggu.
     m_image:
       Image: {fileID: 0}
       Width: 0

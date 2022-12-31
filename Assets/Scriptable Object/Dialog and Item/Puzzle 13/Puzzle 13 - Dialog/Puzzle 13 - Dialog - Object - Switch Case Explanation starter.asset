@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 13 - Dialog - Object - Switch Case Explanation starter
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: 
+    text: Switch Case adalah bentuk lain dari penggunaan Selection
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Switch Case adalah bentuk lain dari penggunaan Selection
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Switch Case (SWITCH dan CASE) digunakan pada kasus dimana terlalu banyak
+      kondisi yang ingin dipenuhi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Daripada kode dipenuhi dengan ELSE IF, akan lebih mudah jika Switch Case
+      digunakan. Selain lebih cepat dijalankan oleh komputer, Switch Case juga lebih
+      mudah dibaca.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

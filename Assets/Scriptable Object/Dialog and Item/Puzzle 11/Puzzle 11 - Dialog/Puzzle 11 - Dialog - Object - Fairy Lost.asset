@@ -14,7 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Fairy pergi :(
+    text: Kamu telah menangkap Fairy
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Namun fairy tersebut segera meninggalkan genggaman mu
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: Seharusnya ada cara untuk menangkap dan menyimpan Fairy tersebut!
     m_image:
       Image: {fileID: 0}
       Width: 0

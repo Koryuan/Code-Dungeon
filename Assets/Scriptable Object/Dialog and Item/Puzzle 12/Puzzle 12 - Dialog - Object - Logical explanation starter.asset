@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 12 - Dialog - Object - Logical explanation starter
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: 
+    text: Logical or Boolean operators berguna ketika kita ingin mengevaluasi beberapa
+      ekspresi yang menggunakan Relational Operator (Relational Expressions)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: 'Logical operators ini terdiri dari 3 jenis;
+
+      AND, OR, dan NOT'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: AND akan menghasilkan nilai TRUE hanya jika seluruh Relational Expressions
+      menghasilkan nilai TRUE. Jika salah satu dari Relational Expression memiliki
+      nilai FALSE, maka Logical Operator AND akan memberikan nilai FALSE.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: OR akan menghasilkan nilai TRUE jika salah satu dair Relational Expression
+      menghasilkan nilai TRUE. Jika seluruh Relational Expressions menghasilkan nilai
+      FALSE, maka Logical Operator OR akan memberikan nilai FALSE.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: NOT akan memberikan nilai TRUE jika hasil dari Relational Expression adalah
+      FALSE. Jika hasil dari Relational Expressions memberikan nilai TRUE, maka Logical
+      Operator NOT akan memberikan nilai FALSE.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Karena Logical atau Boolean Operators ini berkerja dengan menilai beberapa
+      Expressions, maka penting untuk menggunakan dalam kurung "( )" untuk menentukan
+      prioritas yang harus di cek.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Jika tidak ada penggunaan "( )", maka prioritas secara default adalah NOT,
+      lalu AND, dan terakhir OR.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
