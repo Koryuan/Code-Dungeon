@@ -41,6 +41,12 @@ public class DialogBox : MonoBehaviour
         currentDialog = dialog;
         currentIndex = 0;
 
+        if (dialog.Dialogs.Length == 0)
+        {
+            CloseDialog();
+            return;
+        }
+
         NextDialog(currentDialog.Dialogs[currentIndex], true);
 
         // Exception Handeller

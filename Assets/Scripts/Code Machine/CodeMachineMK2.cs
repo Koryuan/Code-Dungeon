@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 //#############%%#(////(%&#/*,,,,,,,,,,,,*/(%%%%##############################################%#(//(((////////////((###(/**,,,,
 //############%%#(/////((#%#/,,,,,,,,,,,,,,,**(###############################################%%#(/((((((((((####(/***,,,,,,,,,
@@ -45,12 +46,24 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
     [SerializeField, Tooltip("Use to compile the code and give string to print")] private CodeCompiler m_compiler;
     [SerializeField, Tooltip("Container for Scan")] private CodeMachineScan m_scanContainer;
 
+    [Header("Code Machine: Sprites")]
+    [SerializeField] private SpriteRenderer m_renderer;
+    [SerializeField] private Sprite m_onOpenSprite;
+    [SerializeField] private Sprite m_onCloseSprite;
+
     [Header("Contain")]
     [SerializeField] private List<ContainReadonly> m_readonlyContains = new List<ContainReadonly>();
     [SerializeField] private List<ContainInputField> m_inputFieldContains = new List<ContainInputField>();
 
     [Header("Awake print")]
     [SerializeField] private string[] m_awakeString = null;
+
+    [Header("On Broken")]
+    [SerializeField] private bool m_broken = false;
+    [SerializeField] private GameEvent[] m_onBrokeInterectEvent;
+
+    [Header("On Infinite Loop")]
+    [SerializeField] private GameEventWithOccurence m_onInfiniteLoopEvent;
 
     [Header("On Interact")]
     [SerializeField] private GameEvent[] m_onInteractEvent;
@@ -95,12 +108,15 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
             m_scanContainer.OnInputButtonClicked += ScanInputReceive;
         }
 
+        UpdateSprite();
+
         if (!m_autoSave) return;
 
         if (m_autoSave is AutoSaveCodeMachine autoSave)
         {
             m_autoSaveCodeMachine = autoSave;
             m_autoSaveCodeMachine.AdditionalData(m_readonlyContains,m_inputFieldContains,m_compiler ? m_compiler.SaveData : new CompilerSaveData());
+            m_autoSaveCodeMachine.AdditionalData2(m_onInfiniteLoopEvent.GetCurrentOccurenceNumber);
             m_autoSave.OnDataLoaded += LoadData;
             m_autoSave.LoadData(canInteract, printInteract, scanInteract, gameObject.activeSelf
                 , m_interactableAnimator ? m_interactableAnimator.activeSelf : false);
@@ -122,6 +138,9 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
             gameObject.SetActive(oldData.ObjectActive);
             if (m_interactableAnimator) m_interactableAnimator.SetActive(oldData.AnimationActive);
 
+            m_broken = oldData.IsBroken;
+            UpdateSprite();
+
             m_onCloseCodePossible = oldData.OnCloseCodePossible;
             if (oldData.PrintedMessages.Count > 0) PrintMessage(oldData.PrintedMessages.ToArray());
 
@@ -129,18 +148,26 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
             for (int i = 0; i < m_inputFieldContains.Count; i++) m_inputFieldContains[i].LoadData(oldData.InputFieldContain[i]);
             if (m_compiler) m_compiler.LoadData(oldData.CompilerData);
 
-            Debug.Log($"{name}, load old save data!");
+            //Debug.Log($"{name}, load old save data!");
         }
     }
     #endregion
 
     private void OnMenuStateChanged(MenuState NewMenuState) => m_canClose = NewMenuState == MenuState.CodeMachineMK2;
 
+    private void UpdateSprite()
+    {
+        if (!m_renderer) return;
+        m_renderer.sprite = m_broken ? m_onCloseSprite : m_onOpenSprite; 
+    }
+
     #region Interaction
     async protected override UniTask Interaction()
     {
         if (m_onInteractEvent.Length > 0) await GameManager.Instance.StartEvent(m_onInteractEvent);
-        OpenPanel(null);
+
+        if (m_broken) GameManager.Instance.StartEvent(m_onBrokeInterectEvent).Forget();
+        else OpenPanel(null);
     }
     async protected override UniTask PrintInteraction()
     {
@@ -198,7 +225,13 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
     #region Print/Scan Function
     public void PrintMessage(string[] MessagesToPrint)
     {
-        if (!m_popUpMessage) return;
+        if (!m_popUpMessage || MessagesToPrint.Length <= 0) return;
+        if (m_onInfiniteLoopEvent.GetEventLength > 0 && MessagesToPrint[0].Contains("INFINITE LOOP"))
+        {
+            GameManager.Instance.StartEvent(m_onInfiniteLoopEvent.Occur()).Forget();
+            m_autoSaveCodeMachine.UpdateInfiniteLoopOccurenceNumber(m_onInfiniteLoopEvent.GetCurrentOccurenceNumber);
+        }
+
         if (MessagesToPrint.Length == 1) m_popUpMessage.PrintOnly1Message(MessagesToPrint[0]);
         else m_popUpMessage.PrintMessage(MessagesToPrint);
     }
@@ -216,7 +249,7 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
         if (m_readonlyContains.Count > Update.IndexToUpdate)
             m_readonlyContains[Update.IndexToUpdate].UpdateText(Update.UpdatedText);
     }
-    public bool UnlockLine(string SearchedText, string ReplaceText, bool Fixed)
+    public bool UnlockLine(string SearchedText, string ReplaceText, bool Fixed, bool InfiniteLoop)
     {
         foreach(ContainReadonly contain in m_readonlyContains)
         {
@@ -224,6 +257,7 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
 
             contain.UpdateText(ReplaceText);
             contain.Fixed(Fixed);
+            m_compiler.UpdateInfiniteLoop(InfiniteLoop);
 
             if (ReplaceText.Contains(StringList.Pseudocode_Scan))
             {
@@ -235,6 +269,11 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
             return true;
         }
         return false;
+    }
+    public void UpdateBrokenState(bool IsBroken)
+    {
+        m_autoSaveCodeMachine.UpdateIsBroke(m_broken = IsBroken);
+        UpdateSprite();
     }
     #endregion
 

@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
     private void LoadData(SaveDataAuto LoadedData)
     {
         if (LoadedData.New) return;
-        Debug.Log($"{name}, Loaded from save data");
+        //Debug.Log($"{name}, Loaded from save data");
         if (LoadedData is DoorSaveData oldData) Activated(oldData.Open);
     }
 

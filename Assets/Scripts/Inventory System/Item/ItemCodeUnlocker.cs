@@ -1,17 +1,19 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Item/Code Unlocker")]
 public class ItemCodeUnlocker : Item
 {
     [Header("Special Attribute")]
-    [SerializeField] private float m_range;
-    [SerializeField] private string m_searchedText;
-    [SerializeField] private string m_changedText;
-    [SerializeField] private bool m_afterChangeFixed = false;
+    [SerializeField] protected float m_range;
+    [SerializeField] protected string m_searchedText;
+    [SerializeField] protected string m_changedText;
+    [SerializeField] protected bool m_afterChangeFixed = false;
+
+    [Header("Infinite Loop")]
+    [SerializeField] protected bool m_infiniteLoop = false;
 
     [Header("At Failed")]
-    [SerializeField] private DialogSetting m_atFailedDialog;
+    [SerializeField] protected DialogSetting m_atFailedDialog;
 
     public override bool Use()
     {
@@ -20,7 +22,7 @@ public class ItemCodeUnlocker : Item
         foreach (Collider2D collid in collidedList)
         {
             var codeMachine = collid.GetComponent<CodeMachineMK2>();
-            if (codeMachine && codeMachine.UnlockLine(m_searchedText, m_changedText, m_afterChangeFixed)) return true;
+            if (codeMachine && codeMachine.UnlockLine(m_searchedText, m_changedText, m_afterChangeFixed, m_infiniteLoop)) return true;
         }
         GameManager.Instance.OpenDialogBox(m_atFailedDialog);
         return false;

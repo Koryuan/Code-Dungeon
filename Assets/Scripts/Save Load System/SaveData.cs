@@ -129,12 +129,12 @@ public class SaveData
         if (OldData != null)
         {
             OldData = NewData;
-            Debug.Log($"Save Data:Code Machine ({NewData.ID}) | update Data");
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | update Data");
         }
         else
         {
             CodeMachineSaveDataList.Add(NewData);
-            Debug.Log($"Save Data:Code Machine ({NewData.ID}) | add Data");
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | add Data");
         }
     }
     #endregion
@@ -155,6 +155,27 @@ public class SaveData
         else
         {
             StringUnlockerSaveDataList.Add(NewData);
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | add Data");
+        }
+    }
+    #endregion
+
+    #region Scene String Unlocker Data
+    public List<TriggerEnterSaveData> TriggerEnterSaveDataList = new List<TriggerEnterSaveData>();
+    public TriggerEnterSaveData GetTriggerEnterSaveData(string ID) => TriggerEnterSaveDataList.Find(x => x.ID == ID);
+    public void AddTriggerEnterSaveData(TriggerEnterSaveData NewData)
+    {
+        TriggerEnterSaveData OldData = TriggerEnterSaveDataList.Find(x => x == NewData);
+        NewData.New = false;
+
+        if (OldData != null)
+        {
+            OldData = NewData;
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | update Data");
+        }
+        else
+        {
+            TriggerEnterSaveDataList.Add(NewData);
             //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | add Data");
         }
     }

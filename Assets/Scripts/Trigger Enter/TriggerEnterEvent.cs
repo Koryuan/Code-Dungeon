@@ -9,9 +9,30 @@ public class TriggerEnterEvent : TriggerEnter
     [Header("Variable")]
     [SerializeField] private bool OnEnterDisable = false;
 
+    private AutoSaveTriggerEnter m_autoSave = null;
+
     private void Awake()
     {
-        if (gameEvents.Length == 0) Debug.Log($"{name} has no event to trigger");
+        if (gameEvents.Length == 0) Debug.LogError($"{name} has no event to trigger");
+
+        m_autoSave = GetComponent<AutoSaveTriggerEnter>();
+
+        if (!m_autoSave) return;
+
+        m_autoSave.OnDataLoaded += LoadData;
+        m_autoSave.LoadData();
+    }
+
+    private void LoadData(SaveDataAuto LoadedData)
+    {
+        if (LoadedData.New) return;
+        if (LoadedData is TriggerEnterSaveData oldData) gameObject.SetActive(oldData.ObjectActivation);
+    }
+
+    public void UpdateActivation(bool Open)
+    {
+        m_autoSave.UpdateObjectActivation(Open);
+        gameObject.SetActive(Open);
     }
 
     protected override void OnPlayerEnter()
@@ -22,6 +43,10 @@ public class TriggerEnterEvent : TriggerEnter
 
         // After Everyting done
         AutoSaveScene.SaveObjectState(name);
-        if (OnEnterDisable) gameObject.SetActive(false);
+        if (OnEnterDisable)
+        {
+            m_autoSave.UpdateObjectActivation(false);
+            gameObject.SetActive(false);
+        }
     }
 }
