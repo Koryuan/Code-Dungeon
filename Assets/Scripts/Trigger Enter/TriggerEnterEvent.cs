@@ -31,7 +31,7 @@ public class TriggerEnterEvent : TriggerEnter
 
     public void UpdateActivation(bool Open)
     {
-        m_autoSave.UpdateObjectActivation(Open);
+        if (m_autoSave) m_autoSave.UpdateObjectActivation(Open);
         gameObject.SetActive(Open);
     }
 
@@ -45,7 +45,7 @@ public class TriggerEnterEvent : TriggerEnter
         AutoSaveScene.SaveObjectState(name);
         if (OnEnterDisable)
         {
-            m_autoSave.UpdateObjectActivation(false);
+            if (m_autoSave) m_autoSave.UpdateObjectActivation(false);
             gameObject.SetActive(false);
         }
     }
