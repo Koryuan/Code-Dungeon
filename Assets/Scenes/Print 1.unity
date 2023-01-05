@@ -16118,7 +16118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 170493750}
   m_Layer: 0
-  m_Name: Stage Selection - Spawn Point
+  m_Name: Spawn Point - Stage Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16272,7 +16272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.999939
+      value: -10.000061
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -16379,8 +16379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7157894ab74ba24faca70c9303f1422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_infiniteLoop: 0
   m_targetList:
-  - m_targetTexts:
+  - name: 
+    m_targetTexts:
     - Hello World
     m_occurence: 1
     m_onTargetEvent:
@@ -17171,7 +17173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.999756
+      value: -9.999817
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17278,8 +17280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7157894ab74ba24faca70c9303f1422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_infiniteLoop: 0
   m_targetList:
-  - m_targetTexts:
+  - name: 
+    m_targetTexts:
     - 729
     m_occurence: 1
     m_onTargetEvent:
@@ -18938,7 +18942,9 @@ MonoBehaviour:
   - {fileID: 257190309}
   - {fileID: 2033557779}
   m_eventList:
-  - m_targetText: 729
+  - name: 729
+    m_targetText:
+    - 729
     m_occurenceNumber: 1
     m_eventList:
     - dialog: {fileID: 0}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class SaveData
 
     // Scene Data
     public SaveDataTutorialScene TutorialScene = new SaveDataTutorialScene();
+    public OtherSceneData OtherData = new OtherSceneData();
 
     #region Scene Object Save Data
     public List<InteractableSaveData> ObjectSaveDataList = new List<InteractableSaveData>();
@@ -186,6 +188,11 @@ public class SaveData
     public float PlayTime = 0f;
     public string LastChapterName = "";
     public string PlayTimeText => $"{PlayTime / 3600f:000}:{Math.Truncate((PlayTime % 3600) / 60):00}:{PlayTime % 60:00}";
+}
+
+[Serializable] public class OtherSceneData
+{
+    public bool Stage2DoorOpen = false;
 }
 
 [Serializable] public class SaveDataTutorialScene

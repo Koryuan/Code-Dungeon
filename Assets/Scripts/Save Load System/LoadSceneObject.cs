@@ -98,6 +98,7 @@ public class LoadSceneObject : MonoBehaviour
         #endregion
 
         stageSelectionSceneObject.Door1.Activated(loadedSaveData.TutorialScene.TakeTablet);
+        stageSelectionSceneObject.Stage2Door.Activated(loadedSaveData.OtherData.Stage2DoorOpen);
 
         if (Player != null)
         {
@@ -186,6 +187,7 @@ public class LoadSceneObject : MonoBehaviour
 [Serializable] public class StageSelectionSceneObject
 {
     public Door Door1;
+    public Door Stage2Door;
 
     [Header("Spawn Point")]
     public Transform TutorialSP = null;

@@ -212,7 +212,10 @@ public class GameManager : MonoBehaviour
                     m_itemChannel.RaiseItemInsert(gameEvent.Item);
                 }
                 OpenDialogBox(gameEvent.Dialog);
+                onEvent = true;
             }
+            await UniTask.WaitUntil(() => onEvent == false);
+
             if (gameEvent.Help) StartHelpEvent(gameEvent.Help);
             await UniTask.WaitUntil(() => onEvent == false);
 
