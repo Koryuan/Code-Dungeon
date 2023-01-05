@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC - Spin
+  m_Name: NPC - spin
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 70ff466fe09816144952a1587301d4fa, type: 3}
-    - time: 0.2
+    - time: 0.1
       value: {fileID: 21300000, guid: 8b91027b0370a8b44b123191ca13fbad, type: 3}
-    - time: 0.4
+    - time: 0.2
       value: {fileID: 21300000, guid: d286be775eb5ef042bbaab0d6f19f1f1, type: 3}
-    - time: 0.6
+    - time: 0.3
       value: {fileID: 21300000, guid: 05f2e42b95eb9ad4abffe03551726aba, type: 3}
     attribute: m_Sprite
     path: 
@@ -55,7 +55,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.70000005
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
