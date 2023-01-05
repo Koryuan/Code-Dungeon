@@ -114,4 +114,19 @@ public class SaveChannel : ScriptableObject
         OnStringUnlockerSaveDataUpdated?.Invoke(NewSaveData);
     }
     #endregion
+
+    #region Trigger Enter Event
+    public event Func<string, TriggerEnterSaveData> OnTriggerEnterSaveDataRequest;
+    public event Action<TriggerEnterSaveData> OnTriggerEnterSaveDataUpdated;
+
+    public TriggerEnterSaveData RaiseTriggerEnterSaveDataRequest(string ID)
+    {
+        if (OnTriggerEnterSaveDataRequest == null) return null;
+        return OnTriggerEnterSaveDataRequest?.Invoke(ID);
+    }
+    public void RaiseTriggerEnterSaveDataUpdated(TriggerEnterSaveData NewSaveData)
+    {
+        OnTriggerEnterSaveDataUpdated?.Invoke(NewSaveData);
+    }
+    #endregion
 }

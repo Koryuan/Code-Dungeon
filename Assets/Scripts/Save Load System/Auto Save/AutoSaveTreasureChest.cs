@@ -28,11 +28,11 @@ public class AutoSaveTreasureChest : AutoSaveInterectable
         while ((LoadedData = m_saveChannel.RaiseTreasureChestSaveDataRequest(name)) == null) await UniTask.Delay(100);
         if (LoadedData.New)
         {
-            Debug.Log($"{name}, didn't need load data");
+            //Debug.Log($"{name}, didn't need load data");
             return;
         }
 
-        Debug.Log($"{name}, has old treasure chest data: Loading.....");
+        //Debug.Log($"{name}, has old treasure chest data: Loading.....");
         m_saveData = LoadedData;
         OnDataLoaded?.Invoke(LoadedData);
     }

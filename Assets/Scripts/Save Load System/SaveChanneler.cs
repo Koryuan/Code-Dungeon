@@ -47,6 +47,10 @@ public class SaveChanneler : MonoBehaviour
         // String Unlocker
         m_saveChannel.OnStringUnlockerSaveDataRequest += GetStringUnlockerSaveData;
         m_saveChannel.OnStringUnlockerSaveDataUpdated += UpdateStringUnlockerSaveData;
+
+        // Trigger Enter
+        m_saveChannel.OnTriggerEnterSaveDataRequest += GetTriggerEnterSaveData;
+        m_saveChannel.OnTriggerEnterSaveDataUpdated += UpdateTriggerEnterSaveData;
     }
 
     #region Item
@@ -59,7 +63,7 @@ public class SaveChanneler : MonoBehaviour
     {
         if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
 
-        Debug.Log($"{name}, send item list data");
+        //Debug.Log($"{name}, send item list data");
         return SaveLoadSystem.Instance._SaveData._ItemList.ToArray();
     }
     #endregion
@@ -75,7 +79,7 @@ public class SaveChanneler : MonoBehaviour
     {
         if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
 
-        Debug.Log($"{name}, send help list data");
+        //Debug.Log($"{name}, send help list data");
         return SaveLoadSystem.Instance._SaveData.HelpList.ToArray();
     }
     #endregion
@@ -198,6 +202,22 @@ public class SaveChanneler : MonoBehaviour
     }
     #endregion
 
+    #region Trigger Enter
+    private TriggerEnterSaveData GetTriggerEnterSaveData(string ID)
+    {
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
+
+        TriggerEnterSaveData OldData = SaveLoadSystem.Instance._SaveData.GetTriggerEnterSaveData(ID);
+        if (OldData == null) return new TriggerEnterSaveData();
+        return OldData;
+    }
+    private void UpdateTriggerEnterSaveData(TriggerEnterSaveData NewData)
+    {
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return;
+        SaveLoadSystem.Instance._SaveData.AddTriggerEnterSaveData(NewData);
+    }
+    #endregion
+
     private void OnDestroy()
     {
         // Help
@@ -236,5 +256,9 @@ public class SaveChanneler : MonoBehaviour
         // String Unlocker
         m_saveChannel.OnStringUnlockerSaveDataRequest -= GetStringUnlockerSaveData;
         m_saveChannel.OnStringUnlockerSaveDataUpdated -= UpdateStringUnlockerSaveData;
+
+        // Trigger Enter
+        m_saveChannel.OnTriggerEnterSaveDataRequest -= GetTriggerEnterSaveData;
+        m_saveChannel.OnTriggerEnterSaveDataUpdated -= UpdateTriggerEnterSaveData;
     }
 }

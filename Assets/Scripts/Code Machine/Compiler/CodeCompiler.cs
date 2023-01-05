@@ -16,7 +16,7 @@ using UnityEngine;
         public void LoadData(int Occurence) => m_occurence = Occurence;
         public (bool, string[]) IsTargetUpdateColor(string[] TextOutput)
         {
-            Debug.Log(TextOutput[0]);
+            //Debug.Log(TextOutput[0]);
             // Validation Check
             int breakNumber = 0; bool isTrue = false;
             for (int i = 0; i < m_targetTexts.Length; i++)
@@ -50,17 +50,21 @@ using UnityEngine;
             foreach (string text in Output) Debug.Log(text);
         }
     }
+    [SerializeField] protected bool m_infiniteLoop = false;
     [SerializeField] protected TargetOutput[] m_targetList;
     [SerializeField] protected GameStateChannel m_channel;
+
     public CompilerSaveData SaveData { get; private set; } = new CompilerSaveData();
     public System.Action<CompilerSaveData> OnUpdate;
     public void Initialize()
     {
+        SaveData.InfiniteLoop = m_infiniteLoop;
         for(int i = 0;i < m_targetList.Length;i++)
         {
             CompilerSaveData.OccurenceData Data = new CompilerSaveData.OccurenceData();
             Data.Index = i;
             Data.Occurence = m_targetList[i].OccurenceNumber;
+            SaveData.OccurenceList.Add(Data);
         }
     }
     public void LoadData(CompilerSaveData LoadedData)
@@ -68,6 +72,7 @@ using UnityEngine;
         if (LoadedData == null) return;
         
         SaveData = LoadedData;
+        m_infiniteLoop = SaveData.InfiniteLoop;
         for(int i = 0;i < m_targetList.Length;i++)
         {
             int Occurence = 0;
@@ -77,7 +82,11 @@ using UnityEngine;
             m_targetList[i].LoadData(Occurence);
         }
     }
-
+    public virtual void UpdateInfiniteLoop(bool IsInfinite)
+    {
+        SaveData.InfiniteLoop = m_infiniteLoop = IsInfinite;
+        OnUpdate?.Invoke(SaveData);
+    }
     public virtual string[] PrintCompile(string[] InputFieldData)
     {
         string[] output = {"ERROR"};
@@ -106,6 +115,7 @@ using UnityEngine;
                 if (SaveData.OccurenceList.Count > i)
                 {
                     SaveData.OccurenceList[i].Occurence = m_targetList[i].OccurenceNumber;
+                    //Debug.Log("This didn't happen right?");
                     OnUpdate?.Invoke(SaveData);
                 }
                 if (m_channel) m_channel.RaiseGameEventPassed(m_targetList[i].OnTarget);
@@ -142,4 +152,5 @@ using UnityEngine;
         public int Occurence;
     }
     public List<OccurenceData> OccurenceList = new List<OccurenceData>();
+    public bool InfiniteLoop = false;
 }

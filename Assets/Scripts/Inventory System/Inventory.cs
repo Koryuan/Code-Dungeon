@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour, IPanelUI
         Item[] LoadedItem = null;
         while ((LoadedItem = m_itemChannel.RaiseItemListRequested()) == null) await UniTask.Delay(100);
         if (LoadedItem.Length > 0) LoadItems(LoadedItem);
-        else Debug.Log("Save Data, Has no any Item");
+        //else Debug.Log("Save Data, Has no any Item");
     }
     private void CheckReferences()
     {

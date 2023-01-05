@@ -14,6 +14,11 @@ public class AutoSaveCodeMachine : AutoSaveInterectable
         m_saveData.CompilerData = CompilerData;
     }
     
+    public void AdditionalData2(int InfiniteLoopEventOccurenceNumber)
+    {
+        m_saveData.InfiniteLoopOccurenceNumber = InfiniteLoopEventOccurenceNumber;
+    }
+
     async public override void LoadData(bool CanInterect, bool CanPrint, bool CanScan, bool ObjectActive, bool AnimationActive)
     {
         m_saveData.ID = name;
@@ -33,9 +38,19 @@ public class AutoSaveCodeMachine : AutoSaveInterectable
         m_saveData = LoadedData;
         OnDataLoaded?.Invoke(LoadedData);
     }
+    public void UpdateIsBroke(bool IsBroken)
+    {
+        m_saveData.IsBroken = IsBroken;
+        m_saveChannel.RaiseCodeMachineSaveDataUpdated(m_saveData);
+    }
     public void UpdateCompilerOccurence(CompilerSaveData NewData)
     {
         m_saveData.CompilerData = NewData;
+        m_saveChannel.RaiseCodeMachineSaveDataUpdated(m_saveData);
+    }
+    public void UpdateInfiniteLoopOccurenceNumber(int Number)
+    {
+        m_saveData.InfiniteLoopOccurenceNumber = Number;
         m_saveChannel.RaiseCodeMachineSaveDataUpdated(m_saveData);
     }
     public void UpdateReadOnlyContain(ContainReadonlySaveData NewData)
@@ -96,8 +111,11 @@ public class AutoSaveCodeMachine : AutoSaveInterectable
 
 [System.Serializable] public class CodeMachineSaveData : InteractableSaveData
 {
+    public bool IsBroken = false;
     public bool OnCloseCodePossible = true;
     public List<string> PrintedMessages = new List<string>();
+
+    public int InfiniteLoopOccurenceNumber = 0;
 
     public CompilerSaveData CompilerData = new CompilerSaveData();
     public List<ContainReadonlySaveData> ReadOnlyContain = new List<ContainReadonlySaveData>();

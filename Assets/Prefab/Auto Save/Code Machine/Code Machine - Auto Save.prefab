@@ -284,8 +284,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1485722980671253467}
   m_HandleRect: {fileID: 1485722980671253460}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.94999975
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -633,7 +633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -9.9995575}
+  m_AnchoredPosition: {x: 0, y: -10.000061}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1485722981066598326
@@ -1186,10 +1186,16 @@ MonoBehaviour:
   m_popUpMessage: {fileID: 6729144370751121935}
   m_compiler: {fileID: 0}
   m_scanContainer: {fileID: 4243883572199500861}
+  m_renderer: {fileID: 5032245714224858094}
+  m_onOpenSprite: {fileID: 21300000, guid: 231858edcb79cb7408e9361484117aa4, type: 3}
+  m_onCloseSprite: {fileID: 21300000, guid: a557d78fd3b8c564c8d61156b99b6fd7, type: 3}
   m_readonlyContains: []
   m_inputFieldContains: []
   m_awakeString:
   - <color=#90EE90>Lock Release
+  m_broken: 0
+  m_onBrokeInterectEvent: []
+  m_onInteractEvent: []
   m_onCloseCodeOnce: 0
   m_onCloseCodeEvent: []
 --- !u!61 &5032245714224858091

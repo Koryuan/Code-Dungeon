@@ -6,12 +6,14 @@ public class NonPlayableCharacter : InteractableTarget
 {
     [System.Serializable] private struct NPCEvent
     {
+        public string name;
         public GameEvent[] EventList;
     }
 
     [Header("Special Attribute")]
+    [SerializeField] private bool m_isActiveAtFirst = true;
     [SerializeField] private List<NPCEvent> m_npcEvent = new List<NPCEvent>();
-
+    
     private int m_currentIndex = 0;
     private int m_totalEvent => m_npcEvent.Count;
     private AutoSaveNPC m_npcAutoSave { get; set; } = null;
@@ -19,6 +21,8 @@ public class NonPlayableCharacter : InteractableTarget
     protected override void Awake()
     {
         base.Awake();
+        gameObject.SetActive(m_isActiveAtFirst);
+
         if (m_autoSave is AutoSaveNPC npc)
         {
             m_npcAutoSave = npc;

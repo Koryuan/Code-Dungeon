@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,15 +16,20 @@ public class KeypadManager : MonoBehaviour
 
     [System.Serializable] private class KeyPadGameEvent
     {
-        [SerializeField] private string m_targetText;
+        [SerializeField] private string name;
+        [SerializeField] private string[] m_targetText;
         [SerializeField] private int m_occurenceNumber;
         [SerializeField] private GameEvent[] m_eventList;
 
-        public string TargetText => m_targetText;
         public int OccurenceNumber => m_occurenceNumber;
         public GameEvent[] EventList => m_eventList;
 
         public void Occur() => m_occurenceNumber--;
+        public bool IsTargetText(string InputedText)
+        {
+            foreach (string text in m_targetText) if (text == InputedText) return true;
+            return false;
+        }
     }
 
     [Header("List")]
@@ -94,7 +100,7 @@ public class KeypadManager : MonoBehaviour
             if (TargetGameEvent != null)
             {
                 TargetGameEvent?.Occur();
-                if (m_autoSave) m_autoSave.UpdateOccuredText(TargetGameEvent.TargetText);
+                if (m_autoSave) m_autoSave.UpdateOccuredText(currentText);
                 if (GameManager.Instance) await GameManager.Instance.StartEvent(TargetGameEvent.EventList);
             }
             ActiveAllKeyInteraction();
@@ -105,7 +111,7 @@ public class KeypadManager : MonoBehaviour
     {
         foreach (KeyPadGameEvent keyEvent in m_eventList)
         {
-            if (keyEvent.TargetText == TargetText && keyEvent.OccurenceNumber > 0) return keyEvent;
+            if (keyEvent.IsTargetText(TargetText) && keyEvent.OccurenceNumber > 0) return keyEvent;
         } return null;
     }
     private Keypad SearchTargetKey(string TargetText)
