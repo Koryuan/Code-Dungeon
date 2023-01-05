@@ -16,5 +16,15 @@ MonoBehaviour:
   - name: Stranger
     text: Jika ada petunjuk lain, aku pasti sudah menemukannya. Hanya ada kau, aku,
       dan 2 mesin tersebut.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Stranger
-    text: Aneh sekali. Apa kedua mesin ini memang benar - benar <b>SAMA</b>?
+    text: Aneh sekali. Apa kedua mesin ini memang benar - benar <b>sama</b>?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

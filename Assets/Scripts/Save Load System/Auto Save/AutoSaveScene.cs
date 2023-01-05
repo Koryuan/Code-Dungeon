@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public static class AutoSaveScene
 {
@@ -7,6 +8,8 @@ public static class AutoSaveScene
         if (SaveLoadSystem.Instance == null || SaveLoadSystem.Instance._SaveData == null) return;
         if (LoadSceneObject.Instance.CurrentScene == SceneType.TutorialScene)
             SaveTutorialScene(ObjectName);
+        else if (LoadSceneObject.Instance.CurrentScene == SceneType.SelectionScene)
+            SaveSelectionScene(ObjectName);
     }
 
     private static void SaveTutorialScene(string ObjectName)
@@ -33,5 +36,16 @@ public static class AutoSaveScene
             default:
                 break;
         }
+    }
+    private static void SaveSelectionScene(string ObjectName)
+    {
+        if (SaveLoadSystem.Instance._SaveData == null)
+        {
+            Debug.LogError("There is no save data");
+            return;
+        }
+
+        if (ObjectName == "Puzzle 16 - Door - Stage Select - 1")
+            SaveLoadSystem.Instance._SaveData.OtherData.Stage2DoorOpen = true;
     }
 }

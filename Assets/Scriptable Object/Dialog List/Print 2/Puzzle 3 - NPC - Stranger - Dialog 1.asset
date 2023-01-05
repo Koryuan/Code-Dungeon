@@ -17,23 +17,68 @@ MonoBehaviour:
     text: 'Hei kamu!
 
       Sepertinya kamu juga bisa menyelesaikan teka - teki sebelumnya.'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Player
     text: Apakah kau juga bisa sampai kesini dengan melewati teka - teki yang sama?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Stranger
     text: Aku tidak tahu apakah kita dihadapkan dengan teka - teki yang sama atau
       tidak, tetapi satu hal yang pasti sekarang kau terjebak bersama disini bersama
       ku.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Player
     text: Apa maksud mu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Stranger
-    text: Kau lihat 2 mesin disana yang terlihat <b>SAMA</b>? Meskipun sekilas terlihat
+    text: Kau lihat 2 mesin disana yang terlihat <b>sama</b>? Meskipun sekilas terlihat
       sama namun satu diantaranya tidak dapat melakukan apapun.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Stranger
     text: Apa menurut mu yang harus kita lakukan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Player
     text: hmm..
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Player
     text: Aku tidak yakin. Apakah tidak ada petunjuk di sekitar sini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Stranger
     text: Jika ada, aku pasti sudah menemukannya. Hanya ada kau, aku, dan 2 mesin
       tersebut.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
