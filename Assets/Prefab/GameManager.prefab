@@ -5261,13 +5261,8 @@ MonoBehaviour:
     StageSelctionSP: {fileID: 0}
     Print2SP: {fileID: 0}
   print2SceneObject:
-    Puzzle4_MachineInt: {fileID: 0}
-    Puzzle4_MachineChar: {fileID: 0}
-    Puzzle4_MachineString: {fileID: 0}
-    Puzzle4_MachineFloat: {fileID: 0}
-    Puzzle4_Unlocker: {fileID: 0}
-    Puzzle4_Door: {fileID: 0}
     Print1SP: {fileID: 0}
+    SelectionSP: {fileID: 0}
   m_selectionSceneSP:
     Print2SP: {fileID: 0}
     SelectStageSP: {fileID: 0}
@@ -6101,7 +6096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02bc96570844d664b8689daf84b490f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 653d07842929d724aad34c9f01614ae6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
