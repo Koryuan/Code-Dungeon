@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Fairy Ketangkap
+    text: Fairy tertangkap
     m_image:
       Image: {fileID: 0}
       Width: 0

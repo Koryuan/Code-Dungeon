@@ -20,13 +20,6 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
-    text: 
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
   - name: Guard B
     text: Apa keperluan mu untuk  melewati Pintu ini?
     m_image:
@@ -56,14 +49,21 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Guard B
-    text: Bukan urusan mu
+    text: Mengetahui seluk beluk tempat ini adalah tugas kami. Tentu saja kami tahu.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Player
-    text: Tolong lah. Aku harus melewati tempat ini
+    text: (Tidak mungkin.)Tolong lah. Aku harus melewati tempat ini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Sudah cukup. Pergi dari sini sekarang!
     m_image:
       Image: {fileID: 0}
       Width: 0
