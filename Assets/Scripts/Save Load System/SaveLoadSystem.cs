@@ -25,6 +25,8 @@ public class SaveLoadSystem : MonoBehaviour
     public SaveData _SaveData { get; private set; } = null;
     #endregion
 
+    public void NewSaveData() => _SaveData = new SaveData();
+
     #region Save and Load
     public bool LoadFromSaveData = false;
 

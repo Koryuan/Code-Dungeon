@@ -23,7 +23,7 @@ MonoBehaviour:
     PRINT("Nilai:
     " + STR(b))'
   m_range: 0.5
-  m_searchedText: '<color=#023020>//PRINT("Nilai: " + STR(b))'
+  m_searchedText: '<color=#156b21>//PRINT("Nilai: " + STR(b))'
   m_changedText: 'PRINT(<color=#bd5d00>"Nilai: "</color> + STR(b))'
   m_afterChangeFixed: 1
   m_infiniteLoop: 0

@@ -91,6 +91,7 @@ public class MainMenu : MonoBehaviour, IPanelUI
         if (ui.GuidePanelIsActive)
         {
             if (m_loadingChannel) m_loadingChannel.RaiseLoadingRequest();
+            SaveLoadSystem.Instance.NewSaveData();
             SceneLoad.LoadTutorialMap();
         }
     }
