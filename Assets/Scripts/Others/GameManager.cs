@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     // Public References
     public bool IsInitialize { get; private set; } = false;
-    public GameState CurrentState { get; private set; } = GameState.Game_Player_State;
+    public GameState CurrentState { get; private set; } = GameState.None;
 
     // UI Priority
     private bool dialogboxOpen = false;
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameStateChannel m_gameStateChannel;
     [SerializeField] private HelpChannel m_helpChannel;
     [SerializeField] private ItemChannel m_itemChannel;
+    [SerializeField] private LoadingChannel m_loadChannel;
 
     public PlayerController Player => player;
 
@@ -61,6 +62,9 @@ public class GameManager : MonoBehaviour
         m_gameStateChannel.OnGameStateRequestedRemove += RemoveState;
         m_gameStateChannel.OnGameEventPassed += StartEventFromChannel;
 
+        // Other Channel
+        m_loadChannel.OnLoadingFinish += StartGame;
+
         // Pause System
         await UniTask.WaitUntil(() => pause && pause.IsInitialize);
         pause.OnOpenPanel += OnPauseMenuOpen;
@@ -80,6 +84,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Manager - Everything loaded");
 
         IsInitialize = true;
+        m_loadChannel.RaiseLoadUpdated(LoadingType.GameManager);
     }
     private void CheckReferences()
     {
@@ -88,6 +93,7 @@ public class GameManager : MonoBehaviour
         if (!guideSystem) Debug.LogError($"{name} has no guide system references");
         if (!player) Debug.LogError($"{name} has no player references");
     }
+    private void StartGame() => CurrentState = GameState.Game_Player_State;
     #endregion
 
     #region Guide System
@@ -246,6 +252,7 @@ public class GameManager : MonoBehaviour
         playerActionMap.Disable();
         m_gameStateChannel.OnGameStateRequestedChange -= UpdateState;
         m_gameStateChannel.OnGameStateRequestedRemove -= RemoveState;
+        m_loadChannel.OnLoadingFinish -= StartGame;
     }
     #endregion
 }

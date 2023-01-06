@@ -21,6 +21,9 @@ public class SaveFileButton : MonoBehaviour, IMenuUI
     [Header("Highlight")]
     [SerializeField] private Image arrow;
 
+    [Header("Channel")]
+    [SerializeField] private LoadingChannel m_loadingChannel;
+
     private HoverButton button;
     private SaveData _saveData;
     private string _saveDataName;
@@ -63,6 +66,7 @@ public class SaveFileButton : MonoBehaviour, IMenuUI
         }
         else if (canUse)
         {
+            m_loadingChannel.RaiseLoadingRequest();
             SaveLoadSystem.Instance.LoadData(_saveDataName);
         }
     }

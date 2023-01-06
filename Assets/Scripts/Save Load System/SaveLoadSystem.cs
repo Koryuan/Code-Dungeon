@@ -58,6 +58,8 @@ public class SaveLoadSystem : MonoBehaviour
         _SaveData = LoadFile(SaveName);
         LoadFromSaveData = true;
         Debug.Log($"Awake: {_SaveData.TutorialScene.JustAwake} at load game");
+
+        
         SceneLoad.LoadStageFromSaveFile();
     }
     public SaveData LoadFile(string FileName)

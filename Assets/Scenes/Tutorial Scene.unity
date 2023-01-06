@@ -171,6 +171,7 @@ MonoBehaviour:
   gameEvents:
   - dialog: {fileID: 0}
     item: {fileID: 0}
+    m_help: {fileID: 0}
     guide: {fileID: 11400000, guid: be38e06d449ac43489c1f56fa69f9a18, type: 2}
     eventAction:
       m_PersistentCalls:
@@ -4898,6 +4899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneType: 2
+  m_loadingChannel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
 --- !u!61 &1116398515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5327,9 +5329,11 @@ MonoBehaviour:
   printInteract: 0
   scanInteract: 0
   m_interactableAnimator: {fileID: 0}
+  openAtStart: 1
   eventList:
   - dialog: {fileID: 11400000, guid: 0ec7ab3bc342e3c47a74506447d69c6e, type: 2}
     item: {fileID: 0}
+    m_help: {fileID: 0}
     guide: {fileID: 0}
     eventAction:
       m_PersistentCalls:

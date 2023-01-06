@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour, IPanelUI
     [Header("Input References")]
     [SerializeField] private InputActionAsset playerActionMap;
 
+    [Header("Channel References")]
+    [SerializeField] private LoadingChannel m_loadingChannel;
+
     #region Initialization
     private void Awake()
     {
@@ -83,7 +86,11 @@ public class MainMenu : MonoBehaviour, IPanelUI
 
     private void OnInterectInput(InputAction.CallbackContext callback)
     {
-        if (ui.GuidePanelIsActive) SceneLoad.LoadTutorialMap();
+        if (ui.GuidePanelIsActive)
+        {
+            m_loadingChannel.RaiseLoadingRequest();
+            SceneLoad.LoadTutorialMap();
+        }
     }
 
     #region Enable Disable

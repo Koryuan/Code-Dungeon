@@ -9,6 +9,7 @@ public static class SceneLoad
     public static void LoadPrint1Stage() => SceneManager.LoadScene("Print 1");
     public static void LoadPrint2Stage() => SceneManager.LoadScene("Print 2");
     public static void LoadSelectionStage() => SceneManager.LoadScene("Selection");
+    public static void LoadLoopStage() => SceneManager.LoadScene("Loop");
     public static void LoadStageFromSaveFile()
     {
         var saveData = SaveLoadSystem.Instance._SaveData;
@@ -28,6 +29,9 @@ public static class SceneLoad
                 break;
             case SceneType.SelectionScene:
                 LoadSelectionStage();
+                break;
+            case SceneType.LoopScene:
+                LoadLoopStage();
                 break;
             default:
                 break;

@@ -5222,6 +5222,7 @@ MonoBehaviour:
   m_gameStateChannel: {fileID: 11400000, guid: 431909f63d5384443ba9f6d401dadb9a, type: 2}
   m_helpChannel: {fileID: 11400000, guid: ab94fa64a9620694db5d2b25af40f676, type: 2}
   m_itemChannel: {fileID: 11400000, guid: c23500c67bbdfe14e8958a638153ac75, type: 2}
+  m_loadChannel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
 --- !u!114 &4682798047610999605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5247,6 +5248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae98f92e4cecc894bb3438da59b1a54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_channel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
   thisScene: 1
   tutorialSceneObject:
     Tablet: {fileID: 0}
@@ -5255,6 +5257,7 @@ MonoBehaviour:
     StageSelectionSP: {fileID: 0}
   stageSelectionSceneObject:
     Door1: {fileID: 0}
+    Stage2Door: {fileID: 0}
     TutorialSP: {fileID: 0}
     Door1SP: {fileID: 0}
   print1SceneObject:
