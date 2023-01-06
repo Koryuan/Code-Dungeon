@@ -16272,7 +16272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10.000061
+      value: -9.999924
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17173,7 +17173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.999817
+      value: -9.999832
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17591,6 +17591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneType: 4
+  m_loadingChannel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
 --- !u!61 &640290700
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17662,6 +17663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneType: 2
+  m_loadingChannel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
 --- !u!61 &825927563
 BoxCollider2D:
   m_ObjectHideFlags: 0

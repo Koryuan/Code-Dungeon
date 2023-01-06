@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -88,19 +90,21 @@ public class MainMenu : MonoBehaviour, IPanelUI
     {
         if (ui.GuidePanelIsActive)
         {
-            m_loadingChannel.RaiseLoadingRequest();
+            if (m_loadingChannel) m_loadingChannel.RaiseLoadingRequest();
             SceneLoad.LoadTutorialMap();
         }
     }
 
     #region Enable Disable
-    private void OnEnable()
+    async private void OnEnable()
     {
+        await UniTask.WaitUntil(() => InputReferences.Instance);
         InputReferences.Instance._Menu_Interect.action.performed += OnInterectInput;
     }
 
-    private void OnDisable()
+    async private void OnDisable()
     {
+        await UniTask.WaitUntil(() => InputReferences.Instance);
         InputReferences.Instance._Menu_Interect.action.performed -= OnInterectInput;
     }
     #endregion

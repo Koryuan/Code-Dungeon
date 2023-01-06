@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3586bb1e5380b44905c8e1e0e7bf17, type: 3}
   m_Name: Puzzle 17 - Item - Kunci Pintu - 04
   m_EditorClassIdentifier: 
-  itemName: Kunci Pintu - 04
+  itemName: Kunci Pintu - Stage 3
   isUseable: 0
-  itemDescription: Kunci Pintu - 04
+  itemDescription: Kunci untuk membuka pintu menuju Stage 3

@@ -156,7 +156,7 @@ public class LoadSceneObject : MonoBehaviour
         if (Player)
         {
             if (LastScene == SceneType.Print1Scene)
-                Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, -1));
+                Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, 1));
             else if (LastScene == SceneType.SelectionScene)
                 Player.InstantMove(print2SceneObject.SelectionSP, new Vector2(0,-1));
         }
@@ -175,7 +175,7 @@ public class LoadSceneObject : MonoBehaviour
             if (LastScene == SceneType.Print2Scene)
                 Player.InstantMove(m_selectionSceneSP.Print2SP, new Vector2(0, 1));
             else if (LastScene == SceneType.SelectStageScene)
-                Player.InstantMove(m_selectionSceneSP.SelectStageSP, new Vector2(0, -1));
+                Player.InstantMove(m_selectionSceneSP.SelectStageSP, new Vector2(0, 1));
         }
     }
     #endregion

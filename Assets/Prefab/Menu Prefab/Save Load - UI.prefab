@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 5073695221712698326}
   - component: {fileID: 2400106001952270622}
   m_Layer: 5
-  m_Name: UI - Save_Load
+  m_Name: Save Load - UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02bc96570844d664b8689daf84b490f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aeb20cfd3d9d8e743ba7819497513a1b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -967,6 +967,7 @@ MonoBehaviour:
   safeFileName: {fileID: 1015036790474987532}
   description: {fileID: 1015036790474987532}
   arrow: {fileID: 8434062291243572922}
+  m_loadingChannel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
 --- !u!1 &4396743480133629686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7887687921255678425
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2196,6 +2197,7 @@ MonoBehaviour:
   safeFileName: {fileID: 5295209115113367861}
   description: {fileID: 5295209115113367861}
   arrow: {fileID: 3630377114066218883}
+  m_loadingChannel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
 --- !u!1 &9074574255244706320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,6 +2466,7 @@ MonoBehaviour:
   safeFileName: {fileID: 5691742095242685674}
   description: {fileID: 5691742095242685674}
   arrow: {fileID: 3882328438349113948}
+  m_loadingChannel: {fileID: 11400000, guid: 7d312c3ddd5f05d4a9ebd8586a436403, type: 2}
 --- !u!1 &9105732986889263613
 GameObject:
   m_ObjectHideFlags: 0

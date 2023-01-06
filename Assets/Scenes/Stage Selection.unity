@@ -649,6 +649,108 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_saveChannel: {fileID: 11400000, guid: 4f52256da805d01499f3f0fb90064764, type: 2}
+--- !u!1 &672566970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1587263350665940983, guid: f21eb30de5aae38449ccaf8622b023d6, type: 3}
+  m_PrefabInstance: {fileID: 672566966}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &672566971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672566970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532815f4bde22564d80e276484d60ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canInteract: 1
+  disableObjectBefore: 0
+  disableObjectAfter: 0
+  disableInteraction: 0
+  printInteract: 0
+  scanInteract: 0
+  m_interactableAnimator: {fileID: 0}
+  openAtStart: 1
+  eventList:
+  - dialog: {fileID: 11400000, guid: 9de6baa10a0953549a6cf5be216fe8c4, type: 2}
+    item: {fileID: 0}
+    m_help: {fileID: 0}
+    guide: {fileID: 0}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 672566972}
+          m_TargetAssemblyTypeName: ObjectNeedItem, Assembly-CSharp
+          m_MethodName: UseItemOnEvent
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &672566972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672566970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e578cc38e9d51d42827e460cc03bd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_itemChannel: {fileID: 11400000, guid: c23500c67bbdfe14e8958a638153ac75, type: 2}
+  m_UseItemEvent:
+  - name: Stage 3 - Key
+    RemoveOnUse: 1
+    SearchedList:
+    - Kunci Pintu - Stage 3
+    OnFindObject:
+    - dialog: {fileID: 11400000, guid: 2e862e3970a4a1b47903f9df6e1d45e0, type: 2}
+      item: {fileID: 0}
+      m_help: {fileID: 0}
+      guide: {fileID: 0}
+      eventAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 672566973}
+            m_TargetAssemblyTypeName: Door, Assembly-CSharp
+            m_MethodName: ActivatedWithSound
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - dialog: {fileID: 11400000, guid: bb236aa73c637514db4e4396680baf15, type: 2}
+      item: {fileID: 0}
+      m_help: {fileID: 0}
+      guide: {fileID: 0}
+      eventAction:
+        m_PersistentCalls:
+          m_Calls: []
+    OnNotFindObject: []
+--- !u!114 &672566973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6826492106877817573, guid: f21eb30de5aae38449ccaf8622b023d6, type: 3}
+  m_PrefabInstance: {fileID: 672566966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672566968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9cb6519f4c44d44bc8ebab985b8de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &774370596
 PrefabInstance:
   m_ObjectHideFlags: 0

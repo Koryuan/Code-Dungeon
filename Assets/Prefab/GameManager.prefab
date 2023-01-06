@@ -877,7 +877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1073649572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3306,7 +3306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8266845924905856613
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3485,14 +3485,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5b976772ec06b0344b961cdb92a1dbf6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3559,8 +3559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowImage: {fileID: 91695870}
-  HighlightSprite: {fileID: 0}
-  NonHighlightSprite: {fileID: 0}
+  HighlightSprite: {fileID: 21300000, guid: 55f9c8eeff474db409ed780292f186c0, type: 3}
+  NonHighlightSprite: {fileID: 21300000, guid: 5b976772ec06b0344b961cdb92a1dbf6, type: 3}
   Button: {fileID: 6493082213073409990}
 --- !u!1 &1822526813762214260
 GameObject:
@@ -4145,7 +4145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &151345415563896923
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4932,14 +4932,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a54d8d0c2c28660409cfbbab7ba921e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5006,8 +5006,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowImage: {fileID: 1829100311401305250}
-  HighlightSprite: {fileID: 0}
-  NonHighlightSprite: {fileID: 0}
+  HighlightSprite: {fileID: 21300000, guid: 1fbf25425a940fc4e89d77b5b784db60, type: 3}
+  NonHighlightSprite: {fileID: 21300000, guid: a54d8d0c2c28660409cfbbab7ba921e4, type: 3}
   Button: {fileID: 8786745983494947000}
 --- !u!1 &4497071449401151259
 GameObject:
@@ -5260,6 +5260,8 @@ MonoBehaviour:
     Stage2Door: {fileID: 0}
     TutorialSP: {fileID: 0}
     Door1SP: {fileID: 0}
+    Stage2SP: {fileID: 0}
+    Stage3SP: {fileID: 0}
   print1SceneObject:
     StageSelctionSP: {fileID: 0}
     Print2SP: {fileID: 0}
@@ -5269,6 +5271,8 @@ MonoBehaviour:
   m_selectionSceneSP:
     Print2SP: {fileID: 0}
     SelectStageSP: {fileID: 0}
+  m_loopSceneSP:
+    StageSelectionSP: {fileID: 0}
 --- !u!1 &4722147498999037951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6515,14 +6519,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 15d21a526a01a984d8a64675077c51b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6589,8 +6593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowImage: {fileID: 5814343542206335130}
-  HighlightSprite: {fileID: 0}
-  NonHighlightSprite: {fileID: 0}
+  HighlightSprite: {fileID: 21300000, guid: 0a02a93c27c80d94a9504b3f36ca92e5, type: 3}
+  NonHighlightSprite: {fileID: 21300000, guid: 15d21a526a01a984d8a64675077c51b4, type: 3}
   Button: {fileID: 6194080771423098287}
 --- !u!1 &7632484837020463864
 GameObject:
@@ -6919,14 +6923,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 36db346a20dacf0439ddfef50af9d395, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6993,8 +6997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowImage: {fileID: 758313518246850348}
-  HighlightSprite: {fileID: 0}
-  NonHighlightSprite: {fileID: 0}
+  HighlightSprite: {fileID: 21300000, guid: 21f34e31c36d4b544ac3d126c6343564, type: 3}
+  NonHighlightSprite: {fileID: 21300000, guid: 36db346a20dacf0439ddfef50af9d395, type: 3}
   Button: {fileID: 8046789702013366652}
 --- !u!1 &8470925169344891769
 GameObject:
@@ -7013,7 +7017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1078195190984938792
 RectTransform:
   m_ObjectHideFlags: 0

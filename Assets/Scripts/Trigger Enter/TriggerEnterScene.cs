@@ -22,6 +22,12 @@ public class TriggerEnterScene : TriggerEnter
             case SceneType.Print2Scene:
                 SceneLoad.LoadPrint2Stage();
                 break;
+            case SceneType.SelectionScene:
+                SceneLoad.LoadSelectionStage();
+                break;
+            case SceneType.LoopScene:
+                SceneLoad.LoadLoopStage();
+                break;
             default:
                 break;
         }
