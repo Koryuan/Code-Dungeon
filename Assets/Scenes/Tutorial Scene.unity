@@ -5015,6 +5015,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5072358144754969506, guid: ba34a39e0a857904c97ad3e7a668094a, type: 3}
+      propertyPath: orthographic size
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5072358145991132555, guid: ba34a39e0a857904c97ad3e7a668094a, type: 3}
       propertyPath: _movement.movementSpeed
       value: 4
