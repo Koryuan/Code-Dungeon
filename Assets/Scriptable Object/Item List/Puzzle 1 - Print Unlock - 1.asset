@@ -24,6 +24,7 @@ MonoBehaviour:
     World")'
   m_range: 0.5
   m_searchedText: PRINT<color=#023020>//("Hello World")
-  m_changedText: PRINT("Hello World")
+  m_changedText: PRINT(<color=#bd5d00>"Hello World"</color>)
   m_afterChangeFixed: 1
+  m_infiniteLoop: 0
   m_atFailedDialog: {fileID: 11400000, guid: 455fc1239475b9c489a6058d0aa18cb2, type: 2}
