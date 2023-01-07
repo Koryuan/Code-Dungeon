@@ -6,6 +6,7 @@ public class LoadSceneObject : MonoBehaviour
 {
     public static LoadSceneObject Instance;
 
+    [SerializeField] private LoadingChannel m_channel;
     [SerializeField] private SceneType thisScene = SceneType.None;
 
     public bool AllLoad { get; private set; } = false;
@@ -42,12 +43,16 @@ public class LoadSceneObject : MonoBehaviour
             case SceneType.SelectionScene:
                 LoadPlayerPositionInSelectionScene(player);
                 break;
+            case SceneType.LoopScene:
+                LoadPlayerPositionInLoopScene(player);
+                break;
             default:
                 break;
         }
 
         SaveLoadSystem.Instance._SaveData.LastScene = thisScene;
         AllLoad = true;
+        m_channel.RaiseLoadUpdated(LoadingType.LoadScene);
     }
 
     #region Tutorial Scene
@@ -103,9 +108,13 @@ public class LoadSceneObject : MonoBehaviour
         if (Player != null)
         {
             if (LastScene == SceneType.TutorialScene)
-                Player.InstantMove(stageSelectionSceneObject.TutorialSP, new Vector2(0,1));
-            else if (LastScene == SceneType.SelectStageScene)
+                Player.InstantMove(stageSelectionSceneObject.TutorialSP, new Vector2(0, 1));
+            else if (LastScene == SceneType.Print1Scene)
                 Player.InstantMove(stageSelectionSceneObject.Door1SP, new Vector2(0, -1));
+            else if (LastScene == SceneType.SelectionScene)
+                Player.InstantMove(stageSelectionSceneObject.Stage2SP,new Vector2(0,-1));
+            else if (LastScene == SceneType.LoopScene)
+                Player.InstantMove(stageSelectionSceneObject.Stage3SP,new Vector2(0,-1));
         }
     }
     #endregion
@@ -147,12 +156,10 @@ public class LoadSceneObject : MonoBehaviour
         if (Player)
         {
             if (LastScene == SceneType.Print1Scene)
-                Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, -1));
+                Player.InstantMove(print2SceneObject.Print1SP, new Vector2(0, 1));
             else if (LastScene == SceneType.SelectionScene)
                 Player.InstantMove(print2SceneObject.SelectionSP, new Vector2(0,-1));
         }
-
-        Debug.Log("Everything done loaded");
     }
     #endregion
 
@@ -168,7 +175,22 @@ public class LoadSceneObject : MonoBehaviour
             if (LastScene == SceneType.Print2Scene)
                 Player.InstantMove(m_selectionSceneSP.Print2SP, new Vector2(0, 1));
             else if (LastScene == SceneType.SelectStageScene)
-                Player.InstantMove(m_selectionSceneSP.SelectStageSP, new Vector2(0, -1));
+                Player.InstantMove(m_selectionSceneSP.SelectStageSP, new Vector2(0, 1));
+        }
+    }
+    #endregion
+
+    #region Loop Scene
+    [SerializeField] private LoopSceneSP m_loopSceneSP;
+    private void LoadPlayerPositionInLoopScene(PlayerController Player)
+    {
+        SaveData loadedSaveData = SaveLoadSystem.Instance._SaveData;
+        SceneType LastScene = loadedSaveData.LastScene;
+
+        if (Player != null)
+        {
+            if (LastScene == SceneType.SelectStageScene)
+                Player.InstantMove(m_loopSceneSP.StageSelectionSP, new Vector2(0, 1));
         }
     }
     #endregion
@@ -192,6 +214,8 @@ public class LoadSceneObject : MonoBehaviour
     [Header("Spawn Point")]
     public Transform TutorialSP = null;
     public Transform Door1SP = null;
+    public Transform Stage2SP = null;
+    public Transform Stage3SP = null;
 }
 
 [Serializable] public class Print1SceneObject
@@ -210,4 +234,9 @@ public class LoadSceneObject : MonoBehaviour
 {
     public Transform Print2SP;
     public Transform SelectStageSP;
+}
+
+[Serializable] public class LoopSceneSP
+{
+    public Transform StageSelectionSP = null;
 }

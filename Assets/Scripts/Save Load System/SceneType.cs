@@ -5,5 +5,6 @@
     SelectStageScene,
     Print1Scene,
     Print2Scene,
-    SelectionScene
+    SelectionScene,
+    LoopScene
 }

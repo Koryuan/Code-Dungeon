@@ -80,8 +80,9 @@ public class PauseMenu : MonoBehaviour, IPanelUI
         if (canOpen)
         {
             OnOpenPanel?.Invoke();
-            Debug.Log($"Last UI: {LastUI}");
+            //Debug.Log($"Last UI: {LastUI}");
             await UniTask.Delay(10);
+            _UI.UpdateLoadButton();
             _UI.PauseMenuPanel(IsOpen = true);
             if (LastUI == null) _UI.ResumeButton.Select();
             else LastUI.Select();

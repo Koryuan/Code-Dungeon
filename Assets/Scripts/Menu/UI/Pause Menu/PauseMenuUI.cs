@@ -45,6 +45,11 @@ public class PauseMenuUI : MonoBehaviour
 
     public void PauseMenuPanel(bool Open) => pauseMenuPanel.SetActive(Open);
 
+    public void UpdateLoadButton()
+    {
+        if (!SaveLoadSystem.Instance.SaveFileExist) loadButton.Button.interactable = false;
+    }
+
     public void AddResumeButtonListener(Action OnClick) => resumeButton.Button.onClick.AddListener(() => OnClick?.Invoke());
     public void AddLoadButtonListener(Action OnClick) => loadButton.Button.onClick.AddListener(() => OnClick?.Invoke());
     public void AddOptionButtonListener(Action OnClick) => optionButton.Button.onClick.AddListener(() => OnClick?.Invoke());

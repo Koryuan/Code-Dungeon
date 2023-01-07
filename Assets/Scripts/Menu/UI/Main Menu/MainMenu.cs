@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +13,9 @@ public class MainMenu : MonoBehaviour, IPanelUI
 
     [Header("Input References")]
     [SerializeField] private InputActionAsset playerActionMap;
+
+    [Header("Channel References")]
+    [SerializeField] private LoadingChannel m_loadingChannel;
 
     #region Initialization
     private void Awake()
@@ -83,17 +88,24 @@ public class MainMenu : MonoBehaviour, IPanelUI
 
     private void OnInterectInput(InputAction.CallbackContext callback)
     {
-        if (ui.GuidePanelIsActive) SceneLoad.LoadTutorialMap();
+        if (ui.GuidePanelIsActive)
+        {
+            if (m_loadingChannel) m_loadingChannel.RaiseLoadingRequest();
+            SaveLoadSystem.Instance.NewSaveData();
+            SceneLoad.LoadTutorialMap();
+        }
     }
 
     #region Enable Disable
-    private void OnEnable()
+    async private void OnEnable()
     {
+        await UniTask.WaitUntil(() => InputReferences.Instance);
         InputReferences.Instance._Menu_Interect.action.performed += OnInterectInput;
     }
 
-    private void OnDisable()
+    async private void OnDisable()
     {
+        await UniTask.WaitUntil(() => InputReferences.Instance);
         InputReferences.Instance._Menu_Interect.action.performed -= OnInterectInput;
     }
     #endregion

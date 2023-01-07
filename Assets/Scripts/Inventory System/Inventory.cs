@@ -139,12 +139,14 @@ public class Inventory : MonoBehaviour, IPanelUI
         {
             m_ui.UpdateItemInfo(lastContain);
             lastContain.Select();
+            lastContain.SetHighlight(true);
         }
         else if (m_itemList.Count > 0)
         {
             SetAllHightlightOff();
             m_ui.UpdateItemInfo(m_itemList[0]);
             m_itemList[m_itemList.Count-1].Select();
+            m_itemList[m_itemList.Count-1].SetHighlight(true);
         } else m_ui.UpdateItemInfo(null);
     }
     private void OpenPanel(InputAction.CallbackContext Callback)

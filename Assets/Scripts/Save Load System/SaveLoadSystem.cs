@@ -25,6 +25,8 @@ public class SaveLoadSystem : MonoBehaviour
     public SaveData _SaveData { get; private set; } = null;
     #endregion
 
+    public void NewSaveData() => _SaveData = new SaveData();
+
     #region Save and Load
     public bool LoadFromSaveData = false;
 
@@ -58,6 +60,8 @@ public class SaveLoadSystem : MonoBehaviour
         _SaveData = LoadFile(SaveName);
         LoadFromSaveData = true;
         Debug.Log($"Awake: {_SaveData.TutorialScene.JustAwake} at load game");
+
+        
         SceneLoad.LoadStageFromSaveFile();
     }
     public SaveData LoadFile(string FileName)

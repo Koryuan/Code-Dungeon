@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         Vector2 XY = canControl? movementInput.action.ReadValue<Vector2>() : Vector2.zero;
-        if (XY.x != 0 || XY.y != 0) _sound.PlayWalkSound();
+        //if (XY.x != 0 || XY.y != 0) _sound.PlayWalkSound();
         if (XY.y > 0)
         {
             _movement.MoveUp();

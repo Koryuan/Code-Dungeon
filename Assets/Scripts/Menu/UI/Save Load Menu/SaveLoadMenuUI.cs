@@ -43,7 +43,11 @@ using UnityEngine;
         foreach (SaveFileButton Button in saveFileButtons) Button.SetHighlight(false);
         panel.SetActive(IsOpen);
         await UniTask.Delay(10);
-        if (IsOpen) saveFileButtons[0].Select();
+        if (IsOpen)
+        {
+            saveFileButtons[0].Select();
+            saveFileButtons[0].SetHighlight(true);
+        }
     }
     public void UpdateUIState(bool IsSave)
     {
