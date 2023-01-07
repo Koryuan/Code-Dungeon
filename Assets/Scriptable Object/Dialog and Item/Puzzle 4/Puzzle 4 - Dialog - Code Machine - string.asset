@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 4 - Dialog - Code Machine - string
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: Tablet
+    text: Apakah kamu mengerti kode barusan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: Pada baris pertama, "D" adalah nama (atau "Identifier") yang diberikan
+      kepada <b>Variable</b> (atau penampung) suatu nilai atau data. Untuk memberikan
+      data kepalda variabel D ini dilakukan dengan meletakkan "=" sebelum data yang
+      ingin dimasukkan.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: Variable D ini kemudian diberikan data berupa "S@@1Az3", yang berarti tipe
+      data tersebut adalah String. String sendiri adalah tipe data khusus untuk menyimpan
+      sekumpulan Char (atau menyimpan teks yang panjang).
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: '"D" kemudian dapat digunakan atau di modifikasi dalam program. Pada kasus
+      ini, program hanya melakukan Print untuk data D.'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

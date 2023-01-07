@@ -13,5 +13,52 @@ MonoBehaviour:
   m_Name: Puzzle 5 - Object - Arithmatic Explanation - 1
   m_EditorClassIdentifier: 
   dialogs:
+  - name: Tablet
+    text: Sepertinya ada penjelasan disini!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: 
-    text: 'Insert: Explanation'
+    text: Untuk melakukan kalkulasi pada data, ada yang namanya <b>Arithmetic Operator</b>.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Nilai yang dikalkulasikan oleh Arithmetic Operators disebut <b>Operands</b>.
+      Operands harus memiliki nilai numerik.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Nilai yang dikalkulasikan oleh Arithmetic Operators disebut <b>Operands</b>.
+      Operands harus memiliki nilai numerik.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: 'Operators dasar dalam pemrograman adalah pertambahan "+", pengurangan
+      "-", perkalian "*", dan pembagian "/". '
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: 'Karena dalam ekspresi arithmetic dasar sering terdapat lebih dari 1 operators,
+      maka komputer memiliki urutan prioritas operators yang akan dijalankan.
+
+      Dalam
+      kurung -> pembagian -> perkalian -> pertambahan - > pengurangan.'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

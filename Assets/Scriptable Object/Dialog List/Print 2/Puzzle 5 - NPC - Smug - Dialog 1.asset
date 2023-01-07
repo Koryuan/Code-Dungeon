@@ -31,7 +31,7 @@ MonoBehaviour:
       Y_Offset: 0
   - name: Stranger <smug>
     text: Dengan kemampuan mu sekarang ini, aku tidak yakin kamu dapat melewati tantangan
-      yang ini.
+      disini.
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -46,15 +46,8 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Stranger <smug>
-    text: Selamat bersenang - senang berkeliling di tempat ini. Mari kita lihat seberapa
-      lama kamu betah disini.
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Stranger <smug>
-    text: Jangan sampai seperti orang pasrah disana ya. Hahahaha
+    text: Selamat bersenang - senang berkeliling di tempat ini. Jangan sampai jadi
+      orang pasrah disana ya. Hahahaha
     m_image:
       Image: {fileID: 0}
       Width: 0
