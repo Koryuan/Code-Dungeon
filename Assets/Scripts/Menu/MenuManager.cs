@@ -31,7 +31,7 @@ public class MenuManager: ScriptableObject
     private Menu FindMenu(IPanelUI SearchedPanel) => m_menuList.Find(x => x.Panel == SearchedPanel);
     public void OpenMenu(IPanelUI OpenedMenu, IMenuUI LastUI)
     {
-        if (m_gameStateChannel) m_gameStateChannel.RaiseGameStateRequested(GameState.Game_Open_Menu);
+        if (m_gameStateChannel) m_gameStateChannel.RaiseGameStateRequestChange(GameState.Game_Open_Menu);
 
         if (m_menuList.Count > 0) m_currentMenu.LastUI = LastUI;
 ;

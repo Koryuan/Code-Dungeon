@@ -8,7 +8,7 @@
     {
         if (m_numberOccurence == 0) return null;
 
-        m_numberOccurence -= 1;
+        if (m_numberOccurence != -1) m_numberOccurence -= 1;
         return m_eventList;
     }
     public int GetEventLength => m_eventList.Length;

@@ -51,6 +51,10 @@ public class SaveChanneler : MonoBehaviour
         // Trigger Enter
         m_saveChannel.OnTriggerEnterSaveDataRequest += GetTriggerEnterSaveData;
         m_saveChannel.OnTriggerEnterSaveDataUpdated += UpdateTriggerEnterSaveData;
+
+        // On Enable Event
+        m_saveChannel.On_OnEnableEventSaveDataRequest += GetOnEnableEventSaveData;
+        m_saveChannel.On_OnEnableEventSaveDataUpdated += UpdateOnEnableEventSaveData;
     }
 
     #region Item
@@ -218,6 +222,22 @@ public class SaveChanneler : MonoBehaviour
     }
     #endregion
 
+    #region On Enable Event
+    private OnEnableEventSaveData GetOnEnableEventSaveData(string ID)
+    {
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
+
+        OnEnableEventSaveData OldData = SaveLoadSystem.Instance._SaveData.GetOnEnableEventSaveData(ID);
+        if (OldData == null) return new OnEnableEventSaveData();
+        return OldData;
+    }
+    private void UpdateOnEnableEventSaveData(OnEnableEventSaveData NewData)
+    {
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return;
+        SaveLoadSystem.Instance._SaveData.AddOnEnableEventSaveData(NewData);
+    }
+    #endregion
+
     private void OnDestroy()
     {
         // Help
@@ -260,5 +280,9 @@ public class SaveChanneler : MonoBehaviour
         // Trigger Enter
         m_saveChannel.OnTriggerEnterSaveDataRequest -= GetTriggerEnterSaveData;
         m_saveChannel.OnTriggerEnterSaveDataUpdated -= UpdateTriggerEnterSaveData;
+
+        // On Enable Event
+        m_saveChannel.On_OnEnableEventSaveDataRequest -= GetOnEnableEventSaveData;
+        m_saveChannel.On_OnEnableEventSaveDataUpdated -= UpdateOnEnableEventSaveData;
     }
 }

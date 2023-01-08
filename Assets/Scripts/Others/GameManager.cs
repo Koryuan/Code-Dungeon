@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         m_gameStateChannel.OnGameStateRequestedChange += UpdateState;
         m_gameStateChannel.OnGameStateRequestedRemove += RemoveState;
         m_gameStateChannel.OnGameEventPassed += StartEventFromChannel;
+        m_gameStateChannel.OnGameStateRequested += GetGameState;
 
         // Other Channel
         m_loadChannel.OnLoadingFinish += StartGame;
@@ -179,7 +180,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
+    private GameState GetGameState() => CurrentState;
     async private void UpdateState()
     {
         if (dialogboxOpen) CurrentState = GameState.Game_Dialog_State;
@@ -250,9 +251,11 @@ public class GameManager : MonoBehaviour
     }
     private void OnDestroy()
     {
+        m_gameStateChannel.OnGameEventPassed -= StartEventFromChannel;
         playerActionMap.Disable();
         m_gameStateChannel.OnGameStateRequestedChange -= UpdateState;
         m_gameStateChannel.OnGameStateRequestedRemove -= RemoveState;
+        m_gameStateChannel.OnGameStateRequested -= GetGameState;
         m_loadChannel.OnLoadingFinish -= StartGame;
     }
     #endregion

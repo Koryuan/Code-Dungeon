@@ -157,7 +157,7 @@ public class SaveData
     }
     #endregion
 
-    #region Scene String Unlocker Data
+    #region Scene Trigger Enter Data
     public List<TriggerEnterSaveData> TriggerEnterSaveDataList = new List<TriggerEnterSaveData>();
     public TriggerEnterSaveData GetTriggerEnterSaveData(string ID) => TriggerEnterSaveDataList.Find(x => x.ID == ID);
     public void AddTriggerEnterSaveData(TriggerEnterSaveData NewData)
@@ -173,6 +173,27 @@ public class SaveData
         else
         {
             TriggerEnterSaveDataList.Add(NewData);
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | add Data");
+        }
+    }
+    #endregion
+
+    #region Scene On Enable Event Data
+    public List<OnEnableEventSaveData> OnEnableEventSaveDataList = new List<OnEnableEventSaveData>();
+    public OnEnableEventSaveData GetOnEnableEventSaveData(string ID) => OnEnableEventSaveDataList.Find(x => x.ID == ID);
+    public void AddOnEnableEventSaveData(OnEnableEventSaveData NewData)
+    {
+        OnEnableEventSaveData OldData = OnEnableEventSaveDataList.Find(x => x == NewData);
+        NewData.New = false;
+
+        if (OldData != null)
+        {
+            OldData = NewData;
+            //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | update Data");
+        }
+        else
+        {
+            OnEnableEventSaveDataList.Add(NewData);
             //Debug.Log($"Save Data:Code Machine ({NewData.ID}) | add Data");
         }
     }
