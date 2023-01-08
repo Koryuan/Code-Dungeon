@@ -202,6 +202,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Left Key",
+                    "type": "Button",
+                    "id": "f938e839-a014-450c-832f-d3df9bf3b4f5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Right Key",
+                    "type": "Button",
+                    "id": "e33453ab-60e4-44d9-867c-eae33a983771",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -268,6 +284,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Menu Help",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe00221b-1c05-43a4-9965-79aa60d72398",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Key",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c25e1cd2-7d83-4c0b-80bc-dba6faa857d6",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right Key",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

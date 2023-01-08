@@ -16,12 +16,18 @@ public class InputReferences : MonoBehaviour
     [SerializeField] private InputActionReference m_menu_Help;
     [SerializeField] private InputActionReference _menuCloseInput;
 
+    [Header("Help Input")]
+    [SerializeField] private InputActionReference m_help_LeftInput;
+    [SerializeField] private InputActionReference m_help_RightInput;
+
     public InputActionReference _PlayerMovementInput => _playerMovementInput;
     public InputActionReference _PlayerInteractionInput => _playerInteractionInput;
     public InputActionReference _PlayerInventoryInput => _playerInventoryInput;
     public InputActionReference _PlayerPauseInput => _playerPauseInput;
     public InputActionReference _Menu_Interect => _menuInterectInput;
     public InputActionReference _Menu_Help => m_menu_Help;
+    public InputActionReference _Help_Left => m_help_LeftInput;
+    public InputActionReference _Help_Right => m_help_RightInput;
     public InputActionReference _Menu_Close => _menuCloseInput;
 
     private void Awake()

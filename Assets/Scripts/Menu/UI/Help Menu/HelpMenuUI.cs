@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [System.Serializable] public class HelpMenuUI
@@ -66,6 +67,8 @@ using UnityEngine.UI;
     #endregion
 
     #region Button
+    public void NextData(InputAction.CallbackContext Context) => NextData();
+    public void PrevData(InputAction.CallbackContext Context) => PreviousData();
     private void NextData()
     {
         if (!m_currentSettings || m_currentSettings.Settings.Length == 0 || m_currentIndex+1 > m_currentSettings.Settings.Length-1) 

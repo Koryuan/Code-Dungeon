@@ -50,3 +50,5 @@ MonoBehaviour:
   _menuInterectInput: {fileID: -3500733767570208791, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
   m_menu_Help: {fileID: -7182658183519908496, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
   _menuCloseInput: {fileID: 4658180035578854726, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
+  m_help_LeftInput: {fileID: -6536368328739388928, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}
+  m_help_RightInput: {fileID: -1198499542748257999, guid: ab89e40587b2a9646b6cb0749557f374, type: 3}

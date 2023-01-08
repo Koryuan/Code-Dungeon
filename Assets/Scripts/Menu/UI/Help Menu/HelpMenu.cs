@@ -50,6 +50,7 @@ public class HelpMenu : MonoBehaviour, IPanelUI
         var Help = Instantiate(m_containPrefab, m_ui.ContainerTransform);
         Help.transform.SetAsFirstSibling();
         Help.OnCreation(NewSettings);
+        Help.OnInterected += m_ui.UpdateSetting;
 
         // Update Action on Item
         Help.Button.OnHoverEvent += () => hover = false;
@@ -86,7 +87,12 @@ public class HelpMenu : MonoBehaviour, IPanelUI
         m_menuManager.OpenMenu(this,null);
         m_ui.OpenPanel(true);
 
-        if (m_contains.Count > 0) m_ui.UpdateSetting(m_contains[0].Settings);
+        if (m_contains.Count > 0)
+        {
+            m_ui.UpdateSetting(m_contains[0].Settings);
+            m_contains[0].Select();
+            m_contains[0].SetHighlight(true);
+        }
 
         Debug.Log("Help Menu: Opened");
     }
@@ -108,12 +114,16 @@ public class HelpMenu : MonoBehaviour, IPanelUI
         InputReferences.Instance._Menu_Help.action.performed += OpenPanel;
         InputReferences.Instance._Menu_Help.action.performed += ClosePanel;
         InputReferences.Instance._Menu_Close.action.performed += ClosePanel;
+        InputReferences.Instance._Help_Left.action.performed += m_ui.PrevData;
+        InputReferences.Instance._Help_Right.action.performed += m_ui.NextData;
     }
     private void OnDisable()
     {
         InputReferences.Instance._Menu_Help.action.performed -= OpenPanel;
         InputReferences.Instance._Menu_Help.action.performed -= ClosePanel;
         InputReferences.Instance._Menu_Close.action.performed -= ClosePanel;
+        InputReferences.Instance._Help_Left.action.performed -= m_ui.PrevData;
+        InputReferences.Instance._Help_Right.action.performed -= m_ui.NextData;
     }
     private void OnDestroy()
     {
