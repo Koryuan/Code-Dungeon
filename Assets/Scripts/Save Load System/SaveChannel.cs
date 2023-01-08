@@ -129,4 +129,19 @@ public class SaveChannel : ScriptableObject
         OnTriggerEnterSaveDataUpdated?.Invoke(NewSaveData);
     }
     #endregion
+
+    #region On Enable Event
+    public event Func<string, OnEnableEventSaveData> On_OnEnableEventSaveDataRequest;
+    public event Action<OnEnableEventSaveData> On_OnEnableEventSaveDataUpdated;
+
+    public OnEnableEventSaveData RaiseOnEnableEventSaveDataRequest(string ID)
+    {
+        if (On_OnEnableEventSaveDataRequest == null) return null;
+        return On_OnEnableEventSaveDataRequest?.Invoke(ID);
+    }
+    public void RaiseOnEnableEventSaveDataUpdated(OnEnableEventSaveData NewSaveData)
+    {
+        On_OnEnableEventSaveDataUpdated?.Invoke(NewSaveData);
+    }
+    #endregion
 }
