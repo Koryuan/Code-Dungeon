@@ -23,6 +23,8 @@ public class HelpContain : MonoBehaviour, IMenuUI
 
         CheckReferences();
 
+        SetHighlight(false);
+
         m_button.onClick.AddListener(OnInterectedCallback);
         m_button.OnSelectEvent += OnSelect;
         m_button.OnDeselectEvent += OnDeselect;
