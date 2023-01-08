@@ -62,7 +62,7 @@ public class LoadSceneObject : MonoBehaviour
     {
         void CheckNullReferences()
         {
-            if (!tutorialSceneObject.AwakeDialog) Debug.LogError($"{name} has no Awake Dialog reference");
+            //if (!tutorialSceneObject.AwakeDialog) Debug.LogError($"{name} has no Awake Dialog reference");
             if (!tutorialSceneObject.Tablet) Debug.LogError($"{name} has no Tablet reference");
             if (!tutorialSceneObject.InteractionQuide) Debug.LogError($"{name} has no Guide reference");
             if (!tutorialSceneObject.StageSelectionSP) Debug.LogError($"{name} has no spawn point from Stage Selection Scene");
@@ -72,7 +72,8 @@ public class LoadSceneObject : MonoBehaviour
 
         CheckNullReferences();
 
-        tutorialSceneObject.AwakeDialog.SetActive(loadedSaveData.TutorialScene.JustAwake);
+        if (tutorialSceneObject.AwakeDialog)
+            tutorialSceneObject.AwakeDialog.SetActive(loadedSaveData.TutorialScene.JustAwake);
         tutorialSceneObject.Tablet.SetActive(!loadedSaveData.TutorialScene.TakeTablet);
         tutorialSceneObject.InteractionQuide.SetActive(!loadedSaveData.TutorialScene.InteractionQuideInteracted);
 
