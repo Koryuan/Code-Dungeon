@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Manager - Everything loaded");
 
         IsInitialize = true;
+        AudioManager.Instance.PlayBGMInGame();
         m_loadChannel.RaiseLoadUpdated(LoadingType.GameManager);
     }
     private void CheckReferences()

@@ -107,11 +107,13 @@ public class HelpMenu : MonoBehaviour, IPanelUI
         await UniTask.WaitUntil(()=> InputReferences.Instance);
         InputReferences.Instance._Menu_Help.action.performed += OpenPanel;
         InputReferences.Instance._Menu_Help.action.performed += ClosePanel;
+        InputReferences.Instance._Menu_Close.action.performed += ClosePanel;
     }
     private void OnDisable()
     {
         InputReferences.Instance._Menu_Help.action.performed -= OpenPanel;
         InputReferences.Instance._Menu_Help.action.performed -= ClosePanel;
+        InputReferences.Instance._Menu_Close.action.performed -= ClosePanel;
     }
     private void OnDestroy()
     {

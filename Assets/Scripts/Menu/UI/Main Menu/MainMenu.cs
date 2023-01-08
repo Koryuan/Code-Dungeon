@@ -22,6 +22,8 @@ public class MainMenu : MonoBehaviour, IPanelUI
     {
         CheckReferences();
         InitializeUI();
+        
+        AudioManager.Instance.PlayBGMMainMenu();
         playerActionMap.Enable();
     }
     private void CheckReferences()
@@ -103,7 +105,7 @@ public class MainMenu : MonoBehaviour, IPanelUI
         InputReferences.Instance._Menu_Interect.action.performed += OnInterectInput;
     }
 
-    async private void OnDisable()
+    async private void OnDestroy()
     {
         await UniTask.WaitUntil(() => InputReferences.Instance);
         InputReferences.Instance._Menu_Interect.action.performed -= OnInterectInput;

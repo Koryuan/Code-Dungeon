@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +11,6 @@ public class SaveData
 
     // Player Data
     public Vector3 PlayerLastPosition = new Vector3();
-
-    // Option Data
-    public float sfxVolume = 1f;
-    public float bgmVolume = 1f;
 
     // Scene Data
     public SaveDataTutorialScene TutorialScene = new SaveDataTutorialScene();

@@ -6,33 +6,38 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance => m_instance;
 
     private float sfxVolume 
-        => (SaveLoadSystem.Instance?._SaveData != null) ? SaveLoadSystem.Instance._SaveData.sfxVolume : 1;
+        => (SaveLoadSystem.Instance?._SaveData != null) ? SaveLoadSystem.Instance._MasterData.SFXVolume : 1;
     private float bgmVolume 
-        => (SaveLoadSystem.Instance?._SaveData != null) ? SaveLoadSystem.Instance._SaveData.bgmVolume : 1;
+        => (SaveLoadSystem.Instance?._SaveData != null) ? SaveLoadSystem.Instance._MasterData.BGMVolume : 1;
 
-    [System.Serializable]
-    private class ObjectAudioClip
+    [SerializeField] private AudioSource m_bgmAudioSource;
+    [SerializeField] private AudioSource m_uiAudioSource;
+
+    [System.Serializable] private class ObjectAudioClip
     {
         // Door
         public AudioClip Object_DoorOpen;
         public AudioClip Object_DoorClose;
-    }
-    [SerializeField] private ObjectAudioClip ObjectAudio;
+        public AudioClip Object_TreasureChest_Open;
+    } [SerializeField] private ObjectAudioClip ObjectAudio;
 
     [System.Serializable]
     private class PlayerAudioClip
     {
         public AudioClip Player_Walk;
-    }
-    [SerializeField] private PlayerAudioClip PlayerAudio;
+    } [SerializeField] private PlayerAudioClip PlayerAudio;
 
-    [System.Serializable]
-    private class UIAudioClip
+    [System.Serializable] private class UIAudioClip
     {
         public AudioClip UI_Confirm;
         public AudioClip UI_Hover;
-    }
-    [SerializeField] private UIAudioClip UIAudio;
+    } [SerializeField] private UIAudioClip m_uiAudio;
+
+    [System.Serializable] private class BGMAudioClip
+    {
+        public AudioClip BGM_MainMenu;
+        public AudioClip BGM_InGame;
+    } [SerializeField] private BGMAudioClip m_bgmAudioClip;
 
     private void Awake()
     {
@@ -70,24 +75,54 @@ public class AudioManager : MonoBehaviour
         Source.volume = sfxVolume;
         Source.PlayOneShot(ObjectAudio.Object_DoorClose);
     }
+    public void PlayTreasureChestOpen(AudioSource Source)
+    {
+        Source.volume = sfxVolume;
+        Source.PlayOneShot(ObjectAudio.Object_TreasureChest_Open);
+    }
     #endregion
 
     #region UI
     public void PlayUIConfirm()
     {
-        if (MainAudioSource.Instance)
-        {
-            MainAudioSource.Instance.Source.volume = sfxVolume;
-            MainAudioSource.Instance.Source.PlayOneShot(UIAudio.UI_Confirm);
-        }
+        if (!m_uiAudioSource) return;
+
+        m_uiAudioSource.volume = sfxVolume;
+        m_uiAudioSource.PlayOneShot(m_uiAudio.UI_Confirm);
     }
     public void PlayUIHover()
     {
-        if (MainAudioSource.Instance)
-        {
-            MainAudioSource.Instance.Source.volume = sfxVolume;
-            MainAudioSource.Instance.Source.PlayOneShot(UIAudio.UI_Hover);
-        }
+        if (!m_uiAudioSource) return;
+        
+        m_uiAudioSource.volume = sfxVolume;
+        m_uiAudioSource.PlayOneShot(m_uiAudio.UI_Hover);
+    }
+    #endregion
+
+    #region BGM
+    public void PlayBGMMainMenu()
+    {
+        if (!m_bgmAudioSource) return;
+
+        m_bgmAudioSource.loop = true;
+        m_bgmAudioSource.volume = bgmVolume;
+
+        if (m_bgmAudioSource.isPlaying && m_bgmAudioSource.clip == m_bgmAudioClip.BGM_MainMenu) return;
+
+        m_bgmAudioSource.clip = m_bgmAudioClip.BGM_MainMenu;
+        m_bgmAudioSource.Play();
+    }
+    public void PlayBGMInGame()
+    {
+        if (!m_bgmAudioSource) return;
+
+        m_bgmAudioSource.loop = true;
+        m_bgmAudioSource.volume = bgmVolume;
+
+        if (m_bgmAudioSource.isPlaying && m_bgmAudioSource.clip == m_bgmAudioClip.BGM_InGame) return;
+
+        m_bgmAudioSource.clip = m_bgmAudioClip.BGM_InGame;
+        m_bgmAudioSource.Play();
     }
     #endregion
 }

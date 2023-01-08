@@ -32,6 +32,7 @@ public class TreasureChest: InteractableTarget
 
     [Header("Special Attribute")]
     [SerializeField] private bool isOpen = false;
+    [SerializeField] private AudioSource m_audioSource = null;
 
     [Header("Event Listing")]
     [SerializeField] private TreasureChestEventList m_openEvent;
@@ -68,6 +69,8 @@ public class TreasureChest: InteractableTarget
             scanInteract = oldData.CanScan;
             gameObject.SetActive(oldData.ObjectActive);
             if (m_interactableAnimator) m_interactableAnimator.SetActive(oldData.AnimationActive);
+
+            // Open update
             isOpen = oldData.Open;
             m_spriteRenderer.sprite = isOpen ? openSprite : closeSprite;
 
@@ -100,5 +103,6 @@ public class TreasureChest: InteractableTarget
         m_spriteRenderer.sprite = Open ? openSprite : closeSprite;
 
         if (m_treasureChestAutoSave) m_treasureChestAutoSave.UpdateOpen(Open);
+        if (m_audioSource) AudioManager.Instance.PlayTreasureChestOpen(m_audioSource);
     }
 }
