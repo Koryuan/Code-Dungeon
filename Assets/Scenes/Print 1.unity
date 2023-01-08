@@ -16272,7 +16272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.999954
+      value: -10.000015
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17173,7 +17173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.999847
+      value: -9.999878
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18521,6 +18521,14 @@ PrefabInstance:
       propertyPath: m_openEvent.m_EventList.Array.data[0].Event.Array.data[0].item
       value: 
       objectReference: {fileID: 11400000, guid: 32e45dbc03d62504aa4d01d2e6bfde85, type: 2}
+    - target: {fileID: 7981122886964218191, guid: 64701d3e5c193bf4e8d192c6827b04c3, type: 3}
+      propertyPath: m_openEvent.m_EventList.Array.data[0].Event.Array.data[0].guide
+      value: 
+      objectReference: {fileID: 11400000, guid: 54e3b6ec822e46841ad504a77daddef2, type: 2}
+    - target: {fileID: 7981122886964218191, guid: 64701d3e5c193bf4e8d192c6827b04c3, type: 3}
+      propertyPath: m_openEvent.m_EventList.Array.data[0].Event.Array.data[0].m_help
+      value: 
+      objectReference: {fileID: 11400000, guid: 5082b44ecf3edc44081fcbd035795d8e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64701d3e5c193bf4e8d192c6827b04c3, type: 3}
 --- !u!4 &1804858006 stripped

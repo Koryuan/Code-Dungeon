@@ -31,8 +31,7 @@ MonoBehaviour:
       Y_Offset: 0
   - name: Stranger
     text: Aku tidak tahu apakah kita dihadapkan dengan teka - teki yang sama atau
-      tidak, tetapi satu hal yang pasti sekarang kau terjebak bersama disini bersama
-      ku.
+      tidak, tetapi satu hal yang pasti sekarang aku kehabisan ide.
     m_image:
       Image: {fileID: 0}
       Width: 0

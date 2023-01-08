@@ -15,7 +15,127 @@ MonoBehaviour:
   dialogs:
   - name: Player
     text: Apa ini?
-  - name: The Tablet
-    text: Hei! Kau!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Benda Asing
+    text: '*beep'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Player
-    text: Whoa! Benda ini bisa bicara!?
+    text: Ternyata bisa menyala.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Benda Asing
+    text: Hei! Jangan sentuh aku sembarangan!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: AAAAHH! Ampuni aku!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Benda Asing
+    text: Hei, Tenang! Aku belum melakukan apa - apa kepada mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Ah
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Benda Asing
+    text: Jadi, apa yang kau lakukan disini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Aku tidak mengingat bagaimana aku bisa disini. Aku baru saja terbangun
+      di ruang sebelah dan sekarang ingin mencari jalan keluar.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: Oh
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Kalau begitu, aku sebaiknya bergegas pergi
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Benda Asing
+    text: Hei, bawa aku dengan mu! Aku mungkin dapat membantu mu keluar dari sini!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Bagaimana kau dapat membantu ku? Apa kau tentang tempat ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Benda Asing
+    text: Err.. Mungkin? Tetapi lebih baik aku mengikuti mu daripada tertidur lagi
+      di lantai.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Benda Asing
+    text: 'Lagipula bukan 2 kepala lebih baik daripada 1 kepala? Aku dapat membantu
+      mu memecahkan teka - teki...
+
+
+      Mungkin.'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Kau terdengar sangat tidak yakin. Tetapi baiklah. Aku akan membawa mu.
+      Ngomong - ngomong, kau harus ku panggil apa?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: Panggil saja aku Tablet
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

@@ -14,4 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: 'Insert: Explanation'
+    text: Program dapat meminta <b>Input</b> dari pengguna
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Untuk dapat melakukan Input ini, diperlukan Variable agar nilai atau data
+      dari input dapat dimasukkan.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

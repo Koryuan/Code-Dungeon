@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: 'Insert: Explanation'
+    text: Modulo adalah salah satu <b>Operator</b> khusus yang akan mengembalikan
+      sisa dari hasil pembagian.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

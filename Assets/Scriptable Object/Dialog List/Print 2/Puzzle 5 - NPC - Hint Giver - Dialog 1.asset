@@ -13,5 +13,24 @@ MonoBehaviour:
   m_Name: Puzzle 5 - NPC - Hint Giver - Dialog 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'Insert: Dialog - 1'
+  - name: Stranger
+    text: Kita bertemu lagi
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Ha? Bagaimana kamu bisa lebih dulu disini daripada aku?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
+    text: 
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
