@@ -21,13 +21,18 @@ public class SaveLoadSystem : MonoBehaviour
     #endregion
 
     #region Save Data
-    private void Awake() => _SaveData = new SaveData();
+    private void Awake()
+    {
+        _SaveData = new SaveData();
+        _MasterData = LoadMasterData();
+    }
     public SaveData _SaveData { get; private set; } = null;
+    public MasterData _MasterData { get; private set; } = null;
     #endregion
 
     public void NewSaveData() => _SaveData = new SaveData();
 
-    #region Save and Load
+    #region Save Data (Save/Load)
     public bool LoadFromSaveData = false;
 
     public void SaveFile(string FileName)
@@ -41,26 +46,10 @@ public class SaveLoadSystem : MonoBehaviour
         bf.Serialize(file, json);
         file.Close();
     }
-    private SaveData LoadFileForDebug()
-    {
-        if (!DebugSaveFileExist || DebuggingTool.Instance == null) return new SaveData();
-
-        // Create initializer to get data
-        SaveData loadData = new SaveData();
-        BinaryFormatter bf = new BinaryFormatter();
-
-        // Get Data from json file
-        FileStream file = File.Open(Application.persistentDataPath + "/Save Data.json", FileMode.Open);
-        JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), loadData);
-        file.Close();
-        return loadData;
-    }
     public void LoadData(string SaveName)
     {
         _SaveData = LoadFile(SaveName);
         LoadFromSaveData = true;
-        Debug.Log($"Awake: {_SaveData.TutorialScene.JustAwake} at load game");
-
         
         SceneLoad.LoadStageFromSaveFile();
     }
@@ -80,6 +69,32 @@ public class SaveLoadSystem : MonoBehaviour
     }
     #endregion
 
+    #region Master Data (Save/Load)
+    public void SaveMasterData()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/Master Data.json");
+        var json = JsonUtility.ToJson(_MasterData, false);
+
+        bf.Serialize(file, json);
+        file.Close();
+    }
+    public MasterData LoadMasterData()
+    {
+        if (!FileExist("Master Data")) return new MasterData();
+
+        // Create initializer to get data
+        MasterData loadData = new MasterData();
+        BinaryFormatter bf = new BinaryFormatter();
+
+        // Get Data from json file
+        FileStream file = File.Open(Application.persistentDataPath + "/Master Data.json", FileMode.Open);
+        JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), loadData);
+        file.Close();
+        return loadData;
+    }
+    #endregion
+
     #region Check Exist
     public bool SaveFileExist
     {
@@ -91,18 +106,15 @@ public class SaveLoadSystem : MonoBehaviour
             return false;
         }
     }
-    public bool DebugSaveFileExist
-    {
-        get
-        {
-            if (File.Exists(Application.persistentDataPath + "/Save Data.json")) return true;
-            return false;
-        }
-    }
     private bool FileExist(string FileName)
     {
         if (File.Exists(Application.persistentDataPath + "/" + FileName + ".json")) return true;
         return false;
     }
     #endregion
+
+    private void OnDestroy()
+    {
+        SaveMasterData();
+    }
 }

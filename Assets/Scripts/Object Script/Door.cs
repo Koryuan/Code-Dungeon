@@ -48,7 +48,7 @@ public class Door : MonoBehaviour
         else
         {
             AutoSaveScene.SaveObjectState(name + " | Close");
-            if (AudioManager.Instance != null) AudioManager.Instance.PlayDoorOpen(m_audioSource);
+            if (AudioManager.Instance != null) AudioManager.Instance.PlayDoorClose(m_audioSource);
         }
     }
 

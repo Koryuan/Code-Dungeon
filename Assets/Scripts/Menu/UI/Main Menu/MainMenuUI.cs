@@ -17,8 +17,8 @@ public class MainMenuUI : MonoBehaviour
     public MenuButton LoadButton => loadButton;
     public MenuButton OptionButton => optionButton;
     public MenuButton QuitButton => quitButton;
-    
-    public bool GuidePanelIsActive => playGuidePanel.activeSelf;
+
+    public bool GuidePanelIsActive => playGuidePanel ? playGuidePanel.activeSelf : false;
 
     public void Initialize(Action<MenuButton> OnSelectEvent)
     {

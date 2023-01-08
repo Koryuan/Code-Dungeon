@@ -18,7 +18,7 @@ public class HelpContain : MonoBehaviour, IMenuUI
 
     public void OnCreation(HelpSettings Settings)
     {
-        name = Settings.Name;
+        name = m_nameText.text = Settings.Name;
         this.Settings = Settings;
 
         CheckReferences();

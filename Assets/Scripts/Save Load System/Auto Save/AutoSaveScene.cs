@@ -25,7 +25,7 @@ public static class AutoSaveScene
         {
             case "Awake - Dialog":
                 tutorialSaveData.JustAwake = false;
-                Debug.Log($"Just Awake: {SaveLoadSystem.Instance._SaveData.TutorialScene.JustAwake}");
+                //Debug.Log($"Just Awake: {SaveLoadSystem.Instance._SaveData.TutorialScene.JustAwake}");
                 break;
             case "Tablet":
                 tutorialSaveData.TakeTablet = true;

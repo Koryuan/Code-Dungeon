@@ -33,10 +33,10 @@ public class OptionMenuUI : MonoBehaviour
         sfxSlider.Slider.onValueChanged.AddListener(UpdateSFXVolume);
         bgmSlider.Slider.onValueChanged.AddListener(UpdateBGMVolume);
 
-        await UniTask.WaitUntil(() => SaveLoadSystem.Instance?._SaveData != null);
+        await UniTask.WaitUntil(() => SaveLoadSystem.Instance?._MasterData != null);
 
-        sfxSlider.Slider.value = SaveLoadSystem.Instance._SaveData.sfxVolume;
-        bgmSlider.Slider.value = SaveLoadSystem.Instance._SaveData.bgmVolume;
+        sfxSlider.Slider.value = SaveLoadSystem.Instance._MasterData.SFXVolume;
+        bgmSlider.Slider.value = SaveLoadSystem.Instance._MasterData.BGMVolume;
     }
     private void CheckReferences()
     {
@@ -46,11 +46,11 @@ public class OptionMenuUI : MonoBehaviour
 
     private void UpdateSFXVolume(float Value)
     {
-        if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._SaveData.sfxVolume = Value;
+        if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._MasterData.SFXVolume = Value;
     }
     private void UpdateBGMVolume(float Value)
     {
-        if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._SaveData.bgmVolume = Value;
+        if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._MasterData.BGMVolume = Value;
     }
 
     public void OptionMenu(bool Open) => optionMenuPanel.SetActive(Open);
