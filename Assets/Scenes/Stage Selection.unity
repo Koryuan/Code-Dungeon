@@ -1905,6 +1905,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1819553470}
     - target: {fileID: 942913444, guid: c3145a5c4d4c5e948851f63b3d4b73b8, type: 3}
+      propertyPath: stageSelectionSceneObject.Stage2SP
+      value: 
+      objectReference: {fileID: 354343625}
+    - target: {fileID: 942913444, guid: c3145a5c4d4c5e948851f63b3d4b73b8, type: 3}
+      propertyPath: stageSelectionSceneObject.Stage3SP
+      value: 
+      objectReference: {fileID: 73329066}
+    - target: {fileID: 942913444, guid: c3145a5c4d4c5e948851f63b3d4b73b8, type: 3}
       propertyPath: stageSelectionSceneObject.Stage2Door
       value: 
       objectReference: {fileID: 774370598}

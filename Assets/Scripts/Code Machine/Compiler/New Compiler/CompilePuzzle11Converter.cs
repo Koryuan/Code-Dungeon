@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
-public class CompilePuzzle11Converter : CodeCompiler
+﻿public class CompilePuzzle11Converter : CodeCompiler
 {
     private bool m_blueFairy = false;
     private bool m_redFairy = false;

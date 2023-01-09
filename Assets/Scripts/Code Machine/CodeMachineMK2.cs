@@ -67,6 +67,7 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
 
     [Header("On Interact")]
     [SerializeField] private GameEvent[] m_onInteractEvent;
+    [SerializeField] private GameEvent[] m_beforePrintStart;
 
     [Header("On Close Code")]
     [SerializeField] private bool m_onCloseCodeOnce = false;
@@ -173,6 +174,8 @@ public class CodeMachineMK2 : InteractableTarget, IPanelUI
     {
         if (m_onInteractEvent.Length > 0) await GameManager.Instance.StartEvent(m_onInteractEvent);
         if (CannotPrintOrScan) return;
+
+        if (GameManager.Instance) await GameManager.Instance.StartEvent(m_beforePrintStart);
 
         List<string> InputData = new List<string>();
         foreach (ContainInputField contain in m_inputFieldContains) InputData.AddRange(contain.GetInputFieldText());
