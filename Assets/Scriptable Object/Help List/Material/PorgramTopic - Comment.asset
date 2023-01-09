@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: PorgramTopic - Comment
+  m_EditorClassIdentifier: 
+  m_name: Comment
+  m_Settings:
+  - m_text: Comment atau "//" dalam pemrograman digunakan dalam berbagai hal, salah
+      satunya sebagai catatan bagi programmer agar kode lebih mudah dibaca. Contohnya
+      seperti pada 2 baris terakhir.
+    m_image: {fileID: 21300000, guid: 1230c97c3fef4f347a3a4cd5bcc0f8c9, type: 3}
+  - m_text: Baris yang dimulai dengan "//" akan membuatnya menjadi tidak dijalankan.
+      Perhatikan bari ke 2 dimana "//" diletakkan sesudah Print
+    m_image: {fileID: 21300000, guid: 1230c97c3fef4f347a3a4cd5bcc0f8c9, type: 3}
+  - m_text: Kasus seperti baris 2 adalah contoh kesalahan jika programmer tidak hati
+      - hati dalam peletakan "//", mengakibatkan error pada program.
+    m_image: {fileID: 21300000, guid: 1230c97c3fef4f347a3a4cd5bcc0f8c9, type: 3}

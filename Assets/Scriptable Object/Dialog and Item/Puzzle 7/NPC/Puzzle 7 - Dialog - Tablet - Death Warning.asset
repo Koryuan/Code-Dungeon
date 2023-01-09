@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
   m_Name: Puzzle 7 - Dialog - Tablet - Death Warning
   m_EditorClassIdentifier: 
-  dialogs: []
+  dialogs:
+  - name: Stranger
+    text: Tempat ini juga dipenuhi tantangan. Pastikan kamu telah mempersiapkan back-up
+      dan baca petunjuk yang ada dengan teliti.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

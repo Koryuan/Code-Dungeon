@@ -28,7 +28,60 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Stranger
-    text: 
+    text: Aku melihat jalan lain setelah mesin itu terbuka
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
+    text: Lupakan itu, apakah kamu sadar bahwa mesin di tengah memerlukan Input yang
+      akan mengeluarkan Print dengan hasil spesifik?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
+    text: Kamu dapat memasukkan berapa pun angka yang kamu inginkan, tetapi jika
+      hasilnya tidak sesuai maka tidak akan terjadi apa - apa
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Kenapa kamu tahu hal tersebut?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
+    text: Aku sudah masuk disini sebelum kamu, tentu saja aku sudah mencobanya.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
+    text: Sebelum kamu melewati jembatan ini, aku sudah melihat beberapa petunjuk
+      yang mengatakan bahwa mesin tersebut perlu melakukan Print dengan hasil 45.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Kalau kamu tahu, kenapa tidak kamu coba masukkan sendiri angkanya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
+    text: Aku kehilangan catatan ku bersama dengan petunjuk yang ku dapatkan. Lupakan
+      aku, lebih baik kau segera bergegas dan selesaikan tantangan di ruang ini.
     m_image:
       Image: {fileID: 0}
       Width: 0

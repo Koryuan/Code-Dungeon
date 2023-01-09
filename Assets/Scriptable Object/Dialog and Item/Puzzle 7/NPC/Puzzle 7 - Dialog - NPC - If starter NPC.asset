@@ -91,3 +91,11 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
+  - name: Tablet
+    text: (Aku rasa dia menghimbau kita untuk menggunakan save machine. Sebaiknya
+      kita ikuti saja saran dari dia)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
