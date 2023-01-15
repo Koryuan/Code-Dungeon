@@ -24,7 +24,10 @@ public class KeypadManager : MonoBehaviour
         public int OccurenceNumber => m_occurenceNumber;
         public GameEvent[] EventList => m_eventList;
 
-        public void Occur() => m_occurenceNumber--;
+        public void Occur()
+        {
+            if (m_occurenceNumber != -1) m_occurenceNumber--;
+        }
         public bool IsTargetText(string InputedText)
         {
             foreach (string text in m_targetText) if (text == InputedText) return true;
@@ -111,7 +114,7 @@ public class KeypadManager : MonoBehaviour
     {
         foreach (KeyPadGameEvent keyEvent in m_eventList)
         {
-            if (keyEvent.IsTargetText(TargetText) && keyEvent.OccurenceNumber > 0) return keyEvent;
+            if (keyEvent.IsTargetText(TargetText) && keyEvent.OccurenceNumber != 0) return keyEvent;
         } return null;
     }
     private Keypad SearchTargetKey(string TargetText)
