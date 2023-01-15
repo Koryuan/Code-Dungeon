@@ -54,6 +54,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void UpdateSFXVolume() => m_uiAudioSource.volume = sfxVolume;
+    public void UpdateBGMVolume() => m_bgmAudioSource.volume = bgmVolume;
+
     #region Player
     public void PlayPlayerWalk(AudioSource Source)
     {

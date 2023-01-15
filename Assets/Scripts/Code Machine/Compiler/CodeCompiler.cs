@@ -50,6 +50,7 @@ using UnityEngine;
             foreach (string text in Output) Debug.Log(text);
         }
     }
+
     [SerializeField] protected bool m_infiniteLoop = false;
     [SerializeField] protected TargetOutput[] m_targetList;
     [SerializeField] protected GameStateChannel m_channel;
