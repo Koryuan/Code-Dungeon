@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Puzzle 22 - Dialog - NPC - For Step Explenation Clear 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: For/Step Code done
+  - name: Intellect
+    text: Kamu berhasil mengaktifkan Mesin disamping. Hebat!
     m_image:
       Image: {fileID: 0}
       Width: 0

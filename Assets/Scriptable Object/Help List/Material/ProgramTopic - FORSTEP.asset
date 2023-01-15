@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: ProgramTopic - FORSTEP
+  m_EditorClassIdentifier: 
+  m_name: FOR STEP
+  m_Settings:
+  - m_text: STEP berguna untuk melewati beberapa pengulangan dalam FOR Looping
+    m_image: {fileID: 21300000, guid: 8a611cc4d889756448810f918edc7dd9, type: 3}
+  - m_text: Contoh penulisan FOR STEP adalah seperti pada gambar
+    m_image: {fileID: 21300000, guid: 830256ca1c8530546ab2ec1a8bedd6e7, type: 3}
+  - m_text: Output dari kode tersebut adalah 2, 4, 6, 8, Looping selesai secara berbaris
+    m_image: {fileID: 21300000, guid: ea3f597f16955e3409bc59867af7c81d, type: 3}
+  - m_text: Akibatnya pengulangan lebih sedikit dibandingkan dengan FOR Loop tanpa
+      STEP
+    m_image: {fileID: 21300000, guid: ea3f597f16955e3409bc59867af7c81d, type: 3}
+  - m_text: Berikut perbandingannya
+    m_image: {fileID: 21300000, guid: 63ba834e2cecabd41b67f3ae69073e5f, type: 3}

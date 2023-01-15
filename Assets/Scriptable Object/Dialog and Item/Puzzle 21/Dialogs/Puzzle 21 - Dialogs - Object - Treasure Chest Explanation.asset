@@ -14,9 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Right_To_Left = 0\r\nCount = 1\r\nFOR Count TO 9\r\n\tRight_To_Left =
-      Right_To_Left + 1\r\n\tif I MOD 3 == 0\r\n\t\tRight_To_Left = Right_To_Left
-      - 2\r\nNext Count\r\n"
+    text: 'Right_To_Left = 0
+
+      Count = 1
+
+'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: "FOR Count TO 9\r\n     Right_To_Left = Right_To_Left + 1\r\n     if Count
+      MOD 3 == 0\r\n\t     Right_To_Left = Right_To_Left - 2\r\nNext Count\r\n"
     m_image:
       Image: {fileID: 0}
       Width: 0

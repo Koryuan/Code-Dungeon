@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: Puzzle 22 - Dialog - NPC - For Step Explenation 2nd 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: For/Step Explanation Clear
+  - name: Intellect
+    text: STEP berguna untuk melewati beberapa pengulangan!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Dibandingkan dengan FOR loop biasa dimana setiap pengulangan dijalankan
+      satu per satu-
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Dengan STEP beberapa pengulangan dapat dilewati tergantung dengan jumlah
+      STEP nya.
     m_image:
       Image: {fileID: 0}
       Width: 0

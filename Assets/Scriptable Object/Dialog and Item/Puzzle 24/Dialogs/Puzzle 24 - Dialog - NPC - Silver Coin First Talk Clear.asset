@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Silver Coin First Talk Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Silver coint 1st talk - Done
+  - name: Silver Collector
+    text: Jika kau memiliki keperluan, datang saja kepada ku. Akan ku usahakan sebisa
+      ku untuk membantu mu!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Tentu sesuai dengan keahlian ku dan apa yang ku punya.
     m_image:
       Image: {fileID: 0}
       Width: 0

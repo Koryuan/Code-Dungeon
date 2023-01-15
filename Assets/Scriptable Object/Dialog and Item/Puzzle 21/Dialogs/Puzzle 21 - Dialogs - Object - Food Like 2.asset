@@ -14,7 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Ayam
+    text: Salah satu makanan kesukaan adalah Ayam
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Aku tidak peduli
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: (Tetapi ada nomor disini. Apa maksudnya?)
     m_image:
       Image: {fileID: 0}
       Width: 0
