@@ -12,8 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
   m_Name: PorgramTopic - For Loop
   m_EditorClassIdentifier: 
-  m_name: 
+  m_name: For Loop
   m_Settings:
   - m_text: <b>Looping</b> digunakan dalam pemrograman untuk melakukan hal yang sama
       berulang - ulang.
-    m_image: {fileID: 0}
+    m_image: {fileID: 21300000, guid: 1a5c6755a18ba004681c04517a1d3b89, type: 3}
+  - m_text: <b>FOR</b> Loop adalah pengulangan yang dilakukan secara perhitungan,
+      artinya jumlah pengulangan yang akan dilakukan oleh FOR harus spesifik.
+    m_image: {fileID: 21300000, guid: 1a5c6755a18ba004681c04517a1d3b89, type: 3}
+  - m_text: Untuk mengetahui cara kerja for lebih detail, perhatikan gambar
+    m_image: {fileID: 21300000, guid: 1a5c6755a18ba004681c04517a1d3b89, type: 3}
+  - m_text: 'Penggunaan For loop dalam Kode adalah dengan
+
+      FOR [variabel] TO
+      [Tujuan]
+
+      [isi kode]
+
+      NEXT [variabel]'
+    m_image: {fileID: 21300000, guid: fee4a689cbf336048b58b7001c0aab31, type: 3}
