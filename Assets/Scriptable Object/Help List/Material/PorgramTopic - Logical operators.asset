@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
   m_Name: PorgramTopic - Logical operators
   m_EditorClassIdentifier: 
-  m_name: Relational Operators
+  m_name: Logical Operators
   m_Settings:
   - m_text: Logical atau Boolean operators berguna ketika kita ingin mengevaluasi
       beberapa ekspresi yang menggunakan Relational Operator (Relational Expressions)

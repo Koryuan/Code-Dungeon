@@ -14,17 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Di taman terdapat seorang perempuan bernama \"Cindy\", Pada tahun ini
-      dia berumur 18 tahun.\r Dia datang dengan Neneknya yang bernama \"Mama Mia\"
-      yang hari ini sedang tidak\r semangat."
+    text: "Di taman terdapat seorang perempuan bernama \"Cindy\".\nPada tahun ini
+      dia berumur 18 tahun.\r "
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: 
-    text: "Ketika ditanya kenapa alasannya sedang ada masalah dirumah sehinga membuat
-      mereka\r berdua tidak semangat. Meskipun besok adalah ulang tahun ke 90 Neneknya."
+    text: 'Dia datang dengan neneknya yang bernama "Mama Mia". "Mama Mia"  hari ini
+      sedang tidak
+
+      semangat.'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Ketika ditanya kenapa alasannya sedang ada masalah dirumah, sehinga mereka
+      berdua tidak semangat.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Padahal, besok adalah ulang tahun ke 90 Neneknya.
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -42,11 +58,17 @@ MonoBehaviour:
 
       (Mama Mia: Semangat = false)
 
-      (Mama
-      Mia: Age = 89)
+'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '(Mama Mia: Age = 89)
 
-      (If NOT Pria AND NOT Semangat AND Age = 89 Then Name
-      = Mama Mia)'
+      (If NOT Pria AND NOT Semangat AND Age = 89
+      Then Name = Mama Mia)'
     m_image:
       Image: {fileID: 0}
       Width: 0

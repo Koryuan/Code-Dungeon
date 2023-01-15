@@ -14,18 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Di taman terdapat seorang Nenek yang sering pergi ke taman tetapi pada
-      hari ini dia datang dengan tidak semangat. Dari yang dia amati orang yang sendiri
-      ataupun orang yang udah \rberumur 68 keatas sudah jarang pergi ke taman."
+    text: Di taman terdapat seorang Nenek yang sering pergi ke taman tetapi pada
+      hari ini dia datang dengan tidak semangat.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: 
-    text: " Katanya orang yang sering pergi ke \rtamanlah yang anak tersebut akan
-      ajak bermaindikarenakan mereka lebih percaya yang sering datang. Nenek yang
-      suka sering pergi ketaman ini sudah berumur 89 tahun."
+    text: Dari yang dia amati orang yang sendiri ataupun orang yang berumur 68 keatas
+      sudah jarang pergi ke taman.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: "Katanya orang yang sering pergi ke \n\rtamanlah yang anak tersebut akan
+      ajak bermain, dikarenakan mereka lebih percaya yang sering datang."
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Nenek yang sering pergi ketaman ini sudah berumur 89 tahun.
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -36,13 +49,19 @@ MonoBehaviour:
 
       (?: Sering = true)
 
-      (?: Age = 89)
+'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '(?: Age = 89)
+
+      (If Age >= 68 OR Sendiri Then Sering = False)
 
       (If
-      Age >= 68 OR Sendiri Then Sering = False)
-
-      (If NOT Sering Then Bermain
-      = False)
+      NOT Sering Then Bermain = False)
 
 '
     m_image:
