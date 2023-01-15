@@ -47,10 +47,12 @@ public class OptionMenuUI : MonoBehaviour
     private void UpdateSFXVolume(float Value)
     {
         if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._MasterData.SFXVolume = Value;
+        if (AudioManager.Instance) AudioManager.Instance.UpdateSFXVolume();
     }
     private void UpdateBGMVolume(float Value)
     {
         if (SaveLoadSystem.Instance?._SaveData != null) SaveLoadSystem.Instance._MasterData.BGMVolume = Value;
+        if (AudioManager.Instance) AudioManager.Instance.UpdateBGMVolume();
     }
 
     public void OptionMenu(bool Open) => optionMenuPanel.SetActive(Open);

@@ -1,6 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Manager/Menu")]
@@ -56,8 +55,7 @@ public class MenuManager: ScriptableObject
     {
         if (m_menuList.Count > 0)
         {
-            if (m_currentMenu.Panel is CodeMachine) m_currentState = MenuState.CodeMachine;
-            else if (m_currentMenu.Panel is CodeMachineMK2) m_currentState = MenuState.CodeMachineMK2;
+            if (m_currentMenu.Panel is CodeMachineMK2) m_currentState = MenuState.CodeMachineMK2;
             else if (m_currentMenu.Panel is HelpMenu) m_currentState = MenuState.Help;
             else if (m_currentMenu.Panel is Inventory) m_currentState = MenuState.Inventory;
             else if (m_currentMenu.Panel is GameOverMenu) m_currentState = MenuState.GameOver;

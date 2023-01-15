@@ -39,7 +39,7 @@ public class ContainReadonly : MonoBehaviour
     }
 }
 
-[System.Serializable] public class ContainReadonlySaveData
+[Serializable] public class ContainReadonlySaveData
 {
     public int Index = -1;
     public string Text = string.Empty;
