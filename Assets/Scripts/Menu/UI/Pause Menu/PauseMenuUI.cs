@@ -31,7 +31,7 @@ public class PauseMenuUI : MonoBehaviour
         optionButton.SetHighlight(false);
         exitButton.SetHighlight(false);
 
-        if (!SaveLoadSystem.Instance.SaveFileExist) loadButton.Button.interactable = false;
+        UpdateLoadButton();
     }
 
     private void CheckReferences()
@@ -47,7 +47,7 @@ public class PauseMenuUI : MonoBehaviour
 
     public void UpdateLoadButton()
     {
-        if (!SaveLoadSystem.Instance.SaveFileExist) loadButton.Button.interactable = false;
+        if (SaveLoadSystem.Instance) loadButton.Button.interactable = SaveLoadSystem.Instance.SaveFileExist;
     }
 
     public void AddResumeButtonListener(Action OnClick) => resumeButton.Button.onClick.AddListener(() => OnClick?.Invoke());

@@ -81,8 +81,10 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Game Manager - Everything loaded");
 
-        IsInitialize = true;
+        await UniTask.WaitUntil(() => AudioManager.Instance != null);
         AudioManager.Instance.PlayBGMInGame();
+
+        IsInitialize = true;
         m_loadChannel.RaiseLoadUpdated(LoadingType.GameManager);
     }
     private void CheckReferences()

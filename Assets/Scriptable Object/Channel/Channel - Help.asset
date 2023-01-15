@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1048f6fc2e7c79742826edb6fc12cab1, type: 3}
   m_Name: Channel - Help
   m_EditorClassIdentifier: 
+  m_helpList: {fileID: 11400000, guid: 32075a4adcb1bce4ca39bece35fc5190, type: 2}
