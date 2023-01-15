@@ -31,7 +31,7 @@ MonoBehaviour:
       Y_Offset: 0
   - name: Tablet
     text: Variable "A" ini kemudian diberikan data atau nilai berupa "-1", yang berarti
-      tipe data tersebut adalah Float.
+      tipe data tersebut adalah <b>Integer</b>.
     m_image:
       Image: {fileID: 0}
       Width: 0

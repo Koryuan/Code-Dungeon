@@ -77,7 +77,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: Benda Asing
     text: Oh
     m_image:
       Image: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Player
-    text: Kalau begitu, aku sebaiknya bergegas pergi
+    text: Kalau tidak ada kepentingan lain, aku sebaiknya bergegas pergi
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -99,15 +99,15 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Player
-    text: Bagaimana kau dapat membantu ku? Apa kau tentang tempat ini?
+    text: Bagaimana kau dapat membantu ku? Apa kau tau tentang tempat ini?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Benda Asing
-    text: Err.. Mungkin? Tetapi lebih baik aku mengikuti mu daripada tertidur lagi
-      di lantai.
+    text: Err.. Iya? Tetapi lebih baik aku mengikuti mu daripada tertidur lagi di
+      lantai.
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Player
-    text: Kau terdengar sangat tidak yakin. Tetapi baiklah. Aku akan membawa mu.
+    text: Kau terdengar sangat tidak yakin, tetapi baiklah. Aku akan membawa mu.
       Ngomong - ngomong, kau harus ku panggil apa?
     m_image:
       Image: {fileID: 0}

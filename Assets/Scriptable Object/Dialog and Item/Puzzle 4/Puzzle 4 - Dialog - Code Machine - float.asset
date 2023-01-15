@@ -22,7 +22,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Tablet
-    text: Pemberian data kepalda variable "C" ini dilakukan dengan meletakkan "="
+    text: Pemberian data kepada variable "C" ini dilakukan dengan meletakkan "="
       sebelum data yang ingin dimasukkan.
     m_image:
       Image: {fileID: 0}
@@ -30,7 +30,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Tablet
-    text: Variable "C" ini kemudian diberikan data atau nilai berupa "3,123", yang
+    text: Variable "C" ini kemudian diberikan data atau nilai berupa "3.123", yang
       berarti tipe data tersebut adalah Float.
     m_image:
       Image: {fileID: 0}

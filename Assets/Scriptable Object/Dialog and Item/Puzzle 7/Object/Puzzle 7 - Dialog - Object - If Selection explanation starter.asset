@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 7 - Dialog - Object - If Selection explanation starter
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: 
+    text: Selection adalah konsep yang hanya akan menjalankan bagian kode ketika
+      suatu kondisi terpenuh
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Kondisi terpenuhi atau tidak bergantung pada value True atau False
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Salah satu bentuk dari Selection adalah IF Statement
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: "Jika kondisi di dalam IF statement bernilai True, maka potongan kode didalamnya
+      akan dijalankan. \nIF [Kondisi] THEN \n[isi kode] \nEND IF"
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Selain IF Statement, juga ada ELSE dan ELSE IF. ELSE dan ELSE IF ini digunakan
+      sebagai pelengkap dari IF statement
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: ELSE digunakan jika saat kondisi di dalam IF statement bernilai False.
+      Digunakan dengan menuliskan ELSE [Isi kode] sebelum END IF.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: ELSE IF digunakan saat IF Statement dan ELSE saja tidak cukup. Ketika diperlukan
+      lebih dari 2 kondisi selain True atau False, maka ELSE IF dapat digunakan.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

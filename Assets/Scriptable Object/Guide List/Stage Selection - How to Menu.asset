@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Stage Selection - How to Menu
   m_EditorClassIdentifier: 
   guideImage:
-  - {fileID: 21300000, guid: fb03dc4f5c5e183428012a96fd5ebbbc, type: 3}
+  - {fileID: 21300000, guid: 434bb4dd82e2ced48830edb9837df830, type: 3}
   - {fileID: 21300000, guid: 973bb39941eacac4585c07a5ba09aec3, type: 3}

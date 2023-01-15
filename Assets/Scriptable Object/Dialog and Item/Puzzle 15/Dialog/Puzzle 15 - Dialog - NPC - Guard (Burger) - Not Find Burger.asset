@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: Player
-    text: AAAAAA
+    text: mati karena guard b
     m_image:
       Image: {fileID: 0}
       Width: 0

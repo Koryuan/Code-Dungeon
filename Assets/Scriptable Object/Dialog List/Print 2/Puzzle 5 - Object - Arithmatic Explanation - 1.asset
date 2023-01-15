@@ -36,15 +36,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: 
-    text: Nilai yang dikalkulasikan oleh Arithmetic Operators disebut <b>Operands</b>.
-      Operands harus memiliki nilai numerik.
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: 
-    text: 'Operators dasar dalam pemrograman adalah pertambahan "+", pengurangan
+    text: 'Arithmetic Operators dasar dalam pemrograman adalah pertambahan "+", pengurangan
       "-", perkalian "*", dan pembagian "/". '
     m_image:
       Image: {fileID: 0}

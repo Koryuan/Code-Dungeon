@@ -15,12 +15,11 @@ MonoBehaviour:
   m_name: Comment
   m_Settings:
   - m_text: Comment atau "//" dalam pemrograman digunakan dalam berbagai hal, salah
-      satunya sebagai catatan bagi programmer agar kode lebih mudah dibaca. Contohnya
-      seperti pada 2 baris terakhir.
-    m_image: {fileID: 21300000, guid: 1230c97c3fef4f347a3a4cd5bcc0f8c9, type: 3}
-  - m_text: Baris yang dimulai dengan "//" akan membuatnya menjadi tidak dijalankan.
-      Perhatikan bari ke 2 dimana "//" diletakkan sesudah Print
-    m_image: {fileID: 21300000, guid: 1230c97c3fef4f347a3a4cd5bcc0f8c9, type: 3}
-  - m_text: Kasus seperti baris 2 adalah contoh kesalahan jika programmer tidak hati
-      - hati dalam peletakan "//", mengakibatkan error pada program.
-    m_image: {fileID: 21300000, guid: 1230c97c3fef4f347a3a4cd5bcc0f8c9, type: 3}
+      satunya sebagai catatan bagi programmer agar kode lebih mudah dibaca
+    m_image: {fileID: 21300000, guid: 45da48877a611f44eade759bf398266e, type: 3}
+  - m_text: Penulisan kode apapun setelah "//" tidak akan dibaca oleh Code Machine,
+      sehingga pada output tidak akan berpengaruh,
+    m_image: {fileID: 21300000, guid: d0f17cc0f8e27174da87ac078d0cd0d0, type: 3}
+  - m_text: Namun, terkadang orang tidak hati - hati dalam peletakan Comment. Membuat
+      fungsi seperti Print tidak akan berkerja karena Print perlu '(" ")'.
+    m_image: {fileID: 21300000, guid: f9ef67db976408b4ca6e1eb49aa3667c, type: 3}

@@ -14,35 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: Player
-    text: Permisi, bisakah kau membukakan pintu ini?
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Guard T
-    text: .....
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Player
-    text: Permisi, apakah kau-
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Guard T
-    text: Pergi dari hadapan kami sekarang
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Player
-    text: O-ok, maaf mengganggu.
+    text: 'Dialog kasih essence 2
+
+'
     m_image:
       Image: {fileID: 0}
       Width: 0

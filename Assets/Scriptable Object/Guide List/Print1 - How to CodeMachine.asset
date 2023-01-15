@@ -14,6 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guideImage:
   - {fileID: 21300000, guid: c6116900e5979a9408add9d4e0effab2, type: 3}
-  - {fileID: 21300000, guid: 0fcd20343f8c3c8459d6d1001591af99, type: 3}
-  - {fileID: 21300000, guid: 4b050cc56a7428c4a85901611a82a80d, type: 3}
-  - {fileID: 21300000, guid: 7962c6397d0198c46841fc5d64d15eb0, type: 3}
+  - {fileID: 21300000, guid: 194081ba28bfaad4e885bdaa637e7a48, type: 3}

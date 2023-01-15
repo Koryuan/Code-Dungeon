@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: 'Food Sequence:'
+    text: Sebutkan 3 makanan favorit secara ber-urutan
     m_image:
       Image: {fileID: 0}
       Width: 0

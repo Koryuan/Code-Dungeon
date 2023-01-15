@@ -16288,7 +16288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.999985
+      value: -10.000046
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -16502,7 +16502,7 @@ PrefabInstance:
     - target: {fileID: 3717345404474917418, guid: 2b5e62ed4fc1ca545afbb52442285ede, type: 3}
       propertyPath: m_npcEvent.Array.data[0].EventList.Array.data[0].m_help
       value: 
-      objectReference: {fileID: 11400000, guid: abc2d0702bfd95a4ab364bcb39375d17, type: 2}
+      objectReference: {fileID: 11400000, guid: 946324e267aba994b88c35c3c3d60600, type: 2}
     - target: {fileID: 3717345404474917418, guid: 2b5e62ed4fc1ca545afbb52442285ede, type: 3}
       propertyPath: m_npcEvent.Array.data[1].EventList.Array.data[0].dialog
       value: 
@@ -17311,7 +17311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485722981066598320, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10.0000305
+      value: -9.999741
       objectReference: {fileID: 0}
     - target: {fileID: 5032245713840847071, guid: d3f98f28a6ff38149aaa2da596111723, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17646,7 +17646,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1208867446099695952, guid: 3dc8e8738c1c8744db876d19a437a3a1, type: 3}
       propertyPath: m_Name
-      value: Puzzle 1 - Code Machine exp
+      value: Puzzle 1 - Trigger enter - Code Machine exp
       objectReference: {fileID: 0}
     - target: {fileID: 1208867446099695953, guid: 3dc8e8738c1c8744db876d19a437a3a1, type: 3}
       propertyPath: m_RootOrder
@@ -19070,7 +19070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1208867446099695952, guid: 3dc8e8738c1c8744db876d19a437a3a1, type: 3}
       propertyPath: m_Name
-      value: Puzzle 2 - Tablet request
+      value: Puzzle 2 - Trigger Enter - Tablet request
       objectReference: {fileID: 0}
     - target: {fileID: 1208867446099695953, guid: 3dc8e8738c1c8744db876d19a437a3a1, type: 3}
       propertyPath: m_RootOrder

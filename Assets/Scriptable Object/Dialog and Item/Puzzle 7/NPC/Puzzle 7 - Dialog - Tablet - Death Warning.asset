@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle 7 - Dialog - Tablet - Death Warning
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: Tempat ini juga dipenuhi tantangan. Pastikan kamu telah mempersiapkan back-up
-      dan baca petunjuk yang ada dengan teliti.
+  - name: Tablet
+    text: Sebaiknya kita lebih berhati-hati kedepannya. Kita dapat menggunakan save
+      machine lebih sering untuk berjaga - jaga.
     m_image:
       Image: {fileID: 0}
       Width: 0

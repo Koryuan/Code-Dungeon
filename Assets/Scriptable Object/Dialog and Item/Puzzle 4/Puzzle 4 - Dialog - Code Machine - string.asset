@@ -32,8 +32,8 @@ MonoBehaviour:
       Y_Offset: 0
   - name: Tablet
     text: Variable D ini kemudian diberikan data berupa "S@@1Az3", yang berarti tipe
-      data tersebut adalah String. String sendiri adalah tipe data khusus untuk menyimpan
-      sekumpulan Char (atau menyimpan teks yang panjang).
+      data tersebut adalah <b>String</b>. <b>String</b> sendiri adalah tipe data
+      khusus untuk menyimpan sekumpulan <b>Char</b> (atau menyimpan teks yang panjang).
     m_image:
       Image: {fileID: 0}
       Width: 0

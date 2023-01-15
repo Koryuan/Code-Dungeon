@@ -14,15 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Program dapat meminta <b>Input</b> dari pengguna
+    text: Banyak program yang dapat meminta <b>Input</b> dari Pengguna. Input ini
+      adalah bentuk interaksi yang dilakukan manusia kepada Mesin. Mesin kemudian
+      akan memberikan Output sesuai dengan Input yang diberikan.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: 
-    text: Untuk dapat melakukan Input ini, diperlukan Variable agar nilai atau data
-      dari input dapat dimasukkan.
+    text: Contoh Input bermacam - macam. Dalam bermain game, kontrol yang dilakukan
+      pemain adalah bentuk dari Input. Angka serta fungsi seperti kali bagi yang
+      pengguna masukkan pada kalkulator juga bentuk dari Input. Log-in, google search,
+      dan bahkan klik dari mouse juga merupakan Input.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Program dapat meminta Input dengan cara menuliskan <b>Input()</b> sebagai
+      nilai dari suatu variabel.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: <b>Diperlukan Variable</b> agar nilai atau data dari input yang dilakukan
+      dapat disimpan dan digunakan oleh program.
     m_image:
       Image: {fileID: 0}
       Width: 0

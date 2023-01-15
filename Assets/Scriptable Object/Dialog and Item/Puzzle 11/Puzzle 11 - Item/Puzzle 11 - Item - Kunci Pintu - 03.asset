@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Kunci Pintu - 03
   isUseable: 0
-  itemDescription: Kunci Pintu - 03
+  itemDescription: Kunci ini sepertinya bisa digunakan untuk membuka pintu di sekitar
+    sini.

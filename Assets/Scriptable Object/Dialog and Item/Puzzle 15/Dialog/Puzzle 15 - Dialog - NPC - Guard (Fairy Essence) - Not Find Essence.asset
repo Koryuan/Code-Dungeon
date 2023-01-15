@@ -13,36 +13,29 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Fairy Essence) - Not Find Essence
   m_EditorClassIdentifier: 
   dialogs:
+  - name: Guard T
+    text: Sudah ku peringatkan untuk tidak mengganggu kami!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: Player
-    text: Permisi, bisakah kau membukakan pintu ini?
+    text: Tunggu dulu! Aku akan segera memberikan bayaran mu!
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Guard T
-    text: .....
+    text: Tidak ada kesempatan lagi bagi mu
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Player
-    text: Permisi, apakah kau-
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Guard T
-    text: Pergi dari hadapan kami sekarang
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Player
-    text: O-ok, maaf mengganggu.
+    text: '*Penjaga kemudian menangkap player'
     m_image:
       Image: {fileID: 0}
       Width: 0

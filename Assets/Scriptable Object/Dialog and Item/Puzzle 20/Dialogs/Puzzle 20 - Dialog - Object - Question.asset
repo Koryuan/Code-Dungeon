@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Keypad Question
+    text: 'HASIL = [] + 40 MOD []
+
+      IF HASIL == 14 THEN //Door Open
+
+      ELSEIF
+      HASIL == 10 //Chest Cooper open'
     m_image:
       Image: {fileID: 0}
       Width: 0

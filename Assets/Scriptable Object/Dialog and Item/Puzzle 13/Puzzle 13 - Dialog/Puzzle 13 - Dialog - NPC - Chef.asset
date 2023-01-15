@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 13 - Dialog - NPC - Chef
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: Player
+    text: Err, maaf. Apakah kamu mengetahui tentang jalan keluar dari tempat ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Chef
+    text: Memangnya ada jalan keluar dari tempat ini? Aku merasa sudah disini seumur
+      hidupku, tapi aku tidak pernah melihat jalan keluar.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: (Sepertinya jawaban mereka semua sama jika kita menanyakan mengenai jalan
+      keluar. Mungkin kita harus ubah pertanyaan kita).
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Hmm.. Maksud ku aku ingin melewati pintu yang dijaga oleh 2 orang di tengah.
+      Tetapi bagaimanapun ku minta, mereka tidak ingin membuka pintu tersebut untuk
+      ku.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Chef
+    text: Oh, mereka memang keras kepala. Terutama yang berwarna merah. Tetapi setau
+      ku jika kita memberikan mereka hadiah mereka akan lebih baik kepada kita.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Hadiah apa yang dapat ku berikan kepada mereka?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Chef
+    text: Haa... Andai saja ada bahan - bahan makanan disini, aku seharusnya bisa
+      membuatkan sesuatu untuk mereka.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Bahan makanan? Kau dapat memasak?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Chef
+    text: Hanya hobi ku, tetapi sudah lama sekali aku tidak memasak. Lagipula juga
+      tidak ada apa - apa disini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Hmm.. Jika aku memiliki bahan makanan, apakah kau dapat membantu ku membuatkan
+      sesuatu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 'Chef '
+    text: Tentu saja. Jika kau memang punya, akan ku bantu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: Puzzle _ - Dialog - NPC - Do While Explanation - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'First Talk
-
-'
+  - name: Librarian
+    text: 'Tahukah kamu perbedaan antara Do While dan While? '
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Librarian
+    text: Disini tertulis
     m_image:
       Image: {fileID: 0}
       Width: 0

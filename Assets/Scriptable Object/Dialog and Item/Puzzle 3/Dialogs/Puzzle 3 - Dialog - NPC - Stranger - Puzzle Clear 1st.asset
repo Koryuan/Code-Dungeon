@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: Stranger
-    text: Luar biasa! Aku tidak mengenai solusi itu sama sekali
+    text: Luar biasa! Aku tidak terpikirkan solusi itu sama sekali
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -35,22 +35,22 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Player
-    text: Jadi, apa kamu tahu tempat apa ini? Apakah kamu tahu juga kenapa kita ada
-      disini? Apakah kamu memiliki ingatan sebelum ini juga?
+    text: Jadi, apa kamu tahu tempat apa ini? Apakah kamu tahu kenapa kita ada disini?
+      Apakah kamu memiliki ingatan sebelum ini?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Stranger
-    text: Hei, Hei! Tenangkan dirimu. Aku tidak bisa menjawab secepat itu.
+    text: Hei, Hei! Tenangkan dirimu. Aku hanya bisa menjawab satu per satu!
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Stranger
-    text: Hmm, aku tidak tahu tempat apa ini, Aku juga tidak memiliki ingatan sebelum
+    text: Hmm, aku tidak tahu tempat apa ini, Aku tidak memiliki ingatan sebelum
       terbangun di tempat ini. Kau juga orang pertama yang ku temui disini. Apa kamu
       melihat orang lain sebelum aku? Kamu tampak tidak kaget ketika melihat ku.
     m_image:

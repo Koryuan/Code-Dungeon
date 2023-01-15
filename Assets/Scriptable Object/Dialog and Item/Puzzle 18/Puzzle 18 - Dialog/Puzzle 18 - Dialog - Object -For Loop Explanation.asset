@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 18 - Dialog - Object -For Loop Explanation
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: 
+    text: <b>Looping</b> digunakan dalam pemrograman untuk melakukan hal yang sama
+      berulang - ulang.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Untuk mengatur pengulangan yang terjadi ada 2 cara. Yaitu secara perhitungan
+      dan secara kondisi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: <b>FOR</b> Loop adalah pengulangan yang dilakukan secara perhitungan, artinya
+      jumlah pengulangan yang akan dilakukan oleh FOR harus spesifik.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

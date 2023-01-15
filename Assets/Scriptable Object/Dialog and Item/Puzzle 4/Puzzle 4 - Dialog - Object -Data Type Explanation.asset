@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 4 - Dialog - Object -Data Type Explanation
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: 
+    text: <b>Data type</b> adalah klasifikasi yang menentukan suatu jenis data. Data
+      tersebut kemudian ditampung pada suatu <b>Variabel</b>
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Klasifikasi dari Data Type berguna agar program dapat menentukan operasi
+      yang akan dilakukan pada data tersebut-
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: dan Variabel berguna jika suatu program perlu mengolah atau menggunakan
+      data tersebut, baik dalam kalkulasi ataupun dalam melakukan Print.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Ada 4 Data type umum; Integer, Float, Char, dan Boolean.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Integer(INT) digunakan untuk bilangan bulat (negatif ataupun positif)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Float digunakan untuk bilangan riil (negatif ataupun positif)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Char digunakan untuk 1 karakter baik huruf, angka, ataupun simbol
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Boolean hanya menyimpan nilai "True" atau "False"
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

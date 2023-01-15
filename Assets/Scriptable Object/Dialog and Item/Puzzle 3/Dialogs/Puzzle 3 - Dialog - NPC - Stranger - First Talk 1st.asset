@@ -14,9 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: Stranger
+    text: ...
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
+    text: AH! Ada orang lain!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Stranger
     text: 'Hei kamu!
 
-      Sepertinya kamu juga bisa menyelesaikan teka - teki sebelumnya.'
+      Apakah kamu juga melewati teka - teki untuk sampai ke
+      sini?'
     m_image:
       Image: {fileID: 0}
       Width: 0

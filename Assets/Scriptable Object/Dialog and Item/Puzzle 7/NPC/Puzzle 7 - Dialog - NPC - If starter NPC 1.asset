@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: Stranger
-    text: aaaaaaa
+    text: Ikuti saja apa kata ku. Lakukan save pada Save machine agar perjalanan
+      mu tidak sia - sia.
     m_image:
       Image: {fileID: 0}
       Width: 0

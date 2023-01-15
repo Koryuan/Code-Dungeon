@@ -21,7 +21,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Guard B
-    text: Apa keperluan mu untuk  melewati Pintu ini?
+    text: Apa keperluan mu untuk  melewati pintu ini?
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -55,15 +55,31 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
-    text: (Tidak mungkin.)Tolong lah. Aku harus melewati tempat ini
+  - name: Tablet
+    text: (Hmm, kita tidak dapat mengonfirmasi hal tersebut. Bagaimana pun juga kita
+      perlu melewati pintu ini).
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Guard B
-    text: Sudah cukup. Pergi dari sini sekarang!
+  - name: Player
+    text: (Aku tahu).
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Player
+    text: Aku tetap ingin melewati pintu ini. Bagaimana jika kau tetap membukakan
+      pintu ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Tablet
+    text: (Argumen mu sangat sempurna, kawan).
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -92,7 +108,15 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Guard B
-    text: Sudah cukup. Pergi dari sini sekarang!
+    text: Waktu dan tenaga karena harus mengikuti omong kosong mu, yang setelah dipikir
+      - pikir sudah aku habiskan karena mendengarkan mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Sekarang jangan ganggu kami.
     m_image:
       Image: {fileID: 0}
       Width: 0

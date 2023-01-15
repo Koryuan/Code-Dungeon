@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 14 - Dialog - Object - NPC 4
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: 
+    text: "Di taman terdapat seorang pria yang suka tidur ditaman dikarenakan anginnya
+      segar.\r Pria tersebut datang sendirian dikarenakan tidak ada yang bisa dia
+      ajak untuk datang.\r Katanya Kakek yang berusia lebih dari 65 tahun dan sering
+      pergi ke taman namanya \"Boudrey\". "
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: "Alasan dia pergi ke taman bukan hanya untuk tidur dengan angin segar.\r
+      Tetapi juga untuk melihat \"Luffy\" yang pada tahun ini berusia 23 tahun. Dikarenakan\r
+      telah jatuh cinta tetapi tidak berani memberitahukan sehingga dia hanya bisa
+      melihat\r dari jauh."
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '(?:Pria = True)
+
+      (?:Sendiri = True)
+
+      (Luffy: Age = 23)
+
+      (IF
+      Pria AND Age > 65 AND Sering Then Name: "Boudrey")'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
