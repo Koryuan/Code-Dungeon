@@ -16,7 +16,7 @@ public class HelpList : ScriptableObject
         }
         return list.ToArray();
     }
-    public bool SearchInHelpSettingList(string ID, ref List<HelpSettings> HelpList)
+    private bool SearchInHelpSettingList(string ID, ref List<HelpSettings> HelpList)
     {
         HelpSettings searched = m_helpList.Find(x => x.Name == ID);
         if (!searched) return false;
