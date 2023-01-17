@@ -28,8 +28,8 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: <color=#176be8><b>Player</b></color>
-    text: Kami memiliki Silver dan berharap dapat menukarkannya dengan persenjataan
-      yang ada disini
+    text: Kami memiliki logam perak ini, dan berharap dapat menukarkannya dengan
+      persenjataan yang ada disini
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -64,14 +64,14 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Armory Guard
-    text: Err, aku dapat memberikan mu gold ini jika kau mau?
+    text: Err, aku dapat memberikan mu gold ini jika kau mau.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: <color=#176be8><b>Player</b></color>
-    text: Hmm? Kau tidak keberatan? Gold ini lebih mahal daripada Silver kan?
+    text: Hmm? Kau tidak keberatan? Gold ini lebih mahal dibandingkan logam kan?
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
       Y_Offset: 0
   - name: Armory Guard
     text: Ya, tetapi aku tidak membutuhkannya. Aku juga tidak yakin dapat membuat
-      senjata dengan gold. Tetapi silver yang kau pegang dapat digunakan untuk hal
+      senjata dengan gold. Tetapi logam yang kau pegang dapat digunakan untuk hal
       tersebut!
     m_image:
       Image: {fileID: 0}

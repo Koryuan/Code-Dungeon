@@ -42,7 +42,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: <color=#565950>Stranger</color>
-    text: Jangan selalu gegabah dalam mengambil keputusan. Kenapa tidak kau berkeliling
+    text: Jangan selalu gegabah dalam mengambil keputusan. Kenapa kau tidak berkeliling
       saja di sekitar tempat ini.
     m_image:
       Image: {fileID: 0}

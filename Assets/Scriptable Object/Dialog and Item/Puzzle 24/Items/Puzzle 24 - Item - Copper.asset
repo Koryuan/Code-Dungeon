@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3586bb1e5380b44905c8e1e0e7bf17, type: 3}
   m_Name: Puzzle 24 - Item - Copper
   m_EditorClassIdentifier: 
-  itemName: Koin tembaga
+  itemName: Koin perunggu
   isUseable: 0
-  itemDescription: Koin tembaga. Sepertinya tidak punya nilai tukar tinggi.
+  itemDescription: Koin perunggu. Sepertinya tidak punya nilai tukar tinggi.

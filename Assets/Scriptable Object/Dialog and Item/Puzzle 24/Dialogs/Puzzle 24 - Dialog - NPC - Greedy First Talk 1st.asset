@@ -63,7 +63,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: <color=#176be8><b>Player</b></color>
-    text: Setiap penjaga disini sepertijnya ditugaskan untuk menjaga ruang disekitar
+    text: Setiap penjaga disini sepertinya ditugaskan untuk menjaga ruang disekitar
       mereka. Oleh karena itu aku yakin ruang sebelah itu pasti tanggung jawab mu.
     m_image:
       Image: {fileID: 0}

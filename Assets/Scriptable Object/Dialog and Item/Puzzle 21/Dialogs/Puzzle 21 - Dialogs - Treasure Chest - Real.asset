@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 21 - Dialogs - Treasure Chest - Real
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: '<color=#17e8d3><b>Tablet</b></color> '
     text: Sepertinya hanya ada catatan kecil
     m_image:
       Image: {fileID: 0}
@@ -27,14 +27,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: 'Apa maksudnya? '
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: '<color=#17e8d3><b>Tablet</b></color> '
     text: Aku tidak yakin, tetapi mungkin lebih baik jika kita mengingatnya.
     m_image:
       Image: {fileID: 0}

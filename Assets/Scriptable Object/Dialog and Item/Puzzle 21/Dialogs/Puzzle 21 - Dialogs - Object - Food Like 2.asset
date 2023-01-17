@@ -20,14 +20,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Aku tidak peduli
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: (Tetapi ada nomor disini. Apa maksudnya?)
     m_image:
       Image: {fileID: 0}

@@ -28,7 +28,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: <color=#176be8><b>Player</b></color>
-    text: Aku memiliki tembaga ini. Apakah bisa ditukarkan dengan barang lain?
+    text: Aku memiliki koin perunggu ini. Apakah bisa ditukarkan dengan barang lain?
     m_image:
       Image: {fileID: 0}
       Width: 0

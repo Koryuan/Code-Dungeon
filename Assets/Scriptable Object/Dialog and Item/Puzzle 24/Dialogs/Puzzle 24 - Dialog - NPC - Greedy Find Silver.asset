@@ -43,14 +43,6 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: NPC Greedy
-    text: Aku ingin bayaran yang <color=#FFD700>bayaran yang pantas</color> atau
-      tidak sama sekali!
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
   - name: <color=#176be8><b>Player</b></color>
     text: (Ada ide lain?)
     m_image:
