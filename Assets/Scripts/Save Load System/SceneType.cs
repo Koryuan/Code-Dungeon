@@ -6,5 +6,6 @@
     Print1Scene,
     Print2Scene,
     SelectionScene,
-    LoopScene
+    LoopScene,
+    ToBeConScene
 }
