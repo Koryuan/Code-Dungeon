@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 5 - Object - Arithmatic Explanation - 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Sepertinya ada penjelasan disini!
     m_image:
       Image: {fileID: 0}

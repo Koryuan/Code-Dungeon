@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Fountain Key - 1
   isUseable: 0
-  itemDescription: Kunci untuk suatu pintu. Sepertinya cocok dengan pintu pada bagian
-    tengah.
+  itemDescription: Kunci untuk suatu pintu. Sepertinya cocok dengan pintu di ruang
+    yang penuh lukisan.

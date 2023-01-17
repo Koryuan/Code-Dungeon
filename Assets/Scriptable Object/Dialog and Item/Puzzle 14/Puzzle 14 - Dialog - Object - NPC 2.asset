@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Di taman terdapat Kakek yang sangat bersemangat, meskipun sudah berusia\r
-      70 tahun kakek tersebut masih bisa berlari dan bermain dengan anak-anak muda\r
-      Kata Kakek tersebut tiga anak tersebut tidak mau main dengan orang yang sudah\r
-      berusia lebih dari 15 tahun dan tidak semangat."
+    text: Di taman terdapat kakek yang sangat bersemangat meskipun sudah berusia
+      70 tahun. Kakek tersebut masih bisa berlari dan bermain dengan anak - anak
+      muda. Kata kakek tersebut tiga anak tersebut tidak mau main dengan orang yang
+      sudah berusia lebih dari 15 tahun dan tidak semangat.
     m_image:
       Image: {fileID: 0}
       Width: 0

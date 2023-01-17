@@ -13,36 +13,43 @@ MonoBehaviour:
   m_Name: Puzzle 5 - NPC - Hint Giver - Dialog 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Kita bertemu lagi
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Ha? Bagaimana kamu bisa lebih dulu disini daripada aku?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
-    text: Aku melihat jalan lain setelah mesin itu terbuka
+  - name: <color=#565950>Stranger</color>
+    text: Aku melihat jalan lain setelah kamu pergi.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
-    text: Lupakan itu, apakah kamu sadar bahwa mesin di tengah memerlukan Input yang
-      akan mengeluarkan Print dengan hasil spesifik?
+  - name: <color=#565950>Stranger</color>
+    text: Lupakan itu, apakah kamu sadar bahwa mesin di ruang yang dipenuhi dengan
+      lukisan sedikit berbeda?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
+    text: Mesin yang itu perlu mengeluarkan Output spesifik.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
     text: Kamu dapat memasukkan berapa pun angka yang kamu inginkan, tetapi jika
       hasilnya tidak sesuai maka tidak akan terjadi apa - apa
     m_image:
@@ -50,21 +57,21 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Kenapa kamu tahu hal tersebut?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Aku sudah masuk disini sebelum kamu, tentu saja aku sudah mencobanya.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Sebelum kamu melewati jembatan ini, aku sudah melihat beberapa petunjuk
       yang mengatakan bahwa mesin tersebut perlu melakukan Print dengan hasil 45.
     m_image:
@@ -72,16 +79,31 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Kalau kamu tahu, kenapa tidak kamu coba masukkan sendiri angkanya?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
-    text: Aku kehilangan catatan ku bersama dengan petunjuk yang ku dapatkan. Lupakan
-      aku, lebih baik kau segera bergegas dan selesaikan tantangan di ruang ini.
+  - name: <color=#565950>Stranger</color>
+    text: Aku baru saja menemukan petunjuk itu ketika ke sini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Sekarang aku kehilangan catatan yang ku gunakan ketika mencatat petunjuk
+      tersebut.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Aku ingin menemukan catatan ku terlebih dahulu. Kau sebaiknya jangan meunggu
+      ku.
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -13,8 +13,72 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Greedy Find Gold
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Oh anda punya gold Nice!
+  - name: NPC Greedy
+    text: Ha? Apa lagi yang kau inginkan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku memiliki ini sekarang.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Sempurna!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Berikan Gold itu pada ku sekarang!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Lebih baik kau berikan dulu apa yang aku mau
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku ingin informasi mengenai kunci untuk membuka ruang sebelah kanan ini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Tentu  saja. Ini dia kuncinya.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Oh, kau ternyata memang memiliki kuncinya selama ini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Hmph, aku sudah mencarikan kunci ini kemana - mana semenjak kau pergi berkeliling
+      untuk mencari imbalan yang sesuai.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Berikan Gold itu pada ku sekarang!
     m_image:
       Image: {fileID: 0}
       Width: 0

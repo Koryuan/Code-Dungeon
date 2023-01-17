@@ -13,8 +13,95 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Gold Coin - Convert to Gold 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Tembaga di ganti jadi Perak
+  - name: <color=#176be8><b>Player</b></color>
+    text: Hallo, dapatkah kau membantu kami?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Ada apa?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kami memiliki Silver dan berharap dapat menukarkannya dengan persenjataan
+      yang ada disini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: '<color=#17e8d3><b>Tablet</b></color> '
+    text: (Alasan yang bagus!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Maaf, tetapi aku tidak bisa memberikan senjata ini ke sembarangan orang.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Ini perlengkapan eksklusif untuk penjaga kami.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Sial!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Err, aku dapat memberikan mu gold ini jika kau mau?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Hmm? Kau tidak keberatan? Gold ini lebih mahal daripada Silver kan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Ya, tetapi aku tidak membutuhkannya. Aku juga tidak yakin dapat membuat
+      senjata dengan gold. Tetapi silver yang kau pegang dapat digunakan untuk hal
+      tersebut!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Baiklah, terima kasih banyak!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Aku sebenarnya masih ingin senjata untuk menghajar orang serakah itu)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: '<color=#17e8d3><b>Tablet</b></color> '
+    text: (Ya, aku juga berharap demikian)
     m_image:
       Image: {fileID: 0}
       Width: 0

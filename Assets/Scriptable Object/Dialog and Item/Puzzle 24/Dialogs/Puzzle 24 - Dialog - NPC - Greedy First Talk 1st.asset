@@ -13,8 +13,87 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Greedy First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Greedy First talk
+  - name: NPC Greedy
+    text: Hehehe, dengan begini terus, aku akan menjadi orang terkaya di tempat ini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: .....
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: AH!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: H-hei! Apa yang kau lihat? Apa kau ingin mencari masalah!?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Tidak. Aku hanya ingin bertanya mengenai ruang di sebelah kanan.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apakah kau memiliki kunci untuk ruang tersebut?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Hmph, aku tidak tahu soal kunci tersebut.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Setiap penjaga disini sepertijnya ditugaskan untuk menjaga ruang disekitar
+      mereka. Oleh karena itu aku yakin ruang sebelah itu pasti tanggung jawab mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Sudah ku katakan aku tidak tahu apa - apa.... Tetapi..
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: ??
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Dengan <color=#FFD700>bayaran yang cukup</color> mungkin aku dapat memberikan
+      mu informasi mengenai kunci yang kau butuhkan, hehehe.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Hmm..
     m_image:
       Image: {fileID: 0}
       Width: 0

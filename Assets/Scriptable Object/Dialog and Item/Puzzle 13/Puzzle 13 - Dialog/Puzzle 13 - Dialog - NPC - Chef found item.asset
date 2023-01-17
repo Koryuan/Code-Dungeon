@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 13 - Dialog - NPC - Chef found item
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Aku menemukan bahan ini. Seharusnya sudah cukup untuk memasak sesuatu kan?
     m_image:
       Image: {fileID: 0}
@@ -34,7 +34,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: (Hanya 1 porsi, sepertinya aku perlu menemukan hadiah lain. Kecuali masih
       ada bahan tersisa, tetapi aku tidak yakin masih ada di tempat ini.)
     m_image:
@@ -42,7 +42,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Terima kasih atas bantuan mu.
     m_image:
       Image: {fileID: 0}

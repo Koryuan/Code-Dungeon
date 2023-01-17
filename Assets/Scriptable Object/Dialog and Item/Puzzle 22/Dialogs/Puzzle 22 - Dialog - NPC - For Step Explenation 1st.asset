@@ -20,7 +20,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Iya?
     m_image:
       Image: {fileID: 0}
@@ -34,7 +34,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Apa yang bisa ku bantu?
     m_image:
       Image: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Kenapa  tidak kau aktifkan sendiri?
     m_image:
       Image: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Tunggu, kenapa tidak kau beritahu saja kepada ku langsung jawabannya?
     m_image:
       Image: {fileID: 0}

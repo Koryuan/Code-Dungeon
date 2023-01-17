@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Fairy Essence) - Find Essence Other Want
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: Dialog other want
+  - name: Guard B
+    text: Hoo kau sudah punya bayaran ternyata
     m_image:
       Image: {fileID: 0}
       Width: 0

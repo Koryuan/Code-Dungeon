@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 13 - Dialog - NPC - Chef
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Err, maaf. Apakah kamu mengetahui tentang jalan keluar dari tempat ini?
     m_image:
       Image: {fileID: 0}
@@ -28,7 +28,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: (Sepertinya jawaban mereka semua sama jika kita menanyakan mengenai jalan
       keluar. Mungkin kita harus ubah pertanyaan kita).
     m_image:
@@ -36,7 +36,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Hmm.. Maksud ku aku ingin melewati pintu yang dijaga oleh 2 orang di tengah.
       Tetapi bagaimanapun ku minta, mereka tidak ingin membuka pintu tersebut untuk
       ku.
@@ -53,7 +53,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Hadiah apa yang dapat ku berikan kepada mereka?
     m_image:
       Image: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Bahan makanan? Kau dapat memasak?
     m_image:
       Image: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Hmm.. Jika aku memiliki bahan makanan, apakah kau dapat membantu ku membuatkan
       sesuatu?
     m_image:

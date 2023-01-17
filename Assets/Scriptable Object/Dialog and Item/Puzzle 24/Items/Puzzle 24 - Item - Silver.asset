@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3586bb1e5380b44905c8e1e0e7bf17, type: 3}
   m_Name: Puzzle 24 - Item - Silver
   m_EditorClassIdentifier: 
-  itemName: Koin perak
+  itemName: Silver iron
   isUseable: 0
-  itemDescription: Koin perak.
+  itemDescription: Potongan baja dengan warna silver. Sepertinya bukan silver murni,
+    daya tukarnya sepertinya tidak begitu tinggi.

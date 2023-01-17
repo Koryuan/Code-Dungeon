@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - Stranger 2nd - Infinite Loop 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: Here some item - Clear
+  - name: ' <color=#565950>Stranger</color>'
+    text: Cepat bawa barang tersebut dan selesaikan tantangannya.
     m_image:
       Image: {fileID: 0}
       Width: 0

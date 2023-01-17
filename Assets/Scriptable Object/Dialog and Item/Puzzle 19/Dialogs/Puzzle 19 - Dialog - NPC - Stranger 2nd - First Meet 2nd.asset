@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - Stranger 2nd - First Meet 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: Ketemu lagi - kelar
+  - name: <color=#565950>Stranger</color>
+    text: Jka kau butuh sesuatu jangan sungkan untuk mencari ku. Aku sepertinya akan
+      berada lama disini.
     m_image:
       Image: {fileID: 0}
       Width: 0

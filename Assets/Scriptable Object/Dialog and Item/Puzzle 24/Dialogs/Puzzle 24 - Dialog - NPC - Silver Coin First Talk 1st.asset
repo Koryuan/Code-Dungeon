@@ -36,7 +36,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Dan kau juga ikut terkunci disini. Aku paham situasi mu.
     m_image:
       Image: {fileID: 0}
@@ -51,14 +51,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: (Apa yang dapat ku minta dari seseorang seperti dia?)
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: (Aku tidak yakin, tetapi tidaklah buruk memiliki orang yang berutang budi
       kepada kita bukan?)
     m_image:

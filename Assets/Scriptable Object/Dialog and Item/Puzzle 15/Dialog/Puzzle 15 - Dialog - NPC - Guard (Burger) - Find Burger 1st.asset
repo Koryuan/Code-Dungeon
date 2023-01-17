@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger) - Find Burger 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Hei, bagaimana jika kau membukakan pintu ini, aku akan memberikan mu masakan
       ini?
     m_image:
@@ -28,7 +28,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: .....Ada masalah?
     m_image:
       Image: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Jadi, kau tidak mau?
     m_image:
       Image: {fileID: 0}

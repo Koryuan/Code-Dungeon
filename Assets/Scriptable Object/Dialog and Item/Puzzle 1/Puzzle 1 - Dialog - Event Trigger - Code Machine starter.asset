@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Puzzle 1 - Dialog - Event Trigger - Code Machine starter
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Hei, lihat mesin di depan kita
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Mesin apa itu?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Mesin ini biasanya digunakan untuk menjalankan suatu program, namun mesin
       seperti ini seharusnya sudah tidak digunakan lagi.
     m_image:
@@ -35,14 +35,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Kalau begitu kenapa bisa ada disini?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Aku tidak yakin. Mari periksa mesin tersebut terlebih dahulu
     m_image:
       Image: {fileID: 0}

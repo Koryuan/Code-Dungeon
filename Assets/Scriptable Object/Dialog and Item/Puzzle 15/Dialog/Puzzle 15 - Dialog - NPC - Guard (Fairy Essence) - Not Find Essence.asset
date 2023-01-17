@@ -20,7 +20,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Tunggu dulu! Aku akan segera memberikan bayaran mu!
     m_image:
       Image: {fileID: 0}
@@ -34,7 +34,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: 
     text: '*Penjaga kemudian menangkap player'
     m_image:
       Image: {fileID: 0}

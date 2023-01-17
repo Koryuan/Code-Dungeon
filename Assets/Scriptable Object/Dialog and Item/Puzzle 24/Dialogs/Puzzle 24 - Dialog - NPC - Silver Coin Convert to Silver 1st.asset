@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Silver Coin Convert to Silver 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Hallo. Aku ingin meminta tolong
     m_image:
       Image: {fileID: 0}
@@ -27,7 +27,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Aku memiliki tembaga ini. Apakah bisa ditukarkan dengan barang lain?
     m_image:
       Image: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Tidak terlalu berat bukan?
     m_image:
       Image: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Terima kasih banyak
     m_image:
       Image: {fileID: 0}

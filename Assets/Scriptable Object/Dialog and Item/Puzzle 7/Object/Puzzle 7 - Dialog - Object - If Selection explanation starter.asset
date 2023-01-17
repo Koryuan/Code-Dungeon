@@ -22,7 +22,8 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: 
-    text: Kondisi terpenuhi atau tidak bergantung pada value True atau False
+    text: Kondisi terpenuhi atau tidak bergantung pada value <color=#27ba67>True</color>
+      atau <color=#27ba67>False</color>.
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -36,8 +37,9 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: 
-    text: "Jika kondisi di dalam IF statement bernilai True, maka potongan kode didalamnya
-      akan dijalankan. \nIF [Kondisi] THEN \n[isi kode] \nEND IF"
+    text: "Jika kondisi di dalam IF statement bernilai <color=#27ba67>True</color>,
+      maka potongan kode didalamnya akan dijalankan. \nIF [Kondisi] THEN \n[isi kode]
+      \nEND IF"
     m_image:
       Image: {fileID: 0}
       Width: 0

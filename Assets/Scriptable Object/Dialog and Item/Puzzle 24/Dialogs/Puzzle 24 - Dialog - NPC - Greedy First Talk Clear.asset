@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Greedy First Talk Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Greedy First talk - Clear
+  - name: NPC Greedy
+    text: Dengan bayaran yang cukup mungkin aku dapat memberikan mu informasi mengenai
+      kunci yang kau butuhkan, hehehe.
     m_image:
       Image: {fileID: 0}
       Width: 0

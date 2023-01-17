@@ -13,8 +13,36 @@ MonoBehaviour:
   m_Name: Puzzle 16 - NPC - When Player enter door
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: aaaaaaa
+  - name: '<color=#176be8><b>Player</b></color> & <color=#17e8d3><b>Tablet</b></color> '
+    text: AAAAAAAAAAAAAAAAAAHHHHHHHHH!!!!!!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Huff... Huff..
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apa yang terjadi?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: '<color=#17e8d3><b>Tablet</b></color> '
+    text: S-sepertinya ada jebakan khusus di ruang ini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: '<color=#17e8d3><b>Tablet</b></color> '
+    text: Ruangan ini tidak begitu besar. Ayo segera kita selidiki!
     m_image:
       Image: {fileID: 0}
       Width: 0

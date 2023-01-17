@@ -20,7 +20,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: (Tidak ada kehidupan di mata orang ini)
     m_image:
       Image: {fileID: 0}
@@ -34,7 +34,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Air?
     m_image:
       Image: {fileID: 0}

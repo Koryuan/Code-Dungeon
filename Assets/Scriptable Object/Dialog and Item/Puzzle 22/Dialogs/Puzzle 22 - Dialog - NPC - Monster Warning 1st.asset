@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 22 - Dialog - NPC - Monster Warning 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Halo, apakah jalan ini dapat dilewati?
     m_image:
       Image: {fileID: 0}
@@ -27,7 +27,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Ada apa memangnya?
     m_image:
       Image: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Sampai kapan bantuan tersebut akan datang?
     m_image:
       Image: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: (Hmm, sepertinya kita tidak dapat menunggu untuk bantuan. Tidak akan ada
       hal baik yang terjadi jika kita hanya menunggu.)
     m_image:

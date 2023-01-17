@@ -13,8 +13,95 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Greedy - Give Key Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Greedy First talk - Clear
+  - name: NPC Greedy
+    text: Apa lagi yang kau inginkan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kau tau mesin pada ruang sebelah kanan untuk apa?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Ha! Aku tidak peduli dengan mesin rongsokkan seperti itu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kau tahu ada orang yang terjebak karena mesin itu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Ho, sangat disayangkan. Tetapi seperti yang ku katakan, aku tidak peduli.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ku juga berpikir demikian. Tetapi aku rasa kau ingin mendengarkan yang
+      ku katakan selanjutnya.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: ??
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Yang terjebak karena mesin itu adalah salah satu pemimpin peloton yang
+      berusaha menjaga monster liar pada lantai ini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku yakin dia akan sangat menghargai kontribusi mu dalam mempersulit pekerjaan
+      ku untuk membebaskan dia.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: H-hei, kau tidak akan memberitahunya kan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Hmm, siapa tahu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Kenapa kau tidak memberitahu ku lebih awal!? Apa yang harus kulakukan selanjutnya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Aaah.. Tamat sudah riwayatku.
     m_image:
       Image: {fileID: 0}
       Width: 0

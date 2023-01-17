@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Di taman terdapat anak yang bernama \"Steven\" dia suka bermain petak
-      umpet\r. Tetapi dia selalu sendirian ketika pergi ke-taman. Katanya orang yang
-      tidak suka\r main petak umpet tidak akan mau bermain petak umpet dengan tiga
-      orang tersebut."
+    text: Di taman terdapat anak yang bernama "Steven" dia suka bermain petak umpet.
+      Tetapi dia selalu sendirian ketika pergi ke-taman. Katanya orang yang tidak
+      suka main petak umpet tidak akan mau bermain petak umpet dengan tiga orang
+      tersebut.
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -28,8 +28,8 @@ MonoBehaviour:
 
       (Steven: Sendiri = True)
 
-      (If NOT
-      Suka Then Bermain = False)'
+      (If NOT Suka
+      Then Bermain = False)'
     m_image:
       Image: {fileID: 0}
       Width: 0

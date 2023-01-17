@@ -13,10 +13,111 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Fairy Essence) - Find Essence 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: 'Dialog kasih essence 2
-
-'
+  - name: <color=#176be8><b>Player</b></color>
+    text: AAAAHHHHH! TUNGGU! Aku memiliki ini untuk  mu!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard T
+    text: Benda apa ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: B-b-bukankah terlihat indah?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard T
+    text: .....
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Hei! Dia tidak menyukainya! Bagaimana ini??)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Tenangkan dirimu! Gunakan ilmu negosiasi mu untuk membawa kita keluar
+      dari masalah!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Anggap saja ini seperti tantangan yang lain! Jika kau fokus pasti ada
+      jalan keluarnya!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Apa yang kau bicarakan-)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard T
+    text: Terima kasih
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: AAH!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Eh? Oh, sama - sama?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Hei, aku berhasil!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Kau ini benar - benar penakut. Kita cukup beruntung kali ini, tapi apa
+      yang akan kita lakukan kedepannya jika penjaga lebih tegas?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Bukan kah kau seharusnya membantu ku memikirkan jalan keluar dari segala
+      masalah?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Aku bilang "Jalan keluar dari tempat ini". Lupakan itu, ayo lanjutkan
+      perjalanan kita)
     m_image:
       Image: {fileID: 0}
       Width: 0

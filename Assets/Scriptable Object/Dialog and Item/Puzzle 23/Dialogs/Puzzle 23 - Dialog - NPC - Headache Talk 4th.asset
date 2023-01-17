@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Puzzle 23 - Dialog - NPC - Headache Talk 4th
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Headache Finish
+  - name: Pemimpin Peloton
+    text: Bawa kunci tersebut dan pergilah ke ruangan kecil yang terkunci di area
+      tengah.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Aku harap kau menemukannya.
     m_image:
       Image: {fileID: 0}
       Width: 0

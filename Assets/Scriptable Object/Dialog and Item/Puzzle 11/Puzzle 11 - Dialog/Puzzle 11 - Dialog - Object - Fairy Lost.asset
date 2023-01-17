@@ -27,7 +27,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Seharusnya ada cara untuk menangkap dan menyimpan Fairy tersebut!
     m_image:
       Image: {fileID: 0}

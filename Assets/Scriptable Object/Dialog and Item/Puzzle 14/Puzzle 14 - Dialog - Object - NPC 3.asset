@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Di taman terdapat seorang guru yang bernama \"Luffy\", yang sering pergi
-      ke-taman\r bersama dengan murid-muridnya. Katanya murid-muridnya tidak suka
-      bermain\r petak umpet. Salah satu muridnya \"Edward\" yang berusia 8 tahun
-      sedang bersemangat\r untuk bermain di-taman. Katanya Orang yang lebih dari
-      10 tahun atau Sendiri suka bermain\r Petak Umpet."
+    text: Di taman terdapat seorang guru yang bernama "Luffy", yang sering pergi
+      ke-taman dengan murid-muridnya. Katanya, murid-muridnya tidak suka bermain
+      petak umpet. Salah satu muridnya "Edward" yang berusia 8 tahun sedang bersemangat
+      untuk bermain di-taman. Katanya Orang yang lebih dari 10 tahun atau Sendiri
+      suka bermain Petak Umpet.
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -34,10 +34,16 @@ MonoBehaviour:
 
       (Edward: Semangat = True)
 
-      (Edward: Sering = True)
+'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '(Edward: Sering = True)
 
-      (IF
-      Age > 10 OR Sendiri Then Suka = True)'
+      (IF Age > 10 OR Sendiri Then Suka = True)'
     m_image:
       Image: {fileID: 0}
       Width: 0

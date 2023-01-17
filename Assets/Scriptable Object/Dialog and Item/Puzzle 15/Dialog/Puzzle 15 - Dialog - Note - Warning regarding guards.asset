@@ -38,14 +38,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Ha? Catatannya habis sampai disini?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Bagaimana pun sebaiknya kita hati - hati dalam mendekati penjaga tersebut.
     m_image:
       Image: {fileID: 0}

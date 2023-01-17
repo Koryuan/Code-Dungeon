@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 1 - Dialog - Object - Comment after explanation
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Hei, apakah kamu sadar bahwa saat ada "//" mesin tidak bisa melakukan Print
       yang di-inginkan?
     m_image:
@@ -21,14 +21,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: '"//" adalah Comment yang seharusnya digunakan sebagai catatan dalam programmer.'
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Mungkin karena pembuat kode tidak hati - hati, Comment tersebut malah membuat
       mesin ini tidak dapat berjalan
     m_image:
@@ -36,7 +36,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Hmm, akan ku perhatikan ketika aku perlu membuat kode sendiri
     m_image:
       Image: {fileID: 0}

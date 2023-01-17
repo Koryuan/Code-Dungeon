@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: Puzzle 3 - Dialog - NPC - Stranger - Puzzle Clear 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Luar biasa! Aku tidak terpikirkan solusi itu sama sekali
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Benarkah begitu? Kamu sangat menekankan kalau mesinnya sama.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Tentu saja. Kenapa aku harus bohong
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Jadi, apa kamu tahu tempat apa ini? Apakah kamu tahu kenapa kita ada disini?
       Apakah kamu memiliki ingatan sebelum ini?
     m_image:
@@ -42,14 +42,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Hei, Hei! Tenangkan dirimu. Aku hanya bisa menjawab satu per satu!
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Hmm, aku tidak tahu tempat apa ini, Aku tidak memiliki ingatan sebelum
       terbangun di tempat ini. Kau juga orang pertama yang ku temui disini. Apa kamu
       melihat orang lain sebelum aku? Kamu tampak tidak kaget ketika melihat ku.
@@ -58,28 +58,28 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Aku sebenarnya bertemu dengan benda i-
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: (HEI! Jangan beritahu keberadaan ku sesuka hati mu!)
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: (ah)
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Aku juga bertemu dengan beberapa benda seperti mesin disamping sebelumnya.
       Sebaiknya kau lanjutkan perjalanan mu. Aku akan segera menyusul.
     m_image:

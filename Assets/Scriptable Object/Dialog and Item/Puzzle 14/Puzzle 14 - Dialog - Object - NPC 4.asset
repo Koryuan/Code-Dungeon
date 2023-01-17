@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Di taman terdapat seorang pria yang suka tidur ditaman dikarenakan anginnya
-      segar.\r Pria tersebut datang sendirian dikarenakan tidak ada yang bisa dia
-      ajak untuk datang.\r Katanya Kakek yang berusia lebih dari 65 tahun dan sering
-      pergi ke taman namanya \"Boudrey\". "
+    text: Terdapat seorang pria yang suka tidur ditaman dikarenakan anginnya segar.
+      Pria tersebut datang sendirian dikarenakan tidak ada yang bisa dia ajak untuk
+      datang. Katanya, Kakek yang berusia lebih dari 65 tahun dan sering pergi ke
+      taman namanya "Boudrey".
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: 
-    text: "Alasan dia pergi ke taman bukan hanya untuk tidur dengan angin segar.\r
-      Tetapi juga untuk melihat \"Luffy\" yang pada tahun ini berusia 23 tahun. Dikarenakan\r
+    text: Alasan dia pergi ke taman bukan hanya untuk tidur dengan angin segar. Tetapi
+      juga untuk melihat "Luffy" yang pada tahun ini berusia 23 tahun. Dikarenakan
       telah jatuh cinta tetapi tidak berani memberitahukan sehingga dia hanya bisa
-      melihat\r dari jauh."
+      melihat dari jauh.
     m_image:
       Image: {fileID: 0}
       Width: 0

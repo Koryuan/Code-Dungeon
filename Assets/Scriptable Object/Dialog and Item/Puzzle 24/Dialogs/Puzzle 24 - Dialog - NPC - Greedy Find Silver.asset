@@ -13,8 +13,76 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Greedy Find Silver
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Oh anda punya silver lol
+  - name: NPC Greedy
+    text: .....Apa ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ini jauh lebih baik dari sebelumnya bukan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Ha.. dengarkan aku, jika kau tidak serius dalam transaksi ini, sebaiknya
+      kau pergi jauh dari hadapan ku.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Aku ingin bayaran yang <color=#FFD700>bayaran yang pantas</color> atau
+      tidak sama sekali!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Aku ingin bayaran yang <color=#FFD700>bayaran yang pantas</color> atau
+      tidak sama sekali!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Ada ide lain?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Mengingat beberapa penjaga disini dipenuhi dengan senjata, mungkin ada
+      gudang persenjataan disini.)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Oh... Dan apa yang akan kita lakukan di gudang persenjataan?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Kita mungkin bisa mengambil beberapa senjata disana dan mengancam orang
+      ini.)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Hmm, ide yang baik.)
     m_image:
       Image: {fileID: 0}
       Width: 0

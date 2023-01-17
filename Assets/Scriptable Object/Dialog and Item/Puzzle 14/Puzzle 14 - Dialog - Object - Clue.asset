@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Puzzle 14 - Dialog - Object - Clue
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Ada kumpulan kertas lagi disini
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Kenapa banyak sekali kertas disini
     m_image:
       Image: {fileID: 0}
@@ -52,21 +52,21 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Catatannya berhenti lagi
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Apa ini? Catatan harian? Kenapa terdengar dramatis sekali
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Jika tidak berguna sebaiknya tidak kita pikirkan
     m_image:
       Image: {fileID: 0}

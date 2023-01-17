@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Puzzle 1 - Dialog - Object - Print Explanation
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Ini terlihat seperti sebuah layar
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Iya, ada sepertinya tertulis beberapa informasi disini.
     m_image:
       Image: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Informasi ini sepertinya dapat membantu kita kedepannya!
     m_image:
       Image: {fileID: 0}

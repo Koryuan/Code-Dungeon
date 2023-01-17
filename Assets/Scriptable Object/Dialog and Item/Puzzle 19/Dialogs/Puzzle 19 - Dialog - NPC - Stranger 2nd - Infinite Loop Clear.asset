@@ -13,8 +13,44 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - Stranger 2nd - Infinite Loop Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: It fixed right?
+  - name: ' <color=#565950>Stranger</color>'
+    text: Bagaimana? Apakah sudah selesai?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ya, ini semua berkat bantuan mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: ' <color=#565950>Stranger</color>'
+    text: Heh, aku ini memang dapat diandalkan di saat genting.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: ' <color=#565950>Stranger</color>'
+    text: Jangan meragukan bantuan ku lagi kedepannya. Siapa tahu lain kali aku yang
+      akan membukakan jalan untuk mu sepenuhnya! HAHAHAHA.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Aku tidak tahan dengan orang ini.)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Aku juga, tetapi bantuannya memang membantu kita selama ini.)
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Puzzle 2 - Dialog - Trigger Enter - Tablet request
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Hei ngomong - ngomong, apakah kamu melihat orang lain semenjak sadar diri?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Tidak. Sudah ku katakan bahwa tepat setelah aku terbangung, aku langsung
       menemukan mu di ruang sebelah.
     m_image:
@@ -28,14 +28,14 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Oh...
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Aku ingin meminta tolong 1 hal lagi. Jika kita bertemu dengan orang dalam
       perjalanan ini, tolong jangan beritahu keberadaan ku.
     m_image:
@@ -43,28 +43,44 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: .....
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Kenapa begitu?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
-    text: Aku takut mereka akan menyimpan diri ku lagi  selamanya.
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: Aku tidak percaya kepada orang lain.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: Kemungkinan jika mereka  melihat benda seperti ku berbicara, mereka akan
+      mencoba untuk menangkap ku.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: Ada kemungkinan aku dibuat tidur lagi dan disimpan selamanya. Ini kesempatan
+      emas bagiku untuk pergi juga dari tempat ini!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
     text: Baiklah.
     m_image:
       Image: {fileID: 0}

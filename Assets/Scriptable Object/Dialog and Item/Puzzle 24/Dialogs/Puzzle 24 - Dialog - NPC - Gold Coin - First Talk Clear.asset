@@ -13,8 +13,15 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Gold Coin - First Talk Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Gold Coin 1st talk - Done
+  - name: Armory Guard
+    text: Aku disini menjaga dan merawat perlengkapan yang ada agar selalu siap digunakan.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Siapa tahu kapan lagi kita akan membutuhkan perlengkapan seperti ini.
     m_image:
       Image: {fileID: 0}
       Width: 0
