@@ -94,6 +94,7 @@ public class HelpMenu : MonoBehaviour, IPanelUI
             m_ui.UpdateSetting(m_contains[m_contains.Count - 1].Settings);
             m_contains[m_contains.Count - 1].Select();
             m_contains[m_contains.Count-1].SetHighlight(true);
+            m_ui.UpdateScrollBar(m_contains[m_contains.Count - 1].ContainerTransform);
         }
 
         Debug.Log("Help Menu: Opened");
