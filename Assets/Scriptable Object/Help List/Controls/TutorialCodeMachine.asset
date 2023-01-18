@@ -20,6 +20,8 @@ MonoBehaviour:
   - m_text: Ketika tidak ada error pada Code Machine, maka tombol Print atau Input
       akan dapat di tekan.
     m_image: {fileID: 21300000, guid: 194081ba28bfaad4e885bdaa637e7a48, type: 3}
-  - m_text: Ketika tidak ada error pada Code Machine, maka tombol Print atau Input
-      akan dapat di tekan.
+  - m_text: 'Print dijalankan dengan tombol X, jika hanya ada "PRINT" pada kode.
+
+      Input
+      dijalankan dengan tombol C, jika ada "INPUT" pada kode.'
     m_image: {fileID: 21300000, guid: 194081ba28bfaad4e885bdaa637e7a48, type: 3}

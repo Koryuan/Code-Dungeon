@@ -21,10 +21,6 @@ MonoBehaviour:
 
       AND, OR, dan NOT'
     m_image: {fileID: 21300000, guid: 42ff3c504844b7b4da7352f0a1f4491f, type: 3}
-  - m_text: 'Logical operators ini terdiri dari 3 jenis;
-
-      AND, OR, dan NOT'
-    m_image: {fileID: 21300000, guid: 86eb22a787c171144bd920b2a243768b, type: 3}
   - m_text: 'AND akan menghasilkan nilai TRUE hanya jika seluruh Relational Expressions
       menghasilkan nilai TRUE. '
     m_image: {fileID: 21300000, guid: b79c521a2ff7b5c4aac18b82e9d796f5, type: 3}

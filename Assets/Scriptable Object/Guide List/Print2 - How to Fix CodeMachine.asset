@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Print2 - How to Fix CodeMachine
   m_EditorClassIdentifier: 
   guideImage:
+  - {fileID: 21300000, guid: b97089e000aa93d4182d33c6e9491014, type: 3}
   - {fileID: 21300000, guid: a251bbc38c6b1304c9d181e5337ee25b, type: 3}
   - {fileID: 21300000, guid: 143c59fe5ac0844428ee99c5e7958f84, type: 3}
   - {fileID: 21300000, guid: bf94cbf6d99a00f41b0a33dc17bc6be6, type: 3}

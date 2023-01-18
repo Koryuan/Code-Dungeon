@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: Fix Code Machine
   m_Settings:
-  - m_text: Akan ada Code Machine yang perlu perbaikan langsung dari Kode ataupun
-      melalui Input
+  - m_text: Kontrol penting yang diperlukan saat memperbaiki Code Machine
+    m_image: {fileID: 21300000, guid: b97089e000aa93d4182d33c6e9491014, type: 3}
+  - m_text: Akan ada Code Machine yang perlu perbaikan langsung dari Kode agar bisa
+      di Print atau Input
     m_image: {fileID: 21300000, guid: a251bbc38c6b1304c9d181e5337ee25b, type: 3}
-  - m_text: Mesin kemudian juga akan mengeluarkan hasil yang sesuai dengan apa yang
-      di isi.
+  - m_text: Untuk itu, player harus melengkapi atau memperbaiki Kotak biru yang ada
+      dalam kode. Setelah itu, print atau input dapat dijalankan.
     m_image: {fileID: 21300000, guid: 143c59fe5ac0844428ee99c5e7958f84, type: 3}
   - m_text: 'Tetapi jika hasil yang dikeluarkan Code Machine belum benar, maka output
       yang keluar dari Code Machine akan berwarna merah. '
@@ -32,6 +34,5 @@ MonoBehaviour:
       Error
     m_image: {fileID: 21300000, guid: fbe724c15890f684cb4d5e319e30e1b2, type: 3}
   - m_text: Jika hasil output sudah benar, warna teks yang dikeluarkan pada Code
-      Machine akan menjadi hijau dan kode menjadi biru. Puzzle pada tempat tertentu
-      juga terselesaikan.
+      Machine akan menjadi hijau. Puzzle pada tempat tertentu juga terselesaikan.
     m_image: {fileID: 21300000, guid: da6a0470ab4d32c49890b7b28bf65606, type: 3}
