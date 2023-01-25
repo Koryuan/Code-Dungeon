@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Tutorial - Dialog - Tablet - Tablet Interaction
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apa ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: <color=#17e841>*beep</color>
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ternyata bisa menyala. Mungkin ada peta disini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: Hei! Jangan sentuh aku sembarangan!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: AAAAHH! Ampuni aku!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: Hei, Tenang! Aku belum melakukan apa - apa kepada mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: 'Ah...
+
+      Maaf, aku tidak pernah bertemu dengan benda yang dapat berbicara.'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: Apa yang kau lakukan disini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku tidak mengingat bagaimana aku bisa disini. Aku baru saja terbangun
+      di ruang sebelah dan sekarang ingin mencari jalan keluar.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: Oh...
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Maaf telah mebangunkan mu, tetapi kalau tidak ada kepentingan lain, aku
+      sebaiknya bergegas pergi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: Hei, bawa aku dengan mu! Aku mungkin dapat membantu mu keluar dari sini!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Bagaimana kau dapat membantu ku? Apa kau tau tentang tempat ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: Err.. Tidak? Tetapi lebih baik aku mengikuti mu daripada tertidur lagi
+      di lantai.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Benda Asing</b></color>
+    text: 'Lagipula bukan 2 kepala lebih baik daripada 1 kepala? Aku dapat membantu
+      mu mencari jalan keluar!
+
+
+      Mungkin.'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kau terdengar sangat tidak yakin, tetapi baiklah. Aku akan membawa mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ngomong - ngomong, kau harus ku panggil apa?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: Panggil saja aku Tablet
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

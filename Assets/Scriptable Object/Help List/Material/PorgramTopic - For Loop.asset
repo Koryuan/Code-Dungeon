@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: PorgramTopic - For Loop
+  m_EditorClassIdentifier: 
+  m_name: For Loop
+  m_Settings:
+  - m_text: <b>Looping</b> digunakan dalam pemrograman untuk melakukan hal yang sama
+      berulang - ulang.
+    m_image: {fileID: 21300000, guid: 1a5c6755a18ba004681c04517a1d3b89, type: 3}
+  - m_text: <b>FOR</b> Loop adalah pengulangan yang dilakukan secara perhitungan,
+      artinya jumlah pengulangan yang akan dilakukan oleh FOR harus spesifik.
+    m_image: {fileID: 21300000, guid: 1a5c6755a18ba004681c04517a1d3b89, type: 3}
+  - m_text: Untuk mengetahui cara kerja for lebih detail, perhatikan gambar
+    m_image: {fileID: 21300000, guid: 1a5c6755a18ba004681c04517a1d3b89, type: 3}
+  - m_text: Cara penulisannya bisa dilihat pada gambar
+    m_image: {fileID: 21300000, guid: fee4a689cbf336048b58b7001c0aab31, type: 3}
+  - m_text: Untuk dengan mudah memahami For loop, lebih baik dengan dilakukan simulasi
+      1 per 1.
+    m_image: {fileID: 21300000, guid: fee4a689cbf336048b58b7001c0aab31, type: 3}
+  - m_text: Count masih bernilai 1 dan belum sampai 5, oleh karena itu kode didalam
+      masih dijalankan.
+    m_image: {fileID: 21300000, guid: ebcb381d9e4241445aa204435a03b562, type: 3}
+  - m_text: Setelah di print, NEXT Count akan menambah nilai Count menjadi 2
+    m_image: {fileID: 21300000, guid: b071daf638c3721488fab9035ccfc1bd, type: 3}
+  - m_text: 'Count yang sekarang bernilai 2, dan masih belum mencapai 5. Maka dari
+      itu, Print  akan dilakukan '
+    m_image: {fileID: 21300000, guid: f5cb02111459efb41958dd455014c487, type: 3}
+  - m_text: 'Sekarang output menjadi 1 dan 2 secara berbaris. '
+    m_image: {fileID: 21300000, guid: 9af7791ffb93b274ba67c20a5932ba6d, type: 3}
+  - m_text: NEXT Count kemudian dijalankan dan nilai Count menjadi 3
+    m_image: {fileID: 21300000, guid: 1122ef322a5f3df46931aac433f24504, type: 3}
+  - m_text: 'Hal yang sama terjadi pada saat Count masih 1 dan 2. '
+    m_image: {fileID: 21300000, guid: 466390002f0d53a4f8a74230e0347b3a, type: 3}
+  - m_text: Sampai Count menuju 5, hal yang sama akan dijalankan terus menerus dan
+      berhenti ketika Count sudah sampai 5.
+    m_image: {fileID: 21300000, guid: da4f6d8999eae5847a291ee7972e8e37, type: 3}
+  - m_text: 'Polanya adalah: Count sudah 5? Jika belum, Print nilai Count sekarang
+      dan tambahkan. Jika sudah Print nilai Count dan akhiri.'
+    m_image: {fileID: 21300000, guid: da4f6d8999eae5847a291ee7972e8e37, type: 3}
+  - m_text: Dalam Code Machine,  hasilnya kurang lebih akan menjadi seperti ini
+    m_image: {fileID: 21300000, guid: f49062ac015037f4fb58d03d6cdf6e47, type: 3}

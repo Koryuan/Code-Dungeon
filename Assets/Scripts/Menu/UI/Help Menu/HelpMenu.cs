@@ -85,13 +85,16 @@ public class HelpMenu : MonoBehaviour, IPanelUI
         if (m_ui.Open || !canOpen) return;
 
         m_menuManager.OpenMenu(this,null);
+
+        foreach (HelpContain contain in m_contains) contain.SetHighlight(false);
         m_ui.OpenPanel(true);
 
         if (m_contains.Count > 0)
         {
-            m_ui.UpdateSetting(m_contains[0].Settings);
-            m_contains[0].Select();
-            m_contains[0].SetHighlight(true);
+            m_ui.UpdateSetting(m_contains[m_contains.Count - 1].Settings);
+            m_contains[m_contains.Count - 1].Select();
+            m_contains[m_contains.Count-1].SetHighlight(true);
+            m_ui.UpdateScrollBar(m_contains[m_contains.Count - 1].ContainerTransform);
         }
 
         Debug.Log("Help Menu: Opened");

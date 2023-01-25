@@ -13,8 +13,53 @@ MonoBehaviour:
   m_Name: Puzzle _ - Dialog - NPC - Stranger 3 - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: First Talk
+  - name: <color=#565950>Stranger</color>
+    text: Hmm, apakah kamu sudah selesai menyelesaikan tantangan disini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Daripada bertanya seperti itu kenapa kau tidak membantu ku menyelesaikan
+      tantangan lainnya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Hei, bukankah aku sudah membantu mu selama ini? Kita sudah mengerjakan
+      bagian kita masing - masing bukan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kau... Apa kau berniat untuk keluar dari sini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Tentu saja, namun aku tidak akan menganggu mu dalam menyelesaikan tantangan
+      disini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Oleh karena itu aku memilih diam dan melihat - lihat saja.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Alasan mu terlalu banyak.
     m_image:
       Image: {fileID: 0}
       Width: 0

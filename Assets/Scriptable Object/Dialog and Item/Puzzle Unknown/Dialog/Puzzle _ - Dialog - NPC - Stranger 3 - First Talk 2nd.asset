@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle _ - Dialog - NPC - Stranger 3 - First Talk 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: First Talk - Clear
+  - name: <color=#565950>Stranger</color>
+    text: Aku hanya melihat - lihat ruangan ini saja. Omong - omong, ruangan disebelah
+      seharusnya jalan keluar dari lantai ini. Semangatlah.
     m_image:
       Image: {fileID: 0}
       Width: 0

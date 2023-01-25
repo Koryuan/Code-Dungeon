@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ContainInputField : MonoBehaviour
@@ -71,4 +72,13 @@ public class ContainInputField : MonoBehaviour
 
     public int Index = -1;
     public List<InputData> InputList = new List<InputData>();
+}
+
+[Serializable] public struct InputField
+{
+    public TMP_InputField Input;
+    public TMP_Text Text;
+    public string Target;
+
+    public bool ReachTarget() => Input.text.Replace(StringList.HTML_Underline_Front, string.Empty) == Target;
 }

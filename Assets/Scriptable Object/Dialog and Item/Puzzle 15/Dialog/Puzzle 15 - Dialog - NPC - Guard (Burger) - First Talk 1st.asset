@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger) - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Permisi, bolehkah kalian membukakan pintu ini untukku?
     m_image:
       Image: {fileID: 0}
@@ -21,13 +21,13 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Guard B
-    text: Apa keperluan mu untuk  melewati Pintu ini?
+    text: Apa keperluan mu untuk  melewati pintu ini?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Aku terjebak disini dan ingin mencari jalan keluar
     m_image:
       Image: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Bagaimana kamu tahu?
     m_image:
       Image: {fileID: 0}
@@ -55,15 +55,31 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
-    text: (Tidak mungkin.)Tolong lah. Aku harus melewati tempat ini
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Hmm, kita tidak dapat mengonfirmasi hal tersebut. Bagaimana pun juga kita
+      perlu melewati pintu ini).
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Guard B
-    text: Sudah cukup. Pergi dari sini sekarang!
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Aku tahu).
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku tetap ingin melewati pintu ini. Bagaimana jika kau tetap membukakan
+      pintu ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Argumen mu sangat sempurna, kawan).
     m_image:
       Image: {fileID: 0}
       Width: 0
@@ -84,7 +100,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Apa yang di rugikan jika kalian mengabuli permohonan ku?
     m_image:
       Image: {fileID: 0}
@@ -92,7 +108,15 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: Guard B
-    text: Sudah cukup. Pergi dari sini sekarang!
+    text: Waktu dan tenaga karena harus mengikuti omong kosong mu, yang setelah dipikir
+      - pikir sudah aku habiskan karena mendengarkan mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Sekarang jangan ganggu kami.
     m_image:
       Image: {fileID: 0}
       Width: 0

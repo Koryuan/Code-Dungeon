@@ -13,8 +13,22 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - While Explanation - First Talk 2nd
   m_EditorClassIdentifier: 
   dialogs:
+  - name: NPC W
+    text: Ini catatan yang ditinggalkan untuk Mesin disamping. Selamat mencoba!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: 
-    text: Explanation clear
+    text: WHILE adalah Looping yang pengulangannya di atur dengan kondisi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Selama kondisinya belum tercapai, maka pengulangan akan terus berjalan.
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -13,8 +13,57 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Silver Coin Convert to Silver 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Silver coint convert to silver
+  - name: <color=#176be8><b>Player</b></color>
+    text: Hallo. Aku ingin meminta tolong
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Apa yang bisa kubantu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku memiliki koin perunggu ini. Apakah bisa ditukarkan dengan barang lain?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Itu saja?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Tidak terlalu berat bukan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Tentu saja tidak! Tunggu sebentar
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Ini ambilah!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Terima kasih banyak
     m_image:
       Image: {fileID: 0}
       Width: 0

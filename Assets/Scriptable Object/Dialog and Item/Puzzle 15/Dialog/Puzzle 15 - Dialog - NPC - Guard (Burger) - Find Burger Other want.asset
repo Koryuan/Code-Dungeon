@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger) - Find Burger Other want
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: AAAAAA
+  - name: Guard T
+    text: Hei! Apa yang kau lakukan!?
     m_image:
       Image: {fileID: 0}
       Width: 0

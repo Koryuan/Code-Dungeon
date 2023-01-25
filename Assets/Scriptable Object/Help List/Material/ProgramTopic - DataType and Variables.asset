@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: ProgramTopic - DataType and Variables
+  m_EditorClassIdentifier: 
+  m_name: Data Type and Variable
+  m_Settings:
+  - m_text: <b>Data type</b> adalah klasifikasi yang menentukan suatu jenis data.
+      Data tersebut kemudian ditampung atau disimpan pada suatu <b>Variabel</b>.
+    m_image: {fileID: 21300000, guid: 6a9f5537c10fa164daff07b5593fee2d, type: 3}
+  - m_text: Variabel akan diberikan nama atau identifier, dan kemudian diberikan
+      suatu nilai atau data.
+    m_image: {fileID: 21300000, guid: 0d3d5a1226b1a5f48919f1a71f3fbd3c, type: 3}
+  - m_text: Untuk melakukan print untuk Variabel, cukup dengan memangil identifier
+      atau nama variabel itu sendiri. Hasil dari Print ini adalah nilai yang diberikan
+      kepada Variabel tersebut
+    m_image: {fileID: 21300000, guid: f125b5e0edc52184eaaf7ef52266fab1, type: 3}
+  - m_text: Print pada variabel dapat di gabungkan dengan teks biasa.
+    m_image: {fileID: 21300000, guid: a007e8d6587a4b84ab8e9dd34ea8faa9, type: 3}
+  - m_text: Data Type dari suatu variabel tergantung pada nilai yang ada di dalamnya.
+    m_image: {fileID: 21300000, guid: e0526714a0d0c3a43b22bd109d04a1ee, type: 3}
+  - m_text: 'Integer(INT) digunakan untuk bilangan bulat (negatif ataupun positif)
+
+      Contoh
+      lain seperti: -5, 123, 0'
+    m_image: {fileID: 21300000, guid: e0526714a0d0c3a43b22bd109d04a1ee, type: 3}
+  - m_text: 'Float digunakan untuk bilangan riil (negatif ataupun positif)
+
+      Contoh
+      lain seperti: 1.1, -1.0, 382.0, 12.125'
+    m_image: {fileID: 21300000, guid: e0526714a0d0c3a43b22bd109d04a1ee, type: 3}
+  - m_text: 'Boolean hanya menyimpan nilai True atau False. <b>Harus di perhatikan,
+      tidak ada tanda kutip dalam kode</b>.
+
+'
+    m_image: {fileID: 21300000, guid: e0526714a0d0c3a43b22bd109d04a1ee, type: 3}
+  - m_text: "Char digunakan untuk 1 karakter baik huruf, angka, ataupun simbol\r.
+      \n*Angka dari char berbeda dengan Integer dan Float\nContoh lain seperti: \"c\",
+      \"A\", \"X\", \"\xA3\", \"6\""
+    m_image: {fileID: 21300000, guid: e0526714a0d0c3a43b22bd109d04a1ee, type: 3}
+  - m_text: 'String(STR) adalah kumpulan dari Data Type char untuk membentuk kata
+      ataupun kalimat.
+
+      Contoh lain seperti: "Hello", "1$34A", "ninety-four"'
+    m_image: {fileID: 21300000, guid: e0526714a0d0c3a43b22bd109d04a1ee, type: 3}

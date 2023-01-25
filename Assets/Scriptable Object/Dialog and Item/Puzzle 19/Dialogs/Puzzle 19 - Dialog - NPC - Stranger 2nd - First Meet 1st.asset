@@ -13,8 +13,51 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - Stranger 2nd - First Meet 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: Ketemu lagi - 1st
+  - name: <color=#565950>Stranger</color>
+    text: Hmm, lukisan ini sama seperti dengan lukisan di ruang sebelumnya
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apakah itu menandakan sesuatu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Aku tidak yakin.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kalau begitu sebaiknya tidak usah kita pikirkan
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Jangan selalu gegabah dalam mengambil keputusan. Kenapa kau tidak berkeliling
+      saja di sekitar tempat ini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Jika aku menemukan sesuatu, akan ku beritahu dirimu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Oh iya, jika kau butuh sesuatu jangan sungkan untuk mencari ku.
     m_image:
       Image: {fileID: 0}
       Width: 0

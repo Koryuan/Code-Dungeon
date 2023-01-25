@@ -13,8 +13,67 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Gold Coin - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Gold Coin 1st talk
+  - name: Armory Guard
+    text: Hai! Apa yang dapat ku bantu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Tempat apa ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Ini adalah gudang persenjataan dimana kami menyimpan berbagai perlengkapan
+      untuk bertarung!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Saat ini, ada monster liar yang berkeliaran. Jadi seluruh perlengkapan
+      harus dijaga dengan baik!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Armory Guard
+    text: Aku disini menjaga dan merawat perlengkapan yang ada agar selalu siap digunakan.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Menurut mu, apa kita dapat mengambil salah satu senjata ini?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Untuk apa? Aku tidak bisa bertarung dengan monster liar)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Bukan untuk melawan monster, dasar penakut! Maksud ku untuk perjalanan
+      kita kedepannya!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Akan ku pikirkan selama masih di ruang ini)
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -13,8 +13,22 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - While Explanation - Print 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Thanks for the help
+  - name: NPC W
+    text: Terbuka! Kau memang luar biasa! Terima kasih banyak atas bantuan mu!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC W
+    text: Tunggu, jika aku bukakan bagaimana dengan bahaya yang berkeliaran??
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC W
+    text: ...Aku tidak akan dimarahi kan?
     m_image:
       Image: {fileID: 0}
       Width: 0

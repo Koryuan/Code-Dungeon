@@ -13,36 +13,79 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Fairy Essence) - Find Essence 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: Permisi, bisakah kau membukakan pintu ini?
+  - name: <color=#176be8><b>Player</b></color>
+    text: P-permisi, aku memiliki ini untuk mu
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Guard T
-    text: .....
+    text: ......
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
-    text: Permisi, apakah kau-
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Hei, mental ku tidak kuat berhadapan dengannya! Apa lagi yang harus ku
+      lakukan?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Kenapa kau takut sekali? Tegakkan diri mu dan tanya lagi)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Kau pikir ini mudah? Kenapa tidak kau saja yang berbicara padanya?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Kau sudah gila? Apakah kau sudah lupa dengan perjanjian kita?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Daripada perjanjian, itu hanya aku berbaik hati mengabuli permohonan mu!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Kau ini keter-)
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: Guard T
-    text: Pergi dari hadapan kami sekarang
+    text: Terima kasih.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
-    text: O-ok, maaf mengganggu.
+  - name: <color=#176be8><b>Player</b></color>
+    text: Eh?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ah, iya sama - sama
     m_image:
       Image: {fileID: 0}
       Width: 0

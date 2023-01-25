@@ -13,8 +13,54 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Silver Coin First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Silver coint 1st talk
+  - name: Silver Collector
+    text: Ha!! Terima kasih! Terima kasih sudah membukakan pintu ini untukku!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Aku mendengar ada monster berkeliaran, jadi aku segera bersembunyi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Tetapi tidak disangka dalam proses penangkapan monster tersebut, semua
+      pintu segera dikunci oleh penjaga lain agar monster tidak dapat bersembunyi
+      di banyak tempat
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Dan kau juga ikut terkunci disini. Aku paham situasi mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Silver Collector
+    text: Kau adalah penyelamat! Jika kau memiliki keperluan, datang saja kepada
+      ku. Akan ku usahakan sebisa ku untuk membantu mu!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Apa yang dapat ku minta dari seseorang seperti dia?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Aku tidak yakin, tetapi tidaklah buruk memiliki orang yang berutang budi
+      kepada kita bukan?)
     m_image:
       Image: {fileID: 0}
       Width: 0

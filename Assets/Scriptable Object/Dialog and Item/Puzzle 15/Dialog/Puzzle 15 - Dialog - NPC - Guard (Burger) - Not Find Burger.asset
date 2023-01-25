@@ -13,8 +13,66 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger) - Not Find Burger
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: AAAAAA
+  - name: Guard B
+    text: Jadi, apa yang akan kau berikan untuk ku?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku masih sedang mencarikan sesuatu yang pantas untuk mu
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Jadi kau tidak memiliki apa-apa untuk ku?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Ini gawat! Cepat pikirkan sesuatu untuk menjawabnya!)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku BELUM menyiapkan apa - apa untuk mu. Tetapi akan segera ku siapkan
+      jika aku menemukannya!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Oh kau pikir kau dapat kabur sekarang? Aku tidak yakin dapat membiarkan
+      mu pergi sesuka hati mu
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Sebentar! Aku serius!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Oh aku juga serius.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '*Penjaga kemudian menangkap player'
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: ProgramTopic - Arithmetic
+  m_EditorClassIdentifier: 
+  m_name: Arithmetic Operators
+  m_Settings:
+  - m_text: 'Untuk melakukan kalkulasi pada data, ada yang namanya <b>Arithmetic
+      Operator</b>. '
+    m_image: {fileID: 21300000, guid: cd1112a22aa4b8c4c9bae3ab068d6688, type: 3}
+  - m_text: 'Arithmetic Operators dasar dalam pemrograman adalah pertambahan "+",
+      pengurangan "-", perkalian "*", dan pembagian "/". '
+    m_image: {fileID: 21300000, guid: cd1112a22aa4b8c4c9bae3ab068d6688, type: 3}
+  - m_text: Dalam gambar, Variable Score dibuat dengan nilai 9. Lalu variable tersebut
+      ditambahkan 1 (baris ke - 2).
+    m_image: {fileID: 21300000, guid: cd1112a22aa4b8c4c9bae3ab068d6688, type: 3}
+  - m_text: Hasil jika di Print, maka Code Machine akan mengeluarkan 10.
+    m_image: {fileID: 21300000, guid: 31afe6d91ef251e4a8ce911598f4c4dc, type: 3}
+  - m_text: Hal yang sama dapat dilakukan  dengan Arithmetic Operator lain, misalnya
+      pengurangan.
+    m_image: {fileID: 21300000, guid: 83195192ef7fcb94cacecf22822ec8d2, type: 3}
+  - m_text: Perhatikan juga nilai variable Score selama kode berjalan. Setelah melakukan
+      print pertama, Score kemudian diberikan nilai baru yaitu 3 * 2
+    m_image: {fileID: 21300000, guid: a1dd5770588faee4495855bc289b829f, type: 3}
+  - m_text: Layaknya matematika umum, ada urutan Arithmetic Operators yang harus
+      diselesaikan terlebih dahulu.
+    m_image: {fileID: 21300000, guid: 33ccfc05c887cd24a8dd413161010b70, type: 3}
+  - m_text: Urutan tersebut adalah dalam kurung -> pembagian -> perkalian -> pertambahan
+      - > pengurangan. Perhatikan nilai Score paling terakhir
+    m_image: {fileID: 21300000, guid: 33ccfc05c887cd24a8dd413161010b70, type: 3}
+  - m_text: Huruf besar dan kecil juga sangat berpengaruh pada dalam kode. Harus
+      teliti dalam penamaan dan penggunaan variabel.
+    m_image: {fileID: 21300000, guid: 4709e23cec432764b8bd1d6a5ae672d3, type: 3}
+  - m_text: '1 Arithmetic Operator yang tidak umum adalah Modulo (MOD). '
+    m_image: {fileID: 21300000, guid: 35656b922633eb44abba06f33328c404, type: 3}
+  - m_text: MOD akan mengambil sisa dari hasil pembagian. Contoh lain 11 MOD 5 adalah
+      1, 22 MOD 11 adalah 0, 5 MOD 9 adalah 9.
+    m_image: {fileID: 21300000, guid: 35656b922633eb44abba06f33328c404, type: 3}

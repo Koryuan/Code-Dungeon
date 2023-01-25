@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: <Help> terbuka di Menu Help.
-    m_image: {fileID: 0}
-    m_imageScaleWidth: 0
-    m_imageScaleHeight: 0
+    text: <Help> terbuka di Menu Help. Tekan tombol "H" pada keyboard.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

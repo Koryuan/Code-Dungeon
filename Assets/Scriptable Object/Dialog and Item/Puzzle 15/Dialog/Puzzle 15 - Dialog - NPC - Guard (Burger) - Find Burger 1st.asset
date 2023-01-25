@@ -13,8 +13,45 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger) - Find Burger 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: AAAAAA
+  - name: <color=#176be8><b>Player</b></color>
+    text: Hei, bagaimana jika kau membukakan pintu ini, aku akan memberikan mu masakan
+      ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: .....
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: .....Ada masalah?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: Kau pikir dengan memberikan ku makanan aku akan membukakan pintu ini? Apa
+      kau pikir aku semudah itu untuk dibeli? Dengan masakan??
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Jadi, kau tidak mau?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard B
+    text: ha... Baiklah, akan ku terima. Bagaimana pun makanan tetaplah makanan.
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -14,7 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Keypad Question
+    text: "HASIL = <color=#2ec766>A</color> + 40 MOD <color=#2ec766>B</color>\nIF
+      HASIL == 14 THEN \n   //Door Open\nELSEIF HASIL == 10THEN\n   //Chest Open"
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Masukkan nilai <color=#2ec766>A</color> dan <color=#2ec766>B</color> secara
+      berurutan pada Tombol disamping.
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1745001349053726201}
   - component: {fileID: 1745001349053726200}
   m_Layer: 0
-  m_Name: Puzzle 5 - Object - Password Teller - 1
+  m_Name: Object - No Auto Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,9 +129,11 @@ MonoBehaviour:
   printInteract: 0
   scanInteract: 0
   m_interactableAnimator: {fileID: 0}
+  openAtStart: 1
   eventList:
   - dialog: {fileID: 11400000, guid: 6d14db610abf18c4e9bf959654d05643, type: 2}
     item: {fileID: 0}
+    m_help: {fileID: 0}
     guide: {fileID: 0}
     eventAction:
       m_PersistentCalls:

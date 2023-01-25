@@ -20,7 +20,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Tidak masalah, apakah kamu terjebak disini juga?
     m_image:
       Image: {fileID: 0}
@@ -35,7 +35,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: ....Jadi, apa kamu mengetahui sesuatu?
     m_image:
       Image: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Tentang jalan keluar dari tempat ini. Apakah kamu menemukan sesuatu selama
       berusaha keluar dari sini?
     m_image:
@@ -64,7 +64,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Lagi - lagi benda ini...
     m_image:
       Image: {fileID: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Tidak. Tolong berikan benda itu pada ku
     m_image:
       Image: {fileID: 0}

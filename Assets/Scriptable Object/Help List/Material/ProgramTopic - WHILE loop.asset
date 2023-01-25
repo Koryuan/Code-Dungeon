@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: ProgramTopic - WHILE loop
+  m_EditorClassIdentifier: 
+  m_name: WHILE Looping
+  m_Settings:
+  - m_text: WHILE adalah Looping yang pengulangannya di atur dengan kondisi.
+    m_image: {fileID: 21300000, guid: 6bdd0345f43cee34ab0e0c7affd90492, type: 3}
+  - m_text: Selama kondisinya belum tercapai, maka pengulangan akan terus berjalan.
+    m_image: {fileID: 21300000, guid: 6bdd0345f43cee34ab0e0c7affd90492, type: 3}
+  - m_text: Cara penulisannya dapat dilihat di gambar
+    m_image: {fileID: 21300000, guid: 77709186d523e914faa0c2bc2e8bf1b3, type: 3}
+  - m_text: Dimulai dengan WHILE, Kondisi loop (yaitu Count <= 5), isi kode yang
+      akan di ulang dalam Loop, dan di akhiri ENDWHILE
+    m_image: {fileID: 21300000, guid: ac673b7fdb5865f478b99cef852837ee, type: 3}
+  - m_text: Kita simulasikan Loop yang terjadi. Count pertama di berikan value 1
+    m_image: {fileID: 21300000, guid: dbbe91f3d5a00aa41849ad6a57fe4535, type: 3}
+  - m_text: Setelah itu, Count akan di cek dengan Kondisi yang ditentukan. Hasil
+      evaluasi Kondisi harus True
+    m_image: {fileID: 21300000, guid: dbbe91f3d5a00aa41849ad6a57fe4535, type: 3}
+  - m_text: Karena Count masih bernilai 1, maka isi kode akan dijalankan. Yaitu Print(Count)
+      dan Count = Count + 1.
+    m_image: {fileID: 21300000, guid: dbbe91f3d5a00aa41849ad6a57fe4535, type: 3}
+  - m_text: <b>Count = Count + 1 ini penting<b>!. Jika tidak ada atau salah, maka
+      Print(Count) akan terus dilakukan tanpa henti
+    m_image: {fileID: 21300000, guid: dbbe91f3d5a00aa41849ad6a57fe4535, type: 3}
+  - m_text: Kondisi yang berjalan tanpa henti ini disebut <b>infinite looping</b>.
+      Kondisi ini akan mengakibatkan error dalam Program.
+    m_image: {fileID: 21300000, guid: dbbe91f3d5a00aa41849ad6a57fe4535, type: 3}
+  - m_text: Setelah pengulangan 1 berakhir, Nilai Count menjadi 2. Karena Count <=
+      5 masih dievaluasi True, maka pengulangan akan terjadi lagi.
+    m_image: {fileID: 21300000, guid: dbbe91f3d5a00aa41849ad6a57fe4535, type: 3}
+  - m_text: Hasil output pada akhirnya menjadi 1, 2, 3, 4, dan 5 secara berbaris.
+    m_image: {fileID: 21300000, guid: dbbe91f3d5a00aa41849ad6a57fe4535, type: 3}

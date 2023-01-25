@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle 23 - Dialog - NPC - Headache Talk 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Headache Second Talk
+  - name: Pemimpin Peloton
+    text: Aku perlu obat untuk meringankan sakit kepala ku. Tolong bantuan mu sekali
+      lagi.
     m_image:
       Image: {fileID: 0}
       Width: 0

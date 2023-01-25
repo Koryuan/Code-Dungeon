@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -84,12 +85,14 @@ public class GuidePanel : MonoBehaviour
     }
 
     #region Enable Disable
-    private void OnEnable()
+    async private void OnEnable()
     {
+        await UniTask.WaitUntil(()=> InputReferences.Instance);
         nextInput.action.performed += NextContent;
     }
-    private void OnDisable()
+    async private void OnDisable()
     {
+        await UniTask.WaitUntil(() => InputReferences.Instance);
         nextInput.action.performed -= NextContent;
     }
     #endregion

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 14 - Dialog - Object - Clue
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: Ada kumpulan kertas lagi disini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kenapa banyak sekali kertas disini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '"Pengetahuan ku tidak dapat membantu ku lagi sekarang. Aku sudah melakukan
+      apapun yang dapat ku lakukan untuk memperbaikinya, namun sekarang aku sudah
+      kehabisan ide"'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '"Rekan ku juga sudah menyerah, dan ingin segera membiarkan Subject017
+      untuk mengurus sisanya. Subject017 sendiri masih dalam tahap pengembangan!"'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: '"Semua ini berantakan karena ulah dari para tester terkutuk. Kalau saja
+      tidak ada mereka, aku dapat mela-"'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Catatannya berhenti lagi
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: Apa ini? Catatan harian? Kenapa terdengar dramatis sekali
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Jika tidak berguna sebaiknya tidak kita pikirkan
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcd13532e5332a4ebabb93c70b695c2, type: 3}
+  m_Name: Print2 - How to Fix CodeMachine
+  m_EditorClassIdentifier: 
+  guideImage:
+  - {fileID: 21300000, guid: b97089e000aa93d4182d33c6e9491014, type: 3}
+  - {fileID: 21300000, guid: a251bbc38c6b1304c9d181e5337ee25b, type: 3}
+  - {fileID: 21300000, guid: 143c59fe5ac0844428ee99c5e7958f84, type: 3}
+  - {fileID: 21300000, guid: bf94cbf6d99a00f41b0a33dc17bc6be6, type: 3}
+  - {fileID: 21300000, guid: fbe724c15890f684cb4d5e319e30e1b2, type: 3}
+  - {fileID: 21300000, guid: da6a0470ab4d32c49890b7b28bf65606, type: 3}

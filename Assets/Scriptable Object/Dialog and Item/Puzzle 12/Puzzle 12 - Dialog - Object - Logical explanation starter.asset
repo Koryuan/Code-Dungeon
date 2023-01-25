@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Logical or Boolean operators berguna ketika kita ingin mengevaluasi beberapa
+    text: Logical atau Boolean operators berguna ketika kita ingin mengevaluasi beberapa
       ekspresi yang menggunakan Relational Operator (Relational Expressions)
     m_image:
       Image: {fileID: 0}
@@ -31,27 +31,27 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: 
-    text: AND akan menghasilkan nilai TRUE hanya jika seluruh Relational Expressions
-      menghasilkan nilai TRUE. Jika salah satu dari Relational Expression memiliki
-      nilai FALSE, maka Logical Operator AND akan memberikan nilai FALSE.
+    text: AND akan menghasilkan nilai True hanya jika seluruh Relational Expressions
+      menghasilkan nilai True. Jika salah satu dari Relational Expression memiliki
+      nilai False, maka Logical Operator AND akan memberikan nilai False.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: 
-    text: OR akan menghasilkan nilai TRUE jika salah satu dair Relational Expression
-      menghasilkan nilai TRUE. Jika seluruh Relational Expressions menghasilkan nilai
-      FALSE, maka Logical Operator OR akan memberikan nilai FALSE.
+    text: OR akan menghasilkan nilai True jika salah satu dari Relational Expression
+      menghasilkan nilai True. Jika seluruh Relational Expressions menghasilkan nilai
+      False, maka Logical Operator OR akan memberikan nilai False.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
   - name: 
-    text: NOT akan memberikan nilai TRUE jika hasil dari Relational Expression adalah
-      FALSE. Jika hasil dari Relational Expressions memberikan nilai TRUE, maka Logical
-      Operator NOT akan memberikan nilai FALSE.
+    text: NOT akan memberikan nilai True jika hasil dari Relational Expression adalah
+      False. Jika hasil dari Relational Expressions memberikan nilai True, maka Logical
+      Operator NOT akan memberikan nilai False.
     m_image:
       Image: {fileID: 0}
       Width: 0

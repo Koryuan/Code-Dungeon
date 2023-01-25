@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger) - Burger Given
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: AAAAAA
+  - name: Guard B
+    text: Aku mengerti, bukankah sudah kita bukakan pintu ini? Segera lewatilah.
+      Aku tidak akan peduli lagi dengan apa yang kau lakukan.
     m_image:
       Image: {fileID: 0}
       Width: 0

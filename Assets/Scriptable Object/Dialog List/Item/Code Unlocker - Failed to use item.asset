@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: There is no code machine to unlcok using this item.
+    text: Tidak ada Code Machine di dekat Player
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

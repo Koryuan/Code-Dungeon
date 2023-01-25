@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,11 +17,13 @@ public class MainMenu : MonoBehaviour, IPanelUI
     [SerializeField] private LoadingChannel m_loadingChannel;
 
     #region Initialization
-    private void Awake()
+    async private void Awake()
     {
         CheckReferences();
         InitializeUI();
         
+        await UniTask.WaitUntil(() => AudioManager.Instance);
+
         AudioManager.Instance.PlayBGMMainMenu();
         playerActionMap.Enable();
     }

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72acadfe88fece143be68e6968e3f005, type: 3}
   m_Name: Channel - Item
   m_EditorClassIdentifier: 
+  m_ListOfItem: {fileID: 11400000, guid: a7dcf60a9447fd840a45c2dd15ba9ca2, type: 2}

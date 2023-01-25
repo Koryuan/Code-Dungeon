@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Burger) - First Talk Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
-    text: AAAAAA
+  - name: Guard B
+    text: Bagaimana jika kau yang mengabuli permohonan ku untuk pergi dari hadapan
+      kami?
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -13,8 +13,30 @@ MonoBehaviour:
   m_Name: Puzzle 23 - Dialog - NPC - Spinning First Talk 1st 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: First talk
+  - name: Pemimpin Peloton
+    text: AAAAAHHHHH!!!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Ah! Hei kau! Tolong aku!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Mesin ini tiba - tiba berputar ketika aku ingin menyimpan kunci seluruh
+      ruangan!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Bantu aku mencari cara untuk mematikan mesin ini!
     m_image:
       Image: {fileID: 0}
       Width: 0

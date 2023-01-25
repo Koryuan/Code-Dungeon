@@ -13,8 +13,31 @@ MonoBehaviour:
   m_Name: Puzzle 23 - Dialog - NPC - Headache Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Headache First Talk
+  - name: Pemimpin Peloton
+    text: Uhh...
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apa kau baik - baik saja?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Tidak. Aku tidak baik - baik saja. Kepala ku sakit karena berputar terlalu
+      lama.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Seharusnya ada obat untuk sakit kepala di lantai ini. Tolong carikan aku
+      obat tersebut.
     m_image:
       Image: {fileID: 0}
       Width: 0

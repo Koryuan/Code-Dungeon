@@ -9,6 +9,8 @@ public class HelpChannel : ScriptableObject
     public event Action<HelpSettings> OnHelpInserted;
     public Func<HelpSettings, bool> OnHelpSearchRequested;
 
+    [SerializeField] private HelpList m_helpList;
+
     public HelpSettings[] RaiseHelpListRequested()
     {
         if (OnHelpListRequested == null) return null;
@@ -22,5 +24,11 @@ public class HelpChannel : ScriptableObject
     {
         if (OnHelpSearchRequested == null) return false;
         return OnHelpSearchRequested.Invoke(SearchedSetting);
+    }
+
+    public HelpSettings[] RaiseListOfHelpSetting(string[] IDList)
+    {
+        if (!m_helpList) return null;
+        return m_helpList.GetHelpList(IDList);
     }
 }

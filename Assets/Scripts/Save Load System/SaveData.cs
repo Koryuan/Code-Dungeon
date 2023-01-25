@@ -6,8 +6,8 @@ public class SaveData
 {
     // Showned Data in Save/Load Menu
     public SceneType LastScene = SceneType.None;
-    public List<Item> _ItemList = new List<Item>();
-    public List<HelpSettings> HelpList = new List<HelpSettings>();
+    public List<string> _ItemList = new List<string>();
+    public List<string> HelpList = new List<string>();
 
     // Player Data
     public Vector3 PlayerLastPosition = new Vector3();

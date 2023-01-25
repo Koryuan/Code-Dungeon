@@ -13,8 +13,60 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - While Explanation - Print 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Why it infinte loop?
+  - name: NPC W
+    text: Apa yang terjadi?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Sepertinya ada bagian dari mesin ini yang rusak.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC W
+    text: Kenapa hal tersebut bisa terjadi, aku tidak membuka mesin ini sama sekali
+      sampai kau datang.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Biarkan aku pikirkan cara untuk  membukanya. Tenanglah aku sudah sering
+      menemukan masalah seperti ini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC W
+    text: Oh.. Baiklah.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Ada ide?)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Tidak, tetapi mungkin <color=#565950>orang itu</color> dapat membantu
+      kita.)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Sebaiknya aku mencarinya sekarang. Seharusnya masih di tempat yang sama)
     m_image:
       Image: {fileID: 0}
       Width: 0

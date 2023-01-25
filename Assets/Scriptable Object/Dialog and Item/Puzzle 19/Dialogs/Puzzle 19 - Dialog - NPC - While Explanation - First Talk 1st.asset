@@ -13,8 +13,73 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - While Explanation - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
+  - name: NPC W
+    text: Hai! Apa yang kau lakukan disini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Orang ini terdengar lebih ramah dari yang lain)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku ingin memasuki ruang ini. Bolehkah aku melewatinya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC W
+    text: Hmm, ada berita mengenai bahaya yang berkeliaran di lantai ini. Jadi banyak
+      penjaga yang di tugaskan untuk mengunci seluruh ruang penting.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC W
+    text: Aku diberikan catatan ini di saat aku perlu membuka ruangan ini. Tetapi
+      aku tidak mengerti. Mungkin kau dapat memahaminya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
   - name: 
-    text: Explanation
+    text: WHILE adalah Looping yang pengulangannya di atur dengan kondisi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Selama kondisinya belum tercapai, maka pengulangan akan terus berjalan.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (sebaiknya kita catat informasi ini.)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Terima kasih atas informasinya. Biarkan aku mencobanya sekarang
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 'NPC W '
+    text: Baiklah, akan ku nyalakan mesinnya. Selamat mencoba!
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -13,39 +13,53 @@ MonoBehaviour:
   m_Name: Puzzle 3 - Dialog - NPC - Stranger - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: 'Hei kamu!
-
-      Sepertinya kamu juga bisa menyelesaikan teka - teki sebelumnya.'
+  - name: <color=#565950>Stranger</color>
+    text: ...
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#565950>Stranger</color>
+    text: AH! Ada orang lain!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: 'Hei kamu!
+
+      Apakah kamu juga melewati teka - teki untuk sampai ke
+      sini?'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
     text: Apakah kau juga bisa sampai kesini dengan melewati teka - teki yang sama?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Aku tidak tahu apakah kita dihadapkan dengan teka - teki yang sama atau
-      tidak, tetapi satu hal yang pasti sekarang kau terjebak bersama disini bersama
-      ku.
+      tidak, tetapi satu hal yang pasti sekarang aku kehabisan ide.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Apa maksud mu?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Kau lihat 2 mesin disana yang terlihat <color=#fbff03><b>sama</b></color>?
       Meskipun sekilas terlihat sama namun satu diantaranya tidak dapat melakukan
       apapun.
@@ -54,28 +68,28 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Apa menurut mu yang harus kita lakukan?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: hmm..
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Aku tidak yakin. Apakah tidak ada petunjuk di sekitar sini?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: <color=#565950>Stranger</color>
     text: Jika ada, aku pasti sudah menemukannya. Hanya ada kau, aku, dan 2 mesin
       tersebut.
     m_image:

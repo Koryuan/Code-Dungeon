@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: Puzzle _ - Dialog - NPC - Do While Explanation - First Talk Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: First Talk - Clear
+  - name: Librarian
+    text: '"Do While melakukan evaluasi kondisi sesudah kode dalam pengulangan dijalankan."'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Librarian
+    text: '"Berbeda dengan While loop biasa dimana kondisi pengulangan di evaluasi
+      terlebih dahulu sebelum kode dijalankan."'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Librarian
+    text: Berarti pengulangan dengan Do While memastikan kode di dalam loop akan
+      dijalankan sekali.
     m_image:
       Image: {fileID: 0}
       Width: 0

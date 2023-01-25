@@ -13,8 +13,117 @@ MonoBehaviour:
   m_Name: Puzzle 22 - Dialog - NPC - For Step Explenation 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: For/Step Explanation
+  - name: Intellect
+    text: Hei, kau!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Iya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Aku perlu bantuan mu
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apa yang bisa ku bantu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Aku perlu kau untuk menyelesaikan mesin disamping.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Mesin itu terhubung dengan jebakan yang ku buat khusus untuk penyelinap.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Tetapi karena situasi berubah, tidak ada cara lain untuk segera menggunakannya.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kenapa  tidak kau aktifkan sendiri?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Apa kau gila? Aku perlu menjaga tempat ini jika monster di dalam keluar.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Aku sendiri tidak tahu akan tahan berapa lama lagi. Seandainya bantuan
+      datang pun tidak menutup kemungkinan akan ada korban.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Dengarkan aku baik - baik, dalam FOR Loop, ada yang dinamakan STEP.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: STEP ini memungkinkan kita untuk melewati beberapa pengulangan sebanyak
+      jumlah STEP
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Mesin disamping memerlukan FOR loop dan STEP untuk dapat dijalankan dengan
+      benar
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Tunggu, kenapa tidak kau beritahu saja kepada ku langsung jawabannya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: 'Sudah lama sekali aku tidak menyentuh mesin itu, masih beruntung aku mengingat
+      apa yang penting untuk menyelesaikannya. '
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Intellect
+    text: Pergilah!
     m_image:
       Image: {fileID: 0}
       Width: 0

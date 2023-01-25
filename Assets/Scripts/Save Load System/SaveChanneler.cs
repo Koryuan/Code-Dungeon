@@ -16,7 +16,7 @@ public class SaveChanneler : MonoBehaviour
         m_helpChannel.OnHelpListRequested += OnRequestHelpList;
 
         // Item Channel
-        m_itemChannel.OnItemInserted += SaveLoadSystem.Instance._SaveData._ItemList.Add;
+        m_itemChannel.OnItemInserted += OnItemInsert;
         m_itemChannel.OnItemListRequested += OnRequestItemList;
         m_itemChannel.OnItemRemoved += RemoveItemFromList;
 
@@ -60,15 +60,17 @@ public class SaveChanneler : MonoBehaviour
     #region Item
     private void OnItemInsert(Item NewItem)
     {
-
+        if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return;
+        if (SaveLoadSystem.Instance._SaveData._ItemList.Contains(NewItem.name)) return;
+        SaveLoadSystem.Instance._SaveData._ItemList.Add(NewItem.ItemName);
     }
-    private void RemoveItemFromList(Item RemovedItem) => SaveLoadSystem.Instance._SaveData._ItemList.Remove(RemovedItem);
+    private void RemoveItemFromList(Item RemovedItem) => SaveLoadSystem.Instance._SaveData._ItemList.Remove(RemovedItem.ItemName);
     private Item[] OnRequestItemList()
     {
         if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
 
         //Debug.Log($"{name}, send item list data");
-        return SaveLoadSystem.Instance._SaveData._ItemList.ToArray();
+        return m_itemChannel.RaiseListOfItem(SaveLoadSystem.Instance._SaveData._ItemList.ToArray());
     }
     #endregion
 
@@ -76,15 +78,15 @@ public class SaveChanneler : MonoBehaviour
     private void OnHelpInsert(HelpSettings NewSetting)
     {
         if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return;
-        if (SaveLoadSystem.Instance._SaveData.HelpList.Contains(NewSetting)) return ;
-        SaveLoadSystem.Instance._SaveData.HelpList.Add(NewSetting);
+        if (SaveLoadSystem.Instance._SaveData.HelpList.Contains(NewSetting.Name)) return ;
+        SaveLoadSystem.Instance._SaveData.HelpList.Add(NewSetting.Name);
     }
     private HelpSettings[] OnRequestHelpList()
     {
         if (!SaveLoadSystem.Instance || SaveLoadSystem.Instance._SaveData == null) return null;
 
         //Debug.Log($"{name}, send help list data");
-        return SaveLoadSystem.Instance._SaveData.HelpList.ToArray();
+        return m_helpChannel.RaiseListOfHelpSetting(SaveLoadSystem.Instance._SaveData.HelpList.ToArray());
     }
     #endregion
 
@@ -245,7 +247,7 @@ public class SaveChanneler : MonoBehaviour
         m_helpChannel.OnHelpListRequested -= OnRequestHelpList;
 
         // Item
-        m_itemChannel.OnItemInserted -= SaveLoadSystem.Instance._SaveData._ItemList.Add;
+        m_itemChannel.OnItemInserted -= OnItemInsert;
         m_itemChannel.OnItemListRequested -= OnRequestItemList;
         m_itemChannel.OnItemRemoved -= RemoveItemFromList;
 

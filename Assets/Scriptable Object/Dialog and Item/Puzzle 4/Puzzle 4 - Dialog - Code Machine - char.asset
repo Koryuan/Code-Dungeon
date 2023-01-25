@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 4 - Dialog - Code Machine - char
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: '"B" disini adalah nama (atau sering disebut "Identifier") yang diberikan
       kepada <b>Variable</b> (atau penampung) suatu nilai atau data.'
     m_image:
@@ -21,7 +21,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Pemberian data kepalda variable "B" ini dilakukan dengan meletakkan "="
       sebelum data yang ingin dimasukkan.
     m_image:
@@ -29,15 +29,15 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Variable "B" ini kemudian diberikan data atau nilai berupa "S", yang berarti
-      tipe data tersebut adalah Float.
+      tipe data tersebut adalah Char.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: '"B" kemudian dapat digunakan atau di modifikasi dalam program. Pada kasus
       ini, program hanya melakukan Print untuk data yang tersimpan di dalam "B".'
     m_image:

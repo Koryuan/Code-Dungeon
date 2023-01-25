@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Gold Coin - Convert to Gold Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Tembaga di ganti jadi Perak - Clear.
+  - name: Armory Guard
+    text: Aku berharap Gold itu dapat membantu mu dalam perjalanan!
     m_image:
       Image: {fileID: 0}
       Width: 0

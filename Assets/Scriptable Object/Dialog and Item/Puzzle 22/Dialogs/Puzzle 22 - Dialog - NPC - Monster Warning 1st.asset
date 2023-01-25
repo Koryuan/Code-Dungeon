@@ -13,8 +13,67 @@ MonoBehaviour:
   m_Name: Puzzle 22 - Dialog - NPC - Monster Warning 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: For/Step Code done
+  - name: <color=#176be8><b>Player</b></color>
+    text: Halo, apakah jalan ini dapat dilewati?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard
+    text: Aku tidak akan melewatinya jika aku menjadi kamu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ada apa memangnya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard
+    text: Ada monster liar yang terpojok disini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard
+    text: Beberapa penjaga sudah dipanggil, tapi sampai bantuan datang kita tidak
+      akan berani bertarung di tempat se sempit ini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard
+    text: Kita bisa dihabisi 1 per 1
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Sampai kapan bantuan tersebut akan datang?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Guard
+    text: Aku tidak tahu. Setelah insiden terakhir, tidak banyak dari kami yang dapat
+      bertarung.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Hmm, sepertinya kita tidak dapat menunggu untuk bantuan. Tidak akan ada
+      hal baik yang terjadi jika kita hanya menunggu.)
     m_image:
       Image: {fileID: 0}
       Width: 0

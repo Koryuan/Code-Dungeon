@@ -13,8 +13,92 @@ MonoBehaviour:
   m_Name: Puzzle 23 - Dialog - NPC - Headache Talk 3rd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Headache Give item
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ini obat untuk mu!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Huff...
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Aku sudah terasa lebih baik. Terima kasih atas bantuan mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Maaf lama. Aku bertemu dengan banyak masalah dalam perjalanan ini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Masalah? Apakah monster liar itu masih berkeliaran?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Yang memberikan ku masalah adalah salah satu guard yang menjaga pintu menuju
+      mesin untuk mematikan mekanisme berputar ini.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Dia meminta bayaran untuk membuka ruangan tersebut.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Ha? Bagaimana ini bisa terjadi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Aku minta maaf atas sikap bawahan ku. Akan ku berikan dia pelajaran seumur
+      hidup!
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: 'Tidak perlu. Aku hanya ingin mengetahui 1 hal.
+
+
+      Apakah kau tau
+      jalan keluar dari lantai ini?'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Pemimpin Peloton
+    text: Oh, itu mudah. Ambil kunci ini dan pergilah ke ruangan terkunci di area
+      tengah.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Terima kasih banyak!
     m_image:
       Image: {fileID: 0}
       Width: 0

@@ -1,9 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 
 public class GameManager : MonoBehaviour
 {
@@ -84,8 +81,10 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Game Manager - Everything loaded");
 
-        IsInitialize = true;
+        await UniTask.WaitUntil(() => AudioManager.Instance != null);
         AudioManager.Instance.PlayBGMInGame();
+
+        IsInitialize = true;
         m_loadChannel.RaiseLoadUpdated(LoadingType.GameManager);
     }
     private void CheckReferences()
@@ -183,15 +182,40 @@ public class GameManager : MonoBehaviour
     private GameState GetGameState() => CurrentState;
     async private void UpdateState()
     {
-        if (dialogboxOpen) CurrentState = GameState.Game_Dialog_State;
-        else if (guideOpen) CurrentState = GameState.Game_Guide_State;
-        else if (pauseOpen) CurrentState = GameState.Game_Pause_State;
-        else if (saveMenuOpen) CurrentState = GameState.Game_Save_Load_State;
-        else if (menuOpen) CurrentState = GameState.Game_Open_Menu;
-        else
+        bool CheckOpen()
+        {
+            if (dialogboxOpen)
+            {
+                CurrentState = GameState.Game_Dialog_State;
+                return true;
+            }
+            else if (guideOpen)
+            {
+                CurrentState = GameState.Game_Guide_State;
+                return true;
+            }
+            else if (pauseOpen)
+            {
+                CurrentState = GameState.Game_Pause_State;
+                return true;
+            }
+            else if (saveMenuOpen)
+            {
+                CurrentState = GameState.Game_Save_Load_State;
+                return true;
+            }
+            else if (menuOpen)
+            {
+                CurrentState = GameState.Game_Open_Menu;
+                return true;
+            }
+            return false;
+        }
+
+        if (!CheckOpen())
         {
             onEvent = false; await UniTask.Delay(10);
-            if (onEvent == false) CurrentState = GameState.Game_Player_State;
+            if (onEvent == false && !CheckOpen()) CurrentState = GameState.Game_Player_State;
         }
         m_gameStateChannel.RaiseGameStateChanged(CurrentState);
     }

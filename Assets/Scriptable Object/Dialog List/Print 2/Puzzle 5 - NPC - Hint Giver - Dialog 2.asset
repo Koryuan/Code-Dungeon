@@ -13,5 +13,18 @@ MonoBehaviour:
   m_Name: Puzzle 5 - NPC - Hint Giver - Dialog 2
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'Insert: Dialog - 2'
+  - name: <color=#565950>Stranger</color>
+    text: 'Mesin di ruang penuh lukisan perlu melakukan Print dengan hasil 45. '
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Cepatlah selesaikan tantangan ini dan menuju ruangan selanjutnya. Aku akan
+      segera menyusul.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

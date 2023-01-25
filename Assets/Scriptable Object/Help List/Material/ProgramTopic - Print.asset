@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: ProgramTopic - Print
+  m_EditorClassIdentifier: 
+  m_name: Output and Print
+  m_Settings:
+  - m_text: Output adalah bentuk interaksi yang dilakukan oleh komputer dengan mengubah
+      data ke bentuk lain yang dapat dilihat atau dimengerti manusia.
+    m_image: {fileID: 21300000, guid: d6bc0cbe396fb2b4986f1b38ab1f93ec, type: 3}
+  - m_text: Salah satu cara untuk menggunakan Output adalah Print, yang berfungsi
+      untuk menampilkan teks pada layar komputer.
+    m_image: {fileID: 21300000, guid: d6bc0cbe396fb2b4986f1b38ab1f93ec, type: 3}
+  - m_text: Untuk melakukan, cukup perlu keyword "PRINT" di dalam kode
+    m_image: {fileID: 21300000, guid: 0bfe277981c820d40831d6220ee37fa6, type: 3}
+  - m_text: Setelah keyword "PRINT", diikuti dengan buka kurung dan buka kutip ->
+      isi pesan -> lalu tutup kutip dan tutup kurung. Seperti pada gambar
+    m_image: {fileID: 21300000, guid: 5c7526a06a4784d4d9c86466d292484b, type: 3}
+  - m_text: Jika kode didalam Code Machine tidak bermasalah, maka Print dapat dilakukan.
+    m_image: {fileID: 21300000, guid: bff1373e74e9e8041a49f352c31de3f0, type: 3}
+  - m_text: Hasil dari kode yang tertulis pada Code Machine akan keluar
+    m_image: {fileID: 21300000, guid: 3bd6fcb3ca2ccdc4e931685e0d9f1151, type: 3}

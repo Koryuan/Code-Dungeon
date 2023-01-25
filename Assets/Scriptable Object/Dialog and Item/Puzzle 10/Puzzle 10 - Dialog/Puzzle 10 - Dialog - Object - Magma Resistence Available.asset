@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: When Available
+    text: "IF NOT <color=#08ff6f><b>Anti Magma</b></color> THEN\n   GAME_OVER\nEND
+      IF"
     m_image:
       Image: {fileID: 0}
       Width: 0

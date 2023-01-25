@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Anti Magma
   isUseable: 0
-  itemDescription: Item Description
+  itemDescription: Sepertinya dengan ini, kita dapat melewati jalan dengan suhu 2000
+    derajat celcius sekali pun.

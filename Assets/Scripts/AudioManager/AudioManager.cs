@@ -41,18 +41,16 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (m_instance != null && m_instance != this)
-        {
-            Destroy(m_instance.gameObject);
-            m_instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        if (m_instance != null && m_instance != this) Destroy(gameObject);
         else
         {
             m_instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    public void UpdateSFXVolume() => m_uiAudioSource.volume = sfxVolume;
+    public void UpdateBGMVolume() => m_bgmAudioSource.volume = bgmVolume;
 
     #region Player
     public void PlayPlayerWalk(AudioSource Source)

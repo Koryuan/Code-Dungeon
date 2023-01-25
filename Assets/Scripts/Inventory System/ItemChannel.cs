@@ -11,6 +11,8 @@ public class ItemChannel : ScriptableObject
     public event Action<Item> OnItemRemoved;
     public event Action<Item> OnItemRequestRemove;
 
+    [SerializeField] private ItemList m_ListOfItem;
+
     public Item[] RaiseItemListRequested()
     {
         if (OnItemListRequested == null) return null;
@@ -32,5 +34,11 @@ public class ItemChannel : ScriptableObject
     public void RaiseItemRequestRemove(Item RequestedItem)
     {
         OnItemRequestRemove?.Invoke(RequestedItem);
+    }
+
+    public Item[] RaiseListOfItem(string[] IDList)
+    {
+        if (!m_ListOfItem) return null;
+        return m_ListOfItem.GetItemList(IDList);
     }
 }

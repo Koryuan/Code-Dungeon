@@ -13,8 +13,74 @@ MonoBehaviour:
   m_Name: Puzzle 19 - Dialog - NPC - Stranger 2nd - Infinite Loop 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: Here some item
+  - name: <color=#176be8><b>Player</b></color>
+    text: Hei, apakah kau mengetahui sesuatu tentang mesin di sebelah kanan kita?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Kenapa dengan mesin itu?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Sepertinya ada bagian Kode yang tidak dapat terbaca pada mesin itu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apakah kamu memiliki ide apa yang harus dilakukan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Ahh! Mungkinkah benda ini berhubungan dengan mesin tersebut?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Ha? Bagaimana kamu memilikinya?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Aku menemukannya di balik lukisan ini. Ada mekanisme yang membuat lukisan
+      ini dapat berputar.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku pikir kau juga akan berdiam diri di tempat ini
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Hei, jangan lupakan semua informasi yang kubagikan dengan mu sampai saat
+      ini. Sebaiknya kau selesaikan tantangan mu dan jangan pikir hal yang aneh -
+      aneh.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Aku bahkan tidak pernah mendengarkan mu berterima kasih kepada ku.
     m_image:
       Image: {fileID: 0}
       Width: 0

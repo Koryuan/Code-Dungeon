@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 5 - Object - Arithmatic Explanation - 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Tablet
+  - name: <color=#17e8d3><b>Tablet</b></color>
     text: Sepertinya ada penjelasan disini!
     m_image:
       Image: {fileID: 0}
@@ -36,15 +36,7 @@ MonoBehaviour:
       Height: 0
       Y_Offset: 0
   - name: 
-    text: Nilai yang dikalkulasikan oleh Arithmetic Operators disebut <b>Operands</b>.
-      Operands harus memiliki nilai numerik.
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: 
-    text: 'Operators dasar dalam pemrograman adalah pertambahan "+", pengurangan
+    text: 'Arithmetic Operators dasar dalam pemrograman adalah pertambahan "+", pengurangan
       "-", perkalian "*", dan pembagian "/". '
     m_image:
       Image: {fileID: 0}

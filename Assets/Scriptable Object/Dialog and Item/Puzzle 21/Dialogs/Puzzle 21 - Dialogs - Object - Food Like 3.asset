@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Ikan
+    text: Ikan adalah salah satu makanan favorit!
     m_image:
       Image: {fileID: 0}
       Width: 0

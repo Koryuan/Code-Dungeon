@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: terdapat air jernih bisa untuk diminum
+    text: Air ini sepertinya bisa diminum
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

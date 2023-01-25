@@ -13,16 +13,8 @@ MonoBehaviour:
   m_Name: Puzzle 3 - Dialog - NPC - Stranger - Puzzle Clear 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: Jika ada petunjuk lain, aku pasti sudah menemukannya. Hanya ada kau, aku,
-      dan 2 mesin tersebut.
-    m_image:
-      Image: {fileID: 0}
-      Width: 0
-      Height: 0
-      Y_Offset: 0
-  - name: Stranger
-    text: Aneh sekali. Apa kedua mesin ini memang benar - benar <b>sama</b>?
+  - name: <color=#565950>Stranger</color>
+    text: Lanjutkanlah perjalanan mu. Aku akan segera menyusul ketika urusan ku selesai.
     m_image:
       Image: {fileID: 0}
       Width: 0

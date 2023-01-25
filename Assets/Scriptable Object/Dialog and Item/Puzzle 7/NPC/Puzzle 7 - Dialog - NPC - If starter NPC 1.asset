@@ -13,8 +13,39 @@ MonoBehaviour:
   m_Name: Puzzle 7 - Dialog - NPC - If starter NPC 1
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
-    text: aaaaaaa
+  - name: <color=#565950>Stranger</color>
+    text: Ikuti saja apa kata ku. Lakukan save pada Save machine agar perjalanan
+      mu tidak sia - sia.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#565950>Stranger</color>
+    text: Sampai bertemu di lain waktu
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Kau tidak ingin pergi?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: ' <color=#565950>Stranger</color>'
+    text: 'Tentu saja aku ingin, tetapi lebih baik kau duluan. Aku sudah melihat
+      apa yang bisa dilakukan diri mu. '
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: ' <color=#565950>Stranger</color>'
+    text: Jika ada jebakan, aku juga bisa mengetahuinya dengan melihat mu. Ide yang
+      bagus bukan? Hahaha
     m_image:
       Image: {fileID: 0}
       Width: 0

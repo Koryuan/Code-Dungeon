@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 13 - Dialog - NPC - Chef found item
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: <color=#176be8><b>Player</b></color>
+    text: Aku menemukan bahan ini. Seharusnya sudah cukup untuk memasak sesuatu kan?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Chef
+    text: Hmm, baiklah. Tolong tunggu sebentar.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Chef
+    text: Sudah selesai! Ini cocok bagiku untuk kembali mulai memasak.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: (Hanya 1 porsi, sepertinya aku perlu menemukan hadiah lain. Kecuali masih
+      ada bahan tersisa, tetapi aku tidak yakin masih ada di tempat ini.)
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#176be8><b>Player</b></color>
+    text: Terima kasih atas bantuan mu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Chef
+    text: Aku juga ingin berterima kasih karena telah memberikan ku kesempatan untuk
+      memeasak lagi.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

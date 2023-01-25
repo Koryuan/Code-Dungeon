@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: Player di serang monster Player death
+    text: '*Player diserang oleh monster di area sempit'
     m_image:
       Image: {fileID: 0}
       Width: 0

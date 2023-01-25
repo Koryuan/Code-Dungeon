@@ -14,9 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: 'Treasure Chest yang benar:
+    text: '<color=#e2e629>Right_To_Left</color> = 0
 
-      aaaaaaa'
+      <color=#fbff03>Count</color>
+      = 1
+
+'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: "FOR <color=#fbff03>Count</color> TO 9\r\n     <color=#e2e629>Right_To_Left</color>
+      = <color=#e2e629>Right_To_Left</color> + 1\r\n     if <color=#fbff03>Count</color>
+      MOD 3 == 0\r\n\t     <color=#e2e629>Right_To_Left</color> = <color=#e2e629>Right_To_Left</color>
+      - 2\r\nNEXT <color=#fbff03>Count</color>\r\n"
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: 
+    text: Buka chest yang sesuai dengan hasil <color=#e2e629>Right_To_Left</color>
     m_image:
       Image: {fileID: 0}
       Width: 0

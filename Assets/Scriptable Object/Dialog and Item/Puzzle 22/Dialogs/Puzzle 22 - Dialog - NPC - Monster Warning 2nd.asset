@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Puzzle 22 - Dialog - NPC - Monster Warning 2nd
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: For/Step Code done
+  - name: Guard
+    text: Beberapa penjaga sudah dipanggil, tapi sampai bantuan datang kita tidak
+      akan berani bertarung di tempat se sempit ini.
     m_image:
       Image: {fileID: 0}
       Width: 0

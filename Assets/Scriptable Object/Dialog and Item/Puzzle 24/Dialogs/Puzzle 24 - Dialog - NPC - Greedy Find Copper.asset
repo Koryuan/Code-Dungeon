@@ -13,8 +13,23 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Greedy Find Copper
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Oh anda punya copper lol
+  - name: <color=#176be8><b>Player</b></color>
+    text: Apakah ini bayaran yang cukup?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: NPC Greedy
+    text: Ha? Kau ingin menghina ku dengan ini?
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Ayo cari cara untuk  mendapatkan barang yang memiliki harga jual lebih
+      tinggi. Mungkin Silver terlebih dahulu?)
     m_image:
       Image: {fileID: 0}
       Width: 0

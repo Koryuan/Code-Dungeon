@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae7c4c2289755d4684c571316ad0234, type: 3}
+  m_Name: Puzzle 14 - Dialog - Object - Question
+  m_EditorClassIdentifier: 
+  dialogs:
+  - name: 
+    text: Di taman terdapat tiga orang anak yang suka bermain. Mereka sedang bermain
+      Petak Umpet (Cari dan Sembunyi) di taman tersebut. Siapakah orang ke-empat
+      yang bermain dengan tiga orang anak tersebut.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: Sepertinya ini akan menjadi pertanyaan yang cukup sulit. Mungkin kita bisa
+      melewatinya terlebih dahulu.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0

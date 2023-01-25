@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Puzzle 24 - Dialog - NPC - Silver Coin Convert to Silver Clear
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: Silver coint convert to silver - Clear.
+  - name: Silver Collector
+    text: Aku senang sekali dapat membalas perbuatan baik mu! Sampai jumpa lagi kawan!
     m_image:
       Image: {fileID: 0}
       Width: 0

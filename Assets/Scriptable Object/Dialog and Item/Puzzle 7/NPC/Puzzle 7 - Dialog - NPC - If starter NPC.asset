@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: Puzzle 7 - Dialog - NPC - If starter NPC
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Stranger
+  - name: ' <color=#565950>Stranger</color>'
     text: Hey, kita bertemu lagi
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Bagaimana kamu bisa selalu lebih dulu sampai sebelum aku?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: ' <color=#565950>Stranger</color>'
     text: Aku punya cara ku sendiri untuk melewati tantangan yang ada
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Cara seperti apa?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: ' <color=#565950>Stranger</color>'
     text: Tentu saja rahasia. Tetapi ada 1 hal yang dapat ku beritahu sekarang.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Jika bukan cara untuk melewati tempat ini, aku tidak mau.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: ' <color=#565950>Stranger</color>'
     text: Jangan tergesah - gesah menolak. Aku yakin kamu akan sangat menghargai
       apa yang akan ku katakan
     m_image:
@@ -63,29 +63,38 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: '?'
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
-    text: Banyak hal fatal disini. Jadi aku anjurkan kamu untuk mempersiapkan back-up.
+  - name: ' <color=#565950>Stranger</color>'
+    text: Banyak perangkap fatal disini. Jadi aku anjurkan kamu untuk mempersiapkan
+      back-up.
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
-    text: Hal fatal? Back-up? Apa maksud mu?
+  - name: <color=#176be8><b>Player</b></color>
+    text: Perangkap fatal? Back-up? Apa maksud mu?
     m_image:
       Image: {fileID: 0}
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Stranger
+  - name: ' <color=#565950>Stranger</color>'
     text: Ikuti saja apa kata ku. Hanya ini yang dapat aku sampaikan sekarang.
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: <color=#17e8d3><b>Tablet</b></color>
+    text: (Aku rasa dia menghimbau kita untuk menggunakan save machine. Sebaiknya
+      kita ikuti saja saran dari dia)
     m_image:
       Image: {fileID: 0}
       Width: 0

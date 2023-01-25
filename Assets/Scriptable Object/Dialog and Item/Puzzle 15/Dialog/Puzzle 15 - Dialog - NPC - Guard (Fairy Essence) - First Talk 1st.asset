@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Puzzle 15 - Dialog - NPC - Guard (Fairy Essence) - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Permisi, bisakah kau membukakan pintu ini?
     m_image:
       Image: {fileID: 0}
@@ -27,7 +27,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: Permisi, apakah kau-
     m_image:
       Image: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
       Width: 0
       Height: 0
       Y_Offset: 0
-  - name: Player
+  - name: <color=#176be8><b>Player</b></color>
     text: O-ok, maaf mengganggu.
     m_image:
       Image: {fileID: 0}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9259a2764a3805340ba15dd3c34c18a1, type: 3}
+  m_Name: PorgramTopic - Comment
+  m_EditorClassIdentifier: 
+  m_name: Comment
+  m_Settings:
+  - m_text: Comment atau "//" dalam pemrograman digunakan dalam berbagai hal, salah
+      satunya sebagai catatan bagi programmer agar kode lebih mudah dibaca
+    m_image: {fileID: 21300000, guid: 45da48877a611f44eade759bf398266e, type: 3}
+  - m_text: Penulisan kode apapun setelah "//" tidak akan dibaca oleh Code Machine,
+      sehingga pada output tidak akan berpengaruh,
+    m_image: {fileID: 21300000, guid: d0f17cc0f8e27174da87ac078d0cd0d0, type: 3}
+  - m_text: Namun, terkadang orang tidak hati - hati dalam peletakan Comment. Membuat
+      fungsi seperti Print tidak akan berkerja karena PRINT perlu '(" ")'.
+    m_image: {fileID: 21300000, guid: f9ef67db976408b4ca6e1eb49aa3667c, type: 3}

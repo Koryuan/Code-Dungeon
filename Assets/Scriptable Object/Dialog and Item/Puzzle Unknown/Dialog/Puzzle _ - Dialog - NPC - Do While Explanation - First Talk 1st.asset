@@ -13,10 +13,32 @@ MonoBehaviour:
   m_Name: Puzzle _ - Dialog - NPC - Do While Explanation - First Talk 1st
   m_EditorClassIdentifier: 
   dialogs:
-  - name: 
-    text: 'First Talk
-
-'
+  - name: Librarian
+    text: 'Tahukah kamu perbedaan antara Do While dan While? '
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Librarian
+    text: Disini tertulis, "Do While melakukan evaluasi kondisi sesudah kode dalam
+      pengulangan dijalankan."
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Librarian
+    text: '"Berbeda dengan While loop biasa dimana kondisi pengulangan di evaluasi
+      terlebih dahulu sebelum kode dijalankan."'
+    m_image:
+      Image: {fileID: 0}
+      Width: 0
+      Height: 0
+      Y_Offset: 0
+  - name: Librarian
+    text: Menarik bukan? Aku sedang mencoba untuk membuat mesin seperti ini. Tetapi
+      mungkin hasilnya belum sempurna.
     m_image:
       Image: {fileID: 0}
       Width: 0
