@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - name: 
-    text: "Di taman terdapat tiga orang anak yang suka bermain.\r Mereka sedang bermain
-      Petak Umpet (Cari dan Sembunyi) di taman tersebut.\r Siapakah orang ke-empat
-      yang bermain dengan tiga orang anak tersebut?"
+    text: Di taman terdapat tiga orang anak yang suka bermain. Mereka sedang bermain
+      Petak Umpet (Cari dan Sembunyi) di taman tersebut. Siapakah orang ke-empat
+      yang bermain dengan tiga orang anak tersebut.
     m_image:
       Image: {fileID: 0}
       Width: 0
